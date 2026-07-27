@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>6 · Combining series and parallel — Circuit Lab</title>
+<meta name="description" content="How to solve a mixed series-parallel circuit step by step, then try it live in the interactive lab.">
+<meta name="theme-color" content="#E4EAF0">
+<link rel="icon" type="image/svg+xml" href="../favicon.svg">
+<link rel="stylesheet" href="../css/style.css">
+</head>
+<body>
+<div class="sheet">
+  <header>
+    <div>
+      <a class="crumb" href="../index.html">← Circuit Lab course</a>
+      <p class="eyebrow" style="margin-top:10px">Putting it together</p>
+      <h1>Combining series and parallel</h1>
+    </div>
+    <p class="sub">Real circuits are rarely pure series or pure parallel. Most exam questions — and most real devices — mix both.</p>
+  </header>
+
+  <div class="prose">
+    <h2 class="section">The recipe</h2>
+    <p>A mixed circuit looks intimidating at first, but it always breaks down the same way: <strong>collapse the parallel section into one equivalent resistor first, then treat the whole thing as a plain series circuit.</strong> Here's the full recipe, in order:</p>
+    <ol>
+      <li>Find the combined resistance of the parallel section: 1/R<sub>p</sub> = 1/R<sub>1</sub> + 1/R<sub>2</sub></li>
+      <li>Add that to the series resistor to get the total circuit resistance: R<sub>total</sub> = R<sub>s</sub> + R<sub>p</sub></li>
+      <li>Find the total current from the battery: I = EMF / R<sub>total</sub> — this is the current everywhere <em>before</em> the junction, including through the series resistor</li>
+      <li>Find the p.d. across the series resistor: V<sub>s</sub> = I × R<sub>s</sub></li>
+      <li>Find the p.d. across the parallel section: V<sub>p</sub> = I × R<sub>p</sub> (check: V<sub>s</sub> + V<sub>p</sub> should equal the EMF)</li>
+      <li>Find each branch current using V<sub>p</sub>, since both branches feel that same p.d.: I<sub>1</sub> = V<sub>p</sub> / R<sub>1</sub>, I<sub>2</sub> = V<sub>p</sub> / R<sub>2</sub></li>
+    </ol>
+
+    <div class="worked">
+      <span class="callout-label">Worked example — the anchor question</span>
+      <p>A 12 V battery is connected to a 1.0 Ω resistor in series with a parallel combination of a 1.0 Ω and a 2.5 Ω resistor. Find everything.</p>
+      <p><strong>Step 1</strong> — R<sub>p</sub> = (1.0 × 2.5) / (1.0 + 2.5) = 2.5 / 3.5 ≈ 0.71 Ω</p>
+      <p><strong>Step 2</strong> — R<sub>total</sub> = 1.0 + 0.71 = 1.71 Ω</p>
+      <p><strong>Step 3</strong> — I = 12 / 1.71 ≈ <strong>7.0 A</strong></p>
+      <p><strong>Step 4</strong> — V<sub>s</sub> = 7.0 × 1.0 = <strong>7.0 V</strong></p>
+      <p><strong>Step 5</strong> — V<sub>p</sub> = 7.0 × 0.71 ≈ <strong>5.0 V</strong> &nbsp;(check: 7.0 + 5.0 = 12 V ✓)</p>
+      <p><strong>Step 6</strong> — I<sub>1</sub> = 5.0 / 1.0 = <strong>5.0 A</strong> &nbsp;·&nbsp; I<sub>2</sub> = 5.0 / 2.5 = <strong>2.0 A</strong> &nbsp;(check: 5.0 + 2.0 = 7.0 A ✓)</p>
+      <p>And a voltmeter connected straight across the battery terminals would simply read the EMF: <strong>12 V</strong> — because it draws no current and taps both terminals directly, no matter what the rest of the circuit is doing.</p>
+    </div>
+
+    <div class="callout">
+      <span class="callout-label">Why this matters</span>
+      This exact circuit is what the interactive lab is built around. Instead of just reading the six steps above, you can drag the sliders and <em>watch</em> the current split, the voltages settle, and the charge dots visibly spend their energy at each resistor in the right order.
+    </div>
+  </div>
+
+  <div style="padding:0 24px 26px">
+    <a href="../lab.html" style="
+      display:block;border:1.5px solid var(--ink);background:rgba(217,63,43,.08);
+      padding:20px 22px;text-decoration:none;color:var(--ink);
+      box-shadow:4px 4px 0 rgba(15,36,54,.12);
+    ">
+      <span style="font-family:'Space Mono',monospace;font-size:11px;letter-spacing:.14em;text-transform:uppercase;color:var(--hot)">Open the lab →</span>
+      <span style="display:block;font-family:'Bricolage Grotesque',sans-serif;font-weight:700;font-size:22px;margin-top:6px">Where the volts go</span>
+      <span style="display:block;font-size:14px;color:var(--ink-soft);margin-top:6px">
+        The full interactive circuit, with a 5-step guided walkthrough and switches to break the series link or either parallel branch — see for yourself which one kills the whole circuit.
+      </span>
+    </a>
+  </div>
+
+  <nav class="lesson-nav">
+    <a href="5-parallel-circuits.html">← Parallel circuits</a>
+    <a class="next" href="../practice.html">Next: Practice questions →</a>
+  </nav>
+</div>
+</body>
+</html>

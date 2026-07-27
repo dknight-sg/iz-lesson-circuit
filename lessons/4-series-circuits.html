@@ -1,0 +1,122 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>4 · Series circuits — Circuit Lab</title>
+<meta name="description" content="Why current is the same everywhere in a series circuit, and why voltages across series components add up to the EMF.">
+<meta name="theme-color" content="#E4EAF0">
+<link rel="icon" type="image/svg+xml" href="../favicon.svg">
+<link rel="stylesheet" href="../css/style.css">
+</head>
+<body>
+<div class="sheet">
+  <header>
+    <div>
+      <a class="crumb" href="../index.html">← Circuit Lab course</a>
+      <p class="eyebrow" style="margin-top:10px">Lesson 4 of 5</p>
+      <h1>Series circuits</h1>
+    </div>
+    <p class="sub">One road, no junctions. Everything charge does, it does one after another.</p>
+  </header>
+
+  <div class="prose">
+    <h2 class="section">One path, no choices</h2>
+    <p>A series circuit is the simplest kind: every component sits on a single loop, one after another, with no junctions. Every scoop of charge that leaves the battery has to pass through <strong>every</strong> component before it gets home — there's no other route available.</p>
+
+    <div class="callout">
+      <span class="callout-label">Rule 1</span>
+      Because there's only one path, exactly the same current flows through every component in a series circuit — including the ammeter, wherever you put it.
+    </div>
+
+    <h2 class="section">Voltages add up</h2>
+    <p>Each resistor takes a bite out of the charge's energy as it passes through. By the time the charge gets back to the battery, all of the energy the battery gave it (its EMF) must be spent — there's nowhere else for it to go. So the p.d.s across each series component always add up to the total EMF.</p>
+    <p class="formula">V<sub>1</sub> + V<sub>2</sub> + … = EMF</p>
+    <p>And since the same current flows through both resistors, you can also add up resistance directly:</p>
+    <p class="formula">R<sub>total</sub> = R<sub>1</sub> + R<sub>2</sub> + …</p>
+
+    <div class="worked">
+      <span class="callout-label">Worked example</span>
+      <p>A 10 V battery is connected to a 2 Ω resistor in series with a 3 Ω resistor. Find the current, and the p.d. across each resistor.</p>
+      <p>R<sub>total</sub> = 2 + 3 = 5 Ω</p>
+      <p>I = V / R = 10 ÷ 5 = <strong>2 A</strong> (this is the current everywhere in the loop)</p>
+      <p>V<sub>1</sub> = I × R<sub>1</sub> = 2 × 2 = <strong>4 V</strong> &nbsp;·&nbsp; V<sub>2</sub> = I × R<sub>2</sub> = 2 × 3 = <strong>6 V</strong></p>
+      <p>Check: 4 + 6 = 10 V, matching the EMF. ✓</p>
+    </div>
+
+    <div class="callout think">
+      <span class="callout-label">Notice</span>
+      There's only one ammeter symbol drawn below, even though there are two resistors — because the current is identical everywhere in a series loop, one reading tells you all of them. Drag either resistance slider and watch <em>both</em> voltage labels change, but their sum always lands back on the battery push.
+    </div>
+
+    <div class="mini-widget" id="mrWidget">
+      <div class="mini-stage">
+        <svg viewBox="-40 0 560 260" role="img" aria-label="A battery connected to two resistors in series, with one ammeter">
+          <path id="mrLoop" class="wire" d="M 80 90 L 80 60 L 480 60 L 480 200 L 80 200 L 80 140"/>
+
+          <line class="wire" x1="52" y1="90" x2="108" y2="90"/>
+          <line class="wire" x1="66" y1="108" x2="94" y2="108"/>
+          <line class="wire" x1="52" y1="122" x2="108" y2="122"/>
+          <line class="wire" x1="66" y1="140" x2="94" y2="140"/>
+          <text class="lbl val" id="mrEmfTag" x="20" y="118" text-anchor="end">10.0 V</text>
+
+          <rect class="comp" x="170" y="42" width="80" height="36" rx="2"/>
+          <text class="lbl val" id="mrR1Tag" x="210" y="32" text-anchor="middle">2.0 Ω</text>
+          <text class="lbl small" id="mrV1Tag" x="210" y="96" text-anchor="middle">drops 4.0 V</text>
+
+          <rect class="comp" x="300" y="42" width="80" height="36" rx="2"/>
+          <text class="lbl val" id="mrR2Tag" x="340" y="32" text-anchor="middle">3.0 Ω</text>
+          <text class="lbl small" id="mrV2Tag" x="340" y="96" text-anchor="middle">drops 6.0 V</text>
+
+          <circle class="comp" cx="430" cy="200" r="20"/>
+          <text class="lbl val" x="430" y="206" text-anchor="middle">A</text>
+          <text class="lbl small" id="mrITag" x="430" y="236" text-anchor="middle">2.0 A</text>
+
+          <g id="mrDots"></g>
+        </svg>
+      </div>
+      <div class="mini-ctl">
+        <div class="ctl">
+          <div class="ctl-top"><label for="mrEmf">Battery push</label><b id="mrEmfVal">10.0 V</b></div>
+          <input id="mrEmf" type="range" min="2" max="24" step="0.5" value="10">
+        </div>
+        <div class="ctl">
+          <div class="ctl-top"><label for="mrR1">Resistor 1</label><b id="mrR1Val">2.0 Ω</b></div>
+          <input id="mrR1" type="range" min="0.5" max="5" step="0.1" value="2">
+        </div>
+        <div class="ctl">
+          <div class="ctl-top"><label for="mrR2">Resistor 2</label><b id="mrR2Val">3.0 Ω</b></div>
+          <input id="mrR2" type="range" min="0.5" max="5" step="0.1" value="3">
+        </div>
+      </div>
+      <div class="mini-readouts">
+        <span>Current (same everywhere) I = <b id="mrIRead">2.0 A</b></span>
+      </div>
+      <div class="budget" style="border-top:1.5px solid var(--ink)">
+        <h2>Energy budget</h2>
+        <div class="bar">
+          <div class="b1" id="mrBar1">R1 4.0 V</div>
+          <div class="b2" id="mrBar2">R2 6.0 V</div>
+        </div>
+        <p id="mrBarTxt">4.0 V + 6.0 V = 10.0 V</p>
+      </div>
+    </div>
+
+    <h2 class="section">Quick check</h2>
+    <details class="q">
+      <summary><span class="qnum">Q</span> Three identical 2 Ω resistors are connected in series to a 6 V battery. What current flows?</summary>
+      <div class="a">
+        <p>R<sub>total</sub> = 2 + 2 + 2 = 6 Ω</p>
+        <p>I = V / R = 6 ÷ 6 = <span class="ans">1 A</span></p>
+      </div>
+    </details>
+  </div>
+
+  <nav class="lesson-nav">
+    <a href="3-resistance-and-ohms-law.html">← Resistance and Ohm's Law</a>
+    <a class="next" href="5-parallel-circuits.html">Next: Parallel circuits →</a>
+  </nav>
+</div>
+<script src="../js/mini-series.js"></script>
+</body>
+</html>

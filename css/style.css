@@ -172,3 +172,129 @@ svg.guide-dim .lit *{opacity:1}
   .panel{grid-template-columns:1fr}
   .controls{border-right:0;border-bottom:1.5px solid var(--ink)}
 }
+
+/* ---- course chrome: breadcrumb, lesson prev/next nav ------------- */
+.crumb{
+  font-family:"Space Mono",monospace;font-size:12px;letter-spacing:.04em;
+  color:var(--ink-soft);text-decoration:none;
+}
+.crumb:hover{color:var(--ink)}
+.crumb:focus-visible{outline:2.5px solid var(--hot);outline-offset:2px}
+
+.lesson-nav{
+  display:flex;justify-content:space-between;gap:12px;flex-wrap:wrap;
+  padding:18px 24px;border-top:1.5px solid var(--ink);
+}
+.lesson-nav a{
+  font-family:"Space Mono",monospace;font-size:12px;letter-spacing:.04em;
+  color:var(--ink);text-decoration:none;border:1.5px solid var(--ink);
+  padding:11px 14px;min-height:44px;display:inline-flex;align-items:center;gap:8px;
+}
+.lesson-nav a:hover{background:var(--ink);color:var(--paper)}
+.lesson-nav a:focus-visible{outline:2.5px solid var(--hot);outline-offset:2px}
+.lesson-nav a.next{margin-left:auto}
+
+/* ---- lesson prose ------------------------------------------------- */
+.prose{padding:22px 24px;max-width:68ch}
+.prose h2.section{
+  font-family:"Bricolage Grotesque",sans-serif;font-weight:700;font-size:22px;
+  margin:34px 0 12px;letter-spacing:-.01em;text-transform:none;color:var(--ink);
+}
+.prose h2.section:first-child{margin-top:0}
+.prose p{margin:0 0 14px;font-size:15px}
+.prose ul, .prose ol{margin:0 0 14px;padding-left:22px;font-size:15px}
+.prose li{margin-bottom:6px}
+.prose strong{color:var(--ink)}
+.prose .formula{
+  font-family:"Space Mono",monospace;font-size:15px;font-weight:700;
+  background:#F7FAFC;border:1.5px solid var(--ink);
+  padding:10px 14px;display:inline-block;margin:4px 0 14px;
+}
+
+.callout{
+  border:1.5px solid var(--ink);border-left:6px solid var(--charge);
+  background:#F7FAFC;padding:14px 16px;margin:0 0 18px;font-size:14px;
+}
+.callout .callout-label{
+  display:block;font-family:"Space Mono",monospace;font-size:11px;
+  letter-spacing:.12em;text-transform:uppercase;color:var(--charge);margin-bottom:6px;
+}
+.callout.think{border-left-color:var(--cool)}
+.callout.think .callout-label{color:var(--cool)}
+
+.worked{
+  border:1.5px solid var(--ink);background:#F7FAFC;padding:16px 18px;margin:0 0 18px;
+}
+.worked .callout-label{
+  display:block;font-family:"Space Mono",monospace;font-size:11px;
+  letter-spacing:.12em;text-transform:uppercase;color:var(--ink-soft);margin-bottom:8px;
+}
+.worked table{margin-top:6px}
+
+/* mini interactive widgets embedded in lesson prose */
+.mini-widget{
+  border:1.5px solid var(--ink);background:rgba(240,244,248,.86);
+  margin:0 0 20px;box-shadow:4px 4px 0 rgba(15,36,54,.1);
+}
+.mini-stage{padding:14px 18px 4px}
+.mini-ctl{padding:12px 18px 18px;display:grid;grid-template-columns:1fr 1fr;gap:16px}
+@media (max-width:520px){.mini-ctl{grid-template-columns:1fr}}
+.mini-readouts{
+  padding:0 18px 16px;display:flex;flex-wrap:wrap;gap:8px 20px;
+  font-family:"Space Mono",monospace;font-size:13px;
+}
+.mini-readouts b{font-weight:700}
+
+/* ---- course home tile grid ---------------------------------------- */
+.tilegrid{display:grid;grid-template-columns:repeat(auto-fill,minmax(230px,1fr));gap:0}
+.tile{
+  border-top:1.5px solid var(--ink);border-right:1.5px solid var(--ink);
+  padding:20px 22px;text-decoration:none;color:var(--ink);
+  display:flex;flex-direction:column;gap:8px;min-height:150px;
+}
+.tile:last-child, .tile:nth-child(2n){border-right:1.5px solid var(--ink)}
+.tile:hover{background:rgba(240,135,30,.08)}
+.tile:focus-visible{outline:2.5px solid var(--hot);outline-offset:-3px}
+.tile .tile-num{
+  font-family:"Space Mono",monospace;font-size:11px;letter-spacing:.14em;
+  color:var(--charge);text-transform:uppercase;
+}
+.tile h3{
+  font-family:"Bricolage Grotesque",sans-serif;font-size:19px;margin:0;
+  line-height:1.15;font-weight:700;
+}
+.tile p{margin:0;font-size:13px;color:var(--ink-soft);flex-grow:1}
+.tile .tile-go{font-family:"Space Mono",monospace;font-size:12px;color:var(--ink-soft)}
+.tile.lab{background:rgba(217,63,43,.06)}
+.tile.lab .tile-num{color:var(--hot)}
+.tile.practice{background:rgba(46,122,140,.06)}
+.tile.practice .tile-num{color:var(--cool)}
+
+/* ---- practice questions (native <details> reveal) ------------------ */
+.qlist{padding:8px 24px 24px}
+.q{border:1.5px solid var(--ink);background:#F7FAFC;margin:0 0 16px}
+.q > summary{
+  list-style:none;cursor:pointer;padding:14px 16px;
+  display:flex;gap:12px;align-items:baseline;font-size:14px;
+}
+.q > summary::-webkit-details-marker{display:none}
+.q > summary .qnum{
+  font-family:"Space Mono",monospace;font-weight:700;color:var(--charge);flex-shrink:0;
+}
+.q > summary .qtag{
+  margin-left:auto;font-family:"Space Mono",monospace;font-size:10px;
+  letter-spacing:.1em;text-transform:uppercase;color:var(--ink-soft);
+  border:1px solid var(--rule);padding:2px 8px;flex-shrink:0;
+}
+.q > summary::after{
+  content:"show answer";margin-left:8px;font-family:"Space Mono",monospace;
+  font-size:11px;color:var(--ink-soft);text-decoration:underline;flex-shrink:0;
+}
+.q[open] > summary::after{content:"hide answer"}
+.q > summary:focus-visible{outline:2.5px solid var(--hot);outline-offset:-2px}
+.q .a{padding:0 16px 16px;border-top:1.5px dotted var(--rule);margin-top:2px}
+.q .a p{margin:12px 0 8px;font-size:14px}
+.q .a .ans{
+  font-family:"Space Mono",monospace;font-weight:700;background:var(--ink);
+  color:var(--paper);display:inline-block;padding:6px 10px;margin-top:6px;
+}

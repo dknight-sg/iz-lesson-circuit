@@ -1,0 +1,129 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>5 · Parallel circuits — Circuit Lab</title>
+<meta name="description" content="Why voltage is the same across parallel branches, why currents add, and why combined parallel resistance is always smaller than the smallest branch.">
+<meta name="theme-color" content="#E4EAF0">
+<link rel="icon" type="image/svg+xml" href="../favicon.svg">
+<link rel="stylesheet" href="../css/style.css">
+</head>
+<body>
+<div class="sheet">
+  <header>
+    <div>
+      <a class="crumb" href="../index.html">← Circuit Lab course</a>
+      <p class="eyebrow" style="margin-top:10px">Lesson 5 of 5</p>
+      <h1>Parallel circuits</h1>
+    </div>
+    <p class="sub">Now there's a junction — charge has a choice of roads, and takes both.</p>
+  </header>
+
+  <div class="prose">
+    <h2 class="section">A junction splits the charge</h2>
+    <p>In a parallel circuit, the wire branches at a junction into two or more separate paths, then joins back together further along. Charge arriving at the junction splits between the branches — some goes one way, some the other — and every bit of it eventually gets home, because charge can't just vanish.</p>
+
+    <div class="callout">
+      <span class="callout-label">Rule 1</span>
+      Both branches connect the <em>same two points</em>, so both branches feel exactly the same p.d. — whatever the voltage is across one parallel branch, it's the same across the other.
+    </div>
+
+    <div class="callout">
+      <span class="callout-label">Rule 2</span>
+      Current splits at the junction and adds back up when the branches rejoin: I<sub>total</sub> = I<sub>1</sub> + I<sub>2</sub>. The smaller-resistance branch — the easier road — always carries more of it.
+    </div>
+
+    <h2 class="section">Combined resistance goes <em>down</em></h2>
+    <p>This one surprises people: adding a second parallel path makes it <strong>easier</strong> overall for current to flow, not harder — because you've literally given the charge a second road to use. So combined parallel resistance is always smaller than the smallest individual branch.</p>
+    <p class="formula">1 / R<sub>p</sub> = 1 / R<sub>1</sub> + 1 / R<sub>2</sub></p>
+    <p>Notice this is the opposite of series, where adding a resistor always makes the total <em>bigger</em>.</p>
+
+    <div class="worked">
+      <span class="callout-label">Worked example</span>
+      <p>A 4 Ω resistor and a 12 Ω resistor are connected in parallel across a 6 V supply. Find the current in each branch, and the total current.</p>
+      <p>Both branches see the full 6 V (Rule 1), so use Ohm's Law on each one separately:</p>
+      <p>I<sub>1</sub> = V / R<sub>1</sub> = 6 ÷ 4 = <strong>1.5 A</strong> &nbsp;·&nbsp; I<sub>2</sub> = V / R<sub>2</sub> = 6 ÷ 12 = <strong>0.5 A</strong></p>
+      <p>I<sub>total</sub> = 1.5 + 0.5 = <strong>2.0 A</strong></p>
+    </div>
+
+    <div class="callout think">
+      <span class="callout-label">Notice</span>
+      Drag either resistance slider and watch the voltmeter reading below — it never moves, because the widget below has no series resistor to eat any voltage first. Every volt the battery gives out appears straight across both branches. That's Rule 1 in its purest form.
+    </div>
+
+    <div class="mini-widget" id="mpWidget">
+      <div class="mini-stage">
+        <svg viewBox="-40 0 700 420" role="img" aria-label="A battery connected to two resistors in parallel, with a voltmeter across the pair and an ammeter reading total current">
+          <path id="mpMain"   class="wire" d="M 80 240 L 80 100 L 350 100"/>
+          <path id="mpBr1"    class="wire" d="M 350 100 L 530 100"/>
+          <path id="mpBr2"    class="wire" d="M 350 100 L 350 300 L 530 300 L 530 100"/>
+          <path id="mpReturn" class="wire" d="M 530 100 L 610 100 L 610 380 L 80 380 L 80 290"/>
+
+          <line class="wire" x1="52" y1="240" x2="108" y2="240"/>
+          <line class="wire" x1="66" y1="258" x2="94" y2="258"/>
+          <line class="wire" x1="52" y1="272" x2="108" y2="272"/>
+          <line class="wire" x1="66" y1="290" x2="94" y2="290"/>
+          <text class="lbl val" id="mpEmfTag" x="20" y="270" text-anchor="end">6.0 V</text>
+
+          <circle class="node" cx="350" cy="100" r="5"/>
+          <circle class="node" cx="530" cy="100" r="5"/>
+
+          <line class="wire" x1="350" y1="100" x2="350" y2="185"/>
+          <line class="wire" x1="530" y1="100" x2="530" y2="185"/>
+          <circle class="comp" cx="440" cy="185" r="22"/>
+          <text class="lbl val" x="440" y="191" text-anchor="middle">V</text>
+          <text class="lbl small" id="mpVTag" x="440" y="222" text-anchor="middle">6.0 V</text>
+
+          <circle class="comp" cx="570" cy="100" r="18"/>
+          <text class="lbl val" x="570" y="105" text-anchor="middle">A</text>
+          <text class="lbl small" id="mpITag" x="570" y="140" text-anchor="middle">2.0 A</text>
+
+          <rect class="comp" x="400" y="82" width="90" height="36" rx="2"/>
+          <text class="lbl val" id="mpR1Tag" x="445" y="72" text-anchor="middle">1.0 Ω</text>
+          <text class="lbl small" id="mpI1Tag" x="445" y="134" text-anchor="middle">6.0 A</text>
+
+          <rect class="comp" x="400" y="282" width="90" height="36" rx="2"/>
+          <text class="lbl val" id="mpR2Tag" x="445" y="272" text-anchor="middle">2.5 Ω</text>
+          <text class="lbl small" id="mpI2Tag" x="445" y="336" text-anchor="middle">2.4 A</text>
+
+          <g id="mpDots"></g>
+        </svg>
+      </div>
+      <div class="mini-ctl">
+        <div class="ctl">
+          <div class="ctl-top"><label for="mpEmf">Battery push</label><b id="mpEmfVal">6.0 V</b></div>
+          <input id="mpEmf" type="range" min="2" max="24" step="0.5" value="6">
+        </div>
+        <div class="ctl">
+          <div class="ctl-top"><label for="mpR1">Resistor · top</label><b id="mpR1Val">1.0 Ω</b></div>
+          <input id="mpR1" type="range" min="0.5" max="5" step="0.1" value="1">
+        </div>
+        <div class="ctl">
+          <div class="ctl-top"><label for="mpR2">Resistor · bottom</label><b id="mpR2Val">2.5 Ω</b></div>
+          <input id="mpR2" type="range" min="0.5" max="5" step="0.1" value="2.5">
+        </div>
+      </div>
+      <div class="mini-readouts">
+        <span>Total current I = <b id="mpIRead">8.4 A</b></span>
+      </div>
+    </div>
+
+    <h2 class="section">Quick check</h2>
+    <details class="q">
+      <summary><span class="qnum">Q</span> Two resistors, 6 Ω and 3 Ω, are connected in parallel across a 12 V supply. What is the current through the 3 Ω resistor?</summary>
+      <div class="a">
+        <p>The 3 Ω branch sees the full 12 V, same as the 6 Ω branch (Rule 1).</p>
+        <p>I = V / R = 12 ÷ 3 = <span class="ans">4 A</span></p>
+      </div>
+    </details>
+  </div>
+
+  <nav class="lesson-nav">
+    <a href="4-series-circuits.html">← Series circuits</a>
+    <a class="next" href="6-combining-circuits.html">Next: Combining them →</a>
+  </nav>
+</div>
+<script src="../js/mini-parallel.js"></script>
+</body>
+</html>

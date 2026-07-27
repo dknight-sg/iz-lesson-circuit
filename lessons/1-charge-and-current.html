@@ -1,0 +1,107 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>1 · Charge and current — Circuit Lab</title>
+<meta name="description" content="What electric charge and current are, how current is measured, and why the ammeter goes in series.">
+<meta name="theme-color" content="#E4EAF0">
+<link rel="icon" type="image/svg+xml" href="../favicon.svg">
+<link rel="stylesheet" href="../css/style.css">
+</head>
+<body>
+<div class="sheet">
+  <header>
+    <div>
+      <a class="crumb" href="../index.html">← Circuit Lab course</a>
+      <p class="eyebrow" style="margin-top:10px">Lesson 1 of 5</p>
+      <h1>Charge and current</h1>
+    </div>
+    <p class="sub">Before voltage and resistance mean anything, you need to know what's actually moving in a wire, and how fast.</p>
+  </header>
+
+  <div class="prose">
+    <h2 class="section">What is electric charge?</h2>
+    <p>Everything is made of atoms, and atoms contain tiny charged particles called <strong>electrons</strong>. In a metal wire, some of these electrons are free to drift from atom to atom. That drifting is electricity.</p>
+    <p>Charge is measured in <strong>coulombs (C)</strong>. You won't often deal with a single electron's charge — instead you deal with a "packet" of charge flowing past a point, the way you'd count litres of water flowing past a point in a pipe rather than counting molecules.</p>
+
+    <h2 class="section">Current is the <em>rate</em> of flow of charge</h2>
+    <p>Current isn't "how much charge" — it's how much charge flows past a point <strong>per second</strong>. That's the key idea people mix up: a current can be small even if a huge amount of charge eventually moves, if it just takes long enough.</p>
+    <p class="formula">I = Q / t</p>
+    <p>Where <strong>I</strong> is current in amperes (A), <strong>Q</strong> is charge in coulombs (C), and <strong>t</strong> is time in seconds (s). One ampere means one coulomb of charge is flowing past a point every second: 1 A = 1 C/s.</p>
+
+    <div class="worked">
+      <span class="callout-label">Worked example</span>
+      <p>A charge of 12 C flows past a point in a wire in 4 s. What is the current?</p>
+      <p>I = Q / t = 12 ÷ 4 = <strong>3 A</strong></p>
+    </div>
+
+    <h2 class="section">Measuring current: the ammeter</h2>
+    <p>An ammeter measures current, and it's always connected <strong>in series</strong> — directly in the path the charge travels, like a tollbooth on a single road. A good ammeter has almost zero resistance of its own, so it counts the charge going past without slowing it down or changing the circuit it's measuring.</p>
+
+    <div class="callout">
+      <span class="callout-label">Try it</span>
+      Drag the sliders below. Watch the ammeter reading and the speed of the dots — they move together. More current means more charge scoops passing the ammeter every second, so the dots visibly speed up.
+    </div>
+
+    <div class="mini-widget" id="msWidget">
+      <div class="mini-stage">
+        <svg viewBox="-40 0 480 260" role="img" aria-label="A battery connected to a single resistor, with an ammeter in series and a voltmeter across the resistor">
+          <path id="msLoop" class="wire" d="M 80 90 L 80 60 L 400 60 L 400 200 L 80 200 L 80 140"/>
+
+          <line class="wire" x1="52" y1="90" x2="108" y2="90"/>
+          <line class="wire" x1="66" y1="108" x2="94" y2="108"/>
+          <line class="wire" x1="52" y1="122" x2="108" y2="122"/>
+          <line class="wire" x1="66" y1="140" x2="94" y2="140"/>
+          <text class="lbl val" id="msEmfTag" x="20" y="118" text-anchor="end">6.0 V</text>
+
+          <rect class="comp" x="200" y="42" width="90" height="36" rx="2"/>
+          <text class="lbl val" id="msRTag" x="245" y="32" text-anchor="middle">3.0 Ω</text>
+
+          <line class="wire" x1="200" y1="60" x2="200" y2="105"/>
+          <line class="wire" x1="290" y1="60" x2="290" y2="105"/>
+          <circle class="comp" cx="245" cy="105" r="20"/>
+          <text class="lbl val" x="245" y="111" text-anchor="middle">V</text>
+          <text class="lbl small" id="msVTag" x="245" y="140" text-anchor="middle">6.0 V</text>
+
+          <circle class="comp" cx="240" cy="200" r="20"/>
+          <text class="lbl val" x="240" y="206" text-anchor="middle">A</text>
+          <text class="lbl small" id="msITag" x="240" y="236" text-anchor="middle">2.0 A</text>
+
+          <g id="msDots"></g>
+        </svg>
+      </div>
+      <div class="mini-ctl">
+        <div class="ctl">
+          <div class="ctl-top"><label for="msEmf">Battery push</label><b id="msEmfVal">6.0 V</b></div>
+          <input id="msEmf" type="range" min="2" max="24" step="0.5" value="6">
+        </div>
+        <div class="ctl">
+          <div class="ctl-top"><label for="msR">Resistance</label><b id="msRVal">3.0 Ω</b></div>
+          <input id="msR" type="range" min="0.5" max="5" step="0.1" value="3">
+        </div>
+      </div>
+      <div class="mini-readouts">
+        <span>Current I = <b id="msIRead">2.0 A</b></span>
+        <span>p.d. across R = <b id="msVRead">6.0 V</b></span>
+      </div>
+    </div>
+
+    <h2 class="section">Quick check</h2>
+    <details class="q">
+      <summary><span class="qnum">Q</span> A current of 0.5 A flows through a torch bulb for 2 minutes. How much charge flows through it?</summary>
+      <div class="a">
+        <p>Careful — the formula uses <strong>seconds</strong>, and the question gives minutes. 2 minutes = 120 s.</p>
+        <p>Q = I × t = 0.5 × 120 = <span class="ans">60 C</span></p>
+      </div>
+    </details>
+  </div>
+
+  <nav class="lesson-nav">
+    <a href="../index.html">← Course home</a>
+    <a class="next" href="2-voltage-and-emf.html">Next: Voltage and EMF →</a>
+  </nav>
+</div>
+<script src="../js/mini-single.js"></script>
+</body>
+</html>

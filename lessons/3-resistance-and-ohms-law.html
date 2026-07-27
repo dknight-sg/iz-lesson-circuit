@@ -1,0 +1,110 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>3 · Resistance and Ohm's Law — Circuit Lab</title>
+<meta name="description" content="What resistance is, the unit ohm, and Ohm's Law V=IR in all three rearrangements.">
+<meta name="theme-color" content="#E4EAF0">
+<link rel="icon" type="image/svg+xml" href="../favicon.svg">
+<link rel="stylesheet" href="../css/style.css">
+</head>
+<body>
+<div class="sheet">
+  <header>
+    <div>
+      <a class="crumb" href="../index.html">← Circuit Lab course</a>
+      <p class="eyebrow" style="margin-top:10px">Lesson 3 of 5</p>
+      <h1>Resistance and Ohm's Law</h1>
+    </div>
+    <p class="sub">Resistance is what decides how much current a given push actually produces.</p>
+  </header>
+
+  <div class="prose">
+    <h2 class="section">What resistance is</h2>
+    <p>Picture a hose. Squeeze it narrower, and less water gets through for the same pump pressure. A resistor does the same thing to charge — it makes the path harder to push charge through, so for the same battery push (EMF), a bigger resistance means less current.</p>
+    <p>Resistance is measured in <strong>ohms (Ω)</strong>. One ohm means one volt of push is needed to drive one amp of current through it: 1 Ω = 1 V / 1 A.</p>
+
+    <h2 class="section">Ohm's Law</h2>
+    <p>Ohm's Law ties voltage, current and resistance together in one formula:</p>
+    <p class="formula">V = I × R</p>
+    <p>You'll need to rearrange this constantly, so it's worth knowing all three forms cold:</p>
+    <p class="formula">I = V / R &nbsp;&nbsp;·&nbsp;&nbsp; R = V / I</p>
+
+    <div class="worked">
+      <span class="callout-label">Worked example — finding current</span>
+      <p>A 12 V battery is connected to a 4 Ω resistor. What current flows?</p>
+      <p>I = V / R = 12 ÷ 4 = <strong>3 A</strong></p>
+    </div>
+
+    <div class="worked">
+      <span class="callout-label">Worked example — finding resistance</span>
+      <p>A resistor has 2 A flowing through it when connected to a 9 V supply. What is its resistance?</p>
+      <p>R = V / I = 9 ÷ 2 = <strong>4.5 Ω</strong></p>
+    </div>
+
+    <div class="callout think">
+      <span class="callout-label">Notice</span>
+      Keep the battery push fixed and drag <em>only</em> the resistance slider up. The current reading falls — and it falls by the same factor the resistance rose by. Double R, and I halves. That's the inverse relationship Ohm's Law describes.
+    </div>
+
+    <div class="mini-widget" id="msWidget">
+      <div class="mini-stage">
+        <svg viewBox="-40 0 480 260" role="img" aria-label="A battery connected to a single resistor, with an ammeter in series and a voltmeter across the resistor">
+          <path id="msLoop" class="wire" d="M 80 90 L 80 60 L 400 60 L 400 200 L 80 200 L 80 140"/>
+
+          <line class="wire" x1="52" y1="90" x2="108" y2="90"/>
+          <line class="wire" x1="66" y1="108" x2="94" y2="108"/>
+          <line class="wire" x1="52" y1="122" x2="108" y2="122"/>
+          <line class="wire" x1="66" y1="140" x2="94" y2="140"/>
+          <text class="lbl val" id="msEmfTag" x="20" y="118" text-anchor="end">6.0 V</text>
+
+          <rect class="comp" x="200" y="42" width="90" height="36" rx="2"/>
+          <text class="lbl val" id="msRTag" x="245" y="32" text-anchor="middle">3.0 Ω</text>
+
+          <line class="wire" x1="200" y1="60" x2="200" y2="105"/>
+          <line class="wire" x1="290" y1="60" x2="290" y2="105"/>
+          <circle class="comp" cx="245" cy="105" r="20"/>
+          <text class="lbl val" x="245" y="111" text-anchor="middle">V</text>
+          <text class="lbl small" id="msVTag" x="245" y="140" text-anchor="middle">6.0 V</text>
+
+          <circle class="comp" cx="240" cy="200" r="20"/>
+          <text class="lbl val" x="240" y="206" text-anchor="middle">A</text>
+          <text class="lbl small" id="msITag" x="240" y="236" text-anchor="middle">2.0 A</text>
+
+          <g id="msDots"></g>
+        </svg>
+      </div>
+      <div class="mini-ctl">
+        <div class="ctl">
+          <div class="ctl-top"><label for="msEmf">Battery push</label><b id="msEmfVal">6.0 V</b></div>
+          <input id="msEmf" type="range" min="2" max="24" step="0.5" value="6">
+        </div>
+        <div class="ctl">
+          <div class="ctl-top"><label for="msR">Resistance</label><b id="msRVal">3.0 Ω</b></div>
+          <input id="msR" type="range" min="0.5" max="5" step="0.1" value="3">
+        </div>
+      </div>
+      <div class="mini-readouts">
+        <span>Current I = <b id="msIRead">2.0 A</b></span>
+        <span>p.d. across R = <b id="msVRead">6.0 V</b></span>
+      </div>
+    </div>
+
+    <h2 class="section">Quick check</h2>
+    <details class="q">
+      <summary><span class="qnum">Q</span> A lamp has resistance 6 Ω. A current of 1.5 A flows through it. What is the p.d. across the lamp?</summary>
+      <div class="a">
+        <p>V = I × R = 1.5 × 6 = <span class="ans">9 V</span></p>
+      </div>
+    </details>
+  </div>
+
+  <nav class="lesson-nav">
+    <a href="2-voltage-and-emf.html">← Voltage and EMF</a>
+    <a class="next" href="4-series-circuits.html">Next: Series circuits →</a>
+  </nav>
+</div>
+<script src="../js/mini-single.js"></script>
+</body>
+</html>

@@ -1,0 +1,111 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>2 · Voltage and EMF — Circuit Lab</title>
+<meta name="description" content="Voltage as energy transferred per unit charge, the difference between EMF and p.d., and why the voltmeter goes in parallel.">
+<meta name="theme-color" content="#E4EAF0">
+<link rel="icon" type="image/svg+xml" href="../favicon.svg">
+<link rel="stylesheet" href="../css/style.css">
+</head>
+<body>
+<div class="sheet">
+  <header>
+    <div>
+      <a class="crumb" href="../index.html">← Circuit Lab course</a>
+      <p class="eyebrow" style="margin-top:10px">Lesson 2 of 5</p>
+      <h1>Voltage: energy per charge</h1>
+    </div>
+    <p class="sub">Current tells you how much charge moves. Voltage tells you how much energy each scoop of that charge is carrying.</p>
+  </header>
+
+  <div class="prose">
+    <h2 class="section">Voltage is energy per unit charge</h2>
+    <p>This is the single most useful idea in this whole topic, so it's worth sitting with: <strong>voltage isn't a "thing" flowing through the wire</strong> — current is the thing that flows. Voltage is a measure of how much energy every coulomb of that charge is carrying, or how much energy it gives up, at a particular point.</p>
+    <p class="formula">V = W / Q</p>
+    <p>Where <strong>V</strong> is voltage in volts (V), <strong>W</strong> is energy transferred in joules (J), and <strong>Q</strong> is charge in coulombs (C). One volt means one joule of energy is transferred for every coulomb of charge: <strong>1 V = 1 J/C</strong>.</p>
+
+    <div class="worked">
+      <span class="callout-label">Worked example</span>
+      <p>A battery does 24 J of work moving 4 C of charge around a circuit. What is the battery's EMF?</p>
+      <p>V = W / Q = 24 ÷ 4 = <strong>6 V</strong></p>
+    </div>
+
+    <h2 class="section">EMF vs. p.d. — same formula, two different jobs</h2>
+    <p>You'll meet two names for voltage, and they describe opposite ends of the same journey:</p>
+    <ul>
+      <li><strong>EMF</strong> (electromotive force) is the energy the <strong>battery gives</strong> to each coulomb of charge — it's the "push". Symbol is still volts.</li>
+      <li><strong>p.d.</strong> (potential difference) is the energy a <strong>component takes away</strong> from each coulomb as charge passes through it — spent on light, heat, or whatever that component does.</li>
+    </ul>
+    <p>In the circuit below, there's only one resistor for the charge to pass through. Every joule the battery gave out has to be spent somewhere before the charge gets home — and there's only one place to spend it. So the p.d. across that resistor always equals the battery's EMF, no matter what you set the resistance to.</p>
+
+    <div class="callout think">
+      <span class="callout-label">Notice</span>
+      Move the resistance slider on its own, leaving the battery push fixed. The voltmeter reading doesn't change — because it's still measuring the <em>same</em> EMF being spent in the <em>same</em> single resistor. It's the current that changes instead.
+    </div>
+
+    <div class="mini-widget" id="msWidget">
+      <div class="mini-stage">
+        <svg viewBox="-40 0 480 260" role="img" aria-label="A battery connected to a single resistor, with an ammeter in series and a voltmeter across the resistor">
+          <path id="msLoop" class="wire" d="M 80 90 L 80 60 L 400 60 L 400 200 L 80 200 L 80 140"/>
+
+          <line class="wire" x1="52" y1="90" x2="108" y2="90"/>
+          <line class="wire" x1="66" y1="108" x2="94" y2="108"/>
+          <line class="wire" x1="52" y1="122" x2="108" y2="122"/>
+          <line class="wire" x1="66" y1="140" x2="94" y2="140"/>
+          <text class="lbl val" id="msEmfTag" x="20" y="118" text-anchor="end">6.0 V</text>
+
+          <rect class="comp" x="200" y="42" width="90" height="36" rx="2"/>
+          <text class="lbl val" id="msRTag" x="245" y="32" text-anchor="middle">3.0 Ω</text>
+
+          <line class="wire" x1="200" y1="60" x2="200" y2="105"/>
+          <line class="wire" x1="290" y1="60" x2="290" y2="105"/>
+          <circle class="comp" cx="245" cy="105" r="20"/>
+          <text class="lbl val" x="245" y="111" text-anchor="middle">V</text>
+          <text class="lbl small" id="msVTag" x="245" y="140" text-anchor="middle">6.0 V</text>
+
+          <circle class="comp" cx="240" cy="200" r="20"/>
+          <text class="lbl val" x="240" y="206" text-anchor="middle">A</text>
+          <text class="lbl small" id="msITag" x="240" y="236" text-anchor="middle">2.0 A</text>
+
+          <g id="msDots"></g>
+        </svg>
+      </div>
+      <div class="mini-ctl">
+        <div class="ctl">
+          <div class="ctl-top"><label for="msEmf">Battery push</label><b id="msEmfVal">6.0 V</b></div>
+          <input id="msEmf" type="range" min="2" max="24" step="0.5" value="6">
+        </div>
+        <div class="ctl">
+          <div class="ctl-top"><label for="msR">Resistance</label><b id="msRVal">3.0 Ω</b></div>
+          <input id="msR" type="range" min="0.5" max="5" step="0.1" value="3">
+        </div>
+      </div>
+      <div class="mini-readouts">
+        <span>Current I = <b id="msIRead">2.0 A</b></span>
+        <span>p.d. across R = <b id="msVRead">6.0 V</b></span>
+      </div>
+    </div>
+
+    <h2 class="section">Measuring voltage: the voltmeter</h2>
+    <p>A voltmeter measures p.d. and connects <strong>in parallel</strong> — across a component, tapping both its ends, not sitting in the charge's path at all. A good voltmeter has an extremely high resistance, so almost no current takes the detour through it. That's why the ammeter and voltmeter are drawn so differently above: one interrupts the wire, the other sits beside it.</p>
+
+    <h2 class="section">Quick check</h2>
+    <details class="q">
+      <summary><span class="qnum">Q</span> A 12 V battery moves 5 C of charge around a circuit. How much energy does it transfer?</summary>
+      <div class="a">
+        <p>Rearrange V = W/Q to make W the subject: W = V × Q.</p>
+        <p>W = 12 × 5 = <span class="ans">60 J</span></p>
+      </div>
+    </details>
+  </div>
+
+  <nav class="lesson-nav">
+    <a href="1-charge-and-current.html">← Charge and current</a>
+    <a class="next" href="3-resistance-and-ohms-law.html">Next: Resistance and Ohm's Law →</a>
+  </nav>
+</div>
+<script src="../js/mini-single.js"></script>
+</body>
+</html>

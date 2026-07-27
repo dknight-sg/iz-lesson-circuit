@@ -1,0 +1,121 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Practice — Circuit Lab</title>
+<meta name="description" content="10 practice questions on charge, current, voltage, resistance, series and parallel circuits, with worked solutions.">
+<meta name="theme-color" content="#E4EAF0">
+<link rel="icon" type="image/svg+xml" href="favicon.svg">
+<link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+<div class="sheet">
+  <header>
+    <div>
+      <a class="crumb" href="index.html">← Circuit Lab course</a>
+      <p class="eyebrow" style="margin-top:10px">Practice</p>
+      <h1>10 questions</h1>
+    </div>
+    <p class="sub">Work each one out on paper first, then tap "show answer" to check. They get harder as you go, ending with the full combined circuit from the lab.</p>
+  </header>
+
+  <div class="qlist">
+
+    <details class="q">
+      <summary><span class="qnum">Q1</span> A charge of 15 C flows past a point in a wire in 5 s. Calculate the current.<span class="qtag">Easy</span></summary>
+      <div class="a">
+        <p>I = Q / t = 15 ÷ 5 = <span class="ans">3 A</span></p>
+      </div>
+    </details>
+
+    <details class="q">
+      <summary><span class="qnum">Q2</span> A current of 2 A flows through a heater for 3 minutes. How much charge flows through it?<span class="qtag">Easy</span></summary>
+      <div class="a">
+        <p>Convert to seconds first: 3 minutes = 180 s.</p>
+        <p>Q = I × t = 2 × 180 = <span class="ans">360 C</span></p>
+      </div>
+    </details>
+
+    <details class="q">
+      <summary><span class="qnum">Q3</span> A battery does 45 J of work moving 9 C of charge around a circuit. What is its EMF?<span class="qtag">Easy</span></summary>
+      <div class="a">
+        <p>V = W / Q = 45 ÷ 9 = <span class="ans">5 V</span></p>
+      </div>
+    </details>
+
+    <details class="q">
+      <summary><span class="qnum">Q4</span> A 9 V battery moves 8 C of charge around a circuit. How much energy is transferred?<span class="qtag">Easy</span></summary>
+      <div class="a">
+        <p>Rearrange V = W/Q to make W the subject: W = V × Q.</p>
+        <p>W = 9 × 8 = <span class="ans">72 J</span></p>
+      </div>
+    </details>
+
+    <details class="q">
+      <summary><span class="qnum">Q5</span> A resistor of 8 Ω has a current of 2.5 A flowing through it. Calculate the p.d. across it.<span class="qtag">Medium</span></summary>
+      <div class="a">
+        <p>V = I × R = 2.5 × 8 = <span class="ans">20 V</span></p>
+      </div>
+    </details>
+
+    <details class="q">
+      <summary><span class="qnum">Q6</span> A 15 V supply drives a current of 3 A through a resistor. What is its resistance?<span class="qtag">Medium</span></summary>
+      <div class="a">
+        <p>R = V / I = 15 ÷ 3 = <span class="ans">5 Ω</span></p>
+      </div>
+    </details>
+
+    <details class="q">
+      <summary><span class="qnum">Q7</span> A 4 Ω resistor and a 6 Ω resistor are connected in series to a 20 V battery. Find (a) the total resistance, (b) the current, (c) the p.d. across each resistor.<span class="qtag">Medium</span></summary>
+      <div class="a">
+        <p>(a) R<sub>total</sub> = 4 + 6 = <strong>10 Ω</strong></p>
+        <p>(b) I = V / R = 20 ÷ 10 = <strong>2 A</strong> — this is the current everywhere in the loop</p>
+        <p>(c) V<sub>1</sub> = I × 4 = 8 V &nbsp;·&nbsp; V<sub>2</sub> = I × 6 = 12 V &nbsp;(check: 8 + 12 = 20 V ✓)</p>
+        <p class="ans">V1 = 8 V, V2 = 12 V</p>
+      </div>
+    </details>
+
+    <details class="q">
+      <summary><span class="qnum">Q8</span> A 5 Ω resistor and a 20 Ω resistor are connected in parallel across a 10 V supply. Find (a) the current in each branch, (b) the total current, (c) the combined resistance.<span class="qtag">Medium</span></summary>
+      <div class="a">
+        <p>Both branches see the full 10 V.</p>
+        <p>(a) I<sub>1</sub> = 10 ÷ 5 = 2 A &nbsp;·&nbsp; I<sub>2</sub> = 10 ÷ 20 = 0.5 A</p>
+        <p>(b) I<sub>total</sub> = 2 + 0.5 = <strong>2.5 A</strong></p>
+        <p>(c) 1/R<sub>p</sub> = 1/5 + 1/20 = 4/20 + 1/20 = 5/20, so R<sub>p</sub> = 20/5 = 4 Ω &nbsp;(check: I = V/R<sub>p</sub> = 10/4 = 2.5 A ✓)</p>
+        <p class="ans">I1 = 2 A, I2 = 0.5 A, Rp = 4 Ω</p>
+      </div>
+    </details>
+
+    <details class="q">
+      <summary><span class="qnum">Q9</span> A 9 V battery is connected to a 1 Ω resistor in series with two parallel resistors, each 2 Ω. Find the total current, and the current through each parallel branch.<span class="qtag">Hard</span></summary>
+      <div class="a">
+        <p>R<sub>p</sub> = (2 × 2) / (2 + 2) = 4/4 = 1 Ω</p>
+        <p>R<sub>total</sub> = 1 + 1 = 2 Ω</p>
+        <p>I = 9 ÷ 2 = <strong>4.5 A</strong></p>
+        <p>V<sub>s</sub> = 4.5 × 1 = 4.5 V &nbsp;·&nbsp; V<sub>p</sub> = 4.5 × 1 = 4.5 V &nbsp;(check: 4.5 + 4.5 = 9 V ✓)</p>
+        <p>Since both parallel resistors are equal, the current splits evenly: I<sub>1</sub> = I<sub>2</sub> = 4.5 ÷ 2 = 2.25 A</p>
+        <p class="ans">I = 4.5 A, I1 = I2 = 2.25 A</p>
+      </div>
+    </details>
+
+    <details class="q">
+      <summary><span class="qnum">Q10</span> This is the lab's circuit: 12 V battery, 1.0 Ω in series with (1.0 Ω ∥ 2.5 Ω). The 1.0 Ω branch develops a fault and goes open-circuit. Without calculating first — will the current in the 2.5 Ω branch increase, decrease, or stay the same? Will the voltmeter across the battery terminals change? Then calculate the new current to check, and verify it live in the lab.<span class="qtag">Hard · reasoning</span></summary>
+      <div class="a">
+        <p><strong>Predict:</strong> with the 1.0 Ω branch cut, all the current that used to split between two branches now has only one road left — the 2.5 Ω branch — so its current should <strong>increase</strong>. The voltmeter is wired straight across the battery terminals and draws no current, so it keeps reading the full EMF no matter what the branches are doing: it should <strong>stay at 12 V</strong>.</p>
+        <p><strong>Check:</strong> with the 1.0 Ω branch open, current only flows through the 1.0 Ω series resistor and the 2.5 Ω branch: R<sub>total</sub> = 1.0 + 2.5 = 3.5 Ω.</p>
+        <p>I = 12 ÷ 3.5 ≈ <strong>3.4 A</strong> — up from 2.0 A before the fault, confirming the prediction.</p>
+        <p class="ans">2.5 Ω branch: 2.0 A → 3.4 A. Voltmeter: stays at 12 V.</p>
+        <p>Go to <a href="lab.html">the lab</a> and use the "Top branch" switch under Break the Circuit to see this exact scenario animate.</p>
+      </div>
+    </details>
+
+  </div>
+
+  <nav class="lesson-nav">
+    <a href="lab.html">← Back to the lab</a>
+    <a class="next" href="index.html">Course home ↺</a>
+  </nav>
+</div>
+</body>
+</html>

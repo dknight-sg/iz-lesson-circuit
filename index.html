@@ -3,12 +3,12 @@
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
-<title>Circuit Lab — series and parallel</title>
-<meta name="description" content="An interactive circuit that teaches voltage, series and parallel resistance for a Cambridge-style exam question. Guided walkthrough, break-the-circuit switches, live sliders.">
+<title>Circuit Lab — a course on voltage, current and resistance</title>
+<meta name="description" content="A free interactive course on electric circuits for Secondary 2: charge, current, voltage, resistance, series, parallel — plus a live simulation lab and practice questions.">
 <meta name="theme-color" content="#E4EAF0">
 <link rel="icon" type="image/svg+xml" href="favicon.svg">
-<meta property="og:title" content="Circuit Lab — where the volts go">
-<meta property="og:description" content="Drag the sliders, break the circuit, watch the charge move. A live explainer for voltage, series and parallel resistance.">
+<meta property="og:title" content="Circuit Lab — a course on voltage, current and resistance">
+<meta property="og:description" content="Charge, current, voltage, resistance, series, parallel — five short lessons, a live simulation, and practice questions. Free, no sign-up.">
 <meta property="og:type" content="website">
 <meta name="twitter:card" content="summary">
 <link rel="stylesheet" href="css/style.css">
@@ -17,146 +17,67 @@
 <div class="sheet">
   <header>
     <div>
-      <p class="eyebrow">Question 3 · made live</p>
-      <h1>Where the volts go</h1>
+      <p class="eyebrow">A free course</p>
+      <h1>Circuit Lab</h1>
     </div>
-    <p class="sub">Each moving dot is one scoop of charge. Bright = carrying energy. Dim = energy spent. Drag the sliders and watch what changes.</p>
-    <div class="header-actions">
-      <button id="bGuide" aria-pressed="false">Guided walkthrough</button>
-    </div>
+    <p class="sub">Five short lessons build up the fundamentals of electric circuits, one idea at a time — each with its own live diagram you can drag and break. Then a full interactive lab and ten practice questions tie it all together.</p>
   </header>
 
-  <div class="stage">
-    <svg viewBox="-40 0 840 420" role="img" aria-label="Circuit diagram with a battery, a series resistor and two parallel resistors">
-      <!-- wire paths (also used to move the charge dots) -->
-      <path id="pMain"   class="wire" d="M 80 240 L 80 100 L 430 100"/>
-      <path id="pBr1"    class="wire" d="M 430 100 L 610 100"/>
-      <path id="pBr2"    class="wire" d="M 430 100 L 430 210 L 610 210 L 610 100"/>
-      <path id="pReturn" class="wire" d="M 610 100 L 700 100 L 700 340 L 80 340 L 80 290"/>
-
-      <g id="gBattery">
-        <line class="wire" x1="52" y1="240" x2="108" y2="240"/>
-        <line class="wire" x1="66" y1="258" x2="94" y2="258"/>
-        <line class="wire" x1="52" y1="272" x2="108" y2="272"/>
-        <line class="wire" x1="66" y1="290" x2="94" y2="290"/>
-        <text class="lbl val" id="tEmf" x="20" y="270" text-anchor="end">12 V</text>
-        <circle id="pump" cx="80" cy="265" r="30" fill="var(--charge)" opacity="0"/>
-      </g>
-
-      <g id="gMeter">
-        <line class="wire" x1="190" y1="100" x2="190" y2="205"/>
-        <line class="wire" x1="190" y1="265" x2="190" y2="340"/>
-        <circle class="comp" cx="190" cy="235" r="30"/>
-        <text class="lbl val" x="190" y="241" text-anchor="middle">V</text>
-        <text class="lbl small" id="tVolt" x="190" y="292" text-anchor="middle">reads 12.0 V</text>
-        <circle class="node" cx="190" cy="100" r="4"/>
-        <circle class="node" cx="190" cy="340" r="4"/>
-      </g>
-
-      <g id="gSeries">
-        <rect class="comp" x="250" y="82" width="100" height="36" rx="2"/>
-        <text class="lbl val" id="tRs"  x="300" y="72"  text-anchor="middle">1.0 Ω</text>
-        <text class="lbl small" id="tVs" x="300" y="142" text-anchor="middle">drops 7.0 V</text>
-      </g>
-
-      <g id="gBranch1">
-        <rect class="comp" x="480" y="82" width="90" height="36" rx="2"/>
-        <text class="lbl val" id="tR1"  x="525" y="72" text-anchor="middle">1.0 Ω</text>
-        <text class="lbl small" id="tI1" x="640" y="96">5.0 A</text>
-      </g>
-
-      <g id="gBranch2">
-        <rect class="comp" x="480" y="192" width="90" height="36" rx="2"/>
-        <text class="lbl val" id="tR2"  x="525" y="182" text-anchor="middle">2.5 Ω</text>
-        <text class="lbl small" id="tI2" x="640" y="206">2.0 A</text>
-      </g>
-      <text class="lbl small" id="tVp" x="525" y="260" text-anchor="middle">both drop 5.0 V</text>
-
-      <g id="gJunction">
-        <circle class="node" cx="430" cy="100" r="5"/>
-        <circle class="node" cx="610" cy="100" r="5"/>
-        <text class="lbl small" id="tItot" x="415" y="80" text-anchor="end">7.0 A in</text>
-      </g>
-
-      <g id="gSwitches"></g>
-      <g id="dots"></g>
-    </svg>
+  <div class="prose" style="padding-bottom:8px">
+    <h2 class="section">How this works</h2>
+    <p>Go in order the first time — each lesson leans on the one before it. Every lesson has a small interactive circuit built into the page, so you're never just reading; you're dragging sliders and watching real numbers respond. Budget about 10 minutes a lesson.</p>
   </div>
 
-  <div class="guide-panel" id="guidePanel" hidden>
-    <div class="guide-top">
-      <span class="guide-step-num" id="guideStepNum">Step 1 of 5</span>
-      <button class="guide-close" id="guideClose" aria-label="Close walkthrough">✕</button>
-    </div>
-    <h3 id="guideTitle">The battery loads every charge</h3>
-    <p id="guideBody">…</p>
-    <div class="guide-nav">
-      <button id="guidePrev">← Back</button>
-      <button id="guideNext">Next →</button>
-    </div>
-  </div>
-
-  <div class="panel">
-    <div class="controls">
-      <h2>Change something</h2>
-      <div class="ctl">
-        <div class="ctl-top"><label for="sEmf">Battery push</label><b id="vEmf">12.0 V</b></div>
-        <input id="sEmf" type="range" min="2" max="24" step="0.5" value="12">
-      </div>
-      <div class="ctl">
-        <div class="ctl-top"><label for="sRs">Series resistor</label><b id="vRs">1.0 Ω</b></div>
-        <input id="sRs" type="range" min="0.5" max="5" step="0.1" value="1">
-      </div>
-      <div class="ctl">
-        <div class="ctl-top"><label for="sR1">Parallel resistor · top</label><b id="vR1">1.0 Ω</b></div>
-        <input id="sR1" type="range" min="0.5" max="5" step="0.1" value="1">
-      </div>
-      <div class="ctl">
-        <div class="ctl-top"><label for="sR2">Parallel resistor · bottom</label><b id="vR2">2.5 Ω</b></div>
-        <input id="sR2" type="range" min="0.5" max="5" step="0.1" value="2.5">
-      </div>
-      <div class="btns">
-        <button id="bReset">Back to the exam values</button>
-        <button id="bMatch">Make both branches equal</button>
-      </div>
-      <p class="note">Set both parallel resistors the same and the current splits 50/50 — the dots move at identical speeds.</p>
-    </div>
-
-    <div class="readout">
-      <h2>What the meters would say</h2>
-      <table>
-        <tr><td>Voltmeter reading</td><td class="n" id="rV">12.0 V</td></tr>
-        <tr><td>Total current from battery</td><td class="n" id="rI">7.0 A</td></tr>
-        <tr><td>p.d. across series resistor</td><td class="n" id="rVs">7.0 V</td></tr>
-        <tr><td>p.d. across parallel pair</td><td class="n" id="rVp">5.0 V</td></tr>
-        <tr><td>Current · top branch</td><td class="n" id="rI1">5.0 A</td></tr>
-        <tr><td>Current · bottom branch</td><td class="n" id="rI2">2.0 A</td></tr>
-        <tr><td>Combined parallel resistance</td><td class="n" id="rRp">0.71 Ω</td></tr>
-      </table>
-      <p class="note" id="rSplit">The top branch is the easier road, so more charge takes it.</p>
-    </div>
-  </div>
-
-  <div class="breakbox">
-    <h2>Break the circuit</h2>
-    <div class="btns">
-      <button id="swSeries" aria-pressed="false">Series link: connected</button>
-      <button id="swBr1" aria-pressed="false">Top branch: connected</button>
-      <button id="swBr2" aria-pressed="false">Bottom branch: connected</button>
-    </div>
-    <p class="note" id="breakNote">Everything connected — current flows as normal.</p>
-  </div>
-
-  <div class="budget">
-    <h2>Energy budget · every scoop spends everything before it gets home</h2>
-    <div class="bar">
-      <div class="b1" id="barS">series 7.0 V</div>
-      <div class="b2" id="barP">parallel 5.0 V</div>
-    </div>
-    <p id="barTxt">7.0 V + 5.0 V = 12.0 V supplied by the battery.</p>
+  <div class="tilegrid">
+    <a class="tile" href="lessons/1-charge-and-current.html">
+      <span class="tile-num">Lesson 1</span>
+      <h3>Charge and current</h3>
+      <p>What's actually moving in a wire, and why current is a <em>rate</em>, not an amount.</p>
+      <span class="tile-go">Start →</span>
+    </a>
+    <a class="tile" href="lessons/2-voltage-and-emf.html">
+      <span class="tile-num">Lesson 2</span>
+      <h3>Voltage: energy per charge</h3>
+      <p>1 V = 1 J/C. The idea that makes everything else in this topic make sense.</p>
+      <span class="tile-go">Start →</span>
+    </a>
+    <a class="tile" href="lessons/3-resistance-and-ohms-law.html">
+      <span class="tile-num">Lesson 3</span>
+      <h3>Resistance and Ohm's Law</h3>
+      <p>What resistance does to current, and V = IR in all three rearrangements.</p>
+      <span class="tile-go">Start →</span>
+    </a>
+    <a class="tile" href="lessons/4-series-circuits.html">
+      <span class="tile-num">Lesson 4</span>
+      <h3>Series circuits</h3>
+      <p>One path, no junctions: same current everywhere, voltages add up.</p>
+      <span class="tile-go">Start →</span>
+    </a>
+    <a class="tile" href="lessons/5-parallel-circuits.html">
+      <span class="tile-num">Lesson 5</span>
+      <h3>Parallel circuits</h3>
+      <p>A junction splits the charge: same voltage on every branch, currents add up.</p>
+      <span class="tile-go">Start →</span>
+    </a>
+    <a class="tile" href="lessons/6-combining-circuits.html">
+      <span class="tile-num">Lesson 6</span>
+      <h3>Combining them</h3>
+      <p>The step-by-step recipe for mixed series-parallel circuits, worked in full.</p>
+      <span class="tile-go">Start →</span>
+    </a>
+    <a class="tile lab" href="lab.html">
+      <span class="tile-num">The lab</span>
+      <h3>Where the volts go</h3>
+      <p>The full interactive circuit: guided walkthrough, live sliders, break-the-circuit switches.</p>
+      <span class="tile-go">Open →</span>
+    </a>
+    <a class="tile practice" href="practice.html">
+      <span class="tile-num">Practice</span>
+      <h3>10 questions</h3>
+      <p>From a basic charge calculation up to a full combined circuit. Self-checking.</p>
+      <span class="tile-go">Practice →</span>
+    </a>
   </div>
 </div>
-
-<script src="js/circuit.js"></script>
 </body>
 </html>

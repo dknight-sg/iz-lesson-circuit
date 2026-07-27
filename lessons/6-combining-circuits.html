@@ -44,9 +44,83 @@
       <p>And a voltmeter connected straight across the battery terminals would simply read the EMF: <strong>12 V</strong> — because it draws no current and taps both terminals directly, no matter what the rest of the circuit is doing.</p>
     </div>
 
-    <div class="callout">
-      <span class="callout-label">Why this matters</span>
-      This exact circuit is what the interactive lab is built around. Instead of just reading the six steps above, you can drag the sliders and <em>watch</em> the current split, the voltages settle, and the charge dots visibly spend their energy at each resistor in the right order.
+    <div class="callout think">
+      <span class="callout-label">Try it</span>
+      Below is that exact circuit, starting at the exam values. Drag any slider and watch every number in the recipe update together — the charge dots spend part of their energy at the series resistor, then split at the junction and spend the rest in whichever branch they took.
+    </div>
+
+    <div class="mini-widget" id="mcWidget">
+      <div class="mini-stage">
+        <svg viewBox="-40 0 840 420" role="img" aria-label="A battery connected to a series resistor, then a parallel pair of resistors, with a voltmeter across the battery">
+          <path id="mcMain"   class="wire" d="M 80 240 L 80 100 L 430 100"/>
+          <path id="mcBr1"    class="wire" d="M 430 100 L 610 100"/>
+          <path id="mcBr2"    class="wire" d="M 430 100 L 430 210 L 610 210 L 610 100"/>
+          <path id="mcReturn" class="wire" d="M 610 100 L 700 100 L 700 340 L 80 340 L 80 290"/>
+
+          <line class="wire" x1="52" y1="240" x2="108" y2="240"/>
+          <line class="wire" x1="66" y1="258" x2="94" y2="258"/>
+          <line class="wire" x1="52" y1="272" x2="108" y2="272"/>
+          <line class="wire" x1="66" y1="290" x2="94" y2="290"/>
+          <text class="lbl val" id="mcEmfTag" x="20" y="270" text-anchor="end">12.0 V</text>
+
+          <line class="wire" x1="190" y1="100" x2="190" y2="205"/>
+          <line class="wire" x1="190" y1="265" x2="190" y2="340"/>
+          <circle class="comp" cx="190" cy="235" r="30"/>
+          <text class="lbl val" x="190" y="241" text-anchor="middle">V</text>
+          <text class="lbl small" id="mcVoltTag" x="190" y="292" text-anchor="middle">reads 12.0 V</text>
+          <circle class="node" cx="190" cy="100" r="4"/>
+          <circle class="node" cx="190" cy="340" r="4"/>
+
+          <rect class="comp" x="250" y="82" width="100" height="36" rx="2"/>
+          <text class="lbl val" id="mcRsTag" x="300" y="72" text-anchor="middle">1.0 Ω</text>
+          <text class="lbl small" id="mcVsTag" x="300" y="142" text-anchor="middle">drops 7.0 V</text>
+
+          <rect class="comp" x="480" y="82" width="90" height="36" rx="2"/>
+          <text class="lbl val" id="mcR1Tag" x="525" y="72" text-anchor="middle">1.0 Ω</text>
+          <text class="lbl small" id="mcI1Tag" x="640" y="96">5.0 A</text>
+
+          <rect class="comp" x="480" y="192" width="90" height="36" rx="2"/>
+          <text class="lbl val" id="mcR2Tag" x="525" y="182" text-anchor="middle">2.5 Ω</text>
+          <text class="lbl small" id="mcI2Tag" x="640" y="206">2.0 A</text>
+          <text class="lbl small" id="mcVpTag" x="525" y="260" text-anchor="middle">both drop 5.0 V</text>
+
+          <circle class="node" cx="430" cy="100" r="5"/>
+          <circle class="node" cx="610" cy="100" r="5"/>
+          <text class="lbl small" id="mcItotTag" x="415" y="80" text-anchor="end">7.0 A in</text>
+
+          <g id="mcDots"></g>
+        </svg>
+      </div>
+      <div class="mini-ctl">
+        <div class="ctl">
+          <div class="ctl-top"><label for="mcEmf">Battery push</label><b id="mcEmfVal">12.0 V</b></div>
+          <input id="mcEmf" type="range" min="2" max="24" step="0.5" value="12">
+        </div>
+        <div class="ctl">
+          <div class="ctl-top"><label for="mcRs">Series resistor</label><b id="mcRsVal">1.0 Ω</b></div>
+          <input id="mcRs" type="range" min="0.5" max="5" step="0.1" value="1">
+        </div>
+        <div class="ctl">
+          <div class="ctl-top"><label for="mcR1">Parallel resistor · top</label><b id="mcR1Val">1.0 Ω</b></div>
+          <input id="mcR1" type="range" min="0.5" max="5" step="0.1" value="1">
+        </div>
+        <div class="ctl">
+          <div class="ctl-top"><label for="mcR2">Parallel resistor · bottom</label><b id="mcR2Val">2.5 Ω</b></div>
+          <input id="mcR2" type="range" min="0.5" max="5" step="0.1" value="2.5">
+        </div>
+      </div>
+      <div class="mini-readouts">
+        <span>Combined parallel resistance R<sub>p</sub> = <b id="mcRpRead">0.71 Ω</b></span>
+        <span>Total current I = <b id="mcIRead">7.0 A</b></span>
+      </div>
+      <div class="budget" style="border-top:1.5px solid var(--ink)">
+        <h2>Energy budget</h2>
+        <div class="bar">
+          <div class="b1" id="mcBar1">series 7.0 V</div>
+          <div class="b2" id="mcBar2">parallel 5.0 V</div>
+        </div>
+        <p id="mcBarTxt">7.0 V + 5.0 V = 12.0 V</p>
+      </div>
     </div>
   </div>
 
@@ -59,7 +133,7 @@
       <span style="font-family:'Space Mono',monospace;font-size:11px;letter-spacing:.14em;text-transform:uppercase;color:var(--hot)">Open the lab →</span>
       <span style="display:block;font-family:'Bricolage Grotesque',sans-serif;font-weight:700;font-size:22px;margin-top:6px">Where the volts go</span>
       <span style="display:block;font-size:14px;color:var(--ink-soft);margin-top:6px">
-        The full interactive circuit, with a 5-step guided walkthrough and switches to break the series link or either parallel branch — see for yourself which one kills the whole circuit.
+        Same circuit, one level up: a 5-step guided walkthrough, and switches to break the series link or either parallel branch — see for yourself which one kills the whole circuit.
       </span>
     </a>
   </div>
@@ -69,5 +143,6 @@
     <a class="next" href="../practice.html">Next: Practice questions →</a>
   </nav>
 </div>
+<script src="../js/mini-combined.js"></script>
 </body>
 </html>

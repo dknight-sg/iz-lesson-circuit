@@ -4,7 +4,7 @@
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <title>Practice — Circuit Lab</title>
-<meta name="description" content="10 practice questions on charge, current, voltage, resistance, series and parallel circuits, with worked solutions.">
+<meta name="description" content="20 practice questions on charge, current, voltage, resistance, series and parallel circuits, with worked solutions.">
 <meta name="theme-color" content="#E4EAF0">
 <link rel="icon" type="image/svg+xml" href="../../favicon.svg">
 <link rel="stylesheet" href="../../css/style.css">
@@ -15,9 +15,9 @@
     <div>
       <a class="crumb" href="index.html">← Circuit Lab course</a>
       <p class="eyebrow" style="margin-top:10px">Practice</p>
-      <h1>10 questions</h1>
+      <h1>20 questions</h1>
     </div>
-    <p class="sub">Work each one out on paper first, then tap "show answer" to check. They get harder as you go, ending with the full combined circuit from the lab.</p>
+    <p class="sub">Work each one out on paper first, then tap "show answer" to check. They get harder as you go, mixing combined-circuit calculations with reasoning questions tied to the lab.</p>
   </header>
 
   <div class="qlist">
@@ -107,6 +107,100 @@
         <p>I = 12 ÷ 3.5 ≈ <strong>3.4 A</strong> — up from 2.0 A before the fault, confirming the prediction.</p>
         <p class="ans">2.5 Ω branch: 2.0 A → 3.4 A. Voltmeter: stays at 12 V.</p>
         <p>Go to <a href="lab.html">the lab</a> and use the "Top branch" switch under Break the Circuit to see this exact scenario animate.</p>
+      </div>
+    </details>
+
+    <details class="q">
+      <summary><span class="qnum">Q11</span> A current of 4 A flows through a device. How long does it take for 20 C of charge to flow through it?<span class="qtag">Easy</span></summary>
+      <div class="a">
+        <p>Rearrange I = Q/t to make t the subject: t = Q / I.</p>
+        <p>t = 20 ÷ 4 = <span class="ans">5 s</span></p>
+      </div>
+    </details>
+
+    <details class="q">
+      <summary><span class="qnum">Q12</span> A battery transfers 150 J of energy moving 25 C of charge around a circuit. What is its EMF?<span class="qtag">Easy</span></summary>
+      <div class="a">
+        <p>V = W / Q = 150 ÷ 25 = <span class="ans">6 V</span></p>
+      </div>
+    </details>
+
+    <details class="q">
+      <summary><span class="qnum">Q13</span> A component has 18 V across it when a current of 3 A flows through it. Find its resistance.<span class="qtag">Medium</span></summary>
+      <div class="a">
+        <p>R = V / I = 18 ÷ 3 = <span class="ans">6 Ω</span></p>
+      </div>
+    </details>
+
+    <details class="q">
+      <summary><span class="qnum">Q14</span> Three resistors — 1 Ω, 2 Ω and 3 Ω — are connected in series to a 12 V battery. Find the current, and the p.d. across each resistor.<span class="qtag">Medium</span></summary>
+      <div class="a">
+        <p>R<sub>total</sub> = 1 + 2 + 3 = 6 Ω</p>
+        <p>I = 12 ÷ 6 = <strong>2 A</strong> — the same everywhere in the loop</p>
+        <p>V<sub>1</sub> = 2 × 1 = 2 V &nbsp;·&nbsp; V<sub>2</sub> = 2 × 2 = 4 V &nbsp;·&nbsp; V<sub>3</sub> = 2 × 3 = 6 V &nbsp;(check: 2 + 4 + 6 = 12 V ✓)</p>
+        <p class="ans">I = 2 A, V1 = 2 V, V2 = 4 V, V3 = 6 V</p>
+      </div>
+    </details>
+
+    <details class="q">
+      <summary><span class="qnum">Q15</span> Three resistors — 2 Ω, 4 Ω and 4 Ω — are connected in parallel across an 8 V supply. Find the current in each branch, the total current, and the combined resistance.<span class="qtag">Medium</span></summary>
+      <div class="a">
+        <p>All three branches see the full 8 V.</p>
+        <p>I<sub>1</sub> = 8 ÷ 2 = 4 A &nbsp;·&nbsp; I<sub>2</sub> = 8 ÷ 4 = 2 A &nbsp;·&nbsp; I<sub>3</sub> = 8 ÷ 4 = 2 A</p>
+        <p>I<sub>total</sub> = 4 + 2 + 2 = <strong>8 A</strong></p>
+        <p>1/R<sub>p</sub> = 1/2 + 1/4 + 1/4 = 2/4 + 1/4 + 1/4 = 4/4 = 1, so R<sub>p</sub> = <strong>1 Ω</strong> &nbsp;(check: I = 8/1 = 8 A ✓)</p>
+        <p class="ans">I1 = 4 A, I2 = I3 = 2 A, Itotal = 8 A, Rp = 1 Ω</p>
+      </div>
+    </details>
+
+    <details class="q">
+      <summary><span class="qnum">Q16</span> A 20 V battery is connected to a 2 Ω resistor in series with a parallel combination of a 3 Ω and a 6 Ω resistor. Find the total current and the current through each parallel branch.<span class="qtag">Hard</span></summary>
+      <div class="a">
+        <p>R<sub>p</sub> = (3 × 6) / (3 + 6) = 18/9 = 2 Ω</p>
+        <p>R<sub>total</sub> = 2 + 2 = 4 Ω</p>
+        <p>I = 20 ÷ 4 = <strong>5 A</strong></p>
+        <p>V<sub>s</sub> = 5 × 2 = 10 V &nbsp;·&nbsp; V<sub>p</sub> = 5 × 2 = 10 V &nbsp;(check: 10 + 10 = 20 V ✓)</p>
+        <p>I<sub>1</sub> = 10 / 3 ≈ 3.3 A &nbsp;·&nbsp; I<sub>2</sub> = 10 / 6 ≈ 1.7 A &nbsp;(check: 3.3 + 1.7 = 5 A ✓)</p>
+        <p class="ans">I = 5 A, I1 ≈ 3.3 A, I2 ≈ 1.7 A</p>
+      </div>
+    </details>
+
+    <details class="q">
+      <summary><span class="qnum">Q17</span> A 24 V battery is connected to a 3 Ω resistor in series with a parallel combination of a 4 Ω and a 12 Ω resistor. Find the total current and the current through each parallel branch.<span class="qtag">Hard</span></summary>
+      <div class="a">
+        <p>R<sub>p</sub> = (4 × 12) / (4 + 12) = 48/16 = 3 Ω</p>
+        <p>R<sub>total</sub> = 3 + 3 = 6 Ω</p>
+        <p>I = 24 ÷ 6 = <strong>4 A</strong></p>
+        <p>V<sub>s</sub> = 4 × 3 = 12 V &nbsp;·&nbsp; V<sub>p</sub> = 4 × 3 = 12 V &nbsp;(check: 12 + 12 = 24 V ✓)</p>
+        <p>I<sub>1</sub> = 12 / 4 = 3 A &nbsp;·&nbsp; I<sub>2</sub> = 12 / 12 = 1 A &nbsp;(check: 3 + 1 = 4 A ✓)</p>
+        <p class="ans">I = 4 A, I1 = 3 A, I2 = 1 A</p>
+      </div>
+    </details>
+
+    <details class="q">
+      <summary><span class="qnum">Q18</span> A third resistor is added in series to an existing series circuit. What happens to the total resistance, and what happens to the current? Explain.<span class="qtag">Medium · reasoning</span></summary>
+      <div class="a">
+        <p>Total resistance <strong>increases</strong> — series resistances simply add up, so an extra resistor always adds to the total.</p>
+        <p>Since I = V/R and R has increased while the battery's EMF hasn't changed, the current <strong>decreases</strong>.</p>
+      </div>
+    </details>
+
+    <details class="q">
+      <summary><span class="qnum">Q19</span> A third branch is added in parallel to an existing parallel circuit. What happens to the combined resistance, and what happens to the total current drawn from the battery? Explain.<span class="qtag">Medium · reasoning</span></summary>
+      <div class="a">
+        <p>Combined resistance <strong>decreases</strong> — every extra branch gives the charge another route through, and 1/R<sub>p</sub> = 1/R<sub>1</sub> + 1/R<sub>2</sub> + … only ever grows as you add terms.</p>
+        <p>Since I = V/R<sub>p</sub> and R<sub>p</sub> has fallen while the EMF hasn't changed, the total current <strong>increases</strong>.</p>
+      </div>
+    </details>
+
+    <details class="q">
+      <summary><span class="qnum">Q20</span> Back to the lab's circuit: 12 V battery, 1.0 Ω in series with (1.0 Ω ∥ 2.5 Ω) — but this time the <strong>bottom</strong> branch (2.5 Ω) develops the fault and goes open-circuit, not the top one. Predict what happens to the current in the 1.0 Ω branch, and to the total current from the battery, compared with Q10's scenario. Then check in the lab.<span class="qtag">Hard · reasoning</span></summary>
+      <div class="a">
+        <p><strong>Predict:</strong> the 1.0 Ω branch now carries everything the battery supplies, so its current should rise. But because 1.0 Ω is a much easier road than the 2.5 Ω branch from Q10, expect a bigger total current here than in Q10's case.</p>
+        <p><strong>Check:</strong> R<sub>total</sub> = 1.0 (series) + 1.0 (only remaining branch) = 2.0 Ω.</p>
+        <p>I = 12 ÷ 2.0 = <strong>6.0 A</strong> — up from 5.0 A before the fault (all of it now through the 1.0 Ω branch).</p>
+        <p>Compare with Q10: cutting the 2.5 Ω branch there left total current at 3.4 A. Cutting the <em>smaller</em>-resistance branch here leaves a <em>bigger</em> total current (6.0 A) — losing the easier road costs you more current than losing the harder one.</p>
+        <p class="ans">1.0 Ω branch: 5.0 A → 6.0 A. Total current: 7.0 A → 6.0 A.</p>
       </div>
     </details>
 

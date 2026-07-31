@@ -298,3 +298,75 @@ svg.guide-dim .lit *{opacity:1}
   font-family:"Space Mono",monospace;font-weight:700;background:var(--ink);
   color:var(--paper);display:inline-block;padding:6px 10px;margin-top:6px;
 }
+
+/* ---- chemistry: quiz-sorter -------------------------------------- */
+.quiz{border:1.5px solid var(--ink);background:#F7FAFC;padding:20px 22px;box-shadow:4px 4px 0 rgba(15,36,54,.1)}
+.quiz-count{font-family:"Space Mono",monospace;font-size:11px;letter-spacing:.1em;text-transform:uppercase;color:var(--ink-soft)}
+.quiz-prompt{font-size:16px;margin:10px 0 18px;line-height:1.4}
+.quiz-btns{display:flex;gap:10px;flex-wrap:wrap}
+.quiz-btns button{flex:1;min-width:140px}
+.quiz-feedback{margin-top:16px;padding:12px 14px;border-left:4px solid var(--ink-soft);font-size:14px;background:var(--paper)}
+.quiz-feedback.correct{border-left-color:var(--cool)}
+.quiz-feedback.wrong{border-left-color:var(--hot)}
+.quiz-feedback[hidden]{display:none}
+.quiz-foot{display:flex;justify-content:space-between;align-items:center;margin-top:16px;flex-wrap:wrap;gap:10px}
+.quiz-score{font-family:"Space Mono",monospace;font-size:13px;color:var(--ink-soft)}
+.quiz-done{text-align:center;padding:12px 0}
+.quiz-done .big{font-family:"Bricolage Grotesque",sans-serif;font-weight:700;font-size:28px;margin:6px 0}
+
+/* ---- chemistry: pH / colour gauge ---------------------------------- */
+.gauge-wrap{margin:14px 0 6px}
+.gauge-bar{
+  height:26px;border:1.5px solid var(--ink);position:relative;overflow:visible;
+  background:linear-gradient(90deg,#D93F2B 0%,#E8843E 20%,#E8D93E 40%,#8FBF5C 50%,#4FA0A8 62%,#2E7A8C 78%,#3E4A9C 100%);
+}
+.gauge-marker{
+  position:absolute;top:-11px;width:0;height:0;transform:translateX(-50%);
+  border-left:8px solid transparent;border-right:8px solid transparent;
+  border-top:13px solid var(--ink);transition:left .4s ease;
+}
+.gauge-labels{display:flex;justify-content:space-between;font-family:"Space Mono",monospace;font-size:10px;color:var(--ink-soft);margin-top:4px}
+
+/* ---- chemistry: split before/after -------------------------------- */
+.split2{display:grid;grid-template-columns:1fr 1fr;gap:16px;margin:0 0 18px}
+@media (max-width:520px){.split2{grid-template-columns:1fr}}
+.split2 .box{border:1.5px solid var(--ink);background:#F7FAFC;padding:14px}
+.split2 .box h4{
+  margin:0 0 10px;font-family:"Space Mono",monospace;font-size:11px;
+  letter-spacing:.1em;text-transform:uppercase;color:var(--ink-soft);font-weight:400;
+}
+
+/* ---- chemistry: test tubes, nails, bubbles -------------------------- */
+.tube-glass{fill:rgba(247,250,252,.4);stroke:var(--ink);stroke-width:2.4}
+.tube-liquid{transition:fill 1s ease, opacity 1s ease}
+.nail-body{transition:fill 1.2s ease}
+.rust-fleck{transition:opacity .8s ease}
+.bubble{fill:#CBD8E4;opacity:0}
+.bubble.on{animation:bubbleRise 1.6s ease-in infinite}
+@keyframes bubbleRise{
+  0%{opacity:0;transform:translateY(0)}
+  15%{opacity:.9}
+  90%{opacity:.2}
+  100%{opacity:0;transform:translateY(-46px)}
+}
+.atom{transition:transform .8s ease}
+.atom-c circle{fill:#0F2436}
+.atom-o circle{fill:#D93F2B}
+.atom-h circle{fill:#F0871E}
+.atom-fe circle{fill:#7C97AE}
+.atom circle{stroke:var(--paper);stroke-width:1.5}
+.atom text{font-family:"Space Mono",monospace;font-size:11px;font-weight:700;fill:#F7FAFC;text-anchor:middle}
+
+/* ---- chemistry: rusting lab, 4-tube grid ---------------------------- */
+.labgrid{display:grid;grid-template-columns:repeat(auto-fit,minmax(180px,1fr));gap:16px;padding:8px 24px 20px}
+.lab-card{border:1.5px solid var(--ink);background:#F7FAFC;padding:14px;text-align:center}
+.lab-card h4{
+  margin:0 0 2px;font-family:"Bricolage Grotesque",sans-serif;font-weight:700;font-size:15px;
+}
+.lab-card .lab-sub{font-size:12px;color:var(--ink-soft);margin:0 0 10px}
+.lab-card .lab-result{
+  margin:10px 0 0;font-family:"Space Mono",monospace;font-size:12px;font-weight:700;
+}
+.lab-card.interactive{border-color:var(--charge);background:rgba(240,135,30,.05)}
+.lab-card .btns{margin-top:10px;flex-direction:column}
+.lab-card .btns button{font-size:11px;padding:8px 10px;min-height:36px}

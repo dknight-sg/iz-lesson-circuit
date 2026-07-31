@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>3 · Types of chemical change — Chemical Changes</title>
+<meta name="description" content="Combustion, thermal decomposition and oxidation (including rusting) — plus a live experiment on what rusting actually needs.">
+<meta name="theme-color" content="#E4EAF0">
+<link rel="icon" type="image/svg+xml" href="../../../favicon.svg">
+<link rel="stylesheet" href="../../../css/style.css">
+</head>
+<body>
+<div class="sheet">
+  <header>
+    <div>
+      <a class="crumb" href="../index.html">← Chemical Changes course</a>
+      <p class="eyebrow" style="margin-top:10px">Lesson 3 of 5</p>
+      <h1>Types of chemical change</h1>
+    </div>
+    <p class="sub">Chemical changes fall into a few recognisable families. Learn to spot them and you can predict what's likely to happen.</p>
+  </header>
+
+  <div class="prose">
+    <h2 class="section">Combustion</h2>
+    <p>A substance (the fuel) reacts quickly with oxygen, releasing heat and usually light. Wood, candle wax, petrol and natural gas all burn this way. Combustion is fast and obvious — flames, heat you can feel from across a room.</p>
+    <p class="formula">fuel + oxygen → oxide(s) + energy</p>
+
+    <h2 class="section">Thermal decomposition</h2>
+    <p>Heat alone breaks a single compound apart into two or more simpler substances. Heat green copper carbonate strongly, and it breaks down into black copper oxide and carbon dioxide gas — a colour change and a gas given off, both signs of a chemical change.</p>
+    <p class="formula">copper carbonate --heat--> copper oxide + carbon dioxide</p>
+
+    <h2 class="section">Oxidation</h2>
+    <p>A substance combines with oxygen — slowly this time, without flames. Two everyday examples matter here:</p>
+    <ul>
+      <li><strong>Rusting:</strong> iron combines with oxygen <em>and</em> water to form rust (hydrated iron oxide) — the reason this needs its own experiment is coming up below.</li>
+      <li><strong>Cellular respiration:</strong> the slow "burning" of glucose with oxygen inside your cells, releasing the energy your body runs on. Same core idea as combustion, but controlled and gradual.</li>
+    </ul>
+
+    <div class="callout">
+      <span class="callout-label">A change you'll also meet</span>
+      Plants use light energy to drive a chemical change too — photosynthesis, turning carbon dioxide and water into glucose and oxygen. It's triggered by light rather than heat, but it's still a genuine chemical change: new substances form.
+    </div>
+
+    <h2 class="section">Try it: what does rusting actually need?</h2>
+    <p>Rust doesn't just need air, and it doesn't just need water — it needs <strong>both at the same time</strong>. Toggle the two conditions below and drag the day slider to test it for yourself.</p>
+
+    <div class="mini-widget" id="rustWidget">
+      <div class="mini-stage">
+        <svg viewBox="0 0 200 260" role="img" aria-label="A test tube containing an iron nail" style="max-width:220px;margin:0 auto;display:block">
+          <rect class="tube-glass" x="60" y="16" width="80" height="220" rx="18"/>
+          <rect class="tube-liquid" x="66" y="120" width="68" height="110" rx="10" fill="#8FBF5C" opacity="0.35"/>
+          <rect class="nail-body" x="94" y="40" width="12" height="170" rx="3" fill="rgb(183,198,212)"/>
+          <circle class="nail-body" cx="100" cy="36" r="9" fill="rgb(183,198,212)"/>
+          <circle class="rust-fleck" cx="97" cy="70" r="3" fill="#96422A" style="opacity:0"/>
+          <circle class="rust-fleck" cx="104" cy="100" r="2.6" fill="#96422A" style="opacity:0"/>
+          <circle class="rust-fleck" cx="96" cy="135" r="3.2" fill="#96422A" style="opacity:0"/>
+          <circle class="rust-fleck" cx="103" cy="165" r="2.8" fill="#96422A" style="opacity:0"/>
+          <circle class="rust-fleck" cx="97" cy="190" r="3" fill="#96422A" style="opacity:0"/>
+        </svg>
+      </div>
+      <div class="mini-ctl">
+        <div class="ctl">
+          <button class="rust-btn-water" aria-pressed="true" style="width:100%">Water: present</button>
+        </div>
+        <div class="ctl">
+          <button class="rust-btn-air" aria-pressed="true" style="width:100%">Air (oxygen): present</button>
+        </div>
+      </div>
+      <div class="mini-ctl" style="grid-template-columns:1fr;padding-top:0">
+        <div class="ctl">
+          <div class="ctl-top"><label>Time passing</label><b class="rust-day-val">Day 7</b></div>
+          <input class="rust-day-slider" type="range" min="0" max="20" step="1" value="7">
+        </div>
+      </div>
+      <div class="mini-readouts">
+        <span class="rust-readout">Rust: 50%</span>
+      </div>
+      <p class="note rust-note" style="padding:0 18px 18px"></p>
+    </div>
+
+    <h2 class="section">Quick check</h2>
+    <details class="q">
+      <summary><span class="qnum">Q</span> An iron tool is kept in a sealed bag with a drying agent, in normal air. Will it rust? Why or why not?</summary>
+      <div class="a">
+        <p>No — the drying agent removes the water vapour from the air, so even though oxygen is present, water isn't. Rusting needs both at once.</p>
+      </div>
+    </details>
+  </div>
+
+  <nav class="lesson-nav">
+    <a href="2-conservation-of-mass.html">← Atoms and conservation of mass</a>
+    <a class="next" href="4-acids-alkalis-and-indicators.html">Next: Acids, alkalis and indicators →</a>
+  </nav>
+</div>
+<script src="../../../js/chem-rust-toggle.js"></script>
+</body>
+</html>

@@ -1,0 +1,113 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>6 · How chemical changes occur — Chemical Changes</title>
+<meta name="description" content="Textbook 11.3 — the five things that cause a chemical change: mixing, heating, light, oxygen and an electric current.">
+<meta name="theme-color" content="#E4EAF0">
+<link rel="icon" type="image/svg+xml" href="../../../favicon.svg">
+<link rel="stylesheet" href="../../../css/style.css">
+<link rel="stylesheet" href="../../../css/chem.css">
+</head>
+<body>
+<div class="sheet">
+  <header>
+    <div>
+      <a class="crumb" href="../index.html">← Chemical Changes</a>
+      <p class="eyebrow" style="margin-top:10px">Lesson 6 of 8 · Textbook 11.3</p>
+      <h1>How chemical changes occur</h1>
+    </div>
+    <p class="sub">Lessons 3 to 5 asked <em>what kind</em> of change it is. This one asks a different question: what caused it to happen at all?</p>
+  </header>
+
+  <div class="prose">
+    <h2 class="section">Five triggers</h2>
+    <p>A chemical change can involve elements, compounds and mixtures, and it results in the formation of one or more new substances. Your textbook groups the causes into five, and exam questions often ask you to name which one is at work.</p>
+
+    <div class="sim" id="triggerLab">
+      <div class="sim-head">
+        <h4>What caused the change?</h4>
+        <div class="picker">
+          <button class="tg-pick" data-trigger="mixing">Mixing</button>
+          <button class="tg-pick" data-trigger="heating">Heating</button>
+          <button class="tg-pick" data-trigger="light">Light</button>
+          <button class="tg-pick" data-trigger="oxygen">Oxygen</button>
+          <button class="tg-pick" data-trigger="current">Electric current</button>
+        </div>
+      </div>
+      <div class="sim-body">
+        <h3 style="font-family:'Bricolage Grotesque',sans-serif;font-size:20px;margin:0 0 4px">
+          <span class="tg-title"></span>
+          <span class="tier g2 tg-badge" hidden></span>
+        </h3>
+        <p class="tg-body" style="font-size:15px;margin:8px 0 0"></p>
+        <p class="wordeq tg-eq"></p>
+      </div>
+    </div>
+
+    <h2 class="section">Mixing</h2>
+    <p>When two or more reactants are mixed together, they can combine irreversibly to form one or more products. All three reactions of acids from the last lesson — with alkalis, metals and carbonates — happen this way.</p>
+
+    <h2 class="section">Heating</h2>
+    <p>Heat, or an increase in temperature, is needed for many chemical reactions to occur. Both <strong>combustion</strong> (burning coal) and <strong>thermal decomposition</strong> (heating calcium carbonate) belong here.</p>
+    <div class="callout">
+      <span class="callout-label">In the limelight</span>
+      Heating calcium carbonate produces calcium oxide, also known as <strong>quicklime</strong>. When quicklime is heated to 2400 °C it glows with an intense white light. Before electric lighting was invented, this glow was used to light up theatre stages — which is exactly where the phrase "in the limelight" comes from.
+    </div>
+
+    <h2 class="section">Exposure to light</h2>
+    <p><strong>Photosynthesis</strong> is a chemical reaction that occurs in green plants. Chlorophyll in their leaves absorbs light energy, and carbon dioxide and water are turned into glucose and oxygen.</p>
+    <p class="formula">carbon dioxide + water &nbsp;--light--&gt;&nbsp; glucose + oxygen</p>
+    <p>The same idea explains something much more ordinary: colours in clothes fade over time when they are exposed to sunlight, because ultraviolet rays drive a chemical reaction in the dye. It is also why old photographs and book covers look faded.</p>
+
+    <h2 class="section">Interaction with oxygen</h2>
+    <p>Rusting and cellular respiration are examples of oxidation, which you met in Lesson 3. Objects made of copper interact with water and oxygen too — that is why old copper coins turn green, and why the red and brown colours of tropical soils are the result of chemical reactions with oxygen.</p>
+
+    <div class="tierblock g2" data-tier="g2">
+      <h3>Using an electric current <span class="tier g2">Optional for G2</span></h3>
+      <p>An electric current can break a compound down into simpler substances, or drive metal out of a solution and onto an object. That is <strong>electrolysis</strong> and <strong>electroplating</strong> — the whole of the next lesson.</p>
+      <p>A well-known example: all the medals for the Tokyo 2020 Olympic Games were made from metals extracted from recycled electronic products. The gold medal is actually a silver core that has been <strong>electroplated</strong> with gold.</p>
+    </div>
+
+    <h2 class="section">Check yourself</h2>
+    <div id="quiz">
+      <script type="application/json">
+      {
+        "questions": [
+          {
+            "type": "sort",
+            "stem": "<p>What caused each chemical change? Sort them by trigger.</p>",
+            "bins": ["Caused by heating", "Caused by light"],
+            "items": [
+              {"text":"Coal burning in a barbecue pit", "bin":0, "why":"Combustion needs heat to start — this is the heating trigger."},
+              {"text":"A green plant making glucose in its leaves", "bin":1, "why":"Photosynthesis is driven by light energy absorbed by chlorophyll."},
+              {"text":"Calcium carbonate breaking down into quicklime", "bin":0, "why":"Thermal decomposition — heat alone breaks the compound apart."},
+              {"text":"The colours of a curtain fading near a sunny window", "bin":1, "why":"Ultraviolet rays in sunlight drive a chemical reaction in the dye."},
+              {"text":"A photograph on display slowly losing its colour", "bin":1, "why":"Same cause as fading clothes — light drives the reaction."},
+              {"text":"Copper carbonate turning black in a test tube over a flame", "bin":0, "why":"Thermal decomposition again — the flame supplies the heat."}
+            ]
+          },
+          {
+            "type": "mcq",
+            "marks": 1,
+            "stem": "<p>An old copper coin has slowly turned green. Which trigger best explains this?</p>",
+            "options": ["Mixing", "Heating", "Exposure to light", "Interaction with oxygen"],
+            "answer": 3,
+            "explain": "Copper reacts with water and oxygen in the air over a long time to form green copper compounds — the interaction-with-oxygen trigger, the same family as rusting."
+          }
+        ]
+      }
+      </script>
+    </div>
+  </div>
+
+  <nav class="lesson-nav">
+    <a href="5-reactions-of-acids.html">← Reactions of acids</a>
+    <a class="next" href="7-electrolysis-and-photosynthesis.html">Next: Electrolysis and photosynthesis →</a>
+  </nav>
+</div>
+<script src="../../../js/chem-widgets.js"></script>
+<script src="../../../js/quiz-engine.js"></script>
+</body>
+</html>

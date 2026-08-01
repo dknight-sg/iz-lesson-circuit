@@ -4,90 +4,192 @@
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <title>4 · Acids, alkalis and indicators — Chemical Changes</title>
-<meta name="description" content="What makes a solution acidic or alkaline, the pH scale, and how litmus and Universal Indicator reveal it.">
+<meta name="description" content="Textbook 11.2 — properties of acids and alkalis, the pH scale, and testing solutions with litmus, Universal Indicator and natural indicators.">
 <meta name="theme-color" content="#E4EAF0">
 <link rel="icon" type="image/svg+xml" href="../../../favicon.svg">
 <link rel="stylesheet" href="../../../css/style.css">
+<link rel="stylesheet" href="../../../css/chem.css">
 </head>
 <body>
 <div class="sheet">
   <header>
     <div>
-      <a class="crumb" href="../index.html">← Chemical Changes course</a>
-      <p class="eyebrow" style="margin-top:10px">Lesson 4 of 5</p>
+      <a class="crumb" href="../index.html">← Chemical Changes</a>
+      <p class="eyebrow" style="margin-top:10px">Lesson 4 of 8 · Textbook 11.2</p>
       <h1>Acids, alkalis and indicators</h1>
     </div>
-    <p class="sub">You can't see acidity. Indicators turn it into a colour you can.</p>
+    <p class="sub">You cannot see acidity, and it is not safe to taste or touch an unknown solution. Indicators turn it into a colour you can read.</p>
   </header>
 
   <div class="prose">
-    <h2 class="section">The pH scale</h2>
-    <p>Every solution sits somewhere on the <strong>pH scale</strong>, from 1 to 14:</p>
+    <h2 class="section">Acids</h2>
     <ul>
-      <li><strong>pH below 7 — acidic.</strong> The lower the number, the more strongly acidic. Vinegar, lemon juice, dilute hydrochloric acid.</li>
-      <li><strong>pH exactly 7 — neutral.</strong> Pure water.</li>
-      <li><strong>pH above 7 — alkaline.</strong> The higher the number, the more strongly alkaline. Soap, baking soda solution, dilute sodium hydroxide.</li>
+      <li>Have a <strong>sour taste</strong>.</li>
+      <li>May be dangerous — some acids can <strong>burn the skin</strong>.</li>
+      <li>Turn <strong>blue litmus paper red</strong>.</li>
+      <li>React with alkalis, metals and carbonates.</li>
+      <li>Commonly found in the laboratory: <strong>hydrochloric acid, sulfuric acid, nitric acid</strong>.</li>
+      <li>Commonly found at home: <strong>acetic acid</strong> (vinegar), <strong>ascorbic acid</strong> (vitamin C), <strong>citric acid</strong> (citrus fruit).</li>
     </ul>
 
-    <h2 class="section">Reading the scale with indicators</h2>
-    <p>An indicator is a chemical that changes colour depending on whether it's in an acid, a neutral solution, or an alkali. You'll meet three kinds:</p>
+    <h2 class="section">Alkalis</h2>
     <ul>
-      <li><strong>Litmus paper</strong> — the simplest. Red litmus turns blue in an alkali; blue litmus turns red in an acid. Neither changes in a neutral solution. It tells you acid-or-alkali, but not how strong.</li>
-      <li><strong>Universal Indicator (UI)</strong> — a full spectrum from red (strongly acidic) through green (neutral) to purple (strongly alkaline), matched against a colour chart to read off an approximate pH number.</li>
-      <li><strong>Natural indicators</strong> — some plant pigments do the same job. Red cabbage juice, for instance, is pink-red in acid and blue-green in alkali.</li>
+      <li>Have a <strong>bitter taste</strong> and a <strong>soapy feel</strong>.</li>
+      <li>May be dangerous — some alkalis can <strong>burn the skin</strong>.</li>
+      <li>Turn <strong>red litmus paper blue</strong>.</li>
+      <li>React with acids in neutralisation reactions.</li>
+      <li>Commonly found in the laboratory: <strong>sodium hydroxide, calcium hydroxide, potassium hydroxide</strong>.</li>
+      <li>Commonly found at home: sodium hydroxide (in soaps), <strong>baking soda</strong>, <strong>ammonia</strong> (in cleaning liquids).</li>
     </ul>
 
-    <h2 class="section">Try it: test six substances</h2>
-    <p>Pick a substance to "dip" a Universal Indicator strip and both litmus papers into.</p>
-
-    <div class="mini-widget" id="indicatorWidget">
-      <div class="mini-stage">
-        <svg viewBox="0 0 140 200" role="img" aria-label="A test tube of coloured liquid" style="max-width:150px;margin:0 auto;display:block">
-          <rect class="tube-glass" x="30" y="10" width="80" height="170" rx="16"/>
-          <rect class="tube-liquid" x="36" y="80" width="68" height="94" rx="8" fill="#8FBF5C"/>
-        </svg>
-      </div>
-      <div class="mini-ctl" style="grid-template-columns:repeat(3,1fr);padding-top:6px">
-        <button class="ind-btn" data-key="hcl">Hydrochloric acid</button>
-        <button class="ind-btn" data-key="vin">Vinegar</button>
-        <button class="ind-btn" data-key="water" aria-pressed="true">Pure water</button>
-        <button class="ind-btn" data-key="soda">Baking soda solution</button>
-        <button class="ind-btn" data-key="soap">Soap solution</button>
-        <button class="ind-btn" data-key="naoh">Sodium hydroxide</button>
-      </div>
-      <div style="padding:16px 18px 6px">
-        <p style="margin:0;font-family:'Space Mono',monospace;font-size:13px">
-          <span class="ind-name">Pure water</span> — <span class="ind-readout">pH ≈ 7 · Neutral</span>
-        </p>
-        <div class="gauge-wrap">
-          <div class="gauge-bar acid-gauge"><div class="gauge-marker" style="left:46%"></div></div>
-          <div class="gauge-labels"><span>1 acid</span><span>7 neutral</span><span>14 alkali</span></div>
-        </div>
-      </div>
-      <div class="mini-readouts" style="padding-top:0">
-        <span class="litmus-red-label">Red litmus: stays red</span>
-        <span class="litmus-blue-label">Blue litmus: stays blue</span>
-      </div>
-      <svg width="0" height="0" style="position:absolute">
-        <circle class="litmus-red" r="0"/>
-        <circle class="litmus-blue" r="0"/>
-      </svg>
+    <div class="callout">
+      <span class="callout-label">Where alkalis come from</span>
+      An alkali is the solution formed when <strong>ammonia</strong>, or a <strong>soluble metallic oxide</strong>, dissolves in water:
+      <p class="formula" style="margin:10px 0 6px">ammonia + water → ammonia solution</p>
+      <p class="formula" style="margin:0 0 6px">sodium oxide + water → sodium hydroxide</p>
+      <p class="formula" style="margin:0">calcium oxide + water → calcium hydroxide (limewater)</p>
     </div>
 
-    <h2 class="section">Quick check</h2>
-    <details class="q">
-      <summary><span class="qnum">Q</span> A solution turns red litmus paper blue. Is the solution acidic, neutral, or alkaline?</summary>
-      <div class="a">
-        <p>Red litmus only turns blue in an alkali — so the solution is <span class="ans">alkaline</span>.</p>
+    <div class="callout think">
+      <span class="callout-label">Safety first</span>
+      Some acids and alkalis are toxic or corrosive and are stored in bottles labelled with <strong>hazard symbols</strong> — such as the skull-and-crossbones for acute toxicity, and the hand-and-surface symbol for corrosives. It is <strong>never</strong> safe to taste or touch an unknown solution in the laboratory. That is exactly why indicators exist.
+    </div>
+
+    <h2 class="section">The pH scale</h2>
+    <p>The <strong>pH scale</strong> tells you how acidic or alkaline a solution is, and runs from <strong>0 to 14</strong>:</p>
+    <ul>
+      <li><strong>pH less than 7</strong> — acidic. The lower the value, the more strongly acidic.</li>
+      <li><strong>pH exactly 7</strong> — neutral. Pure water sits here.</li>
+      <li><strong>pH greater than 7</strong> — alkaline. The higher the value, the more strongly alkaline.</li>
+    </ul>
+    <p>Substances at the extreme ends of the scale are very acidic or very alkaline, and can burn your skin.</p>
+
+    <h2 class="section">Test ten substances</h2>
+    <p>Pick a substance, then choose which indicator to dip into it. The pH values are the ones printed in Figure 11.20 of your textbook.</p>
+
+    <div class="sim" id="phLab">
+      <div class="sim-head">
+        <h4>Indicator bench</h4>
       </div>
-    </details>
+      <div class="sim-body">
+        <p class="note" style="margin-top:0">1 · Choose a substance</p>
+        <div class="picker">
+          <button class="pl-sub" data-sub="battery">Car battery acid</button>
+          <button class="pl-sub" data-sub="lemon">Lemon juice</button>
+          <button class="pl-sub" data-sub="vinegar">Vinegar</button>
+          <button class="pl-sub" data-sub="tomato">Tomato juice</button>
+          <button class="pl-sub" data-sub="coffee">Black coffee</button>
+          <button class="pl-sub" data-sub="milk">Milk</button>
+          <button class="pl-sub" data-sub="water">Pure water</button>
+          <button class="pl-sub" data-sub="soda">Baking soda</button>
+          <button class="pl-sub" data-sub="ammonia">Ammonia</button>
+          <button class="pl-sub" data-sub="oven">Oven cleaner</button>
+        </div>
+
+        <p class="note">2 · Choose an indicator</p>
+        <div class="picker">
+          <button class="pl-ind" data-ind="ui">Universal Indicator</button>
+          <button class="pl-ind" data-ind="cabbage">Red cabbage juice</button>
+          <button class="pl-ind" data-ind="methyl">Methyl orange</button>
+          <button class="pl-ind" data-ind="bromo">Bromothymol blue</button>
+          <button class="pl-ind" data-ind="phenol">Phenol red</button>
+        </div>
+
+        <div style="display:flex;gap:20px;align-items:flex-start;flex-wrap:wrap;margin-top:18px">
+          <svg viewBox="0 0 100 170" style="width:96px;flex:none" role="img" aria-label="Test tube of the solution being tested">
+            <rect x="26" y="8" width="48" height="150" rx="14" fill="rgba(247,250,252,.45)" stroke="#0F2436" stroke-width="2.4"/>
+            <rect class="pl-liquid" x="30" y="66" width="40" height="88" rx="9" fill="#4FA85C" opacity=".9" style="transition:fill .45s ease"/>
+          </svg>
+          <div style="flex:1;min-width:220px">
+            <div class="readout-grid" style="margin-top:0">
+              <div class="readout-box"><span class="rl">Substance</span><span class="rv pl-name" style="font-size:13px">Pure water</span></div>
+              <div class="readout-box"><span class="rl">pH value</span><span class="rv pl-ph">pH 7</span></div>
+              <div class="readout-box"><span class="rl">Classified as</span><span class="rv pl-class">Neutral</span></div>
+            </div>
+            <div class="litmus-row" style="margin-top:14px">
+              <span class="swatch pl-indswatch"></span>
+              <span><b class="pl-indname">Universal Indicator</b> shows <b class="pl-indcolour">Green</b></span>
+            </div>
+          </div>
+        </div>
+
+        <div class="gauge-wrap">
+          <div class="ph-scale"><div class="ph-needle pl-needle" style="left:50%"></div></div>
+          <div class="ph-ticks"><span>0 · most acidic</span><span>7 · neutral</span><span>14 · most alkaline</span></div>
+        </div>
+
+        <div style="margin-top:16px;padding-top:14px;border-top:1.5px dotted var(--rule)">
+          <p class="note" style="margin:0 0 8px">Litmus paper always behaves the same way, whatever the indicator above says:</p>
+          <div class="litmus-row"><span class="litmus-strip pl-red" style="background:#C62B3E"></span><span>Red litmus paper: <b class="pl-redtxt">stays red</b></span></div>
+          <div class="litmus-row"><span class="litmus-strip pl-blue" style="background:#2E58A8"></span><span>Blue litmus paper: <b class="pl-bluetxt">stays blue</b></span></div>
+        </div>
+      </div>
+      <div class="sim-foot"><span class="pl-verdict"></span></div>
+    </div>
+
+    <h2 class="section">Table 11.2 — what litmus tells you</h2>
+    <table style="margin-bottom:18px">
+      <tr>
+        <td style="border-bottom:1.5px solid var(--ink)"><strong>Type of solution</strong></td>
+        <td style="border-bottom:1.5px solid var(--ink)"><strong>Red litmus paper</strong></td>
+        <td style="border-bottom:1.5px solid var(--ink)"><strong>Blue litmus paper</strong></td>
+      </tr>
+      <tr><td>Acidic</td><td>remains red</td><td>turns red</td></tr>
+      <tr><td>Alkaline</td><td>turns blue</td><td>remains blue</td></tr>
+      <tr><td>Neutral</td><td>remains red</td><td>remains blue</td></tr>
+    </table>
+
+    <div class="callout">
+      <span class="callout-label">Why Universal Indicator beats litmus</span>
+      Litmus only tells you <em>acid or alkali</em>. <strong>Universal Indicator</strong> is a mixture of dyes that gives a whole range of colours, so it tells you <em>how</em> acidic or alkaline — an approximate pH value rather than just a category. For an accurate reading, a <strong>pH meter</strong> with an electrode placed in the solution gives a numerical value directly.
+    </div>
+
+    <h2 class="section">Check yourself</h2>
+    <div id="quiz">
+      <script type="application/json">
+      {
+        "questions": [
+          {
+            "type": "mcq",
+            "marks": 1,
+            "stem": "<p>A solution turns red litmus paper blue. What can you conclude?</p>",
+            "options": ["It is acidic", "It is neutral", "It is alkaline", "Nothing — red litmus never changes colour"],
+            "answer": 2,
+            "explain": "Red litmus only turns blue in an alkali. In an acidic or neutral solution it stays red."
+          },
+          {
+            "type": "mcq",
+            "marks": 1,
+            "stem": "<p>Universal Indicator is added to a solution and turns orange. What is the approximate pH?</p>",
+            "options": ["About pH 1 — strongly acidic", "About pH 5 — weakly acidic", "About pH 7 — neutral", "About pH 12 — strongly alkaline"],
+            "answer": 1,
+            "explain": "On the Universal Indicator chart, red is below pH 4 and yellow is around pH 6, so orange sits between them at roughly pH 5 — weakly acidic."
+          },
+          {
+            "type": "mcq",
+            "marks": 2,
+            "stem": "<p>A student dips damp <strong>red</strong> litmus paper into an unknown liquid. It stays red, and the student concludes the liquid must be acidic. Why is that conclusion unsafe?</p>",
+            "options": [
+              "Red litmus is unreliable and should never be used",
+              "Red litmus also stays red in a neutral liquid such as water, so the test cannot tell acidic and neutral apart",
+              "The paper should have been dry, not damp",
+              "Red litmus turns blue in acid, so the student has it backwards"
+            ],
+            "answer": 1,
+            "explain": "This is the classic trap. Red litmus stays red in BOTH acidic and neutral solutions, so a 'no change' result rules out an alkali but proves nothing more. Testing with blue litmus — which turns red only in acid — would settle it."
+          }
+        ]
+      }
+      </script>
+    </div>
   </div>
 
   <nav class="lesson-nav">
     <a href="3-types-of-chemical-change.html">← Types of chemical change</a>
-    <a class="next" href="5-neutralisation-and-acid-reactions.html">Next: Neutralisation and acid reactions →</a>
+    <a class="next" href="5-reactions-of-acids.html">Next: Reactions of acids →</a>
   </nav>
 </div>
-<script src="../../../js/chem-indicator.js"></script>
+<script src="../../../js/chem-widgets.js"></script>
+<script src="../../../js/quiz-engine.js"></script>
 </body>
 </html>

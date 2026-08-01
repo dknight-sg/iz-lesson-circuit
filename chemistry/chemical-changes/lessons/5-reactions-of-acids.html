@@ -1,0 +1,229 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>5 · Reactions of acids — Chemical Changes</title>
+<meta name="description" content="Textbook 11.2 — neutralisation, acids with metals and carbonates, naming the salt, and the tests for hydrogen, carbon dioxide, oxygen and ammonia.">
+<meta name="theme-color" content="#E4EAF0">
+<link rel="icon" type="image/svg+xml" href="../../../favicon.svg">
+<link rel="stylesheet" href="../../../css/style.css">
+<link rel="stylesheet" href="../../../css/chem.css">
+</head>
+<body>
+<div class="sheet">
+  <header>
+    <div>
+      <a class="crumb" href="../index.html">← Chemical Changes</a>
+      <p class="eyebrow" style="margin-top:10px">Lesson 5 of 8 · Textbook 11.2</p>
+      <h1>Reactions of acids</h1>
+    </div>
+    <p class="sub">There are three reactions an acid can undergo, and each produces a different, testable set of products.</p>
+  </header>
+
+  <div class="prose">
+    <h2 class="section">1 · Acid + alkali → salt + water</h2>
+    <p>When an acid is mixed with an alkali, a <strong>neutralisation</strong> reaction occurs. The two cancel each other out, and the products are always a salt and water.</p>
+    <p class="formula">acid + alkali → salt + water</p>
+    <p class="formula">hydrochloric acid + sodium hydroxide → sodium chloride + water</p>
+    <p>When an alkali is added to an acid, the pH of the solution rises as the alkali neutralises the acid. When an acid is added to an alkali, the pH falls. On <strong>complete neutralisation</strong> the solution formed has a pH of 7 — neither acidic nor alkaline.</p>
+
+    <div class="callout think">
+      <span class="callout-label">Take note — what "salt" means here</span>
+      In chemistry a <strong>salt</strong> is a general term for a compound containing a metal, not just the table salt you eat. Table salt is one particular salt, sodium chloride.
+    </div>
+
+    <div class="callout">
+      <span class="callout-label">Naming the salt</span>
+      The salt's name is built from two parts — the metal, then the acid used:
+      <ul style="margin:10px 0 0;padding-left:20px">
+        <li><strong>hydrochloric</strong> acid always makes a <strong>chloride</strong></li>
+        <li><strong>sulfuric</strong> acid always makes a <strong>sulfate</strong></li>
+        <li><strong>nitric</strong> acid always makes a <strong>nitrate</strong></li>
+      </ul>
+      <p style="margin:10px 0 0">So potassium hydroxide with sulfuric acid gives <em>potassium sulfate</em>; magnesium with hydrochloric acid gives <em>magnesium chloride</em>.</p>
+    </div>
+
+    <div class="tierblock g2" data-tier="g2">
+      <h3>2 · Acid + metal → salt + hydrogen <span class="tier g2">Optional for G2</span></h3>
+      <p>An acid can react with a metal to form a salt and <strong>hydrogen gas</strong>. Two products are always formed.</p>
+      <p class="formula">acid + metal → salt + hydrogen</p>
+      <p class="formula">hydrochloric acid + magnesium → magnesium chloride + hydrogen</p>
+      <p><strong>However, not all metals react with an acid in the same way.</strong> Some metals — copper, silver and gold — are relatively unreactive and do <strong>not</strong> react with dilute acids at all. This is where the phrase "the acid test" comes from: miners in the 1850s used nitric acid to check whether a metal was really gold.</p>
+    </div>
+
+    <div class="tierblock g2" data-tier="g2">
+      <h3>3 · Acid + carbonate → salt + carbon dioxide + water <span class="tier g2">Optional for G2</span></h3>
+      <p>An acid can react with a carbonate to form a salt, <strong>carbon dioxide</strong> gas and water. Three products are always formed.</p>
+      <p class="formula">acid + carbonate → salt + carbon dioxide + water</p>
+      <p class="formula">hydrochloric acid + magnesium carbonate → magnesium chloride + carbon dioxide + water</p>
+      <p>Marble and limestone are largely calcium carbonate, which is why acid rain slowly eats away at statues and limestone buildings.</p>
+    </div>
+
+    <h2 class="section">Run all three at the bench</h2>
+    <p>Choose an acid and something to react it with. Watch what happens, read off the word equation, then <strong>test the gas</strong> — and notice what happens if you choose the wrong test.</p>
+
+    <div class="sim" id="acidBench">
+      <div class="sim-head"><h4>Reactions of acids</h4></div>
+      <div class="sim-body">
+        <div class="bench">
+          <div class="bench-col">
+            <h5>1 · Choose the acid</h5>
+            <div class="picker">
+              <button class="ab-acid" data-acid="hydrochloric">Hydrochloric</button>
+              <button class="ab-acid" data-acid="sulfuric">Sulfuric</button>
+              <button class="ab-acid" data-acid="nitric">Nitric</button>
+            </div>
+            <h5 style="margin-top:16px">2 · Choose what to add</h5>
+            <div class="picker">
+              <button class="ab-part" data-part="sodium">Sodium hydroxide</button>
+              <button class="ab-part" data-part="potassium">Potassium hydroxide</button>
+              <button class="ab-part" data-part="magnesium">Magnesium</button>
+              <button class="ab-part" data-part="zinc">Zinc</button>
+              <button class="ab-part" data-part="copper">Copper</button>
+              <button class="ab-part" data-part="calcarb">Calcium carbonate</button>
+              <button class="ab-part" data-part="coppcarb">Copper carbonate</button>
+            </div>
+          </div>
+          <div class="bench-col">
+            <h5>In the test tube</h5>
+            <svg viewBox="0 0 140 200" style="max-width:150px;margin:0 auto" role="img" aria-label="Test tube showing the reaction">
+              <path d="M 44 12 L 44 150 Q 44 178 70 178 Q 96 178 96 150 L 96 12"
+                    fill="rgba(247,250,252,.45)" stroke="#0F2436" stroke-width="2.4"/>
+              <path class="ab-liquid" d="M 46 92 L 46 150 Q 46 176 70 176 Q 94 176 94 150 L 94 92 Z"
+                    fill="#E8A33E" opacity=".55" style="transition:fill .4s ease"/>
+              <rect class="ab-solid" x="64" y="132" width="12" height="34" rx="3" fill="#8FA3B5" style="transition:opacity .4s ease"/>
+              <circle class="ab-fizz fizz" cx="58" cy="140" r="4.5" fill="#CBD8E4"/>
+              <circle class="ab-fizz fizz" cx="72" cy="150" r="3.8" fill="#CBD8E4"/>
+              <circle class="ab-fizz fizz" cx="84" cy="134" r="4.2" fill="#CBD8E4"/>
+              <circle class="ab-fizz fizz" cx="66" cy="118" r="3.4" fill="#CBD8E4"/>
+            </svg>
+            <p class="note ab-obs" style="margin-top:6px"></p>
+          </div>
+        </div>
+
+        <p class="wordeq ab-eq"></p>
+
+        <div class="gastest ab-gaswrap" hidden>
+          <p class="note" style="margin:0 0 8px">A gas is being produced. Which test will identify it?</p>
+          <div class="picker">
+            <button class="ab-test" data-test="splint">Hold in a lighted splint</button>
+            <button class="ab-test" data-test="limewater">Bubble through limewater</button>
+          </div>
+          <div class="verdict ab-verdict" hidden></div>
+          <p class="note" style="margin-top:10px">Gas produced: <b class="ab-gasname">—</b></p>
+        </div>
+      </div>
+    </div>
+
+    <h2 class="section">Tests for the four gases</h2>
+    <p>These come up constantly in exam questions, and each needs the observation stated exactly:</p>
+    <table style="margin-bottom:18px">
+      <tr>
+        <td style="border-bottom:1.5px solid var(--ink)"><strong>Gas</strong></td>
+        <td style="border-bottom:1.5px solid var(--ink)"><strong>Test</strong></td>
+        <td style="border-bottom:1.5px solid var(--ink)"><strong>Positive result</strong></td>
+      </tr>
+      <tr><td><strong>Hydrogen</strong></td><td>Introduce a <em>burning</em> splint</td><td>Extinguishes with a squeaky <strong>"pop"</strong></td></tr>
+      <tr><td><strong>Oxygen</strong></td><td>Introduce a <em>glowing</em> splint</td><td>The splint <strong>rekindles</strong> into a flame</td></tr>
+      <tr><td><strong>Carbon dioxide</strong></td><td>Bubble through limewater</td><td>A <strong>white precipitate</strong> forms — limewater turns chalky</td></tr>
+      <tr><td><strong>Ammonia</strong></td><td>Introduce damp <em>red</em> litmus paper</td><td>The paper <strong>turns blue</strong></td></tr>
+    </table>
+
+    <h2 class="section">Where neutralisation is used</h2>
+    <ul>
+      <li><strong>Toothpaste.</strong> Bacteria on our teeth produce acids that cause tooth decay. Toothpaste is weakly alkaline and neutralises any acid present in the mouth.</li>
+      <li><strong>Antacids.</strong> These medicines contain alkaline compounds that neutralise excess acid produced by the stomach, relieving discomfort.</li>
+      <li><strong>Treating soil.</strong> Soil that is too acidic or too alkaline may stop plants growing well. Adding a suitable substance neutralises it.</li>
+    </ul>
+
+    <div class="tierblock ext" data-tier="ext">
+      <h3>Bases and alkalis <span class="tier ext">Extension</span></h3>
+      <p>A metal oxide is known as a <strong>base</strong>. Like an alkali, it reacts with an acid to form a salt and water. Most bases (for example copper(II) oxide, CuO) are <em>insoluble</em> in water. Some are soluble — sodium oxide dissolves in water to form the alkali sodium hydroxide.</p>
+      <p>So: <strong>alkalis are simply soluble bases.</strong></p>
+    </div>
+
+    <h2 class="section">Check yourself</h2>
+    <div id="quiz">
+      <script type="application/json">
+      {
+        "questions": [
+          {
+            "type": "wordeq",
+            "marks": 2,
+            "stem": "<p>Build the word equation for nitric acid reacting with potassium hydroxide.</p>",
+            "reactants": ["nitric acid", "potassium hydroxide"],
+            "products": ["potassium nitrate", "water"],
+            "bank": ["potassium chloride", "hydrogen", "carbon dioxide"],
+            "explain": "Acid + alkali → salt + water. Nitric acid always gives a nitrate, and the metal comes from the alkali — so potassium nitrate."
+          },
+          {
+            "type": "multi",
+            "marks": 2,
+            "pick": 2,
+            "tag": "Optional for G2",
+            "tier": "g2",
+            "stem": "<p>Which <strong>two</strong> of the following will produce a gas that extinguishes a burning splint with a squeaky “pop”?</p>",
+            "options": [
+              "The decomposition of water using electricity",
+              "The neutralisation of an acid by powdered calcium carbonate",
+              "The reaction between an acid and a piece of magnesium ribbon",
+              "The combustion of petrol in air"
+            ],
+            "answer": [0, 2],
+            "explain": "The 'pop' test identifies hydrogen. Electrolysis of water produces hydrogen (and oxygen), and acid + metal produces hydrogen. Acid + carbonate gives carbon dioxide, and combustion of petrol gives carbon dioxide and water vapour — neither pops."
+          },
+          {
+            "type": "mcq",
+            "marks": 1,
+            "tag": "Optional for G2",
+            "tier": "g2",
+            "stem": "<p>A student adds dilute hydrochloric acid to a piece of copper and observes no bubbles at all. What is the best explanation?</p>",
+            "options": [
+              "The acid was too dilute — it would work if concentrated",
+              "Copper is relatively unreactive and does not react with dilute acids",
+              "The hydrogen produced is invisible, so bubbles cannot be seen",
+              "Copper reacts only with sulfuric acid, not hydrochloric acid"
+            ],
+            "answer": 1,
+            "explain": "Not all metals react with acids. Copper, silver and gold are relatively unreactive and do not produce hydrogen with dilute acids — which is the basis of the original 'acid test' for gold."
+          },
+          {
+            "type": "structured",
+            "marks": 4,
+            "stem": "<p>Dilute hydrochloric acid is added to marble chips (calcium carbonate) in a test tube.</p>",
+            "parts": [
+              {
+                "stem": "Write the word equation for the reaction.",
+                "marks": 2,
+                "model": [
+                  "hydrochloric acid + calcium carbonate →",
+                  "calcium chloride + carbon dioxide + water"
+                ]
+              },
+              {
+                "stem": "Describe how you would test for the gas produced, and state the positive result.",
+                "marks": 2,
+                "model": [
+                  "Bubble the gas through limewater.",
+                  "The limewater turns chalky / a white precipitate forms."
+                ]
+              }
+            ],
+            "explain": "Acid + carbonate always gives three products. The limewater test is the only one that positively identifies carbon dioxide — a splint being extinguished is not enough, because other gases do that too."
+          }
+        ]
+      }
+      </script>
+    </div>
+  </div>
+
+  <nav class="lesson-nav">
+    <a href="4-acids-alkalis-and-indicators.html">← Acids, alkalis and indicators</a>
+    <a class="next" href="6-how-changes-occur.html">Next: How chemical changes occur →</a>
+  </nav>
+</div>
+<script src="../../../js/chem-widgets.js"></script>
+<script src="../../../js/quiz-engine.js"></script>
+</body>
+</html>

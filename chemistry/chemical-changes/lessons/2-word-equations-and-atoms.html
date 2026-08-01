@@ -1,0 +1,152 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>2 · Word equations and atoms — Chemical Changes</title>
+<meta name="description" content="Textbook 11.1 — writing word equations, how atoms rearrange in a reaction, and why mass is conserved.">
+<meta name="theme-color" content="#E4EAF0">
+<link rel="icon" type="image/svg+xml" href="../../../favicon.svg">
+<link rel="stylesheet" href="../../../css/style.css">
+<link rel="stylesheet" href="../../../css/chem.css">
+</head>
+<body>
+<div class="sheet">
+  <header>
+    <div>
+      <a class="crumb" href="../index.html">← Chemical Changes</a>
+      <p class="eyebrow" style="margin-top:10px">Lesson 2 of 8 · Textbook 11.1</p>
+      <h1>Word equations and atoms</h1>
+    </div>
+    <p class="sub">A reaction looks like substances vanishing and new ones appearing. Nothing vanishes — the same atoms simply change partners.</p>
+  </header>
+
+  <div class="prose">
+    <h2 class="section">Writing a word equation</h2>
+    <p>A <strong>word equation</strong> shows which substances are involved in a reaction. Reactants go on the left, products on the right, and an arrow points from one to the other. Any condition the reaction needs — usually heat, light or electricity — is written <em>above</em> the arrow.</p>
+    <p class="formula">reactants → products</p>
+    <p>Two examples straight from your textbook:</p>
+    <p class="formula">methane + oxygen &nbsp;--heat--&gt;&nbsp; carbon dioxide + water</p>
+    <p class="formula">calcium carbonate &nbsp;--heat--&gt;&nbsp; calcium oxide + carbon dioxide</p>
+
+    <div class="callout think">
+      <span class="callout-label">Take note</span>
+      The number of reactants and the number of products <strong>may not be the same</strong>. The first equation above has two reactants and two products; the second has one reactant and two products. Don't assume they must match.
+    </div>
+
+    <h2 class="section">Atoms rearrange — they are never created or destroyed</h2>
+    <p>During a chemical reaction the atoms of the reactants <strong>rearrange themselves</strong> and combine in different ways to form the products. Not a single atom is lost, and not a single new one appears. They simply end up in different combinations.</p>
+    <p>That single fact has a direct consequence. If every atom that went in is still there at the end, the total mass cannot have changed either:</p>
+    <p class="formula">total mass of reactants = total mass of products</p>
+    <p>This is the <strong>conservation of mass</strong>, and it was proved by the French scientist <strong>Antoine Lavoisier</strong> (1743–1794). He carefully weighed the reactants and products of reactions he studied — including burning a wooden log in oxygen — and found the ashes and gases produced had exactly the same mass as the original log and the oxygen used.</p>
+
+    <h2 class="section">Count the atoms yourself</h2>
+    <p>Pick a reaction below. Count how many atoms of each element appear on the left, then on the right, and type them in. This is exactly the check your textbook asks you to do in Figures 11.4 and 11.5.</p>
+
+    <div class="sim" id="atomLab">
+      <div class="sim-head">
+        <h4>Rearrangement of atoms</h4>
+        <div class="picker">
+          <button class="al-pick" data-rx="water">hydrogen + oxygen</button>
+          <button class="al-pick" data-rx="methane">methane + oxygen</button>
+          <button class="al-pick" data-rx="carbon">carbon + oxygen</button>
+        </div>
+      </div>
+      <div class="sim-body">
+        <p class="wordeq al-eq" style="margin-top:0"></p>
+        <div class="atomgrid">
+          <div class="side">
+            <h5>Reactants — before</h5>
+            <div class="al-left"></div>
+          </div>
+          <div class="mid">→</div>
+          <div class="side">
+            <h5>Products — after</h5>
+            <div class="al-right"></div>
+          </div>
+        </div>
+
+        <table class="counttable al-counts">
+          <thead>
+            <tr><th>Element</th><th>In reactants</th><th>In products</th><th>Match?</th></tr>
+          </thead>
+          <tbody></tbody>
+        </table>
+
+        <div class="sim-row" style="margin-top:14px">
+          <button class="al-check">Check my counts</button>
+          <button class="al-show">Show me</button>
+        </div>
+        <div class="al-fb" style="margin-top:14px;padding:12px 14px;border-left:4px solid var(--ink-soft);background:var(--paper);font-size:14px" hidden></div>
+        <p class="note al-note"></p>
+      </div>
+      <div class="sim-foot">
+        Grey = carbon, red = oxygen, white = hydrogen — the same colours your textbook uses.
+      </div>
+    </div>
+
+    <div class="callout">
+      <span class="callout-label">What the counts prove</span>
+      Every reaction gives the same result: the number of atoms of each element is <strong>identical before and after</strong>. The atoms have been rearranged into different molecules, but none were made and none were lost. That is why mass is conserved in every chemical reaction.
+    </div>
+
+    <div class="tierblock ext" data-tier="ext">
+      <h3>Balanced chemical equations <span class="tier ext">Extension</span></h3>
+      <p class="tier-note">Beyond the core syllabus — useful if you want to see where word equations lead next.</p>
+      <p>Chemists usually write reactions with symbols rather than words. A <strong>balanced chemical equation</strong> uses chemical formulae plus numbers in front, chosen so the count of each type of atom is the same on both sides — exactly the check you just did by hand:</p>
+      <p class="formula">CH<sub>4</sub> + 2O<sub>2</sub> → CO<sub>2</sub> + 2H<sub>2</sub>O</p>
+      <p class="formula">2H<sub>2</sub> + O<sub>2</sub> → 2H<sub>2</sub>O</p>
+      <p class="formula">2Na + Cl<sub>2</sub> → 2NaCl</p>
+      <p>Balanced equations let chemists calculate quantities — for instance, what mass of a reactant is needed to produce a certain mass of product.</p>
+    </div>
+
+    <h2 class="section">Check yourself</h2>
+    <div id="quiz">
+      <script type="application/json">
+      {
+        "questions": [
+          {
+            "type": "wordeq",
+            "marks": 2,
+            "stem": "<p>Magnesium burns in oxygen to form magnesium oxide. Build the word equation.</p>",
+            "reactants": ["magnesium", "oxygen"],
+            "products": ["magnesium oxide"],
+            "bank": ["magnesium carbonate", "hydrogen", "water"],
+            "explain": "Magnesium combines with oxygen — a combining reaction with two reactants and a single product."
+          },
+          {
+            "type": "mcq",
+            "marks": 1,
+            "stem": "<p>8 g of a metal reacts completely with 5 g of oxygen. What is the total mass of the product formed?</p>",
+            "options": ["3 g", "8 g", "13 g", "It cannot be worked out without more information"],
+            "answer": 2,
+            "explain": "Mass is conserved: 8 + 5 = 13 g. Every atom that went in is still present in the product, so no mass can be lost."
+          },
+          {
+            "type": "mcq",
+            "marks": 1,
+            "stem": "<p>A student writes: “In a chemical reaction, some atoms are destroyed, which is why the products often weigh less.” What is wrong with this?</p>",
+            "options": [
+              "Nothing — products always weigh less than reactants",
+              "Atoms are never destroyed; if a gas escapes it still has mass, so the total is unchanged",
+              "Atoms are destroyed, but new ones are created to replace them",
+              "Only the reactants have mass; products do not"
+            ],
+            "answer": 1,
+            "explain": "Atoms are neither created nor destroyed — they are only rearranged. An open container can appear to lose mass because a gas has escaped, but if you captured that gas the total would be unchanged."
+          }
+        ]
+      }
+      </script>
+    </div>
+  </div>
+
+  <nav class="lesson-nav">
+    <a href="1-identifying-chemical-change.html">← Identifying a chemical change</a>
+    <a class="next" href="3-types-of-chemical-change.html">Next: Types of chemical change →</a>
+  </nav>
+</div>
+<script src="../../../js/chem-widgets.js"></script>
+<script src="../../../js/quiz-engine.js"></script>
+</body>
+</html>

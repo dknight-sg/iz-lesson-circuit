@@ -1,0 +1,212 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>7 · Electrolysis and photosynthesis — Chemical Changes</title>
+<meta name="description" content="Textbook 11.3 and guide 11.6-11.7 — breaking substances down with electricity, electroplating, and photosynthesis as the reverse of respiration.">
+<meta name="theme-color" content="#E4EAF0">
+<link rel="icon" type="image/svg+xml" href="../../../favicon.svg">
+<link rel="stylesheet" href="../../../css/style.css">
+<link rel="stylesheet" href="../../../css/chem.css">
+</head>
+<body>
+<div class="sheet">
+  <header>
+    <div>
+      <a class="crumb" href="../index.html">← Chemical Changes</a>
+      <p class="eyebrow" style="margin-top:10px">Lesson 7 of 8 · Textbook 11.3 · Guide 11.6–11.7</p>
+      <h1>Electrolysis and photosynthesis</h1>
+    </div>
+    <p class="sub">Two chemical changes driven by something other than heat — one by electricity, one by light.</p>
+  </header>
+
+  <div class="prose">
+    <div class="tierblock g2" data-tier="g2">
+      <h3>Electrolysis <span class="tier g2">Optional for G2</span></h3>
+      <p><strong>Electrolysis</strong> is the breaking down of substances using <strong>electrical energy</strong>. It is one of the "breaking down" chemical changes, but the trigger is an electric current rather than heat.</p>
+    </div>
+
+    <h2 class="section">Splitting water</h2>
+    <p>When electricity is passed through water containing some dissolved salt or acid, using platinum electrodes, the water is decomposed into its elements:</p>
+    <p class="formula">water &nbsp;--electricity--&gt;&nbsp; hydrogen + oxygen</p>
+    <p><strong>Two volumes of hydrogen</strong> are produced for every <strong>one volume of oxygen</strong>. The hydrogen forms at the negative electrode and the oxygen at the positive electrode.</p>
+
+    <div class="callout">
+      <span class="callout-label">Testing the products</span>
+      The oxygen can be identified with a <strong>glowing splint</strong> — it rekindles into a flame. The hydrogen gives a squeaky <strong>"pop"</strong> with a burning splint.
+    </div>
+
+    <h2 class="section">Run the cell yourself</h2>
+    <p>Pick what to put in the cell, then switch the current on. Watch the rate of bubbling at each electrode.</p>
+
+    <div class="sim" id="electroLab">
+      <div class="sim-head">
+        <h4>Electrolysis cell</h4>
+        <div class="picker">
+          <button class="el-mode" data-mode="water">Water</button>
+          <button class="el-mode" data-mode="salt">Molten sodium chloride</button>
+          <button class="el-mode" data-mode="plate">Electroplating</button>
+        </div>
+      </div>
+      <div class="sim-body">
+        <svg viewBox="0 0 340 210" role="img" aria-label="An electrolysis cell with two electrodes in a bath connected to a battery">
+          <!-- battery -->
+          <line x1="152" y1="14" x2="152" y2="30" stroke="#0F2436" stroke-width="2.4"/>
+          <line x1="140" y1="30" x2="164" y2="30" stroke="#0F2436" stroke-width="3"/>
+          <line x1="146" y1="38" x2="158" y2="38" stroke="#0F2436" stroke-width="3"/>
+          <line x1="140" y1="46" x2="164" y2="46" stroke="#0F2436" stroke-width="3"/>
+          <line x1="146" y1="54" x2="158" y2="54" stroke="#0F2436" stroke-width="3"/>
+          <!-- wires -->
+          <path d="M 152 14 L 88 14 L 88 60" fill="none" stroke="#0F2436" stroke-width="2.4"/>
+          <path d="M 152 62 L 252 62 L 252 60" fill="none" stroke="#0F2436" stroke-width="2.4"/>
+          <text class="lbl small" x="80" y="10" text-anchor="middle">−</text>
+          <text class="lbl small" x="262" y="58" text-anchor="middle">+</text>
+          <!-- bath -->
+          <path d="M 44 74 L 44 176 Q 44 190 60 190 L 280 190 Q 296 190 296 176 L 296 74"
+                fill="none" stroke="#0F2436" stroke-width="2.4"/>
+          <path class="el-bath" d="M 46 96 L 46 176 Q 46 188 60 188 L 280 188 Q 294 188 294 176 L 294 96 Z"
+                fill="#BBD4E8" opacity=".55" style="transition:fill .5s ease"/>
+          <!-- electrodes -->
+          <rect x="82" y="60" width="12" height="106" rx="2" fill="#3E4650" stroke="#0F2436" stroke-width="1.5"/>
+          <rect x="246" y="60" width="12" height="106" rx="2" fill="#3E4650" stroke="#0F2436" stroke-width="1.5"/>
+          <!-- object being plated (electroplating mode) -->
+          <g class="el-object">
+            <rect x="76" y="92" width="24" height="60" rx="4" fill="#B7C6D4" stroke="#0F2436" stroke-width="1.5"/>
+            <rect class="el-plate" x="76" y="92" width="24" height="0" rx="4" fill="#C97A3E" stroke="none"/>
+          </g>
+          <!-- ions drifting toward the negative electrode -->
+          <circle class="el-ion ion" cx="200" cy="112" r="5" fill="#C97A3E"/>
+          <circle class="el-ion ion" cx="168" cy="140" r="5" fill="#C97A3E"/>
+          <circle class="el-ion ion" cx="136" cy="120" r="5" fill="#C97A3E"/>
+          <!-- gas bubbles -->
+          <circle class="el-bub-neg gasbubble" cx="76" cy="150" r="4.4" fill="#F7FAFC" stroke="#9FB2C4"/>
+          <circle class="el-bub-neg gasbubble" cx="100" cy="138" r="3.8" fill="#F7FAFC" stroke="#9FB2C4"/>
+          <circle class="el-bub-neg gasbubble" cx="84" cy="122" r="4.2" fill="#F7FAFC" stroke="#9FB2C4"/>
+          <circle class="el-bub-neg gasbubble" cx="96" cy="160" r="3.6" fill="#F7FAFC" stroke="#9FB2C4"/>
+          <circle class="el-bub-pos gasbubble" cx="240" cy="150" r="4.2" fill="#F7FAFC" stroke="#9FB2C4"/>
+          <circle class="el-bub-pos gasbubble" cx="264" cy="134" r="3.8" fill="#F7FAFC" stroke="#9FB2C4"/>
+          <!-- labels -->
+          <text class="lbl small el-neg-label" x="88" y="206" text-anchor="middle">negative electrode</text>
+          <text class="lbl small el-pos-label" x="252" y="206" text-anchor="middle">positive electrode</text>
+        </svg>
+
+        <div class="sim-row" style="margin-top:14px">
+          <button class="el-run">Switch current on</button>
+          <button class="el-reset">Reset</button>
+        </div>
+
+        <p class="wordeq el-eq"></p>
+
+        <div class="readout-grid">
+          <div class="readout-box"><span class="rl">At negative electrode</span><span class="rv el-neg-out" style="font-size:13px">—</span></div>
+          <div class="readout-box"><span class="rl">At positive electrode</span><span class="rv el-pos-out" style="font-size:13px">—</span></div>
+        </div>
+      </div>
+      <div class="sim-foot"><span class="el-note"></span></div>
+    </div>
+
+    <h2 class="section">Splitting molten sodium chloride</h2>
+    <p>Sodium chloride can also be decomposed into its elements by the electrolysis of <strong>molten</strong> sodium chloride, with graphite rods as the electrodes:</p>
+    <p class="formula">sodium chloride &nbsp;--electricity--&gt;&nbsp; sodium + chlorine</p>
+    <p>Sodium metal forms at the negative electrode and chlorine gas at the positive one. In industry, an iron screen keeps the two apart so they cannot meet and react back together.</p>
+
+    <h2 class="section">Electroplating</h2>
+    <p><strong>Electroplating</strong> uses electrolysis to coat an object with a thin layer of metal — to protect it, to make it look better, or to improve its electrical conductivity.</p>
+    <p>The rule to remember: <strong>the object being plated is always the negative electrode</strong>, and the metal used for coating is the positive electrode. Positively charged metal particles move through the solution and build up on the object layer by layer.</p>
+    <ul>
+      <li>The gold medals for the <strong>Tokyo 2020 Olympic Games</strong> are a silver core electroplated with gold.</li>
+      <li>Taps are often chromium-plated, giving a shiny appearance and preventing rusting.</li>
+      <li>Surgical tools and implants are plated to make them more durable.</li>
+    </ul>
+    <div class="callout think">
+      <span class="callout-label">A catch worth knowing</span>
+      If the object does not conduct electricity — a plastic spoon, or an orchid — it must <strong>first be coated with a layer of an electrical conductor</strong> such as graphite or copper before it can be electroplated at all.
+    </div>
+
+    <div class="tierblock ext" data-tier="ext">
+      <h3>Electrolysis as a redox reaction <span class="tier ext">Extension</span></h3>
+      <p>Electrolysis involves both oxidation and reduction happening at the same time. <strong>Oxidation occurs at the positive electrode</strong> (the anode) while <strong>reduction occurs at the negative electrode</strong> (the cathode).</p>
+      <table style="margin-top:10px">
+        <tr>
+          <td style="border-bottom:1.5px solid var(--ink)"><strong></strong></td>
+          <td style="border-bottom:1.5px solid var(--ink)"><strong>At the anode (+)</strong></td>
+          <td style="border-bottom:1.5px solid var(--ink)"><strong>At the cathode (−)</strong></td>
+        </tr>
+        <tr><td>Water</td><td>OH⁻ lose electrons → O₂ and H₂O</td><td>H⁺ gain electrons → H₂</td></tr>
+        <tr><td>Molten NaCl</td><td>Cl⁻ lose electrons → Cl₂</td><td>Na⁺ gain electrons → Na</td></tr>
+      </table>
+    </div>
+
+    <h2 class="section">Photosynthesis</h2>
+    <p><strong>Photosynthesis</strong> is the process by which plants manufacture food, using carbon dioxide, water and <strong>light energy from the Sun</strong>. Chlorophyll in the leaves absorbs the light energy needed to drive the reaction.</p>
+    <p class="formula">carbon dioxide + water &nbsp;--light--&gt;&nbsp; sugar (glucose) + oxygen</p>
+    <p>It is vital for the survival of all living beings, including humans and animals — and plants themselves — because oxygen is created as a by-product.</p>
+
+    <div class="callout">
+      <span class="callout-label">Photosynthesis is respiration in reverse</span>
+      Compare the two word equations:
+      <p class="formula" style="margin:10px 0 6px">photosynthesis: carbon dioxide + water → sugar + oxygen</p>
+      <p class="formula" style="margin:0 0 10px">respiration: sugar + oxygen → carbon dioxide + water</p>
+      They are exact opposites. Respiration, decomposition by bacteria, and the combustion of fossil fuels all <strong>release</strong> carbon dioxide; photosynthesis <strong>absorbs</strong> it. That balance is why planting trees is encouraged to help slow climate change — Singapore has its own annual tree-planting day.
+    </div>
+
+    <h2 class="section">Check yourself</h2>
+    <div id="quiz">
+      <script type="application/json">
+      {
+        "questions": [
+          {
+            "type": "mcq",
+            "marks": 1,
+            "tag": "Optional for G2",
+            "tier": "g2",
+            "stem": "<p>In the electrolysis of water, which gas forms at the negative electrode, and in what proportion?</p>",
+            "options": [
+              "Oxygen — one volume for every two of hydrogen",
+              "Hydrogen — two volumes for every one of oxygen",
+              "Hydrogen — one volume for every two of oxygen",
+              "Both gases form equally at both electrodes"
+            ],
+            "answer": 1,
+            "explain": "Hydrogen forms at the negative electrode, and twice as much hydrogen is produced by volume as oxygen."
+          },
+          {
+            "type": "mcq",
+            "marks": 1,
+            "tag": "Optional for G2",
+            "tier": "g2",
+            "stem": "<p>A student wants to electroplate a plastic spoon with copper. Why must the spoon be coated with graphite first?</p>",
+            "options": [
+              "Graphite makes the copper stick better",
+              "Plastic is not a conductor of electricity, so it cannot act as an electrode until it is coated with a conductor",
+              "Graphite reacts with the copper solution to start the reaction",
+              "It stops the plastic from melting in the solution"
+            ],
+            "answer": 1,
+            "explain": "Electroplating requires the object to act as the negative electrode, which means current must flow through it. Plastic does not conduct, so it must first be covered with a layer of an electrical conductor such as graphite."
+          },
+          {
+            "type": "wordeq",
+            "marks": 2,
+            "stem": "<p>Build the word equation for photosynthesis.</p>",
+            "reactants": ["carbon dioxide", "water"],
+            "products": ["sugar (glucose)", "oxygen"],
+            "bank": ["chlorophyll", "hydrogen", "carbon monoxide"],
+            "explain": "Chlorophyll absorbs the light energy but is not used up, so it is not a reactant — it does not appear in the equation. The condition (light) is written above the arrow."
+          }
+        ]
+      }
+      </script>
+    </div>
+  </div>
+
+  <nav class="lesson-nav">
+    <a href="6-how-changes-occur.html">← How chemical changes occur</a>
+    <a class="next" href="8-beneficial-and-harmful.html">Next: Beneficial and harmful →</a>
+  </nav>
+</div>
+<script src="../../../js/chem-widgets.js"></script>
+<script src="../../../js/quiz-engine.js"></script>
+</body>
+</html>

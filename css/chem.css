@@ -200,7 +200,17 @@ body.hide-ext [data-tier="ext"]{display:none}
 .opt.correct .key{color:var(--cool)}
 .opt.wrong{border-color:var(--hot);background:rgba(217,63,43,.1)}
 .opt.wrong .key{color:var(--hot)}
-.opt:disabled{cursor:default}
+/* Once answered the options are disabled, but they must stay fully legible —
+   the option the student picked is the one they most need to re-read.
+   -webkit-text-fill-color is required to beat WebKit's disabled greying. */
+.opt:disabled{
+  cursor:default;opacity:1;color:var(--ink);-webkit-text-fill-color:var(--ink);
+}
+.opt:disabled .key{-webkit-text-fill-color:currentColor}
+.eqtile:disabled, .eqslot:disabled{
+  opacity:1;color:var(--ink);-webkit-text-fill-color:var(--ink);cursor:default;
+}
+.eqtile.used{opacity:.35}
 
 /* word-equation builder */
 .eqbuild{margin-top:10px}
@@ -253,6 +263,25 @@ body.hide-ext [data-tier="ext"]{display:none}
 .qz-fb.bad .mark{color:var(--hot)}
 .qz-acts{display:flex;gap:8px;flex-wrap:wrap;margin-top:12px;align-items:center}
 .qz-acts .spacer{flex:1}
+
+/* wrong-answer derivation: why it was wrong, then how to get there */
+.derive{
+  margin-top:12px;padding:12px 14px;
+  border:1.5px solid var(--rule);background:#FFF;
+}
+.derive .why{margin:0 0 10px;font-size:14px}
+.derive h5{
+  margin:0 0 8px;font-family:"Space Mono",monospace;font-size:10px;
+  letter-spacing:.12em;text-transform:uppercase;color:var(--charge);font-weight:400;
+}
+.derive ol{margin:0;padding-left:20px;font-size:14px}
+.derive ol li{margin-bottom:7px;line-height:1.5}
+.derive ol li:last-child{margin-bottom:0}
+.derive .ansline{
+  margin:11px 0 0;padding-top:10px;border-top:1.5px dotted var(--rule);
+  font-size:14px;
+}
+.derive .ansline strong{color:var(--cool)}
 
 .model{margin-top:12px;border:1.5px solid var(--ink);background:#FFF}
 .model > summary{

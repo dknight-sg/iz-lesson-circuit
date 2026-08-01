@@ -4,7 +4,7 @@
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <title>Practice — Chemical Changes</title>
-<meta name="description" content="20 interactive practice questions on Chapter 11 Chemical Changes — multiple choice, word equation building, sorting and structured questions, marked as you go.">
+<meta name="description" content="20 interactive practice questions on Chapter 11 Chemical Changes — every wrong answer explains why, and walks through how to reach the right one.">
 <meta name="theme-color" content="#E4EAF0">
 <link rel="icon" type="image/svg+xml" href="../../favicon.svg">
 <link rel="stylesheet" href="../../css/style.css">
@@ -18,7 +18,7 @@
       <p class="eyebrow" style="margin-top:10px">Practice</p>
       <h1>20 questions</h1>
     </div>
-    <p class="sub">Answer each one and it is marked immediately. Structured questions are self-marked against the model answer, exactly the way your revision guide sets them out.</p>
+    <p class="sub">Answer each one and it is marked immediately. Get one wrong and you'll be shown why that answer doesn't work, then walked through how to reach the right one — so a mistake is worth more than a guess that happens to land.</p>
   </header>
 
   <div class="scorebar" id="scorebar">
@@ -35,15 +35,21 @@
         {
           "type": "sort",
           "stem": "<p>Classify each of these everyday changes.</p>",
+          "bins": ["Physical change", "Chemical change"],
           "items": [
-            {"text":"Candle wax melting in the heat of the flame", "bin":0, "why":"Melting is a change of state — the wax is still wax."},
-            {"text":"Candle wax burning at the wick", "bin":1, "why":"Burning is combustion — new substances (carbon dioxide and water) are formed."},
-            {"text":"A nail left in the rain turning orange and flaky", "bin":1, "why":"Rust, a new substance, has formed on the iron."},
-            {"text":"Salt crystals reappearing when sea water evaporates", "bin":0, "why":"A separation — the salt was never chemically changed."},
-            {"text":"Baking a cake in an oven", "bin":1, "why":"Heat forms new substances in the batter, and you cannot reverse it."},
-            {"text":"A copper wire being bent into a coil", "bin":0, "why":"Only the shape changes; it is still copper."}
+            {"text":"Candle wax melting in the heat of the flame", "bin":0, "why":"Melting is only a change of state — the wax is still wax, and it solidifies again on cooling."},
+            {"text":"Candle wax burning at the wick", "bin":1, "why":"Burning is combustion. The wax reacts with oxygen to form carbon dioxide and water — new substances you cannot turn back into wax."},
+            {"text":"A nail left in the rain turning orange and flaky", "bin":1, "why":"Rust is a new substance with completely different properties from the shiny iron it formed on."},
+            {"text":"Salt crystals reappearing when sea water evaporates", "bin":0, "why":"This is a separation, not a reaction. The salt was dissolved, never chemically changed."},
+            {"text":"Baking a cake in an oven", "bin":1, "why":"Heat forms new substances in the batter. You can never un-bake a cake back into batter."},
+            {"text":"A copper wire being bent into a coil", "bin":0, "why":"Only the shape changes. It is the same copper before and after."}
           ],
-          "bins": ["Physical change", "Chemical change"]
+          "workthrough": [
+            "Ask one question every time: <strong>has a new substance been formed?</strong> Nothing else decides it.",
+            "If the answer is no — the substance has only changed state, shape, or been dissolved or separated — it is a <strong>physical</strong> change.",
+            "If the answer is yes — the material now has different properties and you cannot simply reverse it — it is a <strong>chemical</strong> change.",
+            "Use reversibility as a cross-check, not as the rule. Physical changes are usually easy to reverse; chemical ones usually are not."
+          ]
         },
         {
           "type": "mcq",
@@ -51,7 +57,18 @@
           "stem": "<p>12 g of magnesium reacts completely with 8 g of oxygen to form magnesium oxide. What mass of magnesium oxide is produced?</p>",
           "options": ["4 g", "12 g", "20 g", "It depends on how fast the reaction is"],
           "answer": 2,
-          "explain": "Mass is conserved: 12 + 8 = 20 g. The atoms are only rearranged, so nothing can be gained or lost."
+          "explain": "Mass is conserved, so the products must weigh exactly what the reactants weighed.",
+          "whyWrong": {
+            "0": "You subtracted (12 − 8). Subtracting would mean 8 g of matter simply vanished, and atoms cannot vanish.",
+            "1": "You gave just the mass of the magnesium. But the oxygen atoms are now part of the magnesium oxide too, so their mass counts as well.",
+            "3": "Reaction speed changes how <em>long</em> it takes, never how <em>much</em> is produced. The masses are fixed by the atoms involved."
+          },
+          "workthrough": [
+            "Identify the reactants and their masses: magnesium 12 g, oxygen 8 g.",
+            "Recall the rule: in a chemical reaction atoms are only rearranged — none are created and none destroyed.",
+            "So the total mass cannot change: <strong>mass of reactants = mass of products</strong>.",
+            "Add the reactant masses: 12 + 8 = <strong>20 g</strong> of magnesium oxide."
+          ]
         },
         {
           "type": "wordeq",
@@ -60,7 +77,14 @@
           "reactants": ["methane", "oxygen"],
           "products": ["carbon dioxide", "water"],
           "bank": ["carbon monoxide", "hydrogen", "calcium oxide"],
-          "explain": "Complete combustion of a fuel containing carbon and hydrogen gives carbon dioxide and water. Carbon monoxide would only form if there were insufficient oxygen."
+          "explain": "Complete combustion of a fuel containing carbon and hydrogen always gives carbon dioxide and water.",
+          "workthrough": [
+            "Spot the reaction type. “Burns in oxygen” means <strong>combustion</strong>, so oxygen must be one of the reactants.",
+            "Write the reactants: the fuel plus oxygen — <em>methane + oxygen</em>.",
+            "Work out the products from what the fuel contains. Methane contains carbon and hydrogen atoms.",
+            "The carbon ends up combined with oxygen as <strong>carbon dioxide</strong>; the hydrogen ends up combined with oxygen as <strong>water</strong>.",
+            "Carbon <em>monoxide</em> would only form in <strong>incomplete</strong> combustion, when there is insufficient oxygen. The question says complete."
+          ]
         },
         {
           "type": "mcq",
@@ -68,7 +92,19 @@
           "stem": "<p>In the reaction <em>methane + oxygen → carbon dioxide + water</em>, one methane molecule reacts with two oxygen molecules. How many oxygen <strong>atoms</strong> are there in the reactants?</p>",
           "options": ["2", "4", "1", "8"],
           "answer": 1,
-          "explain": "Each oxygen molecule contains 2 oxygen atoms, so 2 molecules contain 4 atoms. Those same 4 atoms end up in the products — 2 in the carbon dioxide and 2 in the two water molecules."
+          "explain": "An oxygen molecule is made of two oxygen atoms, so two molecules contain four atoms.",
+          "whyWrong": {
+            "0": "You counted the number of <em>molecules</em>, not atoms. There are 2 molecules, but each one holds 2 atoms.",
+            "2": "That would be a single atom. The question gives you two whole molecules of oxygen.",
+            "3": "You have over-counted — probably by multiplying by 4 instead of 2. Each oxygen molecule holds 2 atoms, not 4."
+          },
+          "workthrough": [
+            "Read carefully what is being asked: the number of <strong>atoms</strong>, not molecules. This is the trap.",
+            "Recall that an oxygen molecule is written O₂ — it contains <strong>2 oxygen atoms</strong>.",
+            "You are given 2 oxygen molecules.",
+            "Multiply: 2 molecules × 2 atoms each = <strong>4 oxygen atoms</strong>.",
+            "Check with conservation: those same 4 atoms reappear in the products — 2 in the carbon dioxide, and 1 in each of the 2 water molecules."
+          ]
         },
         {
           "type": "wordeq",
@@ -77,7 +113,14 @@
           "reactants": ["copper carbonate"],
           "products": ["copper oxide", "carbon dioxide"],
           "bank": ["copper hydroxide", "water", "oxygen"],
-          "explain": "Thermal decomposition of a carbonate gives the metal oxide plus carbon dioxide. One reactant, two products."
+          "explain": "A carbonate heated strongly breaks down into the metal oxide plus carbon dioxide.",
+          "workthrough": [
+            "Spot the reaction type. One substance being broken down by heat alone is <strong>thermal decomposition</strong>.",
+            "That means there is only <strong>one reactant</strong> — the copper carbonate. Nothing is added to it.",
+            "Learn the standard pattern: <em>metal carbonate → metal oxide + carbon dioxide</em>.",
+            "Apply it: copper carbonate gives <strong>copper oxide</strong> and <strong>carbon dioxide</strong>.",
+            "Sense-check against the observations: the solid changes colour (green → black copper oxide) and a gas is released that turns limewater chalky (carbon dioxide)."
+          ]
         },
         {
           "type": "mcq",
@@ -85,7 +128,19 @@
           "stem": "<p>A substance is strongly heated and breaks down into two simpler substances. No oxygen was involved. Which type of chemical change is this?</p>",
           "options": ["Combustion", "Oxidation", "Thermal decomposition", "Neutralisation"],
           "answer": 2,
-          "explain": "Breaking down by heat alone is thermal decomposition. Combustion and oxidation both require oxygen; neutralisation needs an acid and an alkali."
+          "explain": "Breaking one substance down into simpler ones using heat alone is thermal decomposition.",
+          "whyWrong": {
+            "0": "Combustion needs oxygen, and the question states no oxygen was involved. Combustion also <em>combines</em> substances rather than breaking one apart.",
+            "1": "Oxidation means gaining oxygen — again ruled out, because no oxygen was involved.",
+            "3": "Neutralisation needs an acid and an alkali reacting together. There is no acid or alkali here, and nothing is being mixed."
+          },
+          "workthrough": [
+            "Note the two clues in the question: <strong>heat</strong> was used, and <strong>no oxygen</strong> was involved.",
+            "Eliminate anything requiring oxygen — that removes combustion and oxidation immediately.",
+            "Eliminate neutralisation: it needs an acid plus an alkali being mixed, which is not happening.",
+            "Note the direction of the change: <em>one</em> substance becomes <em>two</em> — that is breaking down, not combining.",
+            "Heat + breaking down = <strong>thermal decomposition</strong>."
+          ]
         },
         {
           "type": "mcq",
@@ -98,7 +153,18 @@
             "Because thermal decomposition always produces a gas"
           ],
           "answer": 1,
-          "explain": "This is the exact distinction your textbook flags. Melting changes state only; thermal decomposition produces genuinely different substances."
+          "explain": "The test is always whether a new substance has formed — not how hot it got, or what state things end in.",
+          "whyWrong": {
+            "0": "Temperature is irrelevant to the classification. A change is chemical because of <em>what forms</em>, not how much heat it took.",
+            "2": "Melting does need heat. And even if it didn't, that would not decide whether a change is chemical.",
+            "3": "Not all thermal decompositions give off a gas, and plenty of non-chemical processes release gas (boiling water gives off steam). A gas is a clue, not the definition."
+          },
+          "workthrough": [
+            "Go back to the definition: a change is <strong>chemical</strong> if one or more <strong>new substances</strong> are formed.",
+            "Ask it of melting: solid ice becomes liquid water. Same substance, different state — <strong>no</strong> new substance. So it is physical.",
+            "Ask it of thermal decomposition: copper carbonate becomes copper oxide and carbon dioxide. These have different colours and properties — <strong>yes</strong>, new substances.",
+            "So the deciding factor is the identity of what you end up with, not the temperature or the state."
+          ]
         },
         {
           "type": "mcq",
@@ -111,7 +177,20 @@
             "In a sealed tube containing only dry nitrogen gas"
           ],
           "answer": 2,
-          "explain": "Rusting needs water AND oxygen. Only the open tube of tap water has both — boiling plus oil removes the oxygen, the drying agent removes the water, and dry nitrogen has neither."
+          "explain": "Rusting requires water and oxygen together. Remove either one and no rust forms.",
+          "whyWrong": {
+            "0": "Water is present, but boiling drives out the dissolved oxygen and the oil layer stops more air dissolving back in. <strong>No oxygen — no rust.</strong>",
+            "1": "Oxygen is present in the air, but the drying agent absorbs the water vapour. <strong>No water — no rust.</strong> Note that a drying agent removes water, not oxygen.",
+            "3": "Dry nitrogen means neither water nor oxygen is present, so rusting is doubly impossible."
+          },
+          "workthrough": [
+            "State the requirement first: rusting needs <strong>water AND oxygen at the same time</strong>.",
+            "Go through each tube and ask whether <em>both</em> are present.",
+            "Boiled water + oil: has water, but boiling removed the oxygen and the oil seals more out. Fails.",
+            "Drying agent + air: has oxygen, but the drying agent removed the water. Fails.",
+            "Dry nitrogen: has neither. Fails.",
+            "Tap water open to the air: has water, and air supplies oxygen. <strong>Both present — this is the one that rusts.</strong>"
+          ]
         },
         {
           "type": "mcq",
@@ -119,7 +198,19 @@
           "stem": "<p>A solution has no effect on either red or blue litmus paper. What is it?</p>",
           "options": ["Strongly acidic", "Weakly acidic", "Neutral", "Alkaline"],
           "answer": 2,
-          "explain": "Only a neutral solution leaves both papers unchanged. An acid turns blue litmus red; an alkali turns red litmus blue."
+          "explain": "Only a neutral solution leaves both litmus papers unchanged.",
+          "whyWrong": {
+            "0": "Any acid — strong or weak — turns <em>blue</em> litmus red. Since the blue paper did not change, the solution cannot be acidic.",
+            "1": "Same reasoning: a weak acid still turns blue litmus red. No change to blue rules out an acid entirely.",
+            "3": "An alkali turns <em>red</em> litmus blue. Since the red paper did not change, it cannot be alkaline."
+          },
+          "workthrough": [
+            "Recall what each paper does: <strong>blue litmus turns red in acid</strong>; <strong>red litmus turns blue in alkali</strong>.",
+            "The blue paper did not change → there is no acid present.",
+            "The red paper did not change → there is no alkali present.",
+            "Neither acidic nor alkaline leaves only one possibility: <strong>neutral</strong>.",
+            "This is the only case where both papers stay as they were."
+          ]
         },
         {
           "type": "mcq",
@@ -132,7 +223,19 @@
             "Red litmus only works on alkalis, so no conclusion is possible from any result"
           ],
           "answer": 1,
-          "explain": "Red litmus stays red in both acidic AND neutral solutions, so a 'no change' result cannot distinguish an acid from water. Blue litmus turns red only in acid, and Universal Indicator gives an actual pH — either would settle it."
+          "explain": "Red litmus staying red is consistent with two different answers, so it cannot single out one of them.",
+          "whyWrong": {
+            "0": "This is exactly the mistake being tested. Red litmus stays red in acidic <em>and</em> neutral solutions, so the observation does not distinguish between them.",
+            "2": "Litmus paper is routinely used damp — that is standard practice, not an error. The flaw is in the logic, not the technique.",
+            "3": "Red litmus does give useful information: turning blue would prove an alkali. The problem is only that <em>staying</em> red is ambiguous."
+          },
+          "workthrough": [
+            "List every solution that leaves red litmus unchanged: <strong>acidic</strong> solutions and <strong>neutral</strong> solutions both do.",
+            "Since two different answers give the same observation, the result cannot prove which one it is. That is the flaw.",
+            "Work out what the test <em>did</em> establish: it rules out an alkali, because an alkali would have turned the paper blue.",
+            "Choose a test that separates the two remaining possibilities. <strong>Blue litmus</strong> turns red only in acid, so it distinguishes acidic from neutral.",
+            "Better still, <strong>Universal Indicator</strong> gives an actual pH value rather than just a category."
+          ]
         },
         {
           "type": "mcq",
@@ -145,7 +248,19 @@
             "About pH 9 — the soil is acidic and needs lime added"
           ],
           "answer": 2,
-          "explain": "Blue to indigo on the Universal Indicator chart is around pH 8–9, so the soil is alkaline. Adding lime (an alkali) would push it further from neutral — the wrong treatment."
+          "explain": "Blue to indigo sits above pH 7 on the Universal Indicator chart, so the soil is alkaline.",
+          "whyWrong": {
+            "0": "pH 3 would show as <em>red or orange</em> on the chart, not blue. You have read the colour on the wrong side of the scale.",
+            "1": "Neutral pH 7 shows as <strong>green</strong>. Blue means the reading has moved past neutral into the alkaline range.",
+            "3": "You read the pH correctly, but then contradicted it — pH 9 is <em>alkaline</em>, not acidic. Lime is an alkali, so adding it would push the soil further from neutral."
+          },
+          "workthrough": [
+            "Recall the Universal Indicator colour order: red (below 4) → orange (~5) → yellow (~6) → <strong>green (7, neutral)</strong> → blue (~8) → indigo (~9) → violet (above 10).",
+            "Locate the observed colour. Dark blue heading toward indigo sits at roughly <strong>pH 8–9</strong>.",
+            "That is above 7, so the soil is <strong>alkaline</strong>.",
+            "Decide the treatment: to move an alkaline soil back toward neutral you would need an <em>acidic</em> substance. Adding more alkali — such as lime — would make it worse.",
+            "Watch for options that read the pH right but then label it with the wrong word. Always check the number and the name agree."
+          ]
         },
         {
           "type": "wordeq",
@@ -154,7 +269,14 @@
           "reactants": ["sulfuric acid", "sodium hydroxide"],
           "products": ["sodium sulfate", "water"],
           "bank": ["sodium chloride", "sodium nitrate", "hydrogen"],
-          "explain": "Acid + alkali → salt + water. Sulfuric acid always gives a sulfate, and the metal comes from the alkali — so sodium sulfate."
+          "explain": "Acid + alkali → salt + water. The salt's name is built from the metal and the acid.",
+          "workthrough": [
+            "Identify the reaction type: an acid reacting with an alkali is <strong>neutralisation</strong>.",
+            "Recall the general pattern: <em>acid + alkali → salt + water</em>. Only ever two products, and one of them is always water.",
+            "Build the salt name in two halves. The <strong>first half comes from the metal</strong> in the alkali — sodium hydroxide gives <em>sodium</em>.",
+            "The <strong>second half comes from the acid</strong> — sulfuric acid always gives a <em>sulfate</em>. (Hydrochloric → chloride, nitric → nitrate.)",
+            "Put them together: <strong>sodium sulfate</strong>, plus water."
+          ]
         },
         {
           "type": "multi",
@@ -170,7 +292,16 @@
             "The combustion of petrol in air"
           ],
           "answer": [0, 2],
-          "explain": "The 'pop' identifies hydrogen. Electrolysis of water produces hydrogen at the negative electrode, and acid + metal produces hydrogen. Acid + carbonate gives carbon dioxide; petrol combustion gives carbon dioxide and water vapour."
+          "explain": "The squeaky “pop” is the confirmatory test for hydrogen, so you are really being asked which reactions make hydrogen.",
+          "workthrough": [
+            "Translate the clue first. A gas that pops with a burning splint is <strong>hydrogen</strong> — so the question is “which two produce hydrogen?”",
+            "Go through each and name the gas it makes.",
+            "Electrolysis of water splits it into hydrogen and oxygen — <strong>hydrogen, yes</strong>.",
+            "Acid + carbonate gives a salt, water and <em>carbon dioxide</em> — no hydrogen.",
+            "Acid + metal gives a salt and <strong>hydrogen</strong> — yes.",
+            "Combustion of petrol gives carbon dioxide and water vapour — no hydrogen.",
+            "So the two are electrolysis of water and acid + magnesium."
+          ]
         },
         {
           "type": "wordeq",
@@ -181,7 +312,14 @@
           "reactants": ["hydrochloric acid", "calcium carbonate"],
           "products": ["calcium chloride", "carbon dioxide", "water"],
           "bank": ["calcium sulfate", "hydrogen", "calcium hydroxide"],
-          "explain": "Acid + carbonate always gives three products: a salt, carbon dioxide and water. Hydrochloric acid gives a chloride."
+          "explain": "Acid + carbonate always produces three things: a salt, carbon dioxide and water.",
+          "workthrough": [
+            "Identify the reaction type from the reactants: this is <strong>acid + carbonate</strong>.",
+            "Recall the pattern — and note it gives <strong>three</strong> products, unlike neutralisation which gives two: <em>acid + carbonate → salt + carbon dioxide + water</em>.",
+            "Name the salt. Metal half from the carbonate: calcium. Acid half from hydrochloric acid: <em>chloride</em>. So <strong>calcium chloride</strong>.",
+            "Add the other two products that always appear: <strong>carbon dioxide</strong> and <strong>water</strong>.",
+            "If you picked hydrogen, you used the acid + <em>metal</em> pattern by mistake. Carbonates give carbon dioxide, not hydrogen."
+          ]
         },
         {
           "type": "mcq",
@@ -196,7 +334,19 @@
             "Copper needs to be heated before it will react"
           ],
           "answer": 1,
-          "explain": "Not all metals react with acids. Copper, silver and gold are relatively unreactive and produce no hydrogen with dilute acids — the basis of the original 'acid test' for gold."
+          "explain": "Not every metal reacts with acid — copper, silver and gold are too unreactive.",
+          "whyWrong": {
+            "0": "Concentration is not the issue. Copper's lack of reaction with dilute acid is down to how unreactive the metal itself is.",
+            "2": "If hydrogen were being produced you would still see <em>bubbles</em>, even though the gas is colourless. The question says nothing happens at all.",
+            "3": "Heating is not the missing ingredient. A reactive metal like magnesium fizzes in cold dilute acid straight away."
+          },
+          "workthrough": [
+            "Recall the general pattern: <em>acid + metal → salt + hydrogen</em>. If it happened, you would see bubbles.",
+            "But note the important exception your textbook flags: <strong>not all metals react with acids</strong>.",
+            "The unreactive ones to remember are <strong>copper, silver and gold</strong>. They produce no hydrogen with dilute acids.",
+            "Since copper is on that list, no reaction is exactly what should be expected.",
+            "This is the origin of the phrase “the acid test” — miners in the 1850s used acid to check whether a metal really was gold, precisely because gold does not react."
+          ]
         },
         {
           "type": "mcq",
@@ -204,7 +354,20 @@
           "stem": "<p>A gas relights a glowing splint. Which gas is it?</p>",
           "options": ["Hydrogen", "Carbon dioxide", "Oxygen", "Ammonia"],
           "answer": 2,
-          "explain": "Rekindling a glowing splint is the test for oxygen. Hydrogen pops with a burning splint, carbon dioxide turns limewater chalky, and ammonia turns damp red litmus blue."
+          "explain": "Rekindling a glowing splint is the confirmatory test for oxygen.",
+          "whyWrong": {
+            "0": "Hydrogen is tested with a <em>burning</em> splint, and it goes out with a squeaky pop — it does not relight anything.",
+            "1": "Carbon dioxide does the opposite: it <em>puts out</em> a flame. It is identified by turning limewater chalky.",
+            "3": "Ammonia is tested with damp <em>red</em> litmus paper, which it turns blue. It has no effect on a splint."
+          },
+          "workthrough": [
+            "Note the exact wording: a <strong>glowing</strong> splint that <strong>relights</strong>. The type of splint and what happens to it both matter.",
+            "Recall the four tests and match the observation.",
+            "Hydrogen — <em>burning</em> splint, extinguished with a squeaky pop.",
+            "<strong>Oxygen — glowing splint, rekindles into a flame.</strong> This matches.",
+            "Carbon dioxide — bubbled through limewater, turns it chalky.",
+            "Ammonia — damp red litmus paper, turns blue."
+          ]
         },
         {
           "type": "mcq",
@@ -212,7 +375,18 @@
           "stem": "<p>The colours of a poster near a sunny window have faded over two years. Which trigger caused this chemical change?</p>",
           "options": ["Mixing", "Heating", "Exposure to light", "An electric current"],
           "answer": 2,
-          "explain": "Ultraviolet rays in sunlight drive a chemical reaction in the dye — the same trigger as photosynthesis, though the outcome here is unwanted."
+          "explain": "Ultraviolet rays in sunlight drive a chemical reaction in the dye.",
+          "whyWrong": {
+            "0": "Nothing was mixed with the poster. Mixing means bringing reactants together, such as an acid with an alkali.",
+            "1": "A sunny window does warm things, but the fading is caused by the <em>ultraviolet rays</em> in the light, not by the temperature. Posters fade in cool but bright places too.",
+            "3": "No electricity is involved. That trigger covers electrolysis and electroplating."
+          },
+          "workthrough": [
+            "Identify what the poster was actually exposed to. The key detail is “near a sunny window” — so <strong>sunlight</strong>.",
+            "Rule out the triggers that need something that isn't present: nothing was mixed in, and no current was applied.",
+            "Distinguish heat from light, since sunlight brings both. The cause here is the <strong>ultraviolet rays</strong> driving a reaction in the dye.",
+            "Confirm with the textbook's own example: this is the same reason clothes, photographs and book covers fade after long exposure to sunlight."
+          ]
         },
         {
           "type": "mcq",
@@ -227,7 +401,19 @@
             "It does not matter which way round they are connected"
           ],
           "answer": 1,
-          "explain": "The object being plated is always the negative electrode. Positively charged gold particles are attracted to it and build up layer by layer, while the gold electrode dissolves into the solution."
+          "explain": "The object being plated is always the negative electrode.",
+          "whyWrong": {
+            "0": "You have them the wrong way round. Connected like this the spoon would dissolve rather than be coated.",
+            "2": "A circuit needs one electrode of each sign for current to flow. Two negatives is not a working cell.",
+            "3": "It matters completely. Reverse the connections and you strip metal off the spoon instead of adding it."
+          },
+          "workthrough": [
+            "Recall which particles carry the metal: the metal travels through the solution as <strong>positively charged</strong> particles.",
+            "Apply the rule that opposite charges attract — positive metal particles are pulled toward the <strong>negative</strong> electrode.",
+            "So whatever you want the metal to land on must be the negative electrode. That is the <strong>spoon</strong>.",
+            "The metal supplying the coating is therefore the positive electrode — the <strong>gold</strong>, which dissolves into the solution as it is used up.",
+            "Memorise it as one line: <em>the object being plated is always negative</em>."
+          ]
         },
         {
           "type": "structured",
@@ -237,19 +423,27 @@
             {
               "stem": "State the two substances that must both be present for iron to rust.",
               "marks": 2,
-              "model": ["Water (or water vapour / moisture)", "Oxygen (from the air)"]
+              "model": ["Water (or water vapour / moisture)", "Oxygen (from the air)"],
+              "note": "Both are needed for full marks — naming only one earns one mark."
             },
             {
               "stem": "Describe one method of preventing rusting, and explain how it works.",
               "marks": 2,
               "model": [
                 "Named method — for example painting, oiling, galvanising (coating with zinc), or keeping the object dry.",
-                "It works by forming a barrier that stops water and oxygen from coming into contact with the iron."
+                "It works by forming a barrier that stops water and oxygen from reaching the iron."
               ],
-              "note": "Any one valid method earns the first mark; the explanation must mention keeping water and/or oxygen away."
+              "note": "One mark for the method, one for the explanation. The explanation must mention keeping water and/or oxygen away — 'it protects the iron' alone is too vague."
             }
           ],
-          "explain": "Every prevention method works the same way — by keeping water and oxygen off the iron surface."
+          "explain": "Every prevention method works the same way: by keeping water and oxygen off the iron surface.",
+          "workthrough": [
+            "For part (a), recall the rusting investigation. The tube that rusted had <strong>both</strong> water and air; every tube missing one of them stayed clean.",
+            "Be precise in the wording — “air” on its own is weaker than “oxygen”, because it is the oxygen in the air that reacts.",
+            "For part (b), pick any one method you can actually explain: painting, oiling, galvanising, or drying.",
+            "Then give the reason, which is the same for all of them: it forms a <strong>barrier</strong> between the iron and the water and oxygen.",
+            "Structure your answer to match the marks — 2 marks means the examiner wants two distinct points, so name the method <em>and</em> explain the mechanism."
+          ]
         },
         {
           "type": "structured",
@@ -261,19 +455,28 @@
               "marks": 2,
               "model": [
                 "Dip a piece of Universal Indicator paper into a sample of the lake water.",
-                "Compare the colour against the pH chart — orange or red means acidic, blue or purple means alkaline, green means neutral."
-              ]
+                "Compare the colour against the pH chart — orange or red means acidic, green means neutral, blue or purple means alkaline."
+              ],
+              "note": "One mark for a workable method, one for saying how you read the result. Naming litmus instead is weaker here, because it cannot show how acidic the water is."
             },
             {
               "stem": "Calcium oxide reacts with water to form calcium hydroxide, an alkali. Which should be used to neutralise the lake — calcium oxide or calcium carbonate? Explain.",
               "marks": 2,
               "model": [
                 "Calcium carbonate should be used.",
-                "If calcium oxide is added in excess it would make the water alkaline, which would also harm the fish. Calcium carbonate neutralises the acid without that risk."
-              ]
+                "If calcium oxide were added in excess it would make the water alkaline, which would also harm the fish. Calcium carbonate neutralises the acid without that risk."
+              ],
+              "note": "The choice alone is one mark; the reason — the risk of overshooting into alkaline — is the second."
             }
           ],
-          "explain": "This is a real trade-off question — both substances neutralise acid, but only one is safe if you add too much."
+          "explain": "Both substances neutralise acid, so the deciding factor is what happens if you add too much.",
+          "workthrough": [
+            "For part (a), choose the indicator that answers the question asked. You need to know <em>how</em> acidic, not just whether it is acidic — so Universal Indicator beats litmus.",
+            "Describe a method the examiner can picture: take a sample, dip the paper in, then compare against the colour chart.",
+            "For part (b), notice the question has given you a hint: calcium oxide forms an <strong>alkali</strong> in water.",
+            "Think about what happens if you overshoot. Too much calcium oxide would swing the lake past neutral and make it alkaline — which harms the fish just as acid did.",
+            "Choose the safer option, <strong>calcium carbonate</strong>, and make the risk of overshooting the core of your explanation."
+          ]
         }
       ]
     }

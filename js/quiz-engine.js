@@ -61,6 +61,34 @@
     return fb;
   }
 
+  // On a wrong attempt, show *why that answer was wrong* and a numbered
+  // route to the correct one. Only rendered when the attempt was not fully
+  // correct — a right answer just gets the short confirmation.
+  function derivation(fb, q, opts){
+    opts = opts || {};
+    const box = el('div', 'derive');
+
+    if (opts.whyWrong){
+      box.appendChild(el('p', 'why',
+        '<strong>Why that isn’t right:</strong> ' + opts.whyWrong));
+    }
+
+    const steps = q.workthrough || [];
+    if (steps.length){
+      box.appendChild(el('h5', null, 'How to work it out'));
+      const ol = el('ol');
+      steps.forEach(s => ol.appendChild(el('li', null, s)));
+      box.appendChild(ol);
+    }
+
+    if (opts.answerLine){
+      box.appendChild(el('p', 'ansline',
+        '<strong>Correct answer:</strong> ' + opts.answerLine));
+    }
+
+    if (box.children.length) fb.appendChild(box);
+  }
+
   // ---- MCQ / multi ---------------------------------------------
   function buildChoice(q, body, multi){
     const need = multi ? (q.pick || (q.answer || []).length) : 1;
@@ -117,7 +145,17 @@
       });
       submit.remove();
       const marks = qMarks(q);
-      feedback(body, ok, ok ? marks : 0, marks, q.explain);
+      const fb = feedback(body, ok, ok ? marks : 0, marks, q.explain);
+
+      if (!ok){
+        // name the option(s) they picked, and the one(s) they should have
+        const pickedLabel = picked.map(i => LETTERS[i] + ' — ' + q.options[i]).join('; ');
+        const rightLabel = (multi ? answer : [answer])
+          .map(i => LETTERS[i] + ' — ' + q.options[i]).join('; ');
+        let why = q.whyWrong && !multi ? q.whyWrong[String(picked[0])] : null;
+        if (!why) why = 'You chose ' + pickedLabel + '.';
+        derivation(fb, q, { whyWrong: why, answerLine: rightLabel });
+      }
       bump(ok ? marks : 0, marks);
     });
   }
@@ -182,12 +220,19 @@
       btnRow.remove();
       const marks = items.length;
       const fb = feedback(body, got === marks, got, marks, null);
+      const missed = placed.filter(p => p.bin !== p.item.bin);
+      if (missed.length){
+        fb.appendChild(el('p', null,
+          '<strong>You put ' + missed.length + ' in the wrong place. Here’s why:</strong>'));
+      }
       placed.forEach(p => {
         if (p.bin !== p.item.bin && p.item.why){
           fb.appendChild(el('p', null,
-            '<strong>' + p.item.text + '</strong> — ' + p.item.why));
+            '<strong>' + p.item.text + '</strong> — should be <em>' +
+            q.bins[p.item.bin] + '</em>. ' + p.item.why));
         }
       });
+      if (missed.length) derivation(fb, q, {});
       bump(got, marks);
     }
 
@@ -281,8 +326,14 @@
       const marks = qMarks(q);
       const fb = feedback(body, ok, ok ? marks : 0, marks, q.explain);
       if (!ok){
-        fb.appendChild(el('p', null,
-          '<strong>Correct equation:</strong> ' + R.join(' + ') + ' → ' + P.join(' + ')));
+        let why;
+        if (!okR && !okP) why = 'Both sides of your equation are wrong.';
+        else if (!okR) why = 'Your products are right, but the reactants are not — check what you started with.';
+        else why = 'Your reactants are right, but the products are not — check what the reaction actually makes.';
+        derivation(fb, q, {
+          whyWrong: why,
+          answerLine: R.join(' + ') + ' → ' + P.join(' + ')
+        });
       }
       bump(ok ? marks : 0, marks);
     });

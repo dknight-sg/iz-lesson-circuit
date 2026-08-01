@@ -155,7 +155,18 @@
             "stem": "<p>A solution turns red litmus paper blue. What can you conclude?</p>",
             "options": ["It is acidic", "It is neutral", "It is alkaline", "Nothing — red litmus never changes colour"],
             "answer": 2,
-            "explain": "Red litmus only turns blue in an alkali. In an acidic or neutral solution it stays red."
+            "explain": "Red litmus only turns blue in an alkali.",
+            "whyWrong": {
+              "0": "In an acid, red litmus <em>stays red</em> — it is blue litmus that turns red. A colour change on the red paper points the other way.",
+              "1": "In a neutral solution neither paper changes at all. Since the red paper did change, the solution cannot be neutral.",
+              "3": "Red litmus does change colour, and this is exactly the change that identifies an alkali."
+            },
+            "workthrough": [
+              "Recall the two rules: <strong>blue litmus turns red in acid</strong>; <strong>red litmus turns blue in alkali</strong>.",
+              "Identify which paper was used and what it did: the <em>red</em> paper turned <em>blue</em>.",
+              "Match that to the rules — only an alkali does this.",
+              "Cross-check the alternatives: an acid would have left red litmus unchanged, and so would a neutral solution. A change on red litmus is unique to alkalis."
+            ]
           },
           {
             "type": "mcq",
@@ -163,7 +174,19 @@
             "stem": "<p>Universal Indicator is added to a solution and turns orange. What is the approximate pH?</p>",
             "options": ["About pH 1 — strongly acidic", "About pH 5 — weakly acidic", "About pH 7 — neutral", "About pH 12 — strongly alkaline"],
             "answer": 1,
-            "explain": "On the Universal Indicator chart, red is below pH 4 and yellow is around pH 6, so orange sits between them at roughly pH 5 — weakly acidic."
+            "explain": "Orange sits between red and yellow on the Universal Indicator chart, around pH 5.",
+            "whyWrong": {
+              "0": "pH 1 would show as a strong <em>red</em>. Orange is less extreme, so the solution is only weakly acidic.",
+              "2": "Neutral pH 7 shows as <strong>green</strong>. Orange is well down on the acidic side of the chart.",
+              "3": "pH 12 would show as <em>indigo or violet</em> — the far alkaline end. Orange is the opposite side of the scale entirely."
+            },
+            "workthrough": [
+              "Recall the Universal Indicator colour order: red (below 4) → orange (~5) → yellow (~6) → <strong>green (7, neutral)</strong> → blue (~8) → indigo (~9) → violet (above 10).",
+              "Find orange in that sequence. It sits between red and yellow.",
+              "Read off the value: red is below 4, yellow is about 6, so orange is roughly <strong>pH 5</strong>.",
+              "Classify it: 5 is less than 7, so the solution is <strong>acidic</strong> — but not strongly so, since it has not gone fully red.",
+              "The memory anchor worth keeping is <em>green means neutral</em>. Everything warmer than green is acidic; everything cooler is alkaline."
+            ]
           },
           {
             "type": "mcq",
@@ -176,7 +199,19 @@
               "Red litmus turns blue in acid, so the student has it backwards"
             ],
             "answer": 1,
-            "explain": "This is the classic trap. Red litmus stays red in BOTH acidic and neutral solutions, so a 'no change' result rules out an alkali but proves nothing more. Testing with blue litmus — which turns red only in acid — would settle it."
+            "explain": "Red litmus staying red is consistent with two different answers, so it cannot single out one of them.",
+            "whyWrong": {
+              "0": "This is the trap the question is built around. Red litmus stays red in acidic <em>and</em> neutral solutions, so the observation cannot tell you which one you have.",
+              "2": "Damp litmus paper is standard practice, not a mistake. The flaw here is in the reasoning, not the technique.",
+              "3": "Red litmus does give useful information — turning blue would have proved an alkali. The problem is only that <em>staying</em> red is ambiguous."
+            },
+            "workthrough": [
+              "List every solution that leaves red litmus unchanged: <strong>acidic</strong> and <strong>neutral</strong> both do.",
+              "Because two different answers produce the same observation, the result cannot prove which one it is. That is the flaw.",
+              "Work out what the test <em>did</em> establish: it rules out an alkali, since an alkali would have turned the paper blue.",
+              "Pick a test that separates the two remaining options. <strong>Blue litmus</strong> turns red only in acid, so it distinguishes acidic from neutral.",
+              "Or use <strong>Universal Indicator</strong>, which gives an actual pH value instead of just a category."
+            ]
           }
         ]
       }

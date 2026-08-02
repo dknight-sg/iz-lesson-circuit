@@ -8,6 +8,7 @@
 <meta name="theme-color" content="#E4EAF0">
 <link rel="icon" type="image/svg+xml" href="../../../favicon.svg">
 <link rel="stylesheet" href="../../../css/style.css">
+<link rel="stylesheet" href="../../../css/interactive.css">
 </head>
 <body>
 <div class="sheet">
@@ -102,14 +103,75 @@
       </div>
     </div>
 
-    <h2 class="section">Quick check</h2>
-    <details class="q">
-      <summary><span class="qnum">Q</span> Three identical 2 Ω resistors are connected in series to a 6 V battery. What current flows?</summary>
-      <div class="a">
-        <p>R<sub>total</sub> = 2 + 2 + 2 = 6 Ω</p>
-        <p>I = V / R = 6 ÷ 6 = <span class="ans">1 A</span></p>
-      </div>
-    </details>
+    <h2 class="section">Check yourself</h2>
+    <div id="quiz">
+      <script type="application/json">
+      {
+        "questions": [
+          {
+            "type": "numeric",
+            "marks": 2,
+            "unit": "A",
+            "answer": 1,
+            "tolerance": 0.01,
+            "stem": "<p>Three identical 2 Ω resistors are connected in series to a 6 V battery. What current flows?</p>",
+            "explain": "Add the resistances first, then apply I = V ÷ R.",
+            "whyWrong": [
+              {
+                "near": 3,
+                "tol": 0.05,
+                "msg": "You used only one resistor (6 ÷ 2). The current passes through <em>all three</em>, so the total resistance is 6 Ω."
+              },
+              {
+                "near": 0.667,
+                "tol": 0.02,
+                "msg": "Check your total resistance — three 2 Ω resistors in series give 6 Ω, not 9 Ω."
+              },
+              {
+                "near": 36,
+                "tol": 1,
+                "msg": "You multiplied. To find current, divide the voltage by the total resistance."
+              }
+            ],
+            "workthrough": [
+              "Work in two steps. <strong>Step 1:</strong> find the total resistance.",
+              "In series the resistances add: 2 + 2 + 2 = <strong>6 Ω</strong>.",
+              "<strong>Step 2:</strong> apply Ohm's Law to the whole circuit: I = V ÷ R<sub>total</sub>.",
+              "Substitute: I = 6 ÷ 6 = <strong>1 A</strong>.",
+              "Remember this 1 A flows through <em>every</em> resistor — in series the current is the same everywhere."
+            ]
+          },
+          {
+            "type": "numeric",
+            "marks": 1,
+            "unit": "V",
+            "answer": 2,
+            "tolerance": 0.01,
+            "stem": "<p>In that same circuit, what is the p.d. across <strong>one</strong> of the 2 Ω resistors?</p>",
+            "explain": "Apply V = I × R to that single resistor, using the current you just found.",
+            "whyWrong": [
+              {
+                "near": 6,
+                "tol": 0.1,
+                "msg": "That is the total EMF. It is shared between all three resistors, so each takes only part of it."
+              },
+              {
+                "near": 0.5,
+                "tol": 0.05,
+                "msg": "You divided the wrong way. Use V = I × R with I = 1 A and R = 2 Ω."
+              }
+            ],
+            "workthrough": [
+              "Use the current from the previous step: I = <strong>1 A</strong>, the same through every resistor.",
+              "Apply Ohm's Law to <em>one</em> resistor on its own: <strong>V = I × R</strong>.",
+              "Substitute: V = 1 × 2 = <strong>2 V</strong>.",
+              "Check with the energy budget: three resistors at 2 V each gives 2 + 2 + 2 = 6 V, exactly the EMF. ✓"
+            ]
+          }
+        ]
+      }
+      </script>
+    </div>
   </div>
 
   <nav class="lesson-nav">
@@ -118,5 +180,6 @@
   </nav>
 </div>
 <script src="../../../js/mini-series.js"></script>
+<script src="../../../js/quiz-engine.js"></script>
 </body>
 </html>

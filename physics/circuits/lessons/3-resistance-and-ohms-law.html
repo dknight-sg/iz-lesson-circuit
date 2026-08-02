@@ -8,6 +8,7 @@
 <meta name="theme-color" content="#E4EAF0">
 <link rel="icon" type="image/svg+xml" href="../../../favicon.svg">
 <link rel="stylesheet" href="../../../css/style.css">
+<link rel="stylesheet" href="../../../css/interactive.css">
 </head>
 <body>
 <div class="sheet">
@@ -91,13 +92,74 @@
       </div>
     </div>
 
-    <h2 class="section">Quick check</h2>
-    <details class="q">
-      <summary><span class="qnum">Q</span> A lamp has resistance 6 Ω. A current of 1.5 A flows through it. What is the p.d. across the lamp?</summary>
-      <div class="a">
-        <p>V = I × R = 1.5 × 6 = <span class="ans">9 V</span></p>
-      </div>
-    </details>
+    <h2 class="section">Check yourself</h2>
+    <div id="quiz">
+      <script type="application/json">
+      {
+        "questions": [
+          {
+            "type": "numeric",
+            "marks": 1,
+            "unit": "V",
+            "answer": 9,
+            "tolerance": 0.01,
+            "stem": "<p>A lamp has resistance 6 Ω. A current of 1.5 A flows through it. What is the p.d. across the lamp?</p>",
+            "explain": "Ohm's Law: V = I × R.",
+            "whyWrong": [
+              {
+                "near": 4,
+                "tol": 0.05,
+                "msg": "You divided (6 ÷ 1.5). To find voltage from current and resistance you multiply them."
+              },
+              {
+                "near": 0.25,
+                "tol": 0.02,
+                "msg": "You divided the wrong way round. V = I × R."
+              },
+              {
+                "near": 7.5,
+                "tol": 0.1,
+                "msg": "You added. Ohm's Law multiplies current by resistance."
+              }
+            ],
+            "workthrough": [
+              "Identify what you have: I = 1.5 A, R = 6 Ω, and you want V.",
+              "Use Ohm's Law in its base form — no rearranging needed: <strong>V = I × R</strong>.",
+              "Substitute: V = 1.5 × 6 = <strong>9 V</strong>.",
+              "Sense-check: raising either the current or the resistance should raise the voltage, and multiplying does exactly that."
+            ]
+          },
+          {
+            "type": "numeric",
+            "marks": 1,
+            "unit": "A",
+            "answer": 3,
+            "tolerance": 0.01,
+            "stem": "<p>A 12 V battery is connected across a 4 Ω resistor. What current flows?</p>",
+            "explain": "Rearranging Ohm's Law gives I = V ÷ R.",
+            "whyWrong": [
+              {
+                "near": 48,
+                "tol": 0.5,
+                "msg": "You multiplied. To find current, divide the voltage by the resistance."
+              },
+              {
+                "near": 0.333,
+                "tol": 0.02,
+                "msg": "You divided the wrong way round (R ÷ V). Current is volts divided by ohms."
+              }
+            ],
+            "workthrough": [
+              "Write down what you have: V = 12 V, R = 4 Ω, find I.",
+              "Start from <strong>V = I × R</strong> and divide both sides by R: <strong>I = V ÷ R</strong>.",
+              "Substitute: I = 12 ÷ 4 = <strong>3 A</strong>.",
+              "Check the relationship: doubling the resistance would halve the current — resistance and current are inversely related at fixed voltage."
+            ]
+          }
+        ]
+      }
+      </script>
+    </div>
   </div>
 
   <nav class="lesson-nav">
@@ -106,5 +168,6 @@
   </nav>
 </div>
 <script src="../../../js/mini-single.js"></script>
+<script src="../../../js/quiz-engine.js"></script>
 </body>
 </html>

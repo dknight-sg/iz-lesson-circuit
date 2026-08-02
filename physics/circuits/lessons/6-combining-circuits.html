@@ -8,6 +8,7 @@
 <meta name="theme-color" content="#E4EAF0">
 <link rel="icon" type="image/svg+xml" href="../../../favicon.svg">
 <link rel="stylesheet" href="../../../css/style.css">
+<link rel="stylesheet" href="../../../css/interactive.css">
 </head>
 <body>
 <div class="sheet">
@@ -136,6 +137,91 @@
         Same circuit, one level up: a 5-step guided walkthrough, and switches to break the series link or either parallel branch — see for yourself which one kills the whole circuit.
       </span>
     </a>
+    <h2 class="section">Check yourself</h2>
+    <div id="quiz">
+      <script type="application/json">
+      {
+        "questions": [
+          {
+            "type": "numeric",
+            "marks": 2,
+            "unit": "A",
+            "answer": 5,
+            "tolerance": 0.05,
+            "stem": "<p>A 20 V battery is connected to a 2 Ω resistor in series with a parallel pair of 6 Ω and 3 Ω. Find the total current from the battery.</p>",
+            "explain": "Collapse the parallel pair first, add the series resistor, then use I = V ÷ R.",
+            "whyWrong": [
+              {
+                "near": 1.82,
+                "tol": 0.05,
+                "msg": "You added all three resistances as if they were in series (2 + 6 + 3 = 11 Ω). The 6 Ω and 3 Ω are in <em>parallel</em> and must be combined first."
+              },
+              {
+                "near": 10,
+                "tol": 0.2,
+                "msg": "You used only one part of the circuit (20 ÷ 2). Both the series resistor and the parallel section contribute to the total resistance."
+              },
+              {
+                "near": 2.22,
+                "tol": 0.08,
+                "msg": "You seem to have used 6 + 3 = 9 Ω for the parallel pair. In parallel the combined resistance is <em>smaller</em> than either branch, not their sum."
+              },
+              {
+                "near": 4,
+                "tol": 0.05,
+                "msg": "You have the right total resistance of 4 Ω but divided incorrectly — 20 ÷ 4 = 5, not 4."
+              }
+            ],
+            "workthrough": [
+              "Always collapse the <strong>parallel section first</strong> — never mix the two rules in one step.",
+              "R<sub>p</sub> = (6 × 3) ÷ (6 + 3) = 18 ÷ 9 = <strong>2 Ω</strong>.",
+              "Now the circuit is just two resistances in series: R<sub>total</sub> = 2 + 2 = <strong>4 Ω</strong>.",
+              "Apply Ohm's Law to the whole circuit: I = V ÷ R<sub>total</sub> = 20 ÷ 4 = <strong>5 A</strong>.",
+              "Sense-check: R<sub>p</sub> (2 Ω) is smaller than the smaller branch (3 Ω) ✓"
+            ]
+          },
+          {
+            "type": "numeric",
+            "marks": 2,
+            "unit": "V",
+            "answer": 10,
+            "tolerance": 0.1,
+            "stem": "<p>Same circuit. What is the p.d. across the <strong>parallel section</strong>?</p>",
+            "explain": "V_p = I × R_p, using the total current that flows into the parallel section.",
+            "whyWrong": [
+              {
+                "near": 20,
+                "tol": 0.2,
+                "msg": "The full 20 V is shared between the series resistor and the parallel section — the parallel part gets only its share."
+              },
+              {
+                "near": 5,
+                "tol": 0.1,
+                "msg": "That is the <em>current</em> in amps, not a voltage. Multiply it by the combined parallel resistance."
+              },
+              {
+                "near": 2,
+                "tol": 0.1,
+                "msg": "That is the combined parallel resistance in ohms, not a voltage. You still need to multiply by the current."
+              },
+              {
+                "near": 30,
+                "tol": 0.5,
+                "msg": "Your answer exceeds the battery's EMF, which is impossible — no part of a circuit can have a p.d. larger than the supply."
+              }
+            ],
+            "workthrough": [
+              "Use the results from the previous step: I = <strong>5 A</strong> and R<sub>p</sub> = <strong>2 Ω</strong>.",
+              "The whole 5 A flows into the parallel section, because everything before the junction is a single path.",
+              "Apply Ohm's Law to the parallel section as a single block: <strong>V<sub>p</sub> = I × R<sub>p</sub></strong>.",
+              "Substitute: V<sub>p</sub> = 5 × 2 = <strong>10 V</strong>.",
+              "Check the energy budget: the series resistor takes V<sub>s</sub> = 5 × 2 = 10 V, and 10 + 10 = 20 V — the full EMF. ✓"
+            ]
+          }
+        ]
+      }
+      </script>
+    </div>
   </div>
 
   <nav class="lesson-nav">
@@ -144,5 +230,6 @@
   </nav>
 </div>
 <script src="../../../js/mini-combined.js"></script>
+<script src="../../../js/quiz-engine.js"></script>
 </body>
 </html>

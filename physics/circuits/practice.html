@@ -4,206 +4,545 @@
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <title>Practice — Circuit Lab</title>
-<meta name="description" content="20 practice questions on charge, current, voltage, resistance, series and parallel circuits, with worked solutions.">
+<meta name="description" content="20 interactive practice questions on charge, current, voltage, resistance, series and parallel circuits — every wrong answer explains why and walks through the working.">
 <meta name="theme-color" content="#E4EAF0">
 <link rel="icon" type="image/svg+xml" href="../../favicon.svg">
 <link rel="stylesheet" href="../../css/style.css">
+<link rel="stylesheet" href="../../css/interactive.css">
 </head>
 <body>
 <div class="sheet">
   <header>
     <div>
-      <a class="crumb" href="index.html">← Circuit Lab course</a>
+      <a class="crumb" href="index.html">← Circuit Lab</a>
       <p class="eyebrow" style="margin-top:10px">Practice</p>
       <h1>20 questions</h1>
     </div>
-    <p class="sub">Work each one out on paper first, then tap "show answer" to check. They get harder as you go, mixing combined-circuit calculations with reasoning questions tied to the lab.</p>
+    <p class="sub">Most of these ask you to <strong>type the answer</strong> rather than pick one — so you cannot work backwards from the options. Get one wrong and you'll be shown why, then walked through the working.</p>
   </header>
 
-  <div class="qlist">
+  <div class="scorebar" id="scorebar">
+    <span>Score <span class="sc">0 / 0</span></span>
+    <span class="bar"><span></span></span>
+    <span class="dn">0 of 20 answered</span>
+    <button class="qz-reset" type="button">Start again</button>
+  </div>
 
-    <details class="q">
-      <summary><span class="qnum">Q1</span> A charge of 15 C flows past a point in a wire in 5 s. Calculate the current.<span class="qtag">Easy</span></summary>
-      <div class="a">
-        <p>I = Q / t = 15 ÷ 5 = <span class="ans">3 A</span></p>
-      </div>
-    </details>
+  <!-- symbol sheet, cloned into Q1 by the engine -->
+  <svg id="symbolSheet" class="symsheet" viewBox="0 0 560 250" style="display:none"
+       role="img" aria-label="Six numbered circuit symbols">
+    <!-- 1 cell -->
+    <g>
+      <line class="sym-w" x1="20" y1="46" x2="58" y2="46"/>
+      <line class="sym-w" x1="58" y1="28" x2="58" y2="64"/>
+      <line class="sym-w" x1="72" y1="36" x2="72" y2="56"/>
+      <line class="sym-w" x1="72" y1="46" x2="110" y2="46"/>
+      <circle class="sym-c" cx="65" cy="92" r="14"/>
+      <text class="sym-n" x="65" y="97">1</text>
+    </g>
+    <!-- 2 lamp -->
+    <g>
+      <line class="sym-w" x1="200" y1="46" x2="222" y2="46"/>
+      <circle class="sym-f" cx="245" cy="46" r="23"/>
+      <line class="sym-w" x1="229" y1="30" x2="261" y2="62"/>
+      <line class="sym-w" x1="261" y1="30" x2="229" y2="62"/>
+      <line class="sym-w" x1="268" y1="46" x2="290" y2="46"/>
+      <circle class="sym-c" cx="245" cy="92" r="14"/>
+      <text class="sym-n" x="245" y="97">2</text>
+    </g>
+    <!-- 3 switch (open) -->
+    <g>
+      <line class="sym-w" x1="380" y1="46" x2="415" y2="46"/>
+      <circle cx="418" cy="46" r="3.5" fill="#0F2436"/>
+      <line class="sym-w" x1="418" y1="46" x2="452" y2="28"/>
+      <circle cx="455" cy="46" r="3.5" fill="#0F2436"/>
+      <line class="sym-w" x1="455" y1="46" x2="490" y2="46"/>
+      <circle class="sym-c" cx="435" cy="92" r="14"/>
+      <text class="sym-n" x="435" y="97">3</text>
+    </g>
+    <!-- 4 fixed resistor -->
+    <g>
+      <line class="sym-w" x1="20" y1="166" x2="42" y2="166"/>
+      <rect class="sym-f" x="42" y="152" width="46" height="28" rx="2"/>
+      <line class="sym-w" x1="88" y1="166" x2="110" y2="166"/>
+      <circle class="sym-c" cx="65" cy="212" r="14"/>
+      <text class="sym-n" x="65" y="217">4</text>
+    </g>
+    <!-- 5 ammeter -->
+    <g>
+      <line class="sym-w" x1="200" y1="166" x2="222" y2="166"/>
+      <circle class="sym-f" cx="245" cy="166" r="23"/>
+      <text class="sym-t" x="245" y="172">A</text>
+      <line class="sym-w" x1="268" y1="166" x2="290" y2="166"/>
+      <circle class="sym-c" cx="245" cy="212" r="14"/>
+      <text class="sym-n" x="245" y="217">5</text>
+    </g>
+    <!-- 6 variable resistor -->
+    <g>
+      <line class="sym-w" x1="380" y1="166" x2="402" y2="166"/>
+      <rect class="sym-f" x="402" y="152" width="46" height="28" rx="2"/>
+      <line class="sym-w" x1="448" y1="166" x2="470" y2="166"/>
+      <line class="sym-w" x1="392" y1="192" x2="458" y2="142"/>
+      <path class="sym-w" d="M 450 142 L 458 142 L 458 150" fill="none"/>
+      <circle class="sym-c" cx="425" cy="212" r="14"/>
+      <text class="sym-n" x="425" y="217">6</text>
+    </g>
+  </svg>
 
-    <details class="q">
-      <summary><span class="qnum">Q2</span> A current of 2 A flows through a heater for 3 minutes. How much charge flows through it?<span class="qtag">Easy</span></summary>
-      <div class="a">
-        <p>Convert to seconds first: 3 minutes = 180 s.</p>
-        <p>Q = I × t = 2 × 180 = <span class="ans">360 C</span></p>
-      </div>
-    </details>
-
-    <details class="q">
-      <summary><span class="qnum">Q3</span> A battery does 45 J of work moving 9 C of charge around a circuit. What is its EMF?<span class="qtag">Easy</span></summary>
-      <div class="a">
-        <p>V = W / Q = 45 ÷ 9 = <span class="ans">5 V</span></p>
-      </div>
-    </details>
-
-    <details class="q">
-      <summary><span class="qnum">Q4</span> A 9 V battery moves 8 C of charge around a circuit. How much energy is transferred?<span class="qtag">Easy</span></summary>
-      <div class="a">
-        <p>Rearrange V = W/Q to make W the subject: W = V × Q.</p>
-        <p>W = 9 × 8 = <span class="ans">72 J</span></p>
-      </div>
-    </details>
-
-    <details class="q">
-      <summary><span class="qnum">Q5</span> A resistor of 8 Ω has a current of 2.5 A flowing through it. Calculate the p.d. across it.<span class="qtag">Medium</span></summary>
-      <div class="a">
-        <p>V = I × R = 2.5 × 8 = <span class="ans">20 V</span></p>
-      </div>
-    </details>
-
-    <details class="q">
-      <summary><span class="qnum">Q6</span> A 15 V supply drives a current of 3 A through a resistor. What is its resistance?<span class="qtag">Medium</span></summary>
-      <div class="a">
-        <p>R = V / I = 15 ÷ 3 = <span class="ans">5 Ω</span></p>
-      </div>
-    </details>
-
-    <details class="q">
-      <summary><span class="qnum">Q7</span> A 4 Ω resistor and a 6 Ω resistor are connected in series to a 20 V battery. Find (a) the total resistance, (b) the current, (c) the p.d. across each resistor.<span class="qtag">Medium</span></summary>
-      <div class="a">
-        <p>(a) R<sub>total</sub> = 4 + 6 = <strong>10 Ω</strong></p>
-        <p>(b) I = V / R = 20 ÷ 10 = <strong>2 A</strong> — this is the current everywhere in the loop</p>
-        <p>(c) V<sub>1</sub> = I × 4 = 8 V &nbsp;·&nbsp; V<sub>2</sub> = I × 6 = 12 V &nbsp;(check: 8 + 12 = 20 V ✓)</p>
-        <p class="ans">V1 = 8 V, V2 = 12 V</p>
-      </div>
-    </details>
-
-    <details class="q">
-      <summary><span class="qnum">Q8</span> A 5 Ω resistor and a 20 Ω resistor are connected in parallel across a 10 V supply. Find (a) the current in each branch, (b) the total current, (c) the combined resistance.<span class="qtag">Medium</span></summary>
-      <div class="a">
-        <p>Both branches see the full 10 V.</p>
-        <p>(a) I<sub>1</sub> = 10 ÷ 5 = 2 A &nbsp;·&nbsp; I<sub>2</sub> = 10 ÷ 20 = 0.5 A</p>
-        <p>(b) I<sub>total</sub> = 2 + 0.5 = <strong>2.5 A</strong></p>
-        <p>(c) 1/R<sub>p</sub> = 1/5 + 1/20 = 4/20 + 1/20 = 5/20, so R<sub>p</sub> = 20/5 = 4 Ω &nbsp;(check: I = V/R<sub>p</sub> = 10/4 = 2.5 A ✓)</p>
-        <p class="ans">I1 = 2 A, I2 = 0.5 A, Rp = 4 Ω</p>
-      </div>
-    </details>
-
-    <details class="q">
-      <summary><span class="qnum">Q9</span> A 9 V battery is connected to a 1 Ω resistor in series with two parallel resistors, each 2 Ω. Find the total current, and the current through each parallel branch.<span class="qtag">Hard</span></summary>
-      <div class="a">
-        <p>R<sub>p</sub> = (2 × 2) / (2 + 2) = 4/4 = 1 Ω</p>
-        <p>R<sub>total</sub> = 1 + 1 = 2 Ω</p>
-        <p>I = 9 ÷ 2 = <strong>4.5 A</strong></p>
-        <p>V<sub>s</sub> = 4.5 × 1 = 4.5 V &nbsp;·&nbsp; V<sub>p</sub> = 4.5 × 1 = 4.5 V &nbsp;(check: 4.5 + 4.5 = 9 V ✓)</p>
-        <p>Since both parallel resistors are equal, the current splits evenly: I<sub>1</sub> = I<sub>2</sub> = 4.5 ÷ 2 = 2.25 A</p>
-        <p class="ans">I = 4.5 A, I1 = I2 = 2.25 A</p>
-      </div>
-    </details>
-
-    <details class="q">
-      <summary><span class="qnum">Q10</span> This is the lab's circuit: 12 V battery, 1.0 Ω in series with (1.0 Ω ∥ 2.5 Ω). The 1.0 Ω branch develops a fault and goes open-circuit. Without calculating first — will the current in the 2.5 Ω branch increase, decrease, or stay the same? Will the voltmeter across the battery terminals change? Then calculate the new current to check, and verify it live in the lab.<span class="qtag">Hard · reasoning</span></summary>
-      <div class="a">
-        <p><strong>Predict:</strong> with the 1.0 Ω branch cut, all the current that used to split between two branches now has only one road left — the 2.5 Ω branch — so its current should <strong>increase</strong>. The voltmeter is wired straight across the battery terminals and draws no current, so it keeps reading the full EMF no matter what the branches are doing: it should <strong>stay at 12 V</strong>.</p>
-        <p><strong>Check:</strong> with the 1.0 Ω branch open, current only flows through the 1.0 Ω series resistor and the 2.5 Ω branch: R<sub>total</sub> = 1.0 + 2.5 = 3.5 Ω.</p>
-        <p>I = 12 ÷ 3.5 ≈ <strong>3.4 A</strong> — up from 2.0 A before the fault, confirming the prediction.</p>
-        <p class="ans">2.5 Ω branch: 2.0 A → 3.4 A. Voltmeter: stays at 12 V.</p>
-        <p>Go to <a href="lab.html">the lab</a> and use the "Top branch" switch under Break the Circuit to see this exact scenario animate.</p>
-      </div>
-    </details>
-
-    <details class="q">
-      <summary><span class="qnum">Q11</span> A current of 4 A flows through a device. How long does it take for 20 C of charge to flow through it?<span class="qtag">Easy</span></summary>
-      <div class="a">
-        <p>Rearrange I = Q/t to make t the subject: t = Q / I.</p>
-        <p>t = 20 ÷ 4 = <span class="ans">5 s</span></p>
-      </div>
-    </details>
-
-    <details class="q">
-      <summary><span class="qnum">Q12</span> A battery transfers 150 J of energy moving 25 C of charge around a circuit. What is its EMF?<span class="qtag">Easy</span></summary>
-      <div class="a">
-        <p>V = W / Q = 150 ÷ 25 = <span class="ans">6 V</span></p>
-      </div>
-    </details>
-
-    <details class="q">
-      <summary><span class="qnum">Q13</span> A component has 18 V across it when a current of 3 A flows through it. Find its resistance.<span class="qtag">Medium</span></summary>
-      <div class="a">
-        <p>R = V / I = 18 ÷ 3 = <span class="ans">6 Ω</span></p>
-      </div>
-    </details>
-
-    <details class="q">
-      <summary><span class="qnum">Q14</span> Three resistors — 1 Ω, 2 Ω and 3 Ω — are connected in series to a 12 V battery. Find the current, and the p.d. across each resistor.<span class="qtag">Medium</span></summary>
-      <div class="a">
-        <p>R<sub>total</sub> = 1 + 2 + 3 = 6 Ω</p>
-        <p>I = 12 ÷ 6 = <strong>2 A</strong> — the same everywhere in the loop</p>
-        <p>V<sub>1</sub> = 2 × 1 = 2 V &nbsp;·&nbsp; V<sub>2</sub> = 2 × 2 = 4 V &nbsp;·&nbsp; V<sub>3</sub> = 2 × 3 = 6 V &nbsp;(check: 2 + 4 + 6 = 12 V ✓)</p>
-        <p class="ans">I = 2 A, V1 = 2 V, V2 = 4 V, V3 = 6 V</p>
-      </div>
-    </details>
-
-    <details class="q">
-      <summary><span class="qnum">Q15</span> Three resistors — 2 Ω, 4 Ω and 4 Ω — are connected in parallel across an 8 V supply. Find the current in each branch, the total current, and the combined resistance.<span class="qtag">Medium</span></summary>
-      <div class="a">
-        <p>All three branches see the full 8 V.</p>
-        <p>I<sub>1</sub> = 8 ÷ 2 = 4 A &nbsp;·&nbsp; I<sub>2</sub> = 8 ÷ 4 = 2 A &nbsp;·&nbsp; I<sub>3</sub> = 8 ÷ 4 = 2 A</p>
-        <p>I<sub>total</sub> = 4 + 2 + 2 = <strong>8 A</strong></p>
-        <p>1/R<sub>p</sub> = 1/2 + 1/4 + 1/4 = 2/4 + 1/4 + 1/4 = 4/4 = 1, so R<sub>p</sub> = <strong>1 Ω</strong> &nbsp;(check: I = 8/1 = 8 A ✓)</p>
-        <p class="ans">I1 = 4 A, I2 = I3 = 2 A, Itotal = 8 A, Rp = 1 Ω</p>
-      </div>
-    </details>
-
-    <details class="q">
-      <summary><span class="qnum">Q16</span> A 20 V battery is connected to a 2 Ω resistor in series with a parallel combination of a 3 Ω and a 6 Ω resistor. Find the total current and the current through each parallel branch.<span class="qtag">Hard</span></summary>
-      <div class="a">
-        <p>R<sub>p</sub> = (3 × 6) / (3 + 6) = 18/9 = 2 Ω</p>
-        <p>R<sub>total</sub> = 2 + 2 = 4 Ω</p>
-        <p>I = 20 ÷ 4 = <strong>5 A</strong></p>
-        <p>V<sub>s</sub> = 5 × 2 = 10 V &nbsp;·&nbsp; V<sub>p</sub> = 5 × 2 = 10 V &nbsp;(check: 10 + 10 = 20 V ✓)</p>
-        <p>I<sub>1</sub> = 10 / 3 ≈ 3.3 A &nbsp;·&nbsp; I<sub>2</sub> = 10 / 6 ≈ 1.7 A &nbsp;(check: 3.3 + 1.7 = 5 A ✓)</p>
-        <p class="ans">I = 5 A, I1 ≈ 3.3 A, I2 ≈ 1.7 A</p>
-      </div>
-    </details>
-
-    <details class="q">
-      <summary><span class="qnum">Q17</span> A 24 V battery is connected to a 3 Ω resistor in series with a parallel combination of a 4 Ω and a 12 Ω resistor. Find the total current and the current through each parallel branch.<span class="qtag">Hard</span></summary>
-      <div class="a">
-        <p>R<sub>p</sub> = (4 × 12) / (4 + 12) = 48/16 = 3 Ω</p>
-        <p>R<sub>total</sub> = 3 + 3 = 6 Ω</p>
-        <p>I = 24 ÷ 6 = <strong>4 A</strong></p>
-        <p>V<sub>s</sub> = 4 × 3 = 12 V &nbsp;·&nbsp; V<sub>p</sub> = 4 × 3 = 12 V &nbsp;(check: 12 + 12 = 24 V ✓)</p>
-        <p>I<sub>1</sub> = 12 / 4 = 3 A &nbsp;·&nbsp; I<sub>2</sub> = 12 / 12 = 1 A &nbsp;(check: 3 + 1 = 4 A ✓)</p>
-        <p class="ans">I = 4 A, I1 = 3 A, I2 = 1 A</p>
-      </div>
-    </details>
-
-    <details class="q">
-      <summary><span class="qnum">Q18</span> A third resistor is added in series to an existing series circuit. What happens to the total resistance, and what happens to the current? Explain.<span class="qtag">Medium · reasoning</span></summary>
-      <div class="a">
-        <p>Total resistance <strong>increases</strong> — series resistances simply add up, so an extra resistor always adds to the total.</p>
-        <p>Since I = V/R and R has increased while the battery's EMF hasn't changed, the current <strong>decreases</strong>.</p>
-      </div>
-    </details>
-
-    <details class="q">
-      <summary><span class="qnum">Q19</span> A third branch is added in parallel to an existing parallel circuit. What happens to the combined resistance, and what happens to the total current drawn from the battery? Explain.<span class="qtag">Medium · reasoning</span></summary>
-      <div class="a">
-        <p>Combined resistance <strong>decreases</strong> — every extra branch gives the charge another route through, and 1/R<sub>p</sub> = 1/R<sub>1</sub> + 1/R<sub>2</sub> + … only ever grows as you add terms.</p>
-        <p>Since I = V/R<sub>p</sub> and R<sub>p</sub> has fallen while the EMF hasn't changed, the total current <strong>increases</strong>.</p>
-      </div>
-    </details>
-
-    <details class="q">
-      <summary><span class="qnum">Q20</span> Back to the lab's circuit: 12 V battery, 1.0 Ω in series with (1.0 Ω ∥ 2.5 Ω) — but this time the <strong>bottom</strong> branch (2.5 Ω) develops the fault and goes open-circuit, not the top one. Predict what happens to the current in the 1.0 Ω branch, and to the total current from the battery, compared with Q10's scenario. Then check in the lab.<span class="qtag">Hard · reasoning</span></summary>
-      <div class="a">
-        <p><strong>Predict:</strong> the 1.0 Ω branch now carries everything the battery supplies, so its current should rise. But because 1.0 Ω is a much easier road than the 2.5 Ω branch from Q10, expect a bigger total current here than in Q10's case.</p>
-        <p><strong>Check:</strong> R<sub>total</sub> = 1.0 (series) + 1.0 (only remaining branch) = 2.0 Ω.</p>
-        <p>I = 12 ÷ 2.0 = <strong>6.0 A</strong> — up from 5.0 A before the fault (all of it now through the 1.0 Ω branch).</p>
-        <p>Compare with Q10: cutting the 2.5 Ω branch there left total current at 3.4 A. Cutting the <em>smaller</em>-resistance branch here leaves a <em>bigger</em> total current (6.0 A) — losing the easier road costs you more current than losing the harder one.</p>
-        <p class="ans">1.0 Ω branch: 5.0 A → 6.0 A. Total current: 7.0 A → 6.0 A.</p>
-      </div>
-    </details>
-
+  <div class="qlist" id="quiz">
+    <script type="application/json">
+    {
+      "questions": [
+        {
+          "type": "label",
+          "diagramRef": "#symbolSheet",
+          "stem": "<p>Name each of these six circuit symbols.</p>",
+          "labels": ["Cell", "Battery", "Lamp", "Switch", "Fixed resistor", "Variable resistor", "Ammeter", "Voltmeter"],
+          "parts": [
+            {"n":1, "answer":"Cell", "why":"One long thin line and one short thick line. A <em>battery</em> would be two or more of these pairs joined in a row."},
+            {"n":2, "answer":"Lamp", "why":"A circle with a cross through it. The ammeter and voltmeter are also circles, but they carry the letter A or V instead."},
+            {"n":3, "answer":"Switch", "why":"Two contact dots with a hinged arm lifted away from one of them — this one is drawn open."},
+            {"n":4, "answer":"Fixed resistor", "why":"A plain rectangle in the wire. Adding a diagonal arrow through it would make it variable."},
+            {"n":5, "answer":"Ammeter", "why":"A circle containing the letter <strong>A</strong>. It is connected in series to measure current."},
+            {"n":6, "answer":"Variable resistor", "why":"A rectangle with a diagonal arrow through it. The arrow is what tells you the resistance can be changed."}
+          ],
+          "explain": "Three of these are circles — the letter inside (or the cross) is what tells them apart.",
+          "workthrough": [
+            "Sort them into families first. Three symbols here are <strong>circles</strong>, and they differ only by what is inside.",
+            "A circle with a <strong>cross</strong> is a lamp. A circle with <strong>A</strong> is an ammeter. A circle with <strong>V</strong> would be a voltmeter.",
+            "Two symbols are <strong>rectangles</strong>. A plain rectangle is a fixed resistor; add a <strong>diagonal arrow</strong> through it and it becomes variable.",
+            "The lines symbol: one long thin line plus one short thick line is a single <strong>cell</strong>. Two or more such pairs in a row is a <strong>battery</strong>.",
+            "The one with two dots and a lifted arm is a <strong>switch</strong> — drawn open here, so no current can flow."
+          ]
+        },
+        {
+          "type": "numeric",
+          "marks": 1,
+          "unit": "A",
+          "answer": 3,
+          "tolerance": 0.01,
+          "stem": "<p>A charge of 15 C flows past a point in a wire in 5 s. Calculate the current.</p>",
+          "explain": "Current is the rate of flow of charge: I = Q ÷ t.",
+          "whyWrong": [
+            {"near": 75, "tol": 0.5, "msg": "You multiplied instead of dividing. Current is charge <em>per second</em>, so it is a division."},
+            {"near": 0.333, "tol": 0.02, "msg": "You divided the wrong way round (t ÷ Q). Current is charge divided by time, not time divided by charge."}
+          ],
+          "workthrough": [
+            "Write down what you are given: Q = 15 C, t = 5 s.",
+            "Recall the definition — current is the <strong>rate of flow of charge</strong>, meaning charge per second.",
+            "That gives the formula <strong>I = Q ÷ t</strong>.",
+            "Substitute: I = 15 ÷ 5 = <strong>3 A</strong>.",
+            "Sanity check the units: coulombs ÷ seconds = C/s, and 1 C/s is exactly 1 ampere."
+          ]
+        },
+        {
+          "type": "numeric",
+          "marks": 2,
+          "unit": "C",
+          "answer": 360,
+          "tolerance": 0.5,
+          "stem": "<p>A current of 2 A flows through a heater for <strong>3 minutes</strong>. How much charge flows through it?</p>",
+          "explain": "Q = I × t, but the time must be in seconds first.",
+          "whyWrong": [
+            {"near": 6, "tol": 0.1, "msg": "You used 3 instead of 180 — the time was given in <strong>minutes</strong> and the formula needs <strong>seconds</strong>. This is the single most common slip in this topic."},
+            {"near": 90, "tol": 1, "msg": "You divided rather than multiplied. To find charge from current and time you multiply them."},
+            {"near": 0.011, "tol": 0.005, "msg": "You divided the wrong way round. Q = I × t, not t ÷ I."}
+          ],
+          "workthrough": [
+            "Note what you are given: I = 2 A, t = 3 minutes.",
+            "<strong>Convert the time to seconds first.</strong> The formula only works in SI units: 3 × 60 = <strong>180 s</strong>.",
+            "Rearrange I = Q ÷ t to make Q the subject: <strong>Q = I × t</strong>.",
+            "Substitute: Q = 2 × 180 = <strong>360 C</strong>.",
+            "Whenever a question gives you minutes or hours, convert before you do anything else — it is the mistake examiners deliberately set up."
+          ]
+        },
+        {
+          "type": "numeric",
+          "marks": 1,
+          "unit": "V",
+          "answer": 5,
+          "tolerance": 0.01,
+          "stem": "<p>A battery does 45 J of work moving 9 C of charge around a circuit. What is its EMF?</p>",
+          "explain": "Voltage is energy per unit charge: V = W ÷ Q.",
+          "whyWrong": [
+            {"near": 405, "tol": 1, "msg": "You multiplied instead of dividing. Voltage is energy <em>per coulomb</em>, so it is a division."},
+            {"near": 0.2, "tol": 0.02, "msg": "You divided the wrong way round (Q ÷ W). Voltage is energy divided by charge."},
+            {"near": 36, "tol": 0.5, "msg": "You subtracted. There is no subtraction here — voltage is a ratio of energy to charge."}
+          ],
+          "workthrough": [
+            "List what you have: W = 45 J of energy, Q = 9 C of charge.",
+            "Recall the meaning of voltage — it is the <strong>energy transferred per unit charge</strong>, so 1 V = 1 J/C.",
+            "That gives <strong>V = W ÷ Q</strong>.",
+            "Substitute: V = 45 ÷ 9 = <strong>5 V</strong>.",
+            "Read it back as a sentence to check it makes sense: every coulomb of charge carries 5 joules of energy."
+          ]
+        },
+        {
+          "type": "numeric",
+          "marks": 1,
+          "unit": "J",
+          "answer": 60,
+          "tolerance": 0.1,
+          "stem": "<p>A 12 V battery moves 5 C of charge around a circuit. How much energy is transferred?</p>",
+          "explain": "Rearranging V = W ÷ Q gives W = V × Q.",
+          "whyWrong": [
+            {"near": 2.4, "tol": 0.1, "msg": "You divided (12 ÷ 5). To find the total energy from voltage and charge you multiply them."},
+            {"near": 0.417, "tol": 0.02, "msg": "You divided the wrong way round. Start from V = W ÷ Q and rearrange to W = V × Q."},
+            {"near": 17, "tol": 0.5, "msg": "You added. Voltage and charge multiply to give energy — they are not added."}
+          ],
+          "workthrough": [
+            "Identify what is asked for: the energy W, given V = 12 V and Q = 5 C.",
+            "Start from the definition of voltage: <strong>V = W ÷ Q</strong>.",
+            "Rearrange to make W the subject — multiply both sides by Q: <strong>W = V × Q</strong>.",
+            "Substitute: W = 12 × 5 = <strong>60 J</strong>.",
+            "Check it against the meaning: each coulomb carries 12 J, and there are 5 coulombs, so 60 J in total."
+          ]
+        },
+        {
+          "type": "numeric",
+          "marks": 1,
+          "unit": "V",
+          "answer": 20,
+          "tolerance": 0.01,
+          "stem": "<p>A resistor of 8 Ω has a current of 2.5 A flowing through it. Calculate the p.d. across it.</p>",
+          "explain": "Ohm's Law: V = I × R.",
+          "whyWrong": [
+            {"near": 3.2, "tol": 0.05, "msg": "You divided (8 ÷ 2.5). To find voltage from current and resistance you multiply them."},
+            {"near": 0.3125, "tol": 0.02, "msg": "You divided the wrong way round. V = I × R — voltage is the product, not a quotient."},
+            {"near": 10.5, "tol": 0.2, "msg": "You added. Ohm's Law multiplies current by resistance."}
+          ],
+          "workthrough": [
+            "Note what you are given and what you want: I = 2.5 A, R = 8 Ω, find V.",
+            "Recall Ohm's Law in its base form: <strong>V = I × R</strong>.",
+            "Since V is already the subject, no rearranging is needed.",
+            "Substitute: V = 2.5 × 8 = <strong>20 V</strong>.",
+            "Quick check: a bigger resistance or a bigger current should both give a bigger voltage — and multiplying does exactly that."
+          ]
+        },
+        {
+          "type": "numeric",
+          "marks": 1,
+          "unit": "Ω",
+          "answer": 5,
+          "tolerance": 0.01,
+          "stem": "<p>A 15 V supply drives a current of 3 A through a resistor. What is its resistance?</p>",
+          "explain": "Rearranging Ohm's Law gives R = V ÷ I.",
+          "whyWrong": [
+            {"near": 45, "tol": 0.5, "msg": "You multiplied. To find resistance you divide the voltage by the current."},
+            {"near": 0.2, "tol": 0.02, "msg": "You divided the wrong way round (I ÷ V). Resistance is volts per amp, so it is V ÷ I."},
+            {"near": 12, "tol": 0.2, "msg": "You subtracted. Ohm's Law is a multiplication relationship, never a subtraction."}
+          ],
+          "workthrough": [
+            "Write down what you have: V = 15 V, I = 3 A, and you want R.",
+            "Start from <strong>V = I × R</strong>.",
+            "Rearrange for R by dividing both sides by I: <strong>R = V ÷ I</strong>.",
+            "Substitute: R = 15 ÷ 3 = <strong>5 Ω</strong>.",
+            "Units confirm it: 1 ohm is 1 volt per amp, so dividing volts by amps must give ohms."
+          ]
+        },
+        {
+          "type": "numeric",
+          "marks": 1,
+          "unit": "s",
+          "answer": 5,
+          "tolerance": 0.01,
+          "stem": "<p>A current of 4 A flows through a device. How long does it take for 20 C of charge to flow through it?</p>",
+          "explain": "Rearranging I = Q ÷ t gives t = Q ÷ I.",
+          "whyWrong": [
+            {"near": 80, "tol": 0.5, "msg": "You multiplied. To find the time you divide the charge by the current."},
+            {"near": 0.2, "tol": 0.02, "msg": "You divided the wrong way round (I ÷ Q). Rearranging I = Q ÷ t gives t = Q ÷ I."}
+          ],
+          "workthrough": [
+            "You are given Q = 20 C and I = 4 A, and asked for the time.",
+            "Start from the definition: <strong>I = Q ÷ t</strong>.",
+            "Rearrange for t. Multiply both sides by t, then divide by I: <strong>t = Q ÷ I</strong>.",
+            "Substitute: t = 20 ÷ 4 = <strong>5 s</strong>.",
+            "Check it forwards: 4 A for 5 s gives 4 × 5 = 20 C. ✓"
+          ]
+        },
+        {
+          "type": "sort",
+          "stem": "<p>Sort each statement by the type of circuit it describes.</p>",
+          "bins": ["True of a series circuit", "True of a parallel circuit"],
+          "items": [
+            {"text":"The current is the same through every component", "bin":0, "why":"There is only one path, so every scoop of charge must pass through every component."},
+            {"text":"The p.d. across each branch is the same", "bin":1, "why":"Both branches connect the same two points, so they must feel the same push."},
+            {"text":"The p.d.s across the components add up to the EMF", "bin":0, "why":"Each component takes a share of the energy, and it all has to be spent by the time the charge gets home."},
+            {"text":"The branch currents add up to the total current", "bin":1, "why":"Charge splits at the junction and rejoins after — none is lost."},
+            {"text":"Adding another component increases the total resistance", "bin":0, "why":"Series resistances simply add, so the total always grows."},
+            {"text":"Adding another component decreases the total resistance", "bin":1, "why":"Each extra branch gives the charge another route, making it easier overall for current to flow."}
+          ],
+          "workthrough": [
+            "Anchor on the two defining facts. <strong>Series = one path</strong>, so the current has nowhere else to go. <strong>Parallel = a junction</strong>, so the charge has a choice.",
+            "From “one path” everything series follows: same current everywhere, and the voltages must share out to add up to the EMF.",
+            "From “branches join the same two points” everything parallel follows: same p.d. across each branch, and the currents add back up.",
+            "For the resistance pair, think physically rather than memorising. Adding a resistor <em>in the way</em> makes the journey harder — resistance up. Adding another <em>road</em> makes it easier — resistance down.",
+            "Notice the neat symmetry: current is the shared quantity in series, and voltage is the shared quantity in parallel."
+          ]
+        },
+        {
+          "type": "numeric",
+          "marks": 1,
+          "unit": "Ω",
+          "answer": 10,
+          "tolerance": 0.01,
+          "stem": "<p>A 4 Ω resistor and a 6 Ω resistor are connected <strong>in series</strong>. What is the total resistance?</p>",
+          "explain": "Series resistances simply add.",
+          "whyWrong": [
+            {"near": 2.4, "tol": 0.05, "msg": "You used the <em>parallel</em> formula. In series you just add the resistances; the product-over-sum rule is for parallel."},
+            {"near": 24, "tol": 0.5, "msg": "You multiplied. Series resistances are added, not multiplied."},
+            {"near": 2, "tol": 0.05, "msg": "You subtracted. Adding a resistor in series always makes the total bigger, never smaller."}
+          ],
+          "workthrough": [
+            "Identify the arrangement — the question says <strong>in series</strong>, so there is one single path.",
+            "Recall the rule: <strong>R<sub>total</sub> = R<sub>1</sub> + R<sub>2</sub></strong>.",
+            "Substitute: 4 + 6 = <strong>10 Ω</strong>.",
+            "Sense-check: the total must be <em>larger</em> than either individual resistor, because the charge has to get through both. 10 Ω is bigger than both 4 and 6. ✓"
+          ]
+        },
+        {
+          "type": "numeric",
+          "marks": 2,
+          "unit": "A",
+          "answer": 2,
+          "tolerance": 0.01,
+          "stem": "<p>That same 4 Ω and 6 Ω pair in series is connected to a 20 V battery. What current flows?</p>",
+          "explain": "Find the total resistance first, then apply I = V ÷ R.",
+          "whyWrong": [
+            {"near": 5, "tol": 0.05, "msg": "You used only the 4 Ω resistor (20 ÷ 4). The current has to pass through <em>both</em>, so use the total resistance of 10 Ω."},
+            {"near": 3.33, "tol": 0.05, "msg": "You used only the 6 Ω resistor (20 ÷ 6). Use the combined total of 10 Ω instead."},
+            {"near": 200, "tol": 2, "msg": "You multiplied. To find current, divide the voltage by the resistance."}
+          ],
+          "workthrough": [
+            "Do this in two steps — never try to jump straight to the current.",
+            "<strong>Step 1:</strong> combine the resistances. In series they add: 4 + 6 = <strong>10 Ω</strong>.",
+            "<strong>Step 2:</strong> apply Ohm's Law to the whole circuit: <strong>I = V ÷ R<sub>total</sub></strong>.",
+            "Substitute: I = 20 ÷ 10 = <strong>2 A</strong>.",
+            "Remember this is the current <em>everywhere</em> in the loop — the same 2 A flows through both resistors, because there is only one path."
+          ]
+        },
+        {
+          "type": "numeric",
+          "marks": 2,
+          "unit": "Ω",
+          "answer": 4,
+          "tolerance": 0.02,
+          "stem": "<p>A 5 Ω resistor and a 20 Ω resistor are connected <strong>in parallel</strong>. What is their combined resistance?</p>",
+          "explain": "For two resistors in parallel, R = (R₁ × R₂) ÷ (R₁ + R₂).",
+          "whyWrong": [
+            {"near": 25, "tol": 0.5, "msg": "You added them, which is the <em>series</em> rule. Adding a parallel branch makes the combined resistance <strong>smaller</strong>, not larger."},
+            {"near": 0.25, "tol": 0.02, "msg": "You stopped at 1/R = 0.25 and forgot the final step — you must take the reciprocal to get R itself."},
+            {"near": 12.5, "tol": 0.2, "msg": "You took the average of the two. There is no averaging rule; use product over sum, or add the reciprocals."}
+          ],
+          "workthrough": [
+            "Spot the arrangement: <strong>parallel</strong>, so expect the answer to come out <em>smaller than the smallest resistor</em> — smaller than 5 Ω.",
+            "Use the reciprocal rule: <strong>1/R = 1/R<sub>1</sub> + 1/R<sub>2</sub></strong>.",
+            "Substitute: 1/R = 1/5 + 1/20 = 4/20 + 1/20 = <strong>5/20</strong>.",
+            "<strong>Take the reciprocal</strong> — this is the step people forget: R = 20/5 = <strong>4 Ω</strong>.",
+            "Or use product over sum directly: (5 × 20) ÷ (5 + 20) = 100 ÷ 25 = 4 Ω.",
+            "Check against the prediction: 4 Ω is indeed smaller than 5 Ω. ✓"
+          ]
+        },
+        {
+          "type": "numeric",
+          "marks": 1,
+          "unit": "A",
+          "answer": 2,
+          "tolerance": 0.01,
+          "stem": "<p>That 5 Ω and 20 Ω pair is connected in parallel across a 10 V supply. What is the current through the <strong>5 Ω</strong> resistor?</p>",
+          "explain": "Each branch feels the full 10 V, so apply Ohm's Law to that branch alone.",
+          "whyWrong": [
+            {"near": 2.5, "tol": 0.05, "msg": "That is the <em>total</em> current from the supply (10 ÷ 4). The question asks only for the current in the 5 Ω branch."},
+            {"near": 0.5, "tol": 0.02, "msg": "That is the current through the <em>20 Ω</em> branch. Re-read which resistor is being asked about."},
+            {"near": 1.25, "tol": 0.05, "msg": "You seem to have split the total current evenly. The branches only share equally if their resistances are equal — here they are not."}
+          ],
+          "workthrough": [
+            "Recall the key parallel fact: <strong>every branch has the full supply p.d. across it</strong>. So the 5 Ω resistor has the whole 10 V.",
+            "You therefore do <em>not</em> need the combined resistance at all for this question.",
+            "Apply Ohm's Law to that branch on its own: <strong>I = V ÷ R</strong>.",
+            "Substitute: I = 10 ÷ 5 = <strong>2 A</strong>.",
+            "Cross-check the whole circuit: the 20 Ω branch carries 10 ÷ 20 = 0.5 A, so the total is 2 + 0.5 = 2.5 A — which matches 10 ÷ 4 Ω. ✓"
+          ]
+        },
+        {
+          "type": "mcq",
+          "marks": 1,
+          "stem": "<p>A third resistor is added <strong>in series</strong> to an existing series circuit. What happens to the total resistance and the current?</p>",
+          "options": [
+            "Resistance increases, current increases",
+            "Resistance increases, current decreases",
+            "Resistance decreases, current increases",
+            "Resistance decreases, current decreases"
+          ],
+          "answer": 1,
+          "explain": "Series resistances add, and a bigger resistance with the same EMF means less current.",
+          "whyWrong": {
+            "0": "You have the resistance right but the current backwards. I = V ÷ R — if R goes up and V is unchanged, I must come <em>down</em>.",
+            "2": "Resistance does not decrease in series. Adding a resistor puts another obstacle in the single path, so the total always grows.",
+            "3": "Both parts are wrong. Series resistances add, so resistance increases — and the current then falls, not for the reason of decreasing resistance."
+          },
+          "workthrough": [
+            "Deal with resistance first. In series the resistances simply <strong>add</strong>, so a third resistor makes the total <strong>larger</strong>.",
+            "Now use Ohm's Law for the whole circuit: <strong>I = V ÷ R<sub>total</sub></strong>.",
+            "The battery's EMF has not changed, so V stays the same while R<sub>total</sub> has gone up.",
+            "Dividing the same voltage by a bigger resistance gives a <strong>smaller current</strong>.",
+            "So: resistance <strong>increases</strong>, current <strong>decreases</strong>."
+          ]
+        },
+        {
+          "type": "mcq",
+          "marks": 1,
+          "stem": "<p>A third branch is added <strong>in parallel</strong> to an existing parallel circuit. What happens to the combined resistance and the total current from the battery?</p>",
+          "options": [
+            "Resistance increases, total current decreases",
+            "Resistance decreases, total current decreases",
+            "Resistance decreases, total current increases",
+            "Both stay the same, because each branch is independent"
+          ],
+          "answer": 2,
+          "explain": "Every extra branch is another route for charge, so combined resistance falls and the battery supplies more current.",
+          "whyWrong": {
+            "0": "Combined resistance does not increase in parallel. Each new branch gives the charge an <em>extra</em> route, which makes it easier for current to flow overall.",
+            "1": "The resistance part is right, but the current follows from it: a smaller R with the same V means a <em>larger</em> total current.",
+            "3": "The branches do behave independently — each still gets the full p.d. — but the <em>battery</em> now has to supply all of them, so the total current it delivers goes up."
+          },
+          "workthrough": [
+            "Think physically before reaching for a formula. Each parallel branch is an <strong>extra road</strong> for the charge.",
+            "More roads means it is <strong>easier</strong> for current to flow overall, so the combined resistance <strong>falls</strong>.",
+            "Confirm with the formula: 1/R = 1/R<sub>1</sub> + 1/R<sub>2</sub> + 1/R<sub>3</sub>. Adding another positive term makes 1/R bigger, so R gets smaller.",
+            "Now apply I = V ÷ R to the whole circuit. V is unchanged and R has fallen, so the total current <strong>increases</strong>.",
+            "Note the everyday consequence: this is exactly why plugging more appliances into one circuit draws more current and can blow the fuse."
+          ]
+        },
+        {
+          "type": "numeric",
+          "marks": 2,
+          "unit": "A",
+          "answer": 7,
+          "tolerance": 0.1,
+          "stem": "<p>The lab's circuit: a 12 V battery connected to a 1.0 Ω resistor in series with a parallel pair of 1.0 Ω and 2.5 Ω. Find the <strong>total current</strong> from the battery.</p>",
+          "explain": "Collapse the parallel pair first, add the series resistor, then use I = V ÷ R.",
+          "whyWrong": [
+            {"near": 2.67, "tol": 0.1, "msg": "You added all three resistances as if they were in series (1 + 1 + 2.5 = 4.5 Ω). The 1.0 Ω and 2.5 Ω are in <em>parallel</em> and must be combined first."},
+            {"near": 12, "tol": 0.2, "msg": "You divided by 1 Ω — using only the series resistor. You must include the parallel section in the total resistance."},
+            {"near": 16.9, "tol": 0.5, "msg": "You used only the parallel combination (12 ÷ 0.71) and left out the 1.0 Ω series resistor."}
+          ],
+          "workthrough": [
+            "Always collapse the <strong>parallel section first</strong> — never mix the two rules in one step.",
+            "R<sub>p</sub> = (1.0 × 2.5) ÷ (1.0 + 2.5) = 2.5 ÷ 3.5 = <strong>0.71 Ω</strong>.",
+            "Now the circuit is just two resistances in series: <strong>R<sub>total</sub> = 1.0 + 0.71 = 1.71 Ω</strong>.",
+            "Apply Ohm's Law to the whole circuit: I = V ÷ R<sub>total</sub> = 12 ÷ 1.71 = <strong>7.0 A</strong>.",
+            "Sense-check: R<sub>p</sub> must be smaller than the smaller branch (0.71 &lt; 1.0 ✓), and the total current must be bigger than through either branch alone."
+          ]
+        },
+        {
+          "type": "numeric",
+          "marks": 2,
+          "unit": "V",
+          "answer": 7,
+          "tolerance": 0.15,
+          "stem": "<p>Same circuit — 12 V, a 1.0 Ω series resistor, then 1.0 Ω ∥ 2.5 Ω. What is the p.d. <strong>across the series resistor</strong>?</p>",
+          "explain": "Once you know the total current, V = I × R for that resistor.",
+          "whyWrong": [
+            {"near": 5, "tol": 0.2, "msg": "That is the p.d. across the <em>parallel section</em>, not the series resistor. The two must add to 12 V, so check which one the question wants."},
+            {"near": 12, "tol": 0.2, "msg": "The full 12 V is shared between the series resistor and the parallel section — the series resistor gets only part of it."},
+            {"near": 1.71, "tol": 0.1, "msg": "That is the total resistance, not a voltage. You still need to multiply the current by the resistance."}
+          ],
+          "workthrough": [
+            "You need the current first, so repeat the previous step: R<sub>p</sub> = 0.71 Ω, R<sub>total</sub> = 1.71 Ω, I = 12 ÷ 1.71 = <strong>7.0 A</strong>.",
+            "That 7.0 A flows through the series resistor, because everything before the junction is a single path.",
+            "Apply Ohm's Law to that resistor alone: <strong>V<sub>s</sub> = I × R<sub>s</sub></strong>.",
+            "Substitute: V<sub>s</sub> = 7.0 × 1.0 = <strong>7.0 V</strong>.",
+            "Check with the energy budget: the parallel section takes V<sub>p</sub> = 7.0 × 0.71 ≈ 5.0 V, and 7.0 + 5.0 = 12 V — the full EMF. ✓"
+          ]
+        },
+        {
+          "type": "mcq",
+          "marks": 1,
+          "stem": "<p>Why is an ammeter connected in series but a voltmeter in parallel?</p>",
+          "options": [
+            "Because an ammeter has a high resistance and a voltmeter has a low resistance",
+            "Because an ammeter must have the charge flow through it, while a voltmeter must tap both ends of a component to compare them",
+            "Because it does not matter — either can be connected either way",
+            "Because a voltmeter would be damaged by the current if placed in series"
+          ],
+          "answer": 1,
+          "explain": "It follows from what each one measures: current flows through a point, but voltage is a difference between two points.",
+          "whyWrong": {
+            "0": "You have the resistances the wrong way round. An ammeter has a <em>very low</em> resistance so it does not slow the current; a voltmeter has a <em>very high</em> resistance so almost no current takes the detour through it.",
+            "2": "It matters completely. A voltmeter placed in series would block almost all the current; an ammeter placed in parallel would short out the component.",
+            "3": "A voltmeter in series would not be damaged — its very high resistance would simply stop the circuit working. The real reason is about what each instrument measures."
+          },
+          "workthrough": [
+            "Start from what each quantity <em>is</em>. Current is the rate of charge flowing <strong>past a point</strong>.",
+            "To count that charge, the meter has to sit <strong>in the path</strong> — so the ammeter goes in <strong>series</strong>, like a tollbooth on a road.",
+            "Voltage is a <strong>difference between two points</strong> — how much energy is lost between one side of a component and the other.",
+            "To measure a difference you must touch <strong>both ends</strong>, so the voltmeter goes across the component, in <strong>parallel</strong>.",
+            "The resistances follow from this: an ammeter needs a <em>very low</em> resistance so it does not disturb the current it measures; a voltmeter needs a <em>very high</em> one so it barely draws any current."
+          ]
+        },
+        {
+          "type": "mcq",
+          "marks": 2,
+          "stem": "<p>In the lab's circuit, the top parallel branch (1.0 Ω) is cut. What happens to the reading on a voltmeter connected directly across the battery terminals?</p>",
+          "options": [
+            "It falls, because less current now flows",
+            "It rises, because the total resistance has increased",
+            "It stays at 12 V, because the voltmeter reads the EMF regardless of the branches",
+            "It falls to zero, because the circuit is broken"
+          ],
+          "answer": 2,
+          "explain": "An ideal voltmeter across the battery reads the EMF, and cutting a branch does not change the battery.",
+          "whyWrong": {
+            "0": "Less current does flow, but the voltmeter is not measuring current. It is connected straight across the battery terminals, so it reads what the battery supplies.",
+            "1": "Total resistance does rise, but that changes the <em>current</em>, not the battery's EMF. The reading does not go above 12 V.",
+            "3": "The circuit is not fully broken — the other parallel branch still provides a complete path. And even a broken circuit would leave the battery's terminal voltage unchanged."
+          },
+          "workthrough": [
+            "First ask what the voltmeter is actually connected to. It taps <strong>both battery terminals directly</strong>, not any resistor.",
+            "So it reads the p.d. supplied by the battery — its <strong>EMF</strong>.",
+            "Now ask whether cutting a branch changes the battery itself. It does not — the battery still pushes 12 V per coulomb.",
+            "The cut <em>does</em> change other things: total resistance rises, so total current falls from 7.0 A to 3.4 A, and the split between branches changes.",
+            "But none of that alters the voltmeter's reading. It <strong>stays at 12 V</strong>.",
+            "You can confirm this in the lab — cut the top branch and watch the voltmeter needle stay put while every other reading moves."
+          ]
+        },
+        {
+          "type": "structured",
+          "marks": 4,
+          "stem": "<p>Still the lab's circuit — 12 V, 1.0 Ω in series with (1.0 Ω ∥ 2.5 Ω). This time the <strong>bottom</strong> branch (2.5 Ω) goes open-circuit.</p>",
+          "parts": [
+            {
+              "stem": "Calculate the new total current from the battery.",
+              "marks": 2,
+              "model": [
+                "With the 2.5 Ω branch cut, the only remaining path is through the 1.0 Ω series resistor and the 1.0 Ω branch, so R_total = 1.0 + 1.0 = 2.0 Ω.",
+                "I = V ÷ R = 12 ÷ 2.0 = 6.0 A."
+              ],
+              "note": "One mark for the correct total resistance, one for the current."
+            },
+            {
+              "stem": "Compare this with cutting the top (1.0 Ω) branch instead, which gives 3.4 A. Explain why cutting the different branches gives such different results.",
+              "marks": 2,
+              "model": [
+                "Cutting a branch leaves the other branch as the only path, so the remaining branch's resistance sets the total.",
+                "Losing the 2.5 Ω branch leaves the easier 1.0 Ω path, giving a lower total resistance and so a larger current — losing the easier road costs you more current than losing the harder one."
+              ]
+            }
+          ],
+          "explain": "Which branch you lose matters, because the surviving branch is what determines the new total resistance.",
+          "workthrough": [
+            "For part (a), redraw the circuit in your head with the 2.5 Ω branch removed. There is no longer anything in parallel — just two resistors in series.",
+            "Add them: R<sub>total</sub> = 1.0 (series) + 1.0 (remaining branch) = <strong>2.0 Ω</strong>.",
+            "Apply Ohm's Law: I = 12 ÷ 2.0 = <strong>6.0 A</strong>.",
+            "For part (b), set the two cases side by side. Cut the 2.5 Ω branch → 1.0 Ω survives → R<sub>total</sub> 2.0 Ω → 6.0 A. Cut the 1.0 Ω branch → 2.5 Ω survives → R<sub>total</sub> 3.5 Ω → 3.4 A.",
+            "State the principle behind the difference: the <strong>surviving</strong> branch sets the total resistance, so keeping the low-resistance branch keeps the current high.",
+            "Put the conclusion in one line: <strong>losing the easier road costs you more current than losing the harder one</strong> — 7.0 A drops to 6.0 A, versus down to 3.4 A."
+          ]
+        }
+      ]
+    }
+    </script>
   </div>
 
   <nav class="lesson-nav">
@@ -211,5 +550,6 @@
     <a class="next" href="index.html">Course home ↺</a>
   </nav>
 </div>
+<script src="../../js/quiz-engine.js"></script>
 </body>
 </html>

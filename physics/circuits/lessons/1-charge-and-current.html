@@ -8,6 +8,7 @@
 <meta name="theme-color" content="#E4EAF0">
 <link rel="icon" type="image/svg+xml" href="../../../favicon.svg">
 <link rel="stylesheet" href="../../../css/style.css">
+<link rel="stylesheet" href="../../../css/interactive.css">
 </head>
 <body>
 <div class="sheet">
@@ -87,14 +88,66 @@
       </div>
     </div>
 
-    <h2 class="section">Quick check</h2>
-    <details class="q">
-      <summary><span class="qnum">Q</span> A current of 0.5 A flows through a torch bulb for 2 minutes. How much charge flows through it?</summary>
-      <div class="a">
-        <p>Careful — the formula uses <strong>seconds</strong>, and the question gives minutes. 2 minutes = 120 s.</p>
-        <p>Q = I × t = 0.5 × 120 = <span class="ans">60 C</span></p>
-      </div>
-    </details>
+    <h2 class="section">Check yourself</h2>
+    <div id="quiz">
+      <script type="application/json">
+      {
+        "questions": [
+          {
+            "type": "numeric",
+            "marks": 2,
+            "unit": "C",
+            "answer": 60,
+            "tolerance": 0.1,
+            "stem": "<p>A current of 0.5 A flows through a torch bulb for <strong>2 minutes</strong>. How much charge flows through it?</p>",
+            "explain": "Q = I × t, but the time must be converted to seconds first.",
+            "whyWrong": [
+              {
+                "near": 1,
+                "tol": 0.05,
+                "msg": "You used 2 instead of 120 — the time was given in <strong>minutes</strong> and the formula needs <strong>seconds</strong>."
+              },
+              {
+                "near": 240,
+                "tol": 1,
+                "msg": "You divided rather than multiplied. Charge is current × time."
+              }
+            ],
+            "workthrough": [
+              "Note what you are given: I = 0.5 A, t = 2 minutes.",
+              "<strong>Convert to seconds first:</strong> 2 × 60 = <strong>120 s</strong>. The formula only works in SI units.",
+              "Rearrange I = Q ÷ t to give <strong>Q = I × t</strong>.",
+              "Substitute: Q = 0.5 × 120 = <strong>60 C</strong>."
+            ]
+          },
+          {
+            "type": "mcq",
+            "marks": 1,
+            "stem": "<p>Why is an ammeter always connected in series?</p>",
+            "options": [
+              "Because it has a very high resistance",
+              "Because the charge must actually flow through it to be counted",
+              "Because it would be damaged in parallel",
+              "Because it measures the p.d. between two points"
+            ],
+            "answer": 1,
+            "explain": "Current is the charge flowing past a point, so the meter must sit in the path.",
+            "whyWrong": {
+              "0": "An ammeter has a very <em>low</em> resistance, precisely so it does not slow down the current it is measuring.",
+              "2": "It is not about damage — an ammeter in parallel would short out the component, but the real reason is what it measures.",
+              "3": "That describes a <em>voltmeter</em>. An ammeter measures current, not p.d."
+            },
+            "workthrough": [
+              "Recall what current is: the rate of charge flowing <strong>past a point</strong>.",
+              "To count that charge, the meter has to sit <strong>in the path</strong> — like a tollbooth on a road.",
+              "That means connecting it <strong>in series</strong>.",
+              "It follows that a good ammeter needs a <strong>very low resistance</strong>, so it does not disturb the current it is measuring."
+            ]
+          }
+        ]
+      }
+      </script>
+    </div>
   </div>
 
   <nav class="lesson-nav">
@@ -103,5 +156,6 @@
   </nav>
 </div>
 <script src="../../../js/mini-single.js"></script>
+<script src="../../../js/quiz-engine.js"></script>
 </body>
 </html>

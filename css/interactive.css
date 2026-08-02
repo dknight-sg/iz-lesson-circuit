@@ -264,6 +264,36 @@ body.hide-ext [data-tier="ext"]{display:none}
 .qz-acts{display:flex;gap:8px;flex-wrap:wrap;margin-top:12px;align-items:center}
 .qz-acts .spacer{flex:1}
 
+/* ---- numeric answer ----------------------------------------- */
+.numrow{display:flex;align-items:center;gap:10px;margin-top:8px;flex-wrap:wrap}
+.numin{
+  font-family:"Space Mono",monospace;font-size:17px;font-weight:700;
+  padding:11px 14px;width:180px;max-width:100%;
+  border:1.5px solid var(--rule);background:#FFF;color:var(--ink);
+}
+.numin::placeholder{font-weight:400;font-size:14px;color:var(--ink-soft)}
+.numin:focus-visible{outline:2.5px solid var(--hot);outline-offset:2px;border-color:var(--ink)}
+.numin:disabled{opacity:1;color:var(--ink);-webkit-text-fill-color:var(--ink)}
+.numin.ok{border-color:var(--cool);background:rgba(46,122,140,.12)}
+.numin.no{border-color:var(--hot);background:rgba(217,63,43,.1)}
+.numunit{
+  font-family:"Space Mono",monospace;font-size:16px;font-weight:700;color:var(--ink-soft);
+}
+
+/* ---- circuit symbol sheet ------------------------------------ */
+.symsheet .sym-box{fill:#FFF;stroke:var(--ink);stroke-width:1.5}
+.symsheet .sym-w{fill:none;stroke:var(--ink);stroke-width:2.4;stroke-linecap:round}
+.symsheet .sym-f{fill:#FFF;stroke:var(--ink);stroke-width:2.4}
+.symsheet .sym-n{
+  font-family:"Space Mono",monospace;font-size:15px;font-weight:700;
+  fill:#F7FAFC;text-anchor:middle;
+}
+.symsheet .sym-c{fill:var(--charge);stroke:var(--ink);stroke-width:2}
+.symsheet .sym-t{
+  font-family:"Space Mono",monospace;font-size:13px;font-weight:700;
+  fill:var(--ink);text-anchor:middle;
+}
+
 /* ---- diagram labelling -------------------------------------- */
 .labelfig{
   border:1.5px solid var(--ink);background:#FFF;padding:14px;margin:4px 0 16px;

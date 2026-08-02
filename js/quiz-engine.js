@@ -426,6 +426,67 @@
     });
   }
 
+  // ---- numeric answer --------------------------------------------
+  // The student types the value rather than picking it, so they cannot
+  // work backwards from the options. `whyWrong` is a list of
+  // {near, tol, msg} so a specific common slip can be named.
+  function buildNumeric(q, body){
+    const wrap = el('div', 'numrow');
+    const input = document.createElement('input');
+    input.type = 'text';
+    input.inputMode = 'decimal';
+    input.className = 'numin';
+    input.setAttribute('aria-label', 'Your answer' + (q.unit ? ' in ' + q.unit : ''));
+    input.placeholder = 'your answer';
+    wrap.appendChild(input);
+    if (q.unit) wrap.appendChild(el('span', 'numunit', q.unit));
+    body.appendChild(wrap);
+
+    const acts = el('div', 'qz-acts');
+    const submit = el('button', null, 'Check answer');
+    submit.type = 'button';
+    submit.disabled = true;
+    acts.appendChild(submit);
+    body.appendChild(acts);
+
+    const parse = () => {
+      const raw = input.value.trim().replace(/,/g, '');
+      if (!raw) return NaN;
+      return parseFloat(raw);
+    };
+    input.addEventListener('input', () => { submit.disabled = isNaN(parse()); });
+    input.addEventListener('keydown', e => {
+      if (e.key === 'Enter' && !submit.disabled){ e.preventDefault(); submit.click(); }
+    });
+
+    submit.addEventListener('click', () => {
+      const given = parse();
+      const tol = q.tolerance != null ? q.tolerance : 0.01;
+      const ok = Math.abs(given - q.answer) <= tol;
+
+      input.disabled = true;
+      input.classList.add(ok ? 'ok' : 'no');
+      submit.remove();
+
+      const marks = qMarks(q);
+      const fb = feedback(body, ok, ok ? marks : 0, marks, q.explain);
+      if (!ok){
+        // look for a named common slip first
+        let why = null;
+        (q.whyWrong || []).forEach(w => {
+          if (why) return;
+          if (Math.abs(given - w.near) <= (w.tol != null ? w.tol : 0.01)) why = w.msg;
+        });
+        if (!why) why = 'You answered ' + given + (q.unit ? ' ' + q.unit : '') + '.';
+        derivation(fb, q, {
+          whyWrong: why,
+          answerLine: q.answer + (q.unit ? ' ' + q.unit : '')
+        });
+      }
+      bump(ok ? marks : 0, marks);
+    });
+  }
+
   // ---- label a diagram -------------------------------------------
   // Clones a diagram already in the page (diagramRef) and asks the student
   // to name each numbered part from a shared pool of labels.
@@ -433,7 +494,12 @@
     const src = document.querySelector(q.diagramRef);
     if (src){
       const fig = el('div', 'labelfig');
-      fig.appendChild(src.cloneNode(true));
+      const copy = src.cloneNode(true);
+      // the source may be a hidden template (display:none); the clone must show
+      copy.removeAttribute('hidden');
+      copy.style.display = '';
+      copy.removeAttribute('id');
+      fig.appendChild(copy);
       body.appendChild(fig);
     }
 
@@ -524,6 +590,7 @@
       else if (q.type === 'sort') buildSort(q, body);
       else if (q.type === 'wordeq') buildWordEq(q, body);
       else if (q.type === 'label') buildLabel(q, body);
+      else if (q.type === 'numeric') buildNumeric(q, body);
       else if (q.type === 'structured') buildStructured(q, body);
     });
 

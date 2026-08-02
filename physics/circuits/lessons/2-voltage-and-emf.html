@@ -8,6 +8,7 @@
 <meta name="theme-color" content="#E4EAF0">
 <link rel="icon" type="image/svg+xml" href="../../../favicon.svg">
 <link rel="stylesheet" href="../../../css/style.css">
+<link rel="stylesheet" href="../../../css/interactive.css">
 </head>
 <body>
 <div class="sheet">
@@ -91,14 +92,66 @@
     <h2 class="section">Measuring voltage: the voltmeter</h2>
     <p>A voltmeter measures p.d. and connects <strong>in parallel</strong> — across a component, tapping both its ends, not sitting in the charge's path at all. A good voltmeter has an extremely high resistance, so almost no current takes the detour through it. That's why the ammeter and voltmeter are drawn so differently above: one interrupts the wire, the other sits beside it.</p>
 
-    <h2 class="section">Quick check</h2>
-    <details class="q">
-      <summary><span class="qnum">Q</span> A 12 V battery moves 5 C of charge around a circuit. How much energy does it transfer?</summary>
-      <div class="a">
-        <p>Rearrange V = W/Q to make W the subject: W = V × Q.</p>
-        <p>W = 12 × 5 = <span class="ans">60 J</span></p>
-      </div>
-    </details>
+    <h2 class="section">Check yourself</h2>
+    <div id="quiz">
+      <script type="application/json">
+      {
+        "questions": [
+          {
+            "type": "numeric",
+            "marks": 1,
+            "unit": "J",
+            "answer": 60,
+            "tolerance": 0.1,
+            "stem": "<p>A 12 V battery moves 5 C of charge around a circuit. How much energy does it transfer?</p>",
+            "explain": "Rearranging V = W ÷ Q gives W = V × Q.",
+            "whyWrong": [
+              {
+                "near": 2.4,
+                "tol": 0.1,
+                "msg": "You divided (12 ÷ 5). To find total energy from voltage and charge you multiply."
+              },
+              {
+                "near": 17,
+                "tol": 0.5,
+                "msg": "You added. Voltage and charge multiply to give energy."
+              }
+            ],
+            "workthrough": [
+              "Start from the definition of voltage: <strong>V = W ÷ Q</strong> — energy per unit charge.",
+              "Rearrange for W by multiplying both sides by Q: <strong>W = V × Q</strong>.",
+              "Substitute: W = 12 × 5 = <strong>60 J</strong>.",
+              "Check the meaning: each coulomb carries 12 J, and there are 5 coulombs, so 60 J altogether."
+            ]
+          },
+          {
+            "type": "mcq",
+            "marks": 1,
+            "stem": "<p>In the single-resistor circuit above, you increase the resistance but leave the battery unchanged. What happens to the voltmeter reading across the resistor?</p>",
+            "options": [
+              "It rises, because resistance is higher",
+              "It falls, because less current flows",
+              "It stays the same, because all the EMF is still spent in that one resistor",
+              "It falls to zero"
+            ],
+            "answer": 2,
+            "explain": "With only one resistor in the loop, it must always take the full EMF.",
+            "whyWrong": {
+              "0": "The reading cannot rise above the battery's EMF — the battery is the only source of energy.",
+              "1": "Less current does flow, but voltage and current change together here: V = I × R, and R rose by exactly the factor I fell by.",
+              "3": "Current falls but never reaches zero, and the resistor still receives the full EMF."
+            },
+            "workthrough": [
+              "Ask where the energy each charge carries can be spent. There is <strong>only one resistor</strong> in the loop.",
+              "Every scoop of charge must give up <em>all</em> its energy before returning to the battery, and there is nowhere else to give it up.",
+              "So the p.d. across that resistor always equals the <strong>full EMF</strong>, whatever its resistance.",
+              "What changes instead is the <strong>current</strong>: raise R and I falls, but V = I × R stays pinned at the EMF."
+            ]
+          }
+        ]
+      }
+      </script>
+    </div>
   </div>
 
   <nav class="lesson-nav">
@@ -107,5 +160,6 @@
   </nav>
 </div>
 <script src="../../../js/mini-single.js"></script>
+<script src="../../../js/quiz-engine.js"></script>
 </body>
 </html>

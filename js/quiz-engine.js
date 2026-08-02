@@ -28,6 +28,7 @@
   function qMarks(q){
     if (q.type === 'structured') return q.parts.reduce((s, p) => s + (p.marks || 1), 0);
     if (q.type === 'sort') return q.items.length;
+    if (q.type === 'label') return q.parts.length;
     return q.marks || 1;
   }
   function bump(earned, possible){
@@ -425,6 +426,77 @@
     });
   }
 
+  // ---- label a diagram -------------------------------------------
+  // Clones a diagram already in the page (diagramRef) and asks the student
+  // to name each numbered part from a shared pool of labels.
+  function buildLabel(q, body){
+    const src = document.querySelector(q.diagramRef);
+    if (src){
+      const fig = el('div', 'labelfig');
+      fig.appendChild(src.cloneNode(true));
+      body.appendChild(fig);
+    }
+
+    const list = el('div', 'labelrows');
+    const rows = q.parts.map(part => {
+      const row = el('div', 'labelrow');
+      row.appendChild(el('span', 'lnum', String(part.n)));
+      const sel = document.createElement('select');
+      sel.className = 'lsel';
+      sel.setAttribute('aria-label', 'Label for part ' + part.n);
+      sel.appendChild(new Option('— choose —', ''));
+      q.labels.forEach(l => sel.appendChild(new Option(l, l)));
+      sel.addEventListener('change', refresh);
+      row.appendChild(sel);
+      const mark = el('span', 'lmark');
+      row.appendChild(mark);
+      list.appendChild(row);
+      return { part, sel, mark, row };
+    });
+    body.appendChild(list);
+
+    const acts = el('div', 'qz-acts');
+    const submit = el('button', null, 'Check my labels');
+    submit.type = 'button';
+    submit.disabled = true;
+    acts.appendChild(submit);
+    body.appendChild(acts);
+
+    function refresh(){
+      submit.disabled = rows.some(r => !r.sel.value);
+    }
+
+    submit.addEventListener('click', () => {
+      let got = 0;
+      rows.forEach(r => {
+        const right = r.sel.value === r.part.answer;
+        if (right) got++;
+        r.sel.disabled = true;
+        r.row.classList.add(right ? 'ok' : 'no');
+        r.mark.textContent = right ? '✓' : '✗';
+        r.mark.className = 'lmark ' + (right ? 'ok' : 'no');
+      });
+      submit.remove();
+
+      const marks = q.parts.length;
+      const fb = feedback(body, got === marks, got, marks, q.explain);
+      const wrong = rows.filter(r => r.sel.value !== r.part.answer);
+      if (wrong.length){
+        fb.appendChild(el('p', null,
+          '<strong>You mislabelled ' + wrong.length +
+          (wrong.length === 1 ? ' part' : ' parts') + '. Here’s why:</strong>'));
+        wrong.forEach(r => {
+          fb.appendChild(el('p', null,
+            '<strong>' + r.part.n + ' is the ' + r.part.answer + '</strong>' +
+            (r.part.why ? ' — ' + r.part.why : '') +
+            ' <em>(you said ' + r.sel.value + ')</em>'));
+        });
+        derivation(fb, q, {});
+      }
+      bump(got, marks);
+    });
+  }
+
   // ---- render ----------------------------------------------------
   function render(){
     root.innerHTML = '';
@@ -451,6 +523,7 @@
       else if (q.type === 'multi') buildChoice(q, body, true);
       else if (q.type === 'sort') buildSort(q, body);
       else if (q.type === 'wordeq') buildWordEq(q, body);
+      else if (q.type === 'label') buildLabel(q, body);
       else if (q.type === 'structured') buildStructured(q, body);
     });
 

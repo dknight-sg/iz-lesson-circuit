@@ -1,0 +1,424 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>The three-pin plug — Electrical Safety</title>
+<meta name="description" content="Label a three-pin plug, learn what the live, neutral and earth wires each do, why the fuse sits in the live wire, and how to choose a fuse rating.">
+<meta name="theme-color" content="#E4EAF0">
+<link rel="icon" type="image/svg+xml" href="../../favicon.svg">
+<meta property="og:title" content="The three-pin plug — Electrical Safety">
+<meta property="og:description" content="Label the plug, state what each wire does, and work out the right fuse rating.">
+<meta property="og:type" content="website">
+<meta name="twitter:card" content="summary">
+<link rel="stylesheet" href="../../css/style.css">
+<link rel="stylesheet" href="../../css/chem.css">
+</head>
+<body>
+<div class="sheet">
+  <header>
+    <div>
+      <a class="crumb" href="../index.html">← Physics</a>
+      <p class="eyebrow" style="margin-top:10px">Electrical Systems · 13.2</p>
+      <h1>The three-pin plug</h1>
+    </div>
+    <p class="sub">Three wires, three jobs. Get which is which wrong and the appliance still works — right up until it kills someone. That is why this is examined so often.</p>
+  </header>
+
+  <div class="prose">
+    <h2 class="section">Inside the plug</h2>
+    <p>This is the view you get with the back cover taken off, held so the <strong>earth pin is at the top</strong>. That orientation matters: it is the one every exam diagram uses, and it is what makes the left/right rule work.</p>
+
+    <div class="labelfig" id="plugFigWrap">
+      <svg id="plugDiagram" viewBox="0 0 380 440" role="img"
+           aria-label="Cut-away of a three-pin plug seen from the back, with six numbered parts">
+        <!-- earth pin, top -->
+        <rect class="plug-pin" x="176" y="6" width="26" height="42" rx="3"/>
+        <!-- body -->
+        <rect class="plug-body" x="44" y="44" width="292" height="342" rx="30"/>
+
+        <!-- earth terminal -->
+        <rect class="plug-term" x="162" y="72" width="54" height="34" rx="4"/>
+        <circle cx="189" cy="89" r="7" fill="#F2F5F8" stroke="#0F2436" stroke-width="1.6"/>
+        <line x1="184" y1="89" x2="194" y2="89" stroke="#0F2436" stroke-width="2"/>
+
+        <!-- neutral terminal, LEFT -->
+        <rect class="plug-term" x="70" y="246" width="52" height="34" rx="4"/>
+        <circle cx="96" cy="263" r="7" fill="#F2F5F8" stroke="#0F2436" stroke-width="1.6"/>
+        <line x1="91" y1="263" x2="101" y2="263" stroke="#0F2436" stroke-width="2"/>
+
+        <!-- live terminal, RIGHT -->
+        <rect class="plug-term" x="256" y="246" width="52" height="34" rx="4"/>
+        <circle cx="282" cy="263" r="7" fill="#F2F5F8" stroke="#0F2436" stroke-width="1.6"/>
+        <line x1="277" y1="263" x2="287" y2="263" stroke="#0F2436" stroke-width="2"/>
+
+        <!-- fuse, in the live line, between live terminal and live pin -->
+        <line x1="282" y1="246" x2="282" y2="228" stroke="#0F2436" stroke-width="3"/>
+        <rect class="plug-fuse" x="262" y="132" width="40" height="96" rx="5"/>
+        <rect x="262" y="132" width="40" height="14" fill="#B9A46E" stroke="#0F2436" stroke-width="1.6"/>
+        <rect x="262" y="214" width="40" height="14" fill="#B9A46E" stroke="#0F2436" stroke-width="1.6"/>
+        <text x="282" y="186" text-anchor="middle" transform="rotate(-90 282 186)"
+              style="font-family:'Space Mono',monospace;font-size:11px;fill:#0F2436">BS 1362</text>
+        <line x1="282" y1="132" x2="282" y2="112" stroke="#0F2436" stroke-width="3"/>
+
+        <!-- wires from the cable grip -->
+        <path class="w-earth"   d="M 186 322 C 150 300 138 220 168 150 C 178 126 186 116 189 106"/>
+        <path class="w-earth-b" d="M 186 322 C 150 300 138 220 168 150 C 178 126 186 116 189 106"/>
+        <path class="w-neutral" d="M 174 324 C 140 316 108 306 96 284"/>
+        <path class="w-live"    d="M 198 324 C 232 316 268 306 282 284"/>
+
+        <!-- cable grip -->
+        <rect class="plug-grip" x="146" y="320" width="88" height="30" rx="6"/>
+        <line x1="160" y1="320" x2="160" y2="350" stroke="#F7FAFC" stroke-width="2"/>
+        <line x1="220" y1="320" x2="220" y2="350" stroke="#F7FAFC" stroke-width="2"/>
+
+        <!-- outer cable -->
+        <rect class="plug-cable" x="162" y="350" width="56" height="86" rx="12"/>
+
+        <!-- numbered callouts -->
+        <g class="callout-num">
+          <path class="callout-line" d="M 306 170 L 336 158"/>
+          <circle cx="348" cy="154" r="15"/><text x="348" y="159">1</text>
+
+          <path class="callout-line" d="M 160 176 L 118 160"/>
+          <circle cx="104" cy="155" r="15"/><text x="104" y="160">2</text>
+
+          <path class="callout-line" d="M 146 340 L 110 372"/>
+          <circle cx="96" cy="380" r="15"/><text x="96" y="385">3</text>
+
+          <path class="callout-line" d="M 252 300 L 300 322"/>
+          <circle cx="314" cy="328" r="15"/><text x="314" y="333">4</text>
+
+          <path class="callout-line" d="M 134 306 L 82 300"/>
+          <circle cx="66" cy="298" r="15"/><text x="66" y="303">5</text>
+
+          <path class="callout-line" d="M 202 22 L 246 22"/>
+          <circle cx="260" cy="22" r="15"/><text x="260" y="27">6</text>
+        </g>
+      </svg>
+    </div>
+
+    <div class="callout think">
+      <span class="callout-label">A word about the photo you sent</span>
+      In that stock photo the brown wire runs to the <em>left</em> terminal and the blue toward the fuse side — which is the reverse of the standard. Plenty of stock photos are wired wrongly, so I have drawn the diagram above to the correct BS&nbsp;1363 standard rather than tracing it. Worth knowing, because copying a miswired photo into an exam answer would cost marks, and copying it into a real plug is genuinely dangerous.
+    </div>
+
+    <h2 class="section">The three wires and what each one does</h2>
+    <table style="margin-bottom:20px">
+      <tr>
+        <td style="border-bottom:1.5px solid var(--ink);width:20%"><strong>Wire</strong></td>
+        <td style="border-bottom:1.5px solid var(--ink);width:22%"><strong>Colour</strong></td>
+        <td style="border-bottom:1.5px solid var(--ink)"><strong>Function</strong></td>
+      </tr>
+      <tr>
+        <td style="vertical-align:top"><strong>Live</strong></td>
+        <td style="vertical-align:top">Brown<br><span style="color:var(--ink-soft);font-size:12px">right-hand terminal</span></td>
+        <td style="vertical-align:top">Carries the current <strong>from the mains supply to the appliance</strong>, at the high supply voltage of about 230 V. This is the dangerous wire — touching it completes a path to earth through your body.</td>
+      </tr>
+      <tr>
+        <td style="vertical-align:top"><strong>Neutral</strong></td>
+        <td style="vertical-align:top">Blue<br><span style="color:var(--ink-soft);font-size:12px">left-hand terminal</span></td>
+        <td style="vertical-align:top"><strong>Completes the circuit</strong>, carrying the current back from the appliance to the supply. It sits at roughly 0 V, so it is the return path rather than the source of the danger.</td>
+      </tr>
+      <tr>
+        <td style="vertical-align:top"><strong>Earth</strong></td>
+        <td style="vertical-align:top">Green and yellow<br><span style="color:var(--ink-soft);font-size:12px">top terminal</span></td>
+        <td style="vertical-align:top">A <strong>safety wire</strong> that carries no current in normal use. It connects the metal casing of the appliance to the ground. If a fault lets the live wire touch the casing, current flows to earth through this low-resistance path instead of through anyone touching it — and that large current blows the fuse, cutting the supply.</td>
+      </tr>
+    </table>
+
+    <div class="callout">
+      <span class="callout-label">Remembering left from right</span>
+      Held with the earth pin at the top and the back cover off: <strong>b<u>L</u>ue goes <u>L</u>eft, b<u>R</u>own goes <u>R</u>ight.</strong> The fuse is always on the brown side, so if you can see the fuse you have found the live terminal.
+    </div>
+
+    <h2 class="section">Why the fuse is in the live wire</h2>
+    <p>The fuse is a deliberately thin piece of wire. If the current gets too large it <strong>heats up and melts</strong>, breaking the circuit.</p>
+    <p>It is placed in the <strong>live</strong> wire, not the neutral one, and that choice is the whole point. When the fuse blows, everything beyond it is cut off from the live supply, so the appliance is left at a safe voltage. Put the fuse in the neutral wire instead and it would still stop the current — but the appliance would stay connected to the 230 V live supply, so anyone opening it up could still get a fatal shock.</p>
+
+    <h2 class="section">Why the earth pin is longest — and the earth wire has the most slack</h2>
+    <ul>
+      <li>The <strong>earth pin is longer and thicker</strong> than the other two. Because it is longer it enters the socket <strong>first</strong> and leaves <strong>last</strong>, so the appliance is earthed before it is ever live. It also pushes open the safety shutters covering the live and neutral holes.</li>
+      <li>Inside the plug, the <strong>earth wire is cut longest</strong>. If the cable is yanked and pulls free of the cable grip, the earth is the <strong>last connection to be torn out</strong> — so the safety wire survives longest.</li>
+    </ul>
+
+    <h2 class="section">The cable grip</h2>
+    <p>The cable grip clamps the <strong>outer insulation</strong> of the cable, not the individual wires. If someone tugs on the flex, the strain is taken by the grip rather than by the three screw terminals. Without it, a pull could drag a wire out of its terminal — and the loose wire touching the casing or another terminal is exactly the fault that causes shocks and fires.</p>
+
+    <h2 class="section">Choosing the fuse rating</h2>
+    <p>Only three ratings are commonly used: <strong>3 A, 5 A and 13 A</strong>. The rule is to work out the normal operating current, then pick the <strong>next standard fuse above it</strong> — high enough that the appliance runs without blowing the fuse, but as low as possible so a fault is caught quickly.</p>
+    <p class="formula">P = V × I &nbsp;→&nbsp; I = P ÷ V &nbsp;&nbsp;(mains V ≈ 230 V in Singapore)</p>
+    <div class="worked">
+      <span class="callout-label">Worked example</span>
+      <p>A television is rated 920 W. Which fuse should be fitted?</p>
+      <p>I = P ÷ V = 920 ÷ 230 = <strong>4 A</strong></p>
+      <p>4 A is above the 3 A fuse, so a 3 A fuse would blow in normal use. The next rating up is <strong>5 A</strong> — that is the correct choice. A 13 A fuse would let a dangerous fault current flow for far too long before blowing.</p>
+    </div>
+
+    <div class="callout think">
+      <span class="callout-label">Appliances with no earth wire</span>
+      Some appliances — hairdryers, phone chargers, many kettles — have only two wires. These are <strong>double insulated</strong>: the casing is plastic, which does not conduct, so there is no metal for a loose live wire to make dangerous. With nothing to earth, the earth wire would serve no purpose. They carry a <strong>double square</strong> symbol to show this.
+    </div>
+
+    <h2 class="section">Questions</h2>
+    <p>Nine questions, marked as you go. Get one wrong and you'll be shown why, plus how to work it out.</p>
+
+    <div class="scorebar" id="scorebar">
+      <span>Score <span class="sc">0 / 0</span></span>
+      <span class="bar"><span></span></span>
+      <span class="dn">0 of 9 answered</span>
+      <button class="qz-reset" type="button">Start again</button>
+    </div>
+
+    <div id="quiz">
+      <script type="application/json">
+      {
+        "questions": [
+          {
+            "type": "label",
+            "diagramRef": "#plugDiagram",
+            "stem": "<p>Label the six numbered parts of the plug.</p>",
+            "labels": ["Live wire", "Neutral wire", "Earth wire", "Fuse", "Cable grip", "Earth pin"],
+            "parts": [
+              {"n":1, "answer":"Fuse", "why":"The cylindrical component in the live line, marked BS 1362. It melts and breaks the circuit if the current gets too large."},
+              {"n":2, "answer":"Earth wire", "why":"The green-and-yellow wire running to the top terminal. It is also the longest wire inside the plug."},
+              {"n":3, "answer":"Cable grip", "why":"The clamp holding the outer insulation of the cable, so a tug on the flex does not strain the terminals."},
+              {"n":4, "answer":"Live wire", "why":"The brown wire running to the right-hand terminal — the one the fuse is connected to."},
+              {"n":5, "answer":"Neutral wire", "why":"The blue wire running to the left-hand terminal. bLue goes Left."},
+              {"n":6, "answer":"Earth pin", "why":"The top pin, longer and thicker than the other two so it connects first and disconnects last."}
+            ],
+            "explain": "With the earth pin at the top: earth to the top terminal, blue to the left, brown to the right with the fuse in that line.",
+            "workthrough": [
+              "Orientate the diagram first — <strong>earth pin at the top</strong>. Every part follows from that.",
+              "Find the fuse. It is the only cylindrical component, and it is always in the <strong>live</strong> line, so it tells you which side is live.",
+              "That fixes the two lower terminals: fuse side = <strong>live (brown, right)</strong>, opposite side = <strong>neutral (blue, left)</strong>. Remember <em>bLue Left, bRown Right</em>.",
+              "The remaining wire, green and yellow, must be the <strong>earth</strong> — running to the top terminal, and cut longest of the three.",
+              "At the bottom, the clamp holding the outer cable sheath is the <strong>cable grip</strong>.",
+              "The pin sticking out at the top, longer and thicker than the others, is the <strong>earth pin</strong>."
+            ]
+          },
+          {
+            "type": "structured",
+            "marks": 6,
+            "stem": "<p>State the function of each of the three wires in a three-pin plug.</p>",
+            "parts": [
+              {
+                "stem": "The live wire.",
+                "marks": 2,
+                "model": [
+                  "Carries the current from the mains supply to the appliance.",
+                  "It is at the high supply voltage (about 230 V), which makes it the dangerous wire."
+                ]
+              },
+              {
+                "stem": "The neutral wire.",
+                "marks": 2,
+                "model": [
+                  "Completes the circuit by carrying the current back from the appliance to the supply.",
+                  "It is at approximately 0 V."
+                ]
+              },
+              {
+                "stem": "The earth wire.",
+                "marks": 2,
+                "model": [
+                  "A safety wire connected to the metal casing of the appliance; it carries no current in normal use.",
+                  "If a fault makes the casing live, it provides a low-resistance path for the current to flow safely to earth — which also blows the fuse and cuts off the supply."
+                ]
+              }
+            ],
+            "explain": "Two marks each means the examiner wants two distinct points per wire — what it does, and the voltage or safety consequence.",
+            "workthrough": [
+              "Notice the mark allocation: <strong>2 marks per wire</strong>, so one sentence each is not enough.",
+              "For live and neutral, give the <em>direction of the current</em> plus the <em>voltage</em>. Live: supply → appliance, at about 230 V. Neutral: appliance → supply, at about 0 V.",
+              "For earth, the two points are <em>what it is connected to</em> (the metal casing, carrying no current normally) and <em>what it does in a fault</em>.",
+              "Be specific about the fault case — this is where marks are usually lost. Say the current flows safely to earth <strong>and</strong> that the resulting large current blows the fuse.",
+              "Avoid vague phrasing like “it protects you”. Name the mechanism."
+            ]
+          },
+          {
+            "type": "mcq",
+            "marks": 1,
+            "stem": "<p>Why is the fuse fitted in the live wire rather than the neutral wire?</p>",
+            "options": [
+              "Because the live wire carries more current than the neutral wire",
+              "So that when the fuse blows, the appliance is cut off from the high-voltage live supply",
+              "Because a fuse will not melt if it is placed in the neutral wire",
+              "Because the neutral wire is not connected to the mains supply"
+            ],
+            "answer": 1,
+            "explain": "Either position would stop the current — but only the live position leaves the appliance at a safe voltage.",
+            "whyWrong": {
+              "0": "The current is the same all the way round a series circuit, so live and neutral carry exactly the same current. That is not the reason.",
+              "2": "A fuse melts because of the current through it, and that current is identical in both wires. It would blow just as readily in the neutral wire.",
+              "3": "The neutral wire is very much part of the circuit — it is the return path to the supply. It just sits at about 0 V."
+            },
+            "workthrough": [
+              "Recognise that a fuse in <em>either</em> wire would break the circuit and stop the current, since the current is the same throughout.",
+              "So the question is not about stopping the current — it is about <strong>what is left connected afterwards</strong>.",
+              "Fuse in the <strong>live</strong> wire: when it blows, the appliance is disconnected from the 230 V supply and everything beyond the fuse is at a safe voltage.",
+              "Fuse in the <strong>neutral</strong> wire: the current stops, but the appliance is <em>still joined to the live supply</em>. Anyone opening it up could receive a fatal shock.",
+              "The fuse therefore goes in the live wire so that blowing it also <strong>isolates the appliance from the live supply</strong>."
+            ]
+          },
+          {
+            "type": "mcq",
+            "marks": 1,
+            "stem": "<p>The earth pin on a three-pin plug is longer than the live and neutral pins. Give the main reason.</p>",
+            "options": [
+              "So that it can carry a larger current than the other two pins",
+              "So the plug can only be inserted one way round",
+              "So the appliance is earthed first when plugging in and earthed last when unplugging",
+              "So it is easier to grip when pulling the plug out"
+            ],
+            "answer": 2,
+            "explain": "A longer pin makes contact first and breaks contact last, so the safety connection is always present while the appliance is live.",
+            "whyWrong": {
+              "0": "The earth pin is thicker partly for robustness, but in normal use it carries <em>no</em> current at all. Current capacity is not why it is longer.",
+              "1": "The plug is already one-way-only because the three pins form an asymmetric triangle. Extra length is not what does that.",
+              "3": "Nothing to do with grip — you pull on the plug body, not the pins."
+            },
+            "workthrough": [
+              "Think about the <strong>order</strong> in which the pins touch the socket as you push the plug in.",
+              "The longest pin reaches its contact <strong>first</strong>, so earth is connected before live and neutral.",
+              "Pulling the plug out reverses that order, so earth is the <strong>last</strong> connection to break.",
+              "The safety benefit: the appliance is earthed for the whole time it is connected to the live supply — never live-but-unearthed, even for a moment.",
+              "Worth also knowing the second job of the longer earth pin: it pushes open the <strong>safety shutters</strong> covering the live and neutral holes in the socket."
+            ]
+          },
+          {
+            "type": "mcq",
+            "marks": 1,
+            "stem": "<p>A television is rated at 920 W and runs from the 230 V mains. Which fuse should be fitted? (Available: 3 A, 5 A, 13 A)</p>",
+            "options": ["3 A", "5 A", "13 A", "Any of them will work equally well"],
+            "answer": 1,
+            "explain": "The operating current is 4 A, so the correct fuse is the next standard rating above it — 5 A.",
+            "whyWrong": {
+              "0": "The television draws 4 A in normal use, which is more than 3 A — so a 3 A fuse would blow every time you switched it on.",
+              "2": "13 A is far above the 4 A the set actually needs. A fault could push well over 4 A and still not blow it, so the fuse would fail to protect the appliance.",
+              "3": "The rating matters a great deal. Too low and it blows in normal use; too high and it fails to cut off a dangerous fault current."
+            },
+            "workthrough": [
+              "Write down what you have: P = 920 W, V = 230 V.",
+              "Rearrange the power equation to find the normal operating current: <strong>I = P ÷ V</strong>.",
+              "Substitute: I = 920 ÷ 230 = <strong>4 A</strong>.",
+              "Now apply the selection rule: choose the <strong>next standard fuse above</strong> the operating current.",
+              "4 A is above 3 A, so a 3 A fuse would blow in normal use. The next rating up is <strong>5 A</strong> — high enough to run, low enough to catch a fault quickly."
+            ]
+          },
+          {
+            "type": "mcq",
+            "marks": 1,
+            "stem": "<p>An electric kettle is rated 2300 W on the 230 V mains. Which fuse should be fitted?</p>",
+            "options": ["3 A", "5 A", "13 A", "A fuse is not needed for a kettle"],
+            "answer": 2,
+            "explain": "I = 2300 ÷ 230 = 10 A, so the only rating above that is 13 A.",
+            "whyWrong": {
+              "0": "The kettle draws 10 A. A 3 A fuse would melt the instant you switched it on.",
+              "1": "10 A is well above 5 A, so a 5 A fuse would also blow immediately in normal use.",
+              "3": "Every mains appliance needs a fuse. A high-power appliance like a kettle needs one more than most, because a fault could draw an enormous current."
+            },
+            "workthrough": [
+              "List what you are given: P = 2300 W, V = 230 V.",
+              "Use I = P ÷ V = 2300 ÷ 230 = <strong>10 A</strong>.",
+              "Compare against the available ratings: 3 A and 5 A are both <em>below</em> 10 A, so either would blow in normal use.",
+              "The next standard rating above 10 A is <strong>13 A</strong> — the only workable choice.",
+              "This is why kettles, heaters and irons are nearly always fitted with 13 A fuses, while lamps and radios take 3 A."
+            ]
+          },
+          {
+            "type": "mcq",
+            "marks": 2,
+            "stem": "<p>A plug has been wired with the brown wire to the left terminal and the blue to the right — the two swapped. The appliance switches on and works normally. What is the danger?</p>",
+            "options": [
+              "There is no real danger, since the appliance works correctly",
+              "The appliance will overheat because the current now flows backwards",
+              "The switch and fuse now sit in the neutral line, so the appliance stays connected to the live supply even when switched off or when the fuse blows",
+              "The earth wire will start carrying current all the time"
+            ],
+            "answer": 2,
+            "explain": "Swapping live and neutral leaves the appliance's switch and fuse protecting the wrong side of the circuit.",
+            "whyWrong": {
+              "0": "This is exactly why the fault is so dangerous — it is invisible in normal use. Working correctly tells you nothing about whether it is safe.",
+              "1": "Mains current alternates direction fifty times a second anyway, so there is no “backwards”. The appliance will not overheat from this.",
+              "3": "The earth wire is unaffected by swapping live and neutral. It still carries no current until there is a fault."
+            },
+            "workthrough": [
+              "Start from what the fuse and switch are meant to do: both are fitted on the <strong>live</strong> side, so that operating either one isolates the appliance from the 230 V supply.",
+              "Now swap live and neutral. The fuse and switch are now in the <strong>neutral</strong> line instead.",
+              "Trace what happens when you switch the appliance off. The current stops — so it appears to be off — but the live supply is still connected right up to the appliance.",
+              "The same applies if the fuse blows: the current stops, but the inside of the appliance remains at 230 V.",
+              "So anyone opening the appliance, or touching a part inside, could receive a <strong>fatal shock from something that appears to be switched off</strong>. That is the danger."
+            ]
+          },
+          {
+            "type": "mcq",
+            "marks": 1,
+            "stem": "<p>A plastic-cased hairdryer has only two wires in its plug — live and neutral, with no earth. Why is this safe?</p>",
+            "options": [
+              "It uses too little current for an earth wire to matter",
+              "It is double insulated — the plastic casing cannot conduct, so there is no metal that could become live",
+              "The neutral wire acts as the earth wire in two-wire appliances",
+              "The fuse alone gives complete protection, so an earth wire is never needed"
+            ],
+            "answer": 1,
+            "explain": "The earth wire's job is to make a metal casing safe. A plastic casing cannot become live, so there is nothing to earth.",
+            "whyWrong": {
+              "0": "A hairdryer is actually a high-current appliance. The current has nothing to do with why the earth is unnecessary.",
+              "2": "The neutral wire is a current-carrying part of the normal circuit. It is not a safety earth and must never be used as one.",
+              "3": "A fuse protects the circuit from excessive current, but it does not stop a metal casing becoming live in the first place. Earthing and fusing do different jobs."
+            },
+            "workthrough": [
+              "Recall precisely what the earth wire is for: it connects the <strong>metal casing</strong> so that a loose live wire touching the casing sends current safely to earth rather than through you.",
+              "Now ask what the hairdryer's casing is made of — <strong>plastic</strong>, which does not conduct electricity.",
+              "So even if the live wire came loose inside and touched the casing, the casing could not become live and could not shock you.",
+              "With no metal to make safe, the earth wire has no job to do. The appliance is <strong>double insulated</strong>.",
+              "Look for the <strong>double square symbol</strong> on the appliance — that is what it means."
+            ]
+          },
+          {
+            "type": "structured",
+            "marks": 4,
+            "stem": "<p>A metal-cased electric heater develops a fault: the live wire works loose and touches the inside of the metal casing. The heater is correctly earthed and fitted with the right fuse.</p>",
+            "parts": [
+              {
+                "stem": "Describe what happens in the moments after the fault occurs.",
+                "marks": 3,
+                "model": [
+                  "The metal casing becomes connected to the live wire, so a current flows from the casing through the earth wire.",
+                  "The earth wire has a very low resistance, so this fault current is very large.",
+                  "The large current melts the fuse, which breaks the circuit and disconnects the appliance from the live supply."
+                ]
+              },
+              {
+                "stem": "Explain why this would be far more dangerous if the heater had not been earthed.",
+                "marks": 1,
+                "model": [
+                  "With no earth wire the casing would stay live, and the current would only flow when someone touched it — passing through their body to earth and giving them a severe or fatal shock."
+                ]
+              }
+            ],
+            "explain": "The earth wire and the fuse work as a pair: earth gives the current an easy path, and that large current is what blows the fuse.",
+            "workthrough": [
+              "For part (a), notice it is worth <strong>3 marks</strong>, so the examiner wants three linked steps — not just “the fuse blows”.",
+              "Step one: the fault connects the live wire to the metal casing, so current flows out through the <strong>earth wire</strong>.",
+              "Step two: explain <em>why the current is large</em> — the earth wire has a <strong>very low resistance</strong>, so a big current flows.",
+              "Step three: that large current <strong>melts the fuse</strong>, breaking the circuit and isolating the appliance.",
+              "For part (b), contrast it with the unearthed case: the casing simply stays live, the fuse never blows because no large current flows, and the danger only reveals itself when a person touches it and becomes the path to earth.",
+              "The examiner is looking for the link between the two components — the earth wire is what <em>causes</em> the fuse to blow."
+            ]
+          }
+        ]
+      }
+      </script>
+    </div>
+  </div>
+
+  <nav class="lesson-nav">
+    <a href="../index.html">← Physics</a>
+    <a class="next" href="../circuits/index.html">Circuits course →</a>
+  </nav>
+</div>
+<script src="../../js/quiz-engine.js"></script>
+</body>
+</html>

@@ -264,6 +264,52 @@ body.hide-ext [data-tier="ext"]{display:none}
 .qz-acts{display:flex;gap:8px;flex-wrap:wrap;margin-top:12px;align-items:center}
 .qz-acts .spacer{flex:1}
 
+/* ---- diagram labelling -------------------------------------- */
+.labelfig{
+  border:1.5px solid var(--ink);background:#FFF;padding:14px;margin:4px 0 16px;
+  display:flex;justify-content:center;
+}
+.labelfig svg{max-width:100%;height:auto}
+.labelrows{display:grid;grid-template-columns:repeat(auto-fit,minmax(230px,1fr));gap:10px}
+.labelrow{
+  display:flex;align-items:center;gap:10px;
+  border:1.5px solid var(--rule);background:#FFF;padding:9px 11px;
+}
+.labelrow.ok{border-color:var(--cool);background:rgba(46,122,140,.09)}
+.labelrow.no{border-color:var(--hot);background:rgba(217,63,43,.08)}
+.labelrow .lnum{
+  font-family:"Space Mono",monospace;font-weight:700;font-size:14px;
+  width:26px;height:26px;flex:none;border:1.5px solid var(--ink);border-radius:50%;
+  display:flex;align-items:center;justify-content:center;background:var(--charge);color:#F7FAFC;
+}
+.labelrow .lsel{
+  flex:1;min-width:0;font-family:inherit;font-size:14px;padding:8px 9px;
+  border:1.5px solid var(--rule);background:#F7FAFC;color:var(--ink);min-height:40px;
+}
+.labelrow .lsel:focus-visible{outline:2.5px solid var(--hot);outline-offset:2px}
+.labelrow .lsel:disabled{opacity:1;color:var(--ink);-webkit-text-fill-color:var(--ink)}
+.labelrow .lmark{font-family:"Space Mono",monospace;font-weight:700;width:16px;flex:none}
+.labelrow .lmark.ok{color:var(--cool)}
+.labelrow .lmark.no{color:var(--hot)}
+
+/* plug diagram colours */
+.plug-body{fill:#F2F5F8;stroke:var(--ink);stroke-width:2.4}
+.plug-pin{fill:#C9B47A;stroke:var(--ink);stroke-width:2}
+.plug-term{fill:#D8C48E;stroke:var(--ink);stroke-width:2}
+.w-earth{stroke:#C8D93A;stroke-width:7;fill:none;stroke-linecap:round}
+.w-earth-b{stroke:#4E9E4E;stroke-width:7;fill:none;stroke-linecap:round;stroke-dasharray:11 11}
+.w-live{stroke:#7B4A2A;stroke-width:7;fill:none;stroke-linecap:round}
+.w-neutral{stroke:#2E6BB8;stroke-width:7;fill:none;stroke-linecap:round}
+.plug-fuse{fill:#E8DCC0;stroke:var(--ink);stroke-width:2}
+.plug-grip{fill:#3E4650;stroke:var(--ink);stroke-width:2}
+.plug-cable{fill:#EDEFF2;stroke:var(--ink);stroke-width:2.4}
+.callout-num circle{fill:var(--charge);stroke:var(--ink);stroke-width:2}
+.callout-num text{
+  font-family:"Space Mono",monospace;font-size:14px;font-weight:700;
+  fill:#F7FAFC;text-anchor:middle;
+}
+.callout-line{stroke:var(--ink);stroke-width:1.5;stroke-dasharray:4 3;fill:none}
+
 /* wrong-answer derivation: why it was wrong, then how to get there */
 .derive{
   margin-top:12px;padding:12px 14px;

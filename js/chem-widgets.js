@@ -609,8 +609,7 @@ function svg(tag, attrs){
     current: {
       title:'Using an electric current',
       eq:'water --electricity--> hydrogen + oxygen',
-      body:'An electric current breaks a compound down, or drives metal from a solution onto an object. This covers electrolysis and electroplating.',
-      tier:'g2'
+      body:'An electric current breaks a compound down, or drives metal from a solution onto an object. This covers electrolysis and electroplating.'
     }
   };
 
@@ -625,8 +624,7 @@ function svg(tag, attrs){
     titleEl.textContent = t.title;
     eqEl.textContent = t.eq;
     bodyEl.textContent = t.body;
-    if (t.tier){ setHidden(badge, false); badge.textContent = 'Optional for G2'; }
-    else setHidden(badge, true);
+    setHidden(badge, true);
   }
 
   btns.forEach(b => b.addEventListener('click', () => {

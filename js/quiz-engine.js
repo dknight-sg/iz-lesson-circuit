@@ -29,6 +29,7 @@
     if (q.type === 'structured') return q.parts.reduce((s, p) => s + (p.marks || 1), 0);
     if (q.type === 'sort') return q.items.length;
     if (q.type === 'label') return q.parts.length;
+    if (q.type === 'pee') return q.steps.length;
     return q.marks || 1;
   }
   function bump(earned, possible){
@@ -426,6 +427,147 @@
     });
   }
 
+  // ---- hotspot: pick the right line out of a passage --------------
+  function buildHotspot(q, body){
+    const wrap = el('div', 'hotlines');
+    const rows = q.lines.map((text, i) => {
+      const b = el('button', 'hotline', '<span class="hl-n">' + (i + 1) + '</span><span>' + text + '</span>');
+      b.type = 'button';
+      b.addEventListener('click', () => {
+        if (b.disabled) return;
+        rows.forEach(x => x.setAttribute('aria-pressed', 'false'));
+        b.setAttribute('aria-pressed', 'true');
+        submit.disabled = false;
+        chosen = i;
+      });
+      wrap.appendChild(b);
+      return b;
+    });
+    body.appendChild(wrap);
+    let chosen = -1;
+
+    const acts = el('div', 'qz-acts');
+    const submit = el('button', null, 'Check my choice');
+    submit.type = 'button';
+    submit.disabled = true;
+    acts.appendChild(submit);
+    body.appendChild(acts);
+
+    submit.addEventListener('click', () => {
+      const ok = (q.accept || [q.answer]).indexOf(chosen) !== -1;
+      rows.forEach((b, i) => {
+        b.disabled = true;
+        if (i === q.answer) b.classList.add('correct');
+        else if (i === chosen) b.classList.add('wrong');
+      });
+      submit.remove();
+      const marks = qMarks(q);
+      const fb = feedback(body, ok, ok ? marks : 0, marks, q.explain);
+      if (!ok){
+        const why = (q.whyWrong || {})[String(chosen)] ||
+          'That line does not carry the shift the question is asking about.';
+        derivation(fb, q, {
+          whyWrong: why,
+          answerLine: 'line ' + (q.answer + 1) + ' — “' + q.lines[q.answer] + '”'
+        });
+      }
+      bump(ok ? marks : 0, marks);
+    });
+  }
+
+  // ---- P.E.E. — three chained choices that build a paragraph ------
+  function buildPee(q, body){
+    const built = [];
+    let step = 0;
+
+    const strip = el('div', 'peesteps');
+    q.steps.forEach((s, i) => {
+      const chip = el('span', 'peechip', s.label);
+      chip.dataset.i = i;
+      strip.appendChild(chip);
+      if (i < q.steps.length - 1) strip.appendChild(el('span', 'peearrow', '→'));
+    });
+    body.appendChild(strip);
+
+    const stage = el('div', 'peestage');
+    body.appendChild(stage);
+
+    const para = el('div', 'peepara');
+    para.hidden = true;
+    body.appendChild(para);
+
+    function markChips(){
+      [...strip.querySelectorAll('.peechip')].forEach((c, i) => {
+        c.classList.toggle('done', i < step);
+        c.classList.toggle('now', i === step);
+      });
+    }
+
+    function renderStep(){
+      markChips();
+      stage.innerHTML = '';
+      if (step >= q.steps.length){ finish(); return; }
+      const s = q.steps[step];
+      stage.appendChild(el('p', 'peeprompt',
+        '<strong>' + s.label + '</strong> — ' + s.prompt));
+      const opts = el('div', 'opts');
+      const btns = s.options.map((text, i) => {
+        const b = el('button', 'opt',
+          '<span class="key">' + LETTERS[i] + '</span><span>' + text + '</span>');
+        b.type = 'button';
+        b.addEventListener('click', () => {
+          if (b.disabled) return;
+          const ok = i === s.answer;
+          btns.forEach((x, k) => {
+            x.disabled = true;
+            if (k === s.answer) x.classList.add('correct');
+            else if (k === i) x.classList.add('wrong');
+          });
+          built.push({ label: s.label, text: s.options[s.answer], ok: ok });
+          const note = el('div', 'qz-fb ' + (ok ? 'good' : 'bad'));
+          note.appendChild(el('p', null,
+            '<span class="mark">' + (ok ? 'Good choice' : 'Not the strongest') + '</span>'));
+          note.appendChild(el('p', null, ok ? s.whyRight
+            : ((s.why || {})[String(i)] || 'That one does less work than the best option.')));
+          stage.appendChild(note);
+          const nx = el('div', 'qz-acts');
+          const nb = el('button', null, step < q.steps.length - 1 ? 'Next step →' : 'Build my paragraph');
+          nb.type = 'button';
+          nb.addEventListener('click', () => { step++; renderStep(); });
+          nx.appendChild(nb);
+          stage.appendChild(nx);
+          if (ok) got++;
+        });
+        opts.appendChild(b);
+        return b;
+      });
+      stage.appendChild(opts);
+    }
+
+    let got = 0;
+    function finish(){
+      stage.innerHTML = '';
+      markChips();
+      para.hidden = false;
+      para.innerHTML = '<h5>Your paragraph</h5><p>' +
+        built.map(b => b.text).join(' ') + '</p>';
+      const marks = qMarks(q);
+      const fb = feedback(body, got === marks, got, marks, q.explain);
+      if (q.model){
+        const m = el('details', 'model');
+        m.appendChild(el('summary', null, 'Compare with a full-mark answer'));
+        const mb = el('div', 'mbody');
+        mb.appendChild(el('p', null, q.model));
+        m.appendChild(mb);
+        fb.appendChild(m);
+      }
+      if (got < marks) derivation(fb, q, {});
+      bump(got, marks);
+    }
+
+    renderStep();
+  }
+
   // ---- numeric answer --------------------------------------------
   // The student types the value rather than picking it, so they cannot
   // work backwards from the options. `whyWrong` is a list of
@@ -591,6 +733,8 @@
       else if (q.type === 'wordeq') buildWordEq(q, body);
       else if (q.type === 'label') buildLabel(q, body);
       else if (q.type === 'numeric') buildNumeric(q, body);
+      else if (q.type === 'hotspot') buildHotspot(q, body);
+      else if (q.type === 'pee') buildPee(q, body);
       else if (q.type === 'structured') buildStructured(q, body);
     });
 

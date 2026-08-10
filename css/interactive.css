@@ -1,6 +1,6 @@
 /* ============================================================
-   Chemistry: Chemical Changes
-   Loaded in addition to style.css
+   Shared interactive styling — quiz engine, plus the
+   subject-specific widgets. Loaded in addition to style.css.
    ============================================================ */
 
 /* ---- syllabus tier badges ---------------------------------- */
@@ -263,6 +263,98 @@ body.hide-ext [data-tier="ext"]{display:none}
 .qz-fb.bad .mark{color:var(--hot)}
 .qz-acts{display:flex;gap:8px;flex-wrap:wrap;margin-top:12px;align-items:center}
 .qz-acts .spacer{flex:1}
+
+/* ============================================================
+   Literature
+   ============================================================ */
+
+/* quoted extract — deliberately short, for criticism and review */
+.extract{
+  border-left:6px solid var(--charge);background:#F7FAFC;
+  padding:16px 20px;margin:0 0 18px;
+}
+.extract p{margin:0;font-size:16px;line-height:1.85;white-space:pre-line}
+.extract .cite{
+  display:block;margin-top:12px;font-family:"Space Mono",monospace;
+  font-size:11px;letter-spacing:.06em;color:var(--ink-soft);white-space:normal;
+}
+
+.booknote{
+  display:flex;gap:10px;align-items:flex-start;
+  border:1.5px dashed var(--rule);background:rgba(240,135,30,.06);
+  padding:12px 14px;margin:0 0 18px;font-size:13px;color:var(--ink-soft);
+}
+.booknote strong{color:var(--ink)}
+
+/* the turn — before/after panel */
+.turnbox{display:grid;grid-template-columns:1fr auto 1fr;gap:14px;align-items:center;margin:0 0 20px}
+@media (max-width:620px){.turnbox{grid-template-columns:1fr;gap:8px}}
+.turnbox .half{border:1.5px solid var(--ink);background:#F7FAFC;padding:14px 16px}
+.turnbox .half h5{
+  margin:0 0 8px;font-family:"Space Mono",monospace;font-size:10px;
+  letter-spacing:.1em;text-transform:uppercase;color:var(--ink-soft);font-weight:400;
+}
+.turnbox .half p{margin:0;font-size:14px}
+.turnbox .pivot{
+  font-family:"Space Mono",monospace;font-size:22px;color:var(--charge);
+  text-align:center;font-weight:700;
+}
+@media (max-width:620px){.turnbox .pivot{transform:rotate(90deg)}}
+
+/* scope ladder: Self -> Others -> Nation */
+.scoperow{
+  display:grid;grid-template-columns:118px 1fr;gap:14px;
+  border-top:1.5px solid var(--rule);padding:13px 0;align-items:baseline;
+}
+.scoperow:last-child{border-bottom:1.5px solid var(--rule)}
+.scoperow .scope{
+  font-family:"Space Mono",monospace;font-size:11px;letter-spacing:.1em;
+  text-transform:uppercase;color:var(--charge);
+}
+.scoperow .what strong{display:block;margin-bottom:3px}
+.scoperow .what span{font-size:14px;color:var(--ink-soft)}
+@media (max-width:520px){.scoperow{grid-template-columns:1fr;gap:4px}}
+
+/* hotspot — clickable lines */
+.hotlines{display:flex;flex-direction:column;gap:4px;margin-top:8px}
+.hotline{
+  display:flex;gap:12px;align-items:flex-start;text-align:left;width:100%;
+  border:1.5px solid transparent;border-left-color:var(--rule);
+  background:#FFF;padding:9px 12px;cursor:pointer;min-height:40px;
+  font-family:"Spline Sans",system-ui,sans-serif;font-size:15px;color:var(--ink);
+  line-height:1.5;
+}
+.hotline:hover:not(:disabled){border-color:var(--rule);border-left-color:var(--charge);background:rgba(240,135,30,.06)}
+.hotline:focus-visible{outline:2.5px solid var(--hot);outline-offset:2px}
+.hotline[aria-pressed="true"]{border-color:var(--ink);background:rgba(240,135,30,.14)}
+.hotline.correct{border-color:var(--cool);background:rgba(46,122,140,.14)}
+.hotline.wrong{border-color:var(--hot);background:rgba(217,63,43,.1)}
+.hotline:disabled{cursor:default;opacity:1;color:var(--ink);-webkit-text-fill-color:var(--ink)}
+.hotline .hl-n{
+  font-family:"Space Mono",monospace;font-size:11px;color:var(--ink-soft);
+  flex:none;width:18px;padding-top:3px;
+}
+
+/* P.E.E. builder */
+.peesteps{display:flex;gap:8px;align-items:center;flex-wrap:wrap;margin:4px 0 16px}
+.peechip{
+  font-family:"Space Mono",monospace;font-size:11px;letter-spacing:.08em;
+  text-transform:uppercase;border:1.5px solid var(--rule);color:var(--ink-soft);
+  padding:5px 11px;
+}
+.peechip.now{border-color:var(--ink);background:var(--ink);color:#F7FAFC}
+.peechip.done{border-color:var(--cool);color:var(--cool);background:rgba(46,122,140,.1)}
+.peearrow{font-family:"Space Mono",monospace;color:var(--charge);font-weight:700}
+.peeprompt{margin:0 0 10px;font-size:15px}
+.peepara{
+  border:1.5px solid var(--ink);background:#FFF;padding:16px 18px;margin-top:16px;
+  box-shadow:4px 4px 0 rgba(15,36,54,.1);
+}
+.peepara h5{
+  margin:0 0 8px;font-family:"Space Mono",monospace;font-size:10px;
+  letter-spacing:.12em;text-transform:uppercase;color:var(--charge);font-weight:400;
+}
+.peepara p{margin:0;font-size:15px;line-height:1.65}
 
 /* ---- numeric answer ----------------------------------------- */
 .numrow{display:flex;align-items:center;gap:10px;margin-top:8px;flex-wrap:wrap}

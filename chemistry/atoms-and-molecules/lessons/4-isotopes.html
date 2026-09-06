@@ -1,0 +1,208 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>4 · Isotopes and relative atomic mass — Atoms and Molecules</title>
+<meta name="description" content="Textbook 8.2 plus class notes — isotopes are atoms of the same element with the same protons and electrons but different neutrons, and how isotope abundance gives a relative atomic mass such as chlorine's 35.5.">
+<meta name="theme-color" content="#E4EAF0">
+<link rel="icon" type="image/svg+xml" href="../../../favicon.svg">
+<link rel="stylesheet" href="../../../css/style.css">
+<link rel="stylesheet" href="../../../css/interactive.css">
+</head>
+<body>
+<div class="sheet">
+  <header>
+    <div>
+      <a class="crumb" href="../index.html">← Atoms and Molecules</a>
+      <p class="eyebrow" style="margin-top:10px">Lesson 4 of 7 · Textbook 8.2 <span class="tier ext">+ class notes</span></p>
+      <h1>Isotopes and relative atomic mass</h1>
+    </div>
+    <p class="sub">The last lesson said the proton number names the element. This one asks the obvious follow-up: what happens if you change the <em>neutrons</em> instead?</p>
+  </header>
+
+  <div class="prose">
+    <div class="booknote">
+      <span>✏️</span>
+      <span>The relative atomic mass calculation in the second half goes <strong>beyond the printed textbook pages</strong> — but it is worked through in your own notes on page 73, so it is treated as core here.</span>
+    </div>
+
+    <h2 class="section">Neutrons are the one that can vary</h2>
+    <p>Unlike the number of electrons, the number of neutrons in an atom is <strong>not always equal</strong> to the number of protons. Some types of atom have different numbers of neutrons.</p>
+
+    <table class="cmp" style="margin-bottom:20px">
+      <tr>
+        <td class="h" style="border-bottom:1.5px solid var(--ink);width:26%">Atom</td>
+        <td class="h" style="border-bottom:1.5px solid var(--ink)">Protons</td>
+        <td class="h" style="border-bottom:1.5px solid var(--ink)">Electrons</td>
+        <td class="h" style="border-bottom:1.5px solid var(--ink)">Neutrons</td>
+      </tr>
+      <tr><td><strong>carbon</strong></td><td>6</td><td>6</td><td class="diff">6, 7 or 8</td></tr>
+      <tr><td><strong>nitrogen</strong></td><td>7</td><td>7</td><td class="diff">7 or 8</td></tr>
+      <tr><td><strong>uranium</strong></td><td>92</td><td>92</td><td class="diff">143 or 146</td></tr>
+    </table>
+
+    <div class="callout">
+      <span class="callout-label">Definition — straight from your notes</span>
+      <strong>Isotopes are atoms of the same element with the same number of protons and electrons, but a different number of neutrons.</strong>
+      <p style="margin:10px 0 0">Nitrogen-14 and nitrogen-15 are isotopes of nitrogen. Uranium-235 and uranium-238 are isotopes of uranium.</p>
+    </div>
+
+    <div class="sim" id="isotopeLab">
+      <div class="sim-head">
+        <h4>Same element, different neutrons</h4>
+        <div class="picker is-pick">
+          <button type="button" data-k="carbon">Carbon</button>
+          <button type="button" data-k="hydrogen">Hydrogen</button>
+          <button type="button" data-k="chlorine">Chlorine</button>
+          <button type="button" data-k="nitrogen">Nitrogen</button>
+          <button type="button" data-k="uranium">Uranium</button>
+        </div>
+      </div>
+      <div class="sim-body">
+        <div class="is-rows"></div>
+        <p class="sep-out is-note" style="margin-top:14px"></p>
+      </div>
+      <div class="sim-foot">Two columns never move; one always does. That is the whole definition, in a table.</div>
+    </div>
+
+    <h2 class="section">Nucleon number</h2>
+    <div class="callout">
+      <span class="callout-label">The number below the symbol</span>
+      <strong>Nucleon number = number of protons + number of neutrons.</strong> ("Nucleons" just means the particles in the nucleus.)
+      <p style="margin:10px 0 0">Rearranged, that gives the version you will actually use in questions:<br>
+      <strong>number of neutrons = nucleon number − proton number</strong></p>
+    </div>
+    <p>So carbon-14 has 6 protons (it is carbon) and <strong>14 − 6 = 8</strong> neutrons. Chlorine-37 has 17 protons and <strong>37 − 17 = 20</strong> neutrons.</p>
+
+    <h2 class="section">Why chlorine's mass is 35.5</h2>
+    <p>Every nucleon number is a whole number — you cannot have half a proton. Yet the periodic table gives chlorine a relative atomic mass of <strong>35.5</strong>. That is not a rounding error; it is telling you something real.</p>
+    <p>Chlorine exists as two isotopes: about <strong>75% chlorine-35</strong> and <strong>25% chlorine-37</strong>. The relative atomic mass is the <strong>weighted average</strong> of the two.</p>
+
+    <div class="sim" id="ramLab">
+      <div class="sim-head">
+        <h4>Relative atomic mass from abundance</h4>
+        <div class="picker ram-pick">
+          <button type="button" data-k="chlorine">Chlorine</button>
+          <button type="button" data-k="boron">Boron</button>
+          <button type="button" data-k="copper">Copper</button>
+        </div>
+      </div>
+      <div class="sim-body">
+        <div class="at-ctl">
+          <div><label>Abundance of the lighter isotope</label>
+            <input type="range" class="ram-pct" min="0" max="100" step="1" value="75" aria-label="Percentage abundance of the lighter isotope"></div>
+        </div>
+        <div class="ram-row">
+          <div class="ram-box"><span class="rl">Lighter isotope</span><span class="rv ram-a">—</span></div>
+          <div class="ram-box"><span class="rl">Its abundance</span><span class="rv ram-pa">—</span></div>
+          <div class="ram-box"><span class="rl">Heavier isotope</span><span class="rv ram-b">—</span></div>
+          <div class="ram-box"><span class="rl">Its abundance</span><span class="rv ram-pb">—</span></div>
+        </div>
+        <div class="ram-work"></div>
+        <div class="ram-eq">
+          <span class="lbl">Relative atomic mass =</span>
+          <span class="ram-ans">—</span>
+        </div>
+        <p class="sep-out ram-note"></p>
+      </div>
+      <div class="sim-foot">Set chlorine back to 75% and the answer lands exactly on <strong>35.5</strong> — the number printed on the periodic table.</div>
+    </div>
+
+    <div class="callout think">
+      <span class="callout-label">The method, in the form your notes use</span>
+      <p style="margin:0 0 8px">Multiply each isotope's nucleon number by its percentage abundance over 100, then add:</p>
+      <p style="margin:0;font-family:'Space Mono',monospace;font-size:15px;text-align:center">
+        ( <sup>75</sup>&frasl;<sub>100</sub> × 35 ) + ( <sup>25</sup>&frasl;<sub>100</sub> × 37 ) = 26.25 + 9.25 = <strong>35.5</strong>
+      </p>
+      <p style="margin:10px 0 0">Two checks worth doing every time. The abundances must add to <strong>100%</strong>. And the answer must land <strong>between</strong> the two nucleon numbers — closer to whichever isotope is more abundant. Chlorine's 35.5 sits nearer 35 than 37, which fits 75% being the lighter one.</p>
+    </div>
+
+    <h2 class="section">Check yourself</h2>
+    <div id="quiz">
+      <script type="application/json">
+      {
+        "questions": [
+          {
+            "type": "mcq",
+            "marks": 2,
+            "stem": "<p>What are isotopes?</p>",
+            "options": [
+              "Atoms of different elements with the same number of neutrons",
+              "Atoms of the same element with the same number of protons and electrons, but different numbers of neutrons",
+              "Atoms that have lost or gained electrons",
+              "Atoms of the same element with different numbers of protons"
+            ],
+            "answer": 1,
+            "explain": "Same protons and electrons; only the neutrons differ.",
+            "whyWrong": {
+              "0": "Isotopes are always the <strong>same</strong> element. Different elements means different proton numbers, which is a different idea entirely.",
+              "2": "Losing or gaining electrons changes the <em>charge</em>, not the element or the isotope. Isotopes are neutral atoms with equal protons and electrons.",
+              "3": "This is impossible for one element. <strong>Changing the protons changes the element</strong> — that was the whole point of the last lesson."
+            },
+            "workthrough": [
+              "Start from the rule you already know: the <strong>proton number</strong> identifies the element, so it cannot change between isotopes of the same element.",
+              "Electrons equal protons in a neutral atom, so those cannot change either.",
+              "That leaves only one particle free to vary: the <strong>neutron</strong>.",
+              "Hence the definition: atoms of the <strong>same element</strong>, with the <strong>same protons and electrons</strong> but <strong>different neutrons</strong>.",
+              "Two marks: one for same protons/electrons, one for different neutrons."
+            ]
+          },
+          {
+            "type": "numeric",
+            "marks": 1,
+            "unit": "neutrons",
+            "answer": 8,
+            "tolerance": 0.5,
+            "stem": "<p>Carbon-14 has a nucleon number of 14. Carbon's proton number is 6. How many neutrons does a carbon-14 atom have?</p>",
+            "explain": "Neutrons = nucleon number − proton number = 14 − 6.",
+            "whyWrong": [
+              {"near": 14, "tol": 0.4, "msg": "14 is the <strong>nucleon number</strong> — the protons and neutrons added together. You still need to subtract the 6 protons."},
+              {"near": 6, "tol": 0.4, "msg": "6 is the number of <strong>protons</strong> (and electrons). Subtract it from 14 to get the neutrons."},
+              {"near": 20, "tol": 0.5, "msg": "You added instead of subtracting. Nucleon number already <em>includes</em> the protons, so adding them again counts them twice."}
+            ],
+            "workthrough": [
+              "Recall the relationship: <strong>nucleon number = protons + neutrons</strong>.",
+              "Rearrange for what you want: <strong>neutrons = nucleon number − proton number</strong>.",
+              "Substitute: 14 − 6 = <strong>8 neutrons</strong>.",
+              "Cross-check against the table: carbon can have 6, 7 or 8 neutrons — so 8 is one of its isotopes, carbon-14. ✓"
+            ]
+          },
+          {
+            "type": "numeric",
+            "marks": 2,
+            "unit": "",
+            "answer": 35.5,
+            "tolerance": 0.05,
+            "stem": "<p>Chlorine is 75% chlorine-35 and 25% chlorine-37. Calculate its relative atomic mass.</p>",
+            "explain": "(75/100 × 35) + (25/100 × 37) = 26.25 + 9.25 = 35.5",
+            "whyWrong": [
+              {"near": 36, "tol": 0.2, "msg": "You took the plain average of 35 and 37. That would only be right if both isotopes were <strong>50%</strong> each. Here the lighter one is far more abundant, so the answer must sit closer to 35."},
+              {"near": 72, "tol": 0.5, "msg": "You added the two nucleon numbers. A relative atomic mass is an <em>average</em>, so it has to lie between them."},
+              {"near": 35, "tol": 0.2, "msg": "That is the nucleon number of the more common isotope alone. The 25% of chlorine-37 pulls the average slightly upwards."},
+              {"near": 37, "tol": 0.2, "msg": "That is the heavier isotope alone — and it is the <em>less</em> abundant one, so the average must be well below it."}
+            ],
+            "workthrough": [
+              "Write each isotope as its abundance over 100, multiplied by its nucleon number.",
+              "Chlorine-35: <sup>75</sup>&frasl;<sub>100</sub> × 35 = <strong>26.25</strong>",
+              "Chlorine-37: <sup>25</sup>&frasl;<sub>100</sub> × 37 = <strong>9.25</strong>",
+              "Add them: 26.25 + 9.25 = <strong>35.5</strong>",
+              "Check it lands between 35 and 37, and nearer 35 because that isotope is more abundant. ✓ This is why the periodic table shows 35.5 rather than a whole number.",
+              "Two marks: one for the weighted method, one for the correct answer."
+            ]
+          }
+        ]
+      }
+      </script>
+    </div>
+  </div>
+
+  <nav class="lesson-nav">
+    <a href="3-proton-number.html">← The proton number</a>
+    <a class="next" href="5-atoms-and-molecules.html">Next: Atoms and molecules →</a>
+  </nav>
+</div>
+<script src="../../../js/atom-widgets.js"></script>
+<script src="../../../js/quiz-engine.js"></script>
+</body>
+</html>

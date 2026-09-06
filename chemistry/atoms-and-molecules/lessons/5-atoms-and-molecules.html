@@ -1,0 +1,183 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>5 · Atoms and molecules — Atoms and Molecules</title>
+<meta name="description" content="Textbook 8.3 — representing atoms and molecules with labelled circles, and the difference between a molecule of an element and a molecule of a compound.">
+<meta name="theme-color" content="#E4EAF0">
+<link rel="icon" type="image/svg+xml" href="../../../favicon.svg">
+<link rel="stylesheet" href="../../../css/style.css">
+<link rel="stylesheet" href="../../../css/interactive.css">
+</head>
+<body>
+<div class="sheet">
+  <header>
+    <div>
+      <a class="crumb" href="../index.html">← Atoms and Molecules</a>
+      <p class="eyebrow" style="margin-top:10px">Lesson 5 of 7 · Textbook 8.3</p>
+      <h1>Atoms and molecules</h1>
+    </div>
+    <p class="sub">Atoms rarely sit alone. Join them and you get a molecule — but whether that molecule is an element or a compound depends on one thing only.</p>
+  </header>
+
+  <div class="prose">
+    <h2 class="section">What a molecule is</h2>
+    <p>An atom can combine with one or more atoms of the <strong>same</strong> element or of <strong>different</strong> elements to form <strong>molecules</strong>.</p>
+    <div class="callout">
+      <span class="callout-label">Definition</span>
+      A <strong>molecule</strong> is made up of <strong>two or more atoms that are chemically combined</strong>.
+    </div>
+
+    <h2 class="section">Drawing them with labelled circles</h2>
+    <p>A simple way to represent atoms and molecules is with <strong>labelled circles</strong>.</p>
+    <table class="cmp" style="margin-bottom:20px">
+      <tr><td class="h" style="border-bottom:1.5px solid var(--ink);width:30%">What you draw</td><td class="h" style="border-bottom:1.5px solid var(--ink)">What it means</td></tr>
+      <tr><td><strong>One circle</strong>, labelled with a chemical symbol</td><td>An <strong>atom</strong> of that element. One circle labelled H is a hydrogen atom.</td></tr>
+      <tr><td><strong>Two circles joined</strong>, both labelled H</td><td>A <strong>hydrogen molecule</strong> — atoms of the same element combined. Total atoms: <strong>2</strong>.</td></tr>
+      <tr><td><strong>Two H circles and one O circle</strong>, joined</td><td>A <strong>water molecule</strong> — atoms of different elements combined. Total atoms: <strong>3</strong>.</td></tr>
+    </table>
+
+    <div class="callout think">
+      <span class="callout-label">A limitation of the model, which is examinable</span>
+      Circles of different <strong>colours and sizes</strong> are used so that we can tell atoms apart easily. <strong>In fact, atoms do not have any colour.</strong> This is one limitation of scientific models — they are simplified representations, and are <strong>not always real and accurate</strong>.
+      <p style="margin:10px 0 0">If a question asks for a limitation of the labelled-circle model, this is the answer it wants.</p>
+    </div>
+
+    <h2 class="section">Element or compound?</h2>
+    <div class="callout">
+      <span class="callout-label">The one test</span>
+      A molecule of an <strong>element</strong> consists of only <strong>one type</strong> of atom chemically combined — nitrogen (N₂), oxygen (O₂).<br>
+      A molecule of a <strong>compound</strong> consists of <strong>two or more types</strong> of atom chemically combined — nitrogen dioxide (NO₂).
+    </div>
+
+    <div class="sim" id="moleculeLab">
+      <div class="sim-head">
+        <h4>Build a molecule</h4>
+        <div class="picker">
+          <button type="button" class="ml-preset" data-m="F,F">F₂</button>
+          <button type="button" class="ml-preset" data-m="H,Cl">HCl</button>
+          <button type="button" class="ml-preset" data-m="O,C,O">CO₂</button>
+          <button type="button" class="ml-preset" data-m="H,N,H,H">NH₃</button>
+          <button type="button" class="ml-preset" data-m="H,O,H">H₂O</button>
+        </div>
+      </div>
+      <div class="sim-body">
+        <div class="ml-bank">
+          <button type="button" class="ml-add" data-a="H" style="background:#F7FAFC;color:#0F2436">H</button>
+          <button type="button" class="ml-add" data-a="C" style="background:#5A6B7A;color:#F7FAFC">C</button>
+          <button type="button" class="ml-add" data-a="N" style="background:#8E9AC8;color:#0F2436">N</button>
+          <button type="button" class="ml-add" data-a="O" style="background:#D93F2B;color:#F7FAFC">O</button>
+          <button type="button" class="ml-add" data-a="F" style="background:#9FD0E8;color:#0F2436">F</button>
+          <button type="button" class="ml-add" data-a="S" style="background:#E8C33B;color:#0F2436">S</button>
+          <button type="button" class="ml-add" data-a="Cl" style="background:#5FB36B;color:#0F2436;font-size:13px">Cl</button>
+          <span style="flex:1"></span>
+          <button type="button" class="ml-undo" style="font-size:11px;padding:9px 12px;min-height:40px">Undo</button>
+          <button type="button" class="ml-clear" style="font-size:11px;padding:9px 12px;min-height:40px">Clear</button>
+        </div>
+        <svg class="ml-stage" viewBox="0 0 420 180" role="img" aria-label="The molecule you have built"></svg>
+        <div class="readout-grid">
+          <div class="readout-box"><span class="rl">Chemical formula</span><span class="rv ml-formula">—</span></div>
+          <div class="readout-box"><span class="rl">Total atoms</span><span class="rv ml-total">0</span></div>
+          <div class="readout-box"><span class="rl">Element or compound?</span><span class="rv ml-kind" style="font-size:13px">—</span></div>
+        </div>
+        <p class="sep-out ml-note"></p>
+      </div>
+      <div class="sim-foot">The five presets are exactly the Learning Point on page 75. Build each one and check the atom counts against your own answers.</div>
+    </div>
+
+    <div class="callout">
+      <span class="callout-label">The trap worth naming</span>
+      <strong>O₂ is a molecule, but it is still an element.</strong> Two atoms joined does not make a compound — the atoms have to be <strong>different kinds</strong>. Joining two oxygen atoms gives you oxygen, not something new.
+      <p style="margin:10px 0 0">This is the same point Chapter 3 made about the particle diagrams. If it caught you there, it will catch you here.</p>
+    </div>
+
+    <h2 class="section">Check yourself</h2>
+    <div id="quiz">
+      <script type="application/json">
+      {
+        "questions": [
+          {
+            "type": "mcq",
+            "marks": 1,
+            "stem": "<p>What is a molecule?</p>",
+            "options": [
+              "The simplest unit of an element",
+              "Two or more atoms that are chemically combined",
+              "Two or more atoms mixed together",
+              "An atom that has gained a neutron"
+            ],
+            "answer": 1,
+            "explain": "Two or more atoms, chemically combined.",
+            "whyWrong": {
+              "0": "That is an <strong>atom</strong>. A molecule is built from two or more of them.",
+              "2": "“Mixed” is the wrong word — that would describe a mixture, where nothing is joined. A molecule needs the atoms <strong>chemically combined</strong>.",
+              "3": "An atom that gains a neutron becomes an <strong>isotope</strong> of the same element. It is still a single atom, not a molecule."
+            },
+            "workthrough": [
+              "Recall the definition: a molecule is made up of <strong>two or more atoms that are chemically combined</strong>.",
+              "Both halves matter. <strong>Two or more</strong> rules out a single atom.",
+              "<strong>Chemically combined</strong> rules out a mixture, where particles simply share space.",
+              "The atoms may be of the same element (a molecule of an element) or of different elements (a molecule of a compound)."
+            ]
+          },
+          {
+            "type": "sort",
+            "stem": "<p>Sort each molecule by whether it is a molecule of an element or of a compound.</p>",
+            "bins": ["Molecule of an element", "Molecule of a compound"],
+            "items": [
+              {"text":"Two oxygen atoms joined (O₂)", "bin":0, "why":"Both atoms are the same type, so joining them does not make a new substance — it is still oxygen."},
+              {"text":"One nitrogen and two oxygen atoms joined (NO₂)", "bin":1, "why":"Two different types of atom chemically combined."},
+              {"text":"Two hydrogen atoms joined (H₂)", "bin":0, "why":"Same type of atom throughout."},
+              {"text":"Two hydrogen and one oxygen atom joined (H₂O)", "bin":1, "why":"Hydrogen and oxygen are different elements, chemically combined."},
+              {"text":"Two nitrogen atoms joined (N₂)", "bin":0, "why":"Only nitrogen atoms — a molecule of an element."},
+              {"text":"One hydrogen and one chlorine atom joined (HCl)", "bin":1, "why":"Two different types of atom, so a compound."}
+            ],
+            "workthrough": [
+              "Ask one question of each molecule: <strong>how many different types of atom are in it?</strong>",
+              "<strong>One type</strong> → molecule of an <strong>element</strong>, however many atoms there are.",
+              "<strong>Two or more types</strong> → molecule of a <strong>compound</strong>.",
+              "The count of atoms is irrelevant to this decision. O₂ has two atoms and S₈ has eight, and both are elements.",
+              "Guard against the trap: joining atoms together does <em>not</em> automatically make a compound. They must be <strong>different</strong> atoms."
+            ]
+          },
+          {
+            "type": "mcq",
+            "marks": 1,
+            "stem": "<p>In diagrams, atoms are drawn as circles of different colours and sizes. What limitation of this model does that reveal?</p>",
+            "options": [
+              "Atoms are actually cubes, not spheres",
+              "Atoms do not have any colour — the model is a simplified representation and is not always real and accurate",
+              "Atoms are all exactly the same size",
+              "The model cannot show more than three atoms"
+            ],
+            "answer": 1,
+            "explain": "The colours are a convenience for us, not a property of atoms.",
+            "whyWrong": {
+              "0": "The textbook makes no claim about atoms being cubes. The limitation it names is about <strong>colour</strong>.",
+              "2": "Atoms of different elements really do differ in size, so that part of the model is not the misleading bit.",
+              "3": "Diagrams routinely show many atoms — the Vitamin B12 structure has over a hundred."
+            },
+            "workthrough": [
+              "Ask why the colours are there in the first place: so that <strong>we can distinguish between atoms easily</strong>.",
+              "Then ask whether atoms really have those colours. They do not — <strong>atoms have no colour at all</strong>.",
+              "So the colour is added for our benefit, not because it is real.",
+              "That makes it a <strong>limitation of scientific models</strong>: they are simplified representations, and are not always real and accurate.",
+              "The same caution applied to the planetary model in Lesson 2 — useful for study, not a picture of reality."
+            ]
+          }
+        ]
+      }
+      </script>
+    </div>
+  </div>
+
+  <nav class="lesson-nav">
+    <a href="4-isotopes.html">← Isotopes</a>
+    <a class="next" href="6-chemical-formulae.html">Next: Chemical formulae →</a>
+  </nav>
+</div>
+<script src="../../../js/atom-widgets.js"></script>
+<script src="../../../js/quiz-engine.js"></script>
+</body>
+</html>

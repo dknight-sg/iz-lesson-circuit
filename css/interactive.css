@@ -667,3 +667,74 @@ table.decide .tech{font-family:"Space Mono",monospace;font-size:12px;color:var(-
 /* image-characteristics readout */
 .mi-list{margin:12px 0 0;padding-left:18px;font-size:14px}
 .mi-list li{margin-bottom:6px}
+
+/* ============================================================
+   Chemistry: Atoms and Molecules (Chapter 8)
+   ============================================================ */
+.at-ctl{display:grid;grid-template-columns:repeat(auto-fit,minmax(190px,1fr));gap:14px;margin-bottom:12px}
+.at-ctl label{display:block;font-family:"Space Mono",monospace;font-size:10px;letter-spacing:.1em;
+  text-transform:uppercase;color:var(--ink-soft);margin-bottom:6px}
+.at-ctl input[type=range]{width:100%}
+.at-ctl b{font-family:"Space Mono",monospace;font-size:13px;color:var(--ink)}
+
+/* scale-of-an-atom bar */
+.sc-track{border:1.5px solid var(--ink);background:#FFF;height:26px;margin:12px 0 6px;position:relative;overflow:hidden}
+.sc-bar{height:100%;background:var(--charge);transition:width .6s ease;min-width:2px}
+.sc-title{font-size:17px;font-weight:700;margin:0}
+.sc-dim{font-family:"Space Mono",monospace;font-size:12px;color:var(--ink-soft);margin:2px 0 8px}
+
+/* atom builder readouts */
+.ab-id{display:flex;align-items:center;gap:14px;border:1.5px solid var(--ink);background:#F7FAFC;padding:12px 16px;margin-bottom:12px}
+.ab-sym{font-family:"Space Mono",monospace;font-size:32px;font-weight:700;color:var(--charge);line-height:1}
+.ab-name{font-size:17px;text-transform:capitalize}
+.ab-preset,.ml-preset{font-size:11px;padding:8px 11px;min-height:38px}
+
+/* isotope tables */
+table.isot{width:100%;border-collapse:collapse;margin:0}
+table.isot td{border-bottom:1px dotted var(--rule);padding:8px 10px;font-size:14px}
+table.isot td.h{font-family:"Space Mono",monospace;font-size:10px;letter-spacing:.1em;text-transform:uppercase;
+  color:var(--ink-soft);border-bottom:1.5px solid var(--ink)}
+table.isot .same{color:var(--ink-soft)}
+table.isot .diff{color:var(--charge);font-weight:700}
+.diff{color:var(--charge);font-weight:700}
+
+/* relative atomic mass calculator */
+.ram-row{display:flex;gap:10px;flex-wrap:wrap;align-items:stretch;margin-bottom:12px}
+.ram-box{flex:1;min-width:130px;border:1.5px solid var(--ink);background:#F7FAFC;padding:10px 12px;text-align:center}
+.ram-box .rl{display:block;font-family:"Space Mono",monospace;font-size:10px;letter-spacing:.1em;
+  text-transform:uppercase;color:var(--ink-soft);margin-bottom:4px}
+.ram-box .rv{font-family:"Space Mono",monospace;font-weight:700;font-size:16px}
+.ram-work{font-family:"Space Mono",monospace;font-size:14px;border:1.5px solid var(--ink);background:#FFF;
+  padding:12px 14px;margin-bottom:10px;overflow-x:auto;white-space:nowrap}
+.ram-eq{display:flex;align-items:baseline;gap:10px;font-family:"Space Mono",monospace;margin-bottom:10px}
+.ram-eq .lbl{font-size:11px;letter-spacing:.08em;text-transform:uppercase;color:var(--ink-soft)}
+.ram-ans{font-size:26px;font-weight:700;color:var(--charge)}
+
+/* molecule builder */
+.ml-bank{display:flex;flex-wrap:wrap;gap:8px;margin-bottom:12px;align-items:center}
+.ml-add{font-family:"Space Mono",monospace;font-size:15px;font-weight:700;width:46px;height:46px;
+  min-height:46px;padding:0;border:1.5px solid var(--ink);cursor:pointer;box-shadow:none}
+.ml-formula{font-family:"Space Mono",monospace;font-size:24px;font-weight:700}
+.ml-kind{font-size:14px;font-weight:700}
+.fl-formula{font-family:"Space Mono",monospace;font-size:30px;font-weight:700;color:var(--charge);
+  text-align:center;padding:10px 0 16px}
+.fl-kind{font-size:15px;font-weight:700}
+
+/* history-of-models panel */
+.mh-figs{display:flex;justify-content:center;margin-bottom:12px}
+.mh-panel,.at-panel{border:1.5px solid var(--ink);background:#F7FAFC;padding:14px 18px}
+.mh-panel h5,.at-panel h5{margin:0 0 4px;font-family:"Space Mono",monospace;font-size:12px;letter-spacing:.1em;
+  text-transform:uppercase;color:var(--charge);font-weight:400}
+.mh-who{margin:0 0 12px;font-size:13px;color:var(--ink-soft);font-style:italic}
+.mh-panel h6,.at-panel h6{margin:12px 0 5px;font-family:"Space Mono",monospace;font-size:10px;
+  letter-spacing:.1em;text-transform:uppercase;font-weight:400}
+.mh-good,.at-good{color:var(--cool)}
+.mh-bad,.at-bad{color:var(--hot)}
+.mh-panel p{margin:0;font-size:14px;line-height:1.6}
+.at-panel ul{margin:0;padding-left:18px;font-size:14px}
+.at-panel li{margin-bottom:7px;line-height:1.55}
+.at-tabs,.mh-tabs{display:grid;grid-template-columns:repeat(auto-fit,minmax(140px,1fr));gap:8px;margin-bottom:12px}
+.at-btn,.mh-btn{font-family:"Spline Sans",system-ui,sans-serif;font-size:14px;text-transform:none;letter-spacing:0;
+  padding:11px 12px;min-height:44px;border:1.5px solid var(--ink);background:#FFF;cursor:pointer;
+  box-shadow:none;color:var(--ink)}
+.at-btn[aria-pressed="true"],.mh-btn[aria-pressed="true"]{background:var(--ink);color:#F7FAFC}

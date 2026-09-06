@@ -1,0 +1,741 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Practice — Atoms and Molecules</title>
+<meta name="description" content="30 interactive practice questions on Chapter 8 — sub-atomic particles, proton and nucleon number, isotopes, relative atomic mass, molecules, chemical formulae and atomic technologies.">
+<meta name="theme-color" content="#E4EAF0">
+<link rel="icon" type="image/svg+xml" href="../../favicon.svg">
+<link rel="stylesheet" href="../../css/style.css">
+<link rel="stylesheet" href="../../css/interactive.css">
+</head>
+<body>
+<div class="sheet">
+  <header>
+    <div>
+      <a class="crumb" href="index.html">← Atoms and Molecules</a>
+      <p class="eyebrow" style="margin-top:10px">Practice</p>
+      <h1>30 questions</h1>
+    </div>
+    <p class="sub">Label an atom, type nucleon numbers, calculate a relative atomic mass. Get one wrong and you'll be told exactly which idea slipped, then walked to the right answer.</p>
+  </header>
+
+  <div class="scorebar" id="scorebar">
+    <span>Score <span class="sc">0 / 0</span></span>
+    <span class="bar"><span></span></span>
+    <span class="dn">0 of 30 answered</span>
+    <button class="qz-reset" type="button">Start again</button>
+  </div>
+
+  <!-- atom diagram, cloned into the label question -->
+  <svg id="atomSheet" viewBox="0 0 420 230" style="display:none" role="img" aria-label="An atom with four numbered parts">
+    <ellipse cx="210" cy="112" rx="120" ry="48" fill="none" stroke="#9FB2C4" stroke-width="1.6"/>
+    <ellipse cx="210" cy="112" rx="48" ry="120" fill="none" stroke="#9FB2C4" stroke-width="1.6"/>
+    <circle cx="210" cy="112" r="92" fill="none" stroke="#9FB2C4" stroke-width="1.6"/>
+    <circle cx="210" cy="112" r="30" fill="rgba(217,63,43,.12)" stroke="#0F2436" stroke-width="1.6" stroke-dasharray="4 3"/>
+    <g font-family="Space Mono, monospace" font-size="10" font-weight="700" text-anchor="middle">
+      <circle cx="199" cy="104" r="9" fill="#D93F2B" stroke="#0F2436" stroke-width="1.2"/><text x="199" y="108" fill="#F7FAFC">+</text>
+      <circle cx="220" cy="103" r="9" fill="#8E9AA6" stroke="#0F2436" stroke-width="1.2"/><text x="220" y="107" fill="#F7FAFC">0</text>
+      <circle cx="205" cy="122" r="9" fill="#8E9AA6" stroke="#0F2436" stroke-width="1.2"/><text x="205" y="126" fill="#F7FAFC">0</text>
+      <circle cx="223" cy="121" r="9" fill="#D93F2B" stroke="#0F2436" stroke-width="1.2"/><text x="223" y="125" fill="#F7FAFC">+</text>
+    </g>
+    <circle cx="330" cy="112" r="7" fill="#2E7A8C" stroke="#0F2436" stroke-width="1.2"/>
+    <circle cx="210" cy="20" r="7" fill="#2E7A8C" stroke="#0F2436" stroke-width="1.2"/>
+    <circle cx="145" cy="47" r="7" fill="#2E7A8C" stroke="#0F2436" stroke-width="1.2"/>
+    <g class="callout-num">
+      <path class="callout-line" d="M 199 96 L 150 62"/><circle cx="136" cy="54" r="15"/><text x="136" y="59">1</text>
+      <path class="callout-line" d="M 224 130 L 276 168"/><circle cx="290" cy="176" r="15"/><text x="290" y="181">2</text>
+      <path class="callout-line" d="M 330 105 L 366 76"/><circle cx="380" cy="66" r="15"/><text x="380" y="71">3</text>
+      <path class="callout-line" d="M 210 142 L 176 190"/><circle cx="164" cy="200" r="15"/><text x="164" y="205">4</text>
+    </g>
+  </svg>
+
+  <div class="qlist" id="quiz">
+    <script type="application/json">
+    {
+      "questions": [
+        {
+          "type": "mcq",
+          "marks": 1,
+          "stem": "<p>What is an atom?</p>",
+          "options": [
+            "The simplest unit of an element",
+            "Two or more particles chemically combined",
+            "Any very small piece of matter",
+            "The smallest piece of a mixture"
+          ],
+          "answer": 0,
+          "explain": "Simplest unit of an element — Greek for “cannot be cut”.",
+          "whyWrong": {
+            "1": "That describes a <strong>molecule</strong>. An atom is a single unit.",
+            "2": "Far too loose — a grain of sand is small and contains a colossal number of atoms.",
+            "3": "An atom belongs to an <em>element</em>, not a mixture. A mixture separates into constituents that are themselves made of atoms."
+          },
+          "workthrough": [
+            "Recall the definition: an atom is the <strong>simplest unit of an element</strong>.",
+            "The word comes from the Greek <em>atomos</em> — “cannot be cut”.",
+            "Link to Chapter 3: each element consists of only <strong>one type of atom</strong>.",
+            "So the element carbon consists only of carbon atoms."
+          ]
+        },
+        {
+          "type": "label",
+          "diagramRef": "#atomSheet",
+          "stem": "<p>Name the four numbered parts of this atom.</p>",
+          "labels": ["Proton", "Neutron", "Electron", "Nucleus", "Molecule", "Isotope"],
+          "parts": [
+            {"n":1, "answer":"Proton", "why":"The positively charged particle (+), found within the nucleus."},
+            {"n":2, "answer":"Neutron", "why":"The particle with no charge (0), also within the nucleus."},
+            {"n":3, "answer":"Electron", "why":"The negatively charged particle, moving around the nucleus at high speed."},
+            {"n":4, "answer":"Nucleus", "why":"The central region containing the protons and neutrons. It is positively charged."}
+          ],
+          "explain": "Two particles inside, one outside, and the region they sit in.",
+          "workthrough": [
+            "Use <strong>position</strong> first. Anything in the centre is in the <strong>nucleus</strong>; anything on the outer rings is an <strong>electron</strong>.",
+            "Then use <strong>charge</strong> to split the two nuclear particles: <strong>+</strong> is a <strong>proton</strong>, <strong>0</strong> is a <strong>neutron</strong>.",
+            "The dashed circle enclosing them both is the <strong>nucleus</strong> itself.",
+            "Remember the consequence: protons (+) and neutrons (0) together make the nucleus <strong>positively charged</strong>, while the whole atom is neutral because the electrons balance the protons."
+          ]
+        },
+        {
+          "type": "mcq",
+          "marks": 2,
+          "stem": "<p>Why is an atom electrically neutral?</p>",
+          "options": [
+            "Because neutrons cancel out the protons",
+            "Because it has equal numbers of protons and electrons, so the +1 and −1 charges cancel",
+            "Because electrons have almost no mass",
+            "Because the nucleus is very small"
+          ],
+          "answer": 1,
+          "explain": "Equal numbers of + and −, exactly balanced.",
+          "whyWrong": {
+            "0": "Neutrons have <strong>no charge at all</strong>, so they cannot cancel anything.",
+            "2": "That is about <em>mass</em>, not charge. An electron still carries a full −1 charge.",
+            "3": "Size has nothing to do with charge."
+          },
+          "workthrough": [
+            "Recall the charges: proton <strong>+1</strong>, electron <strong>−1</strong>, neutron <strong>0</strong>.",
+            "In an atom the number of protons <strong>equals</strong> the number of electrons.",
+            "So the positive and negative charges balance exactly and cancel.",
+            "Two marks: one for equal numbers, one for the charges cancelling."
+          ]
+        },
+        {
+          "type": "sort",
+          "stem": "<p>Sort each sub-atomic particle by where it is found.</p>",
+          "bins": ["Within the nucleus", "Around the nucleus"],
+          "items": [
+            {"text":"Proton — relative charge +1", "bin":0, "why":"Protons and neutrons form the nucleus."},
+            {"text":"Neutron — relative charge 0", "bin":0, "why":"Also within the nucleus, contributing mass but no charge."},
+            {"text":"Electron — relative charge −1", "bin":1, "why":"Electrons move around the nucleus at high speed."},
+            {"text":"The particle with relative mass 1/1840", "bin":1, "why":"That is the electron — about 1840 times lighter than a proton."},
+            {"text":"The particle that gives the nucleus its positive charge", "bin":0, "why":"The proton. Neutrons are neutral, so the proton is the only source of positive charge."}
+          ],
+          "workthrough": [
+            "Recall the split: <strong>protons and neutrons form the nucleus</strong>; <strong>electrons move around it</strong>.",
+            "So charge alone identifies position here: +1 and 0 are inside; −1 is outside.",
+            "The relative-mass clue also points to the electron — only the electron is 1/1840.",
+            "And only the proton is positive, so it must be what makes the nucleus positively charged."
+          ]
+        },
+        {
+          "type": "mcq",
+          "marks": 1,
+          "stem": "<p>The mass of an atom is contributed mainly by which particles?</p>",
+          "options": ["The electrons", "The protons and neutrons in the nucleus", "The protons only", "All three equally"],
+          "answer": 1,
+          "explain": "Protons and neutrons have relative mass 1; an electron has 1/1840.",
+          "whyWrong": {
+            "0": "An electron's relative mass is only <strong>1/1840</strong> — negligible.",
+            "2": "Neutrons have the same mass as protons. Helium has 2 protons but a relative atomic mass of 4.",
+            "3": "A proton is about 1840 times heavier than an electron — nowhere near equal."
+          },
+          "workthrough": [
+            "Compare relative masses: proton <strong>1</strong>, neutron <strong>1</strong>, electron <strong>1/1840</strong>.",
+            "The electrons' mass is therefore <strong>negligible</strong> and does not add up to the atom's mass.",
+            "Both protons and neutrons sit in the <strong>nucleus</strong>.",
+            "So the mass of an atom is essentially the mass of its nucleus."
+          ]
+        },
+        {
+          "type": "mcq",
+          "marks": 1,
+          "stem": "<p>Why is the nucleus positively charged?</p>",
+          "options": [
+            "It contains protons (+1) and neutrons (0), so the only charge present is positive",
+            "It contains more protons than electrons",
+            "The electrons have moved away from it",
+            "Neutrons carry a small positive charge"
+          ],
+          "answer": 0,
+          "explain": "Positive protons plus uncharged neutrons gives a net positive.",
+          "whyWrong": {
+            "1": "Electrons are not in the nucleus at all, so there is nothing to compare against inside it.",
+            "2": "Electrons were never inside the nucleus; they occupy the space around it.",
+            "3": "A neutron's relative charge is <strong>0</strong> — the name is the clue."
+          },
+          "workthrough": [
+            "The nucleus contains <strong>protons and neutrons only</strong>.",
+            "Their charges are <strong>+1</strong> and <strong>0</strong>.",
+            "There is no negative charge inside to offset the protons.",
+            "So the nucleus is positively charged, even though the whole atom is neutral."
+          ]
+        },
+        {
+          "type": "mcq",
+          "marks": 1,
+          "stem": "<p>An atom is described as “mostly empty space”. Which comparison does the textbook use?</p>",
+          "options": [
+            "A pea in a shoebox",
+            "A marble in the middle of a football stadium",
+            "A grain of sand on a beach",
+            "A coin on a football pitch"
+          ],
+          "answer": 1,
+          "explain": "Atom : nucleus as stadium : marble.",
+          "whyWrong": {
+            "0": "Far too small a ratio — a shoebox is only a few hundred times a pea. The real ratio is vastly larger.",
+            "2": "A memorable image, but not the comparison the textbook makes, and it describes quantity rather than a size ratio.",
+            "3": "Close in spirit but not the textbook's wording, and a pitch is smaller than a whole stadium."
+          },
+          "workthrough": [
+            "Recall the planetary model: within the atom, electrons move around the nucleus, and the atom is <strong>mostly empty space</strong>.",
+            "The textbook's image: if an atom were the size of a <strong>football stadium</strong>, the nucleus would be like a <strong>marble placed in the middle</strong>.",
+            "The point is the enormous gap between the tiny central nucleus and the electrons far out.",
+            "That is also why most of an atom's <em>volume</em> is empty while nearly all its <em>mass</em> is in that marble."
+          ]
+        },
+        {
+          "type": "sort",
+          "stem": "<p>Sort each statement by the model of the atom it describes.</p>",
+          "bins": ["Dalton's billiard ball model", "Thomson's plum pudding model", "The planetary model"],
+          "items": [
+            {"text":"A hard solid sphere, shown with wooden balls joined by hooks", "bin":0, "why":"Dalton's model from the 1800s — no sub-atomic particles at all."},
+            {"text":"Electrons sitting within a mass of protons", "bin":1, "why":"Thomson's model from the early 1900s — the plums in the pudding."},
+            {"text":"Electrons moving around a central nucleus, like planets round the sun", "bin":2, "why":"The model the textbook uses."},
+            {"text":"Introduced by John Dalton in the 1800s", "bin":0, "why":"Dalton is named directly with this model."},
+            {"text":"Came from J. J. Thomson in the early 1900s", "bin":1, "why":"Thomson is named with the plum pudding model."},
+            {"text":"Shows the atom as mostly empty space", "bin":2, "why":"Only the planetary model separates a tiny nucleus from distant electrons."}
+          ],
+          "workthrough": [
+            "Take the models in order of time: <strong>Dalton</strong> (1800s) → <strong>Thomson</strong> (early 1900s) → <strong>planetary</strong>.",
+            "Dalton's has <strong>no internal structure</strong> — just a solid sphere.",
+            "Thomson's has <strong>charges but no nucleus</strong> — electrons scattered through positive material.",
+            "The planetary model is the first with a <strong>nucleus</strong>, and therefore the first with mostly empty space.",
+            "The pattern to notice: each model was replaced when it could no longer explain the evidence. <strong>Science involves constant revision.</strong>"
+          ]
+        },
+        {
+          "type": "mcq",
+          "marks": 1,
+          "stem": "<p>Why are Dalton's and Thomson's models no longer accepted?</p>",
+          "options": [
+            "They were never tested by experiment",
+            "They are not able to explain many properties of atoms, and newer models were built from experiments and revisions",
+            "They were proved to be deliberate mistakes",
+            "They were replaced because the scientists who made them died"
+          ],
+          "answer": 1,
+          "explain": "They failed to explain the evidence, so they were revised.",
+          "whyWrong": {
+            "0": "They were based on the thinking and evidence available at the time. The problem is that <em>later</em> evidence outgrew them.",
+            "2": "Nothing dishonest happened. Being superseded is normal in science, not a scandal.",
+            "3": "Models are replaced when better evidence arrives, not when their authors do."
+          },
+          "workthrough": [
+            "Recall the reason given: both models <strong>cannot explain many properties of atoms</strong>.",
+            "Newer atomic models have since been constructed <strong>based on experiments and revisions of old atomic models</strong>.",
+            "So the mechanism is evidence, not authority.",
+            "The wider point the textbook draws: <strong>science involves constant revision</strong> so that it stays current and reliable, and what is accepted today may be changed in future."
+          ]
+        },
+        {
+          "type": "mcq",
+          "marks": 1,
+          "stem": "<p>What makes one element different from another?</p>",
+          "options": [
+            "The number of neutrons in its atoms",
+            "The number of protons in its atoms",
+            "The mass of its atoms",
+            "Whether it is a solid, liquid or gas"
+          ],
+          "answer": 1,
+          "explain": "No two elements share a proton number.",
+          "whyWrong": {
+            "0": "Atoms of the <em>same</em> element can have different neutron counts — those are <strong>isotopes</strong>.",
+            "2": "Mass depends on protons <em>and</em> neutrons, so atoms of one element can differ in mass.",
+            "3": "State depends on temperature and is a physical property."
+          },
+          "workthrough": [
+            "Recall the rule: <strong>no two elements can have the same number of protons</strong>.",
+            "The proton number acts like an identity number — one per element.",
+            "Neutrons vary within a single element, so they cannot be the identifier.",
+            "That is why the periodic table is ordered by <strong>increasing proton number</strong>."
+          ]
+        },
+        {
+          "type": "numeric",
+          "marks": 1,
+          "unit": "protons",
+          "answer": 2,
+          "tolerance": 0.4,
+          "stem": "<p>Helium's periodic table box shows <strong>2</strong> above the symbol and <strong>4</strong> below. How many protons does a helium atom have?</p>",
+          "explain": "The number above the symbol is the proton number.",
+          "whyWrong": [
+            {"near": 4, "tol": 0.4, "msg": "4 is the number <em>below</em> — the relative atomic mass. The <strong>proton number</strong> is above."},
+            {"near": 6, "tol": 0.4, "msg": "You added the two numbers. They are separate pieces of information."},
+            {"near": 1, "tol": 0.3, "msg": "1 proton is hydrogen. Helium is the second element."}
+          ],
+          "workthrough": [
+            "The number <strong>above</strong> the symbol is the <strong>proton number</strong>.",
+            "For helium that is <strong>2</strong>, so a helium atom has 2 protons.",
+            "The number below is the relative atomic mass — 4 for helium.",
+            "Cross-check: helium has 2 protons and 2 neutrons, and 2 + 2 = 4. ✓"
+          ]
+        },
+        {
+          "type": "numeric",
+          "marks": 1,
+          "unit": "electrons",
+          "answer": 8,
+          "tolerance": 0.4,
+          "stem": "<p>An oxygen atom has 8 protons. How many electrons does it have?</p>",
+          "explain": "In an atom, electrons always equal protons.",
+          "whyWrong": [
+            {"near": 16, "tol": 0.5, "msg": "16 is oxygen's relative atomic mass — protons plus neutrons. The electrons match the <strong>protons</strong> only."},
+            {"near": 0, "tol": 0.3, "msg": "An atom always has electrons. Without them it could not be electrically neutral."},
+            {"near": 6, "tol": 0.3, "msg": "6 protons would be carbon. Oxygen has 8, so it has 8 electrons."}
+          ],
+          "workthrough": [
+            "Recall: in an atom the number of protons is <strong>equal</strong> to the number of electrons.",
+            "That is precisely what makes the atom <strong>electrically neutral</strong> — the +1s and −1s cancel.",
+            "Oxygen has 8 protons, so it has <strong>8 electrons</strong>.",
+            "Neutrons are not involved in this at all, because they have no charge."
+          ]
+        },
+        {
+          "type": "mcq",
+          "marks": 2,
+          "stem": "<p>Element 113 was made by colliding zinc (30 protons) with bismuth (83 protons). Why does that give element 113?</p>",
+          "options": [
+            "Because both are metals",
+            "Because the protons combine: 30 + 83 = 113, and the proton number defines the element",
+            "Because zinc and bismuth are next to each other in the periodic table",
+            "Because 113 collisions were needed"
+          ],
+          "answer": 1,
+          "explain": "Proton numbers add, and the total names the element.",
+          "whyWrong": {
+            "0": "Being metals does not determine what forms. Only the proton counts matter.",
+            "2": "They are far apart — 30 and 83. Position is irrelevant.",
+            "3": "It took over <strong>four trillion</strong> collisions across nine years."
+          },
+          "workthrough": [
+            "An element is defined by its <strong>number of protons</strong>.",
+            "Zinc brings 30; bismuth brings 83.",
+            "Fusing the nuclei combines them: 30 + 83 = <strong>113</strong>.",
+            "An atom with 113 protons <em>is</em> element 113 — <strong>nihonium (Nh)</strong>, the first element discovered in Asia.",
+            "Two marks: one for adding the proton numbers, one for the proton number defining the element."
+          ]
+        },
+        {
+          "type": "mcq",
+          "marks": 1,
+          "stem": "<p>Why did Mendeleev leave gaps in his periodic table?</p>",
+          "options": [
+            "He ran out of space on the page",
+            "To allow for the inclusion of elements that were yet to be discovered",
+            "Because those elements were too dangerous to include",
+            "To show where mistakes had been made"
+          ],
+          "answer": 1,
+          "explain": "The gaps were placeholders for undiscovered elements.",
+          "whyWrong": {
+            "0": "The gaps are deliberate features in the middle of the table, not a layout accident.",
+            "2": "Danger has nothing to do with it — he did not know those elements yet.",
+            "3": "The gaps were predictions, not error markers. His actual inconsistency (iodine and tellurium) was a separate matter."
+          },
+          "workthrough": [
+            "Mendeleev devised a table with the <strong>63 elements known to exist</strong> at the time.",
+            "He left gaps <strong>to allow for the inclusion of elements yet to be discovered</strong>.",
+            "That was a genuine prediction — he expected the gaps to be filled, and they were.",
+            "Separately, his table had inconsistencies (iodine placed before tellurium), later resolved by ordering on <strong>proton number</strong>."
+          ]
+        },
+        {
+          "type": "mcq",
+          "marks": 2,
+          "stem": "<p>What are isotopes?</p>",
+          "options": [
+            "Atoms of different elements with the same number of neutrons",
+            "Atoms of the same element with the same protons and electrons, but different numbers of neutrons",
+            "Atoms that have lost or gained electrons",
+            "Atoms of the same element with different numbers of protons"
+          ],
+          "answer": 1,
+          "explain": "Same protons and electrons; only neutrons differ.",
+          "whyWrong": {
+            "0": "Isotopes are always of the <strong>same</strong> element.",
+            "2": "That changes the charge, not the isotope. Isotopes are neutral atoms with protons equal to electrons.",
+            "3": "Impossible for one element — <strong>changing the protons changes the element</strong>."
+          },
+          "workthrough": [
+            "The <strong>proton number</strong> identifies the element, so it cannot change between isotopes of one element.",
+            "Electrons equal protons in a neutral atom, so those cannot change either.",
+            "Only the <strong>neutron</strong> is free to vary.",
+            "Hence: same element, same protons and electrons, <strong>different neutrons</strong>.",
+            "Two marks: one for same protons/electrons, one for different neutrons."
+          ]
+        },
+        {
+          "type": "numeric",
+          "marks": 1,
+          "unit": "neutrons",
+          "answer": 8,
+          "tolerance": 0.4,
+          "stem": "<p>Carbon-14 has a nucleon number of 14 and a proton number of 6. How many neutrons does it have?</p>",
+          "explain": "Neutrons = nucleon number − proton number = 14 − 6.",
+          "whyWrong": [
+            {"near": 14, "tol": 0.4, "msg": "14 is the <strong>nucleon number</strong> — protons and neutrons together. Subtract the 6 protons."},
+            {"near": 6, "tol": 0.4, "msg": "6 is the proton count. Subtract it from 14 to find the neutrons."},
+            {"near": 20, "tol": 0.5, "msg": "You added. The nucleon number already includes the protons, so adding counts them twice."}
+          ],
+          "workthrough": [
+            "Recall: <strong>nucleon number = protons + neutrons</strong>.",
+            "Rearrange: <strong>neutrons = nucleon number − proton number</strong>.",
+            "Substitute: 14 − 6 = <strong>8 neutrons</strong>.",
+            "Cross-check with the table: carbon can have 6, 7 or 8 neutrons, so 8 is valid — it is carbon-14. ✓"
+          ]
+        },
+        {
+          "type": "numeric",
+          "marks": 1,
+          "unit": "neutrons",
+          "answer": 20,
+          "tolerance": 0.4,
+          "stem": "<p>Chlorine-37 has a proton number of 17. How many neutrons does it have?</p>",
+          "explain": "37 − 17 = 20.",
+          "whyWrong": [
+            {"near": 37, "tol": 0.4, "msg": "37 is the nucleon number. You still need to subtract the 17 protons."},
+            {"near": 17, "tol": 0.4, "msg": "17 is the proton number (and the electron count). Subtract it from 37."},
+            {"near": 18, "tol": 0.3, "msg": "18 neutrons gives chlorine-<strong>35</strong> (17 + 18). This question asks about chlorine-37."},
+            {"near": 54, "tol": 0.5, "msg": "You added instead of subtracting."}
+          ],
+          "workthrough": [
+            "Use <strong>neutrons = nucleon number − proton number</strong>.",
+            "The name “chlorine-37” gives you the nucleon number: <strong>37</strong>.",
+            "Chlorine's proton number is 17.",
+            "37 − 17 = <strong>20 neutrons</strong>.",
+            "Compare with chlorine-35: 35 − 17 = 18 neutrons. Same element, two neutron counts — that is what makes them isotopes."
+          ]
+        },
+        {
+          "type": "numeric",
+          "marks": 2,
+          "unit": "",
+          "answer": 35.5,
+          "tolerance": 0.05,
+          "stem": "<p>Chlorine is 75% chlorine-35 and 25% chlorine-37. Calculate its relative atomic mass.</p>",
+          "explain": "(75/100 × 35) + (25/100 × 37) = 26.25 + 9.25 = 35.5",
+          "whyWrong": [
+            {"near": 36, "tol": 0.2, "msg": "You took the plain average. That would only be right at <strong>50% each</strong>. The lighter isotope is far more abundant, so the answer sits closer to 35."},
+            {"near": 72, "tol": 0.5, "msg": "You added the nucleon numbers. An average must lie <em>between</em> them."},
+            {"near": 35, "tol": 0.15, "msg": "That is the more common isotope alone. The 25% of chlorine-37 pulls the average slightly up."},
+            {"near": 37, "tol": 0.15, "msg": "That is the heavier isotope alone — and it is the <em>less</em> abundant one."}
+          ],
+          "workthrough": [
+            "Multiply each nucleon number by its abundance over 100.",
+            "Chlorine-35: <sup>75</sup>&frasl;<sub>100</sub> × 35 = <strong>26.25</strong>",
+            "Chlorine-37: <sup>25</sup>&frasl;<sub>100</sub> × 37 = <strong>9.25</strong>",
+            "Add: 26.25 + 9.25 = <strong>35.5</strong>",
+            "Check it lies between 35 and 37, nearer 35 because that isotope is more abundant. ✓ That is why the table shows 35.5 and not a whole number.",
+            "Two marks: one for the weighted method, one for the answer."
+          ]
+        },
+        {
+          "type": "mcq",
+          "marks": 1,
+          "stem": "<p>Why are relative atomic masses often not whole numbers?</p>",
+          "options": [
+            "Because protons and neutrons have slightly different masses",
+            "Because the value is a weighted average of the element's isotopes, each with a different nucleon number",
+            "Because the measurements are not accurate enough",
+            "Because electrons add a fraction to the mass"
+          ],
+          "answer": 1,
+          "explain": "A weighted average of whole numbers need not be whole.",
+          "whyWrong": {
+            "0": "Both are given relative mass <strong>1</strong> in this chapter, so that is not the cause.",
+            "2": "The values are known very precisely. The non-whole number is real, not measurement error.",
+            "3": "An electron's mass is <strong>negligible</strong> (1/1840) and is not counted towards the atom's mass at all."
+          },
+          "workthrough": [
+            "Every individual isotope has a <strong>whole-number</strong> nucleon number — you cannot have half a proton.",
+            "But an element is usually a mixture of isotopes in fixed proportions.",
+            "The relative atomic mass is the <strong>weighted average</strong> of those isotopes.",
+            "An average of whole numbers need not be whole — 75% of 35 plus 25% of 37 gives <strong>35.5</strong>."
+          ]
+        },
+        {
+          "type": "mcq",
+          "marks": 1,
+          "stem": "<p>What is a molecule?</p>",
+          "options": [
+            "The simplest unit of an element",
+            "Two or more atoms that are chemically combined",
+            "Two or more atoms mixed together",
+            "An atom that has gained a neutron"
+          ],
+          "answer": 1,
+          "explain": "Two or more atoms, chemically combined.",
+          "whyWrong": {
+            "0": "That is an <strong>atom</strong>.",
+            "2": "“Mixed” describes a mixture, where nothing is joined. A molecule needs the atoms <strong>chemically combined</strong>.",
+            "3": "That gives an <strong>isotope</strong> — still one atom, not a molecule."
+          },
+          "workthrough": [
+            "Recall: a molecule is <strong>two or more atoms chemically combined</strong>.",
+            "<strong>Two or more</strong> rules out a single atom.",
+            "<strong>Chemically combined</strong> rules out a mixture.",
+            "The atoms may be the same element (molecule of an element) or different (molecule of a compound)."
+          ]
+        },
+        {
+          "type": "sort",
+          "stem": "<p>Sort each molecule by what it is.</p>",
+          "bins": ["Molecule of an element", "Molecule of a compound"],
+          "items": [
+            {"text":"O₂ — two oxygen atoms joined", "bin":0, "why":"Both atoms are the same type, so it is still oxygen."},
+            {"text":"NO₂ — one nitrogen and two oxygen atoms", "bin":1, "why":"Two different types of atom chemically combined."},
+            {"text":"H₂ — two hydrogen atoms joined", "bin":0, "why":"Same type of atom throughout."},
+            {"text":"H₂O — two hydrogen and one oxygen atom", "bin":1, "why":"Different elements chemically combined."},
+            {"text":"N₂ — two nitrogen atoms joined", "bin":0, "why":"Only nitrogen atoms."},
+            {"text":"HCl — one hydrogen and one chlorine atom", "bin":1, "why":"Two different types of atom."}
+          ],
+          "workthrough": [
+            "Ask: <strong>how many different types of atom?</strong>",
+            "<strong>One type</strong> → molecule of an <strong>element</strong>, however many atoms.",
+            "<strong>Two or more types</strong> → molecule of a <strong>compound</strong>.",
+            "The number of atoms is irrelevant to this decision.",
+            "The trap: joining atoms does <em>not</em> automatically make a compound. They must be <strong>different</strong> atoms."
+          ]
+        },
+        {
+          "type": "numeric",
+          "marks": 1,
+          "unit": "atoms",
+          "answer": 3,
+          "tolerance": 0.4,
+          "stem": "<p>How many atoms are there in one molecule of water, H₂O?</p>",
+          "explain": "2 hydrogen + 1 oxygen = 3.",
+          "whyWrong": [
+            {"near": 2, "tol": 0.3, "msg": "You counted only the hydrogen. The oxygen counts too — a symbol with no subscript means <strong>one</strong> atom."},
+            {"near": 1, "tol": 0.3, "msg": "That is the oxygen alone. Add the two hydrogen atoms."},
+            {"near": 4, "tol": 0.3, "msg": "Over-counted. H₂ is two atoms and O is one, giving three."}
+          ],
+          "workthrough": [
+            "Read each symbol with its subscript: <strong>H₂</strong> → 2 hydrogen atoms.",
+            "<strong>O</strong> has no subscript, and no subscript means <strong>one</strong> atom.",
+            "Total: 2 + 1 = <strong>3 atoms</strong>.",
+            "Note the difference from the number of <em>elements</em>, which is 2."
+          ]
+        },
+        {
+          "type": "numeric",
+          "marks": 1,
+          "unit": "atoms",
+          "answer": 24,
+          "tolerance": 0.4,
+          "stem": "<p>How many atoms are there in one molecule of glucose, C₆H₁₂O₆?</p>",
+          "explain": "6 + 12 + 6 = 24.",
+          "whyWrong": [
+            {"near": 3, "tol": 0.3, "msg": "You counted the number of <em>elements</em>, not atoms. Add the subscripts instead."},
+            {"near": 12, "tol": 0.4, "msg": "That is the hydrogen alone."},
+            {"near": 18, "tol": 0.4, "msg": "One of the three groups is missing. Check 6 + 12 + 6."},
+            {"near": 432, "tol": 3, "msg": "You multiplied the subscripts. They are counts, so they are <strong>added</strong>."}
+          ],
+          "workthrough": [
+            "<strong>C₆</strong> → 6 carbon atoms.",
+            "<strong>H₁₂</strong> → 12 hydrogen atoms.",
+            "<strong>O₆</strong> → 6 oxygen atoms.",
+            "Add: 6 + 12 + 6 = <strong>24 atoms</strong>.",
+            "The number of <em>elements</em> is 3 — a different question, and a common mix-up."
+          ]
+        },
+        {
+          "type": "sort",
+          "stem": "<p>Sort each chemical formula by what it represents.</p>",
+          "bins": ["Element", "Compound"],
+          "items": [
+            {"text":"S₈", "bin":0, "why":"One symbol only — all eight atoms are sulfur."},
+            {"text":"CH₄", "bin":1, "why":"Carbon and hydrogen chemically combined."},
+            {"text":"C₆H₁₂O₆", "bin":1, "why":"Three different symbols."},
+            {"text":"I₂", "bin":0, "why":"One symbol — two iodine atoms."},
+            {"text":"CO", "bin":1, "why":"Carbon and oxygen — two different elements, despite only two atoms."},
+            {"text":"Cl₂", "bin":0, "why":"One symbol — two chlorine atoms joined."}
+          ],
+          "workthrough": [
+            "Ignore how many atoms there are. Count the <strong>different chemical symbols</strong>.",
+            "<strong>One symbol</strong> → <strong>element</strong>: S₈, I₂, Cl₂.",
+            "<strong>Two or more</strong> → <strong>compound</strong>: CH₄, C₆H₁₂O₆, CO.",
+            "S₈ is the trap in one direction — eight atoms, still an element.",
+            "CO is the trap in the other — only two atoms, but a compound."
+          ]
+        },
+        {
+          "type": "mcq",
+          "marks": 1,
+          "stem": "<p>In diagrams, atoms are drawn as circles of different colours and sizes. What limitation of scientific models does this reveal?</p>",
+          "options": [
+            "Atoms are actually cubes",
+            "Atoms do not have any colour — models are simplified representations and are not always real and accurate",
+            "All atoms are exactly the same size",
+            "Models cannot show more than three atoms"
+          ],
+          "answer": 1,
+          "explain": "The colours are for our convenience, not a property of atoms.",
+          "whyWrong": {
+            "0": "The textbook makes no such claim. The limitation named is about <strong>colour</strong>.",
+            "2": "Atoms of different elements genuinely differ in size, so that part is not misleading.",
+            "3": "Diagrams routinely show many atoms — the Vitamin B12 structure has over a hundred."
+          },
+          "workthrough": [
+            "The colours exist so that <strong>we can distinguish between atoms easily</strong>.",
+            "But <strong>atoms have no colour at all</strong>.",
+            "So the colour is added for our benefit, not because it is real.",
+            "That is a <strong>limitation of scientific models</strong>: simplified, and not always real and accurate — the same caution as for the planetary model."
+          ]
+        },
+        {
+          "type": "mcq",
+          "marks": 1,
+          "stem": "<p>What extra information does a <strong>structural</strong> formula give that a chemical formula does not?</p>",
+          "options": [
+            "The mass of the molecule",
+            "How the atoms in the molecule are chemically combined",
+            "The number of each type of atom",
+            "Whether the substance is an element or a compound"
+          ],
+          "answer": 1,
+          "explain": "It shows the arrangement, not just the count.",
+          "whyWrong": {
+            "0": "Neither kind of formula states a mass directly.",
+            "2": "A plain chemical formula already gives that — the subscripts.",
+            "3": "You can tell that from a chemical formula too, by counting the different symbols."
+          },
+          "workthrough": [
+            "A <strong>chemical formula</strong> tells you <em>which</em> elements and <em>how many</em> atoms of each.",
+            "A <strong>structural formula</strong> shows <strong>how the atoms in a molecule are chemically combined</strong> — the arrangement.",
+            "That is why the cholesterol, chlorophyll and vitamin B12 diagrams look like networks rather than short strings of symbols.",
+            "R. B. Woodward and colleagues used exactly that understanding to <strong>create new molecules</strong> in the laboratory."
+          ]
+        },
+        {
+          "type": "mcq",
+          "marks": 2,
+          "stem": "<p>How does a nuclear power plant generate electricity?</p>",
+          "options": [
+            "Uranium is burned like coal and the flames heat water",
+            "Heat released from radioactive elements changes water to steam, which moves turbines",
+            "Atoms are collided to release light, which is converted to electricity",
+            "Nuclear waste is decomposed to release energy"
+          ],
+          "answer": 1,
+          "explain": "Controlled heat → steam → turbines → electricity.",
+          "whyWrong": {
+            "0": "Nuclear energy is not burning. It is the <strong>controlled release of heat</strong> from radioactive elements, not combustion.",
+            "2": "Colliding atoms at high speed creates new <em>elements</em> in a particle accelerator — a different process, and not a power source.",
+            "3": "Nuclear waste is the by-product to be disposed of safely, not the fuel."
+          },
+          "workthrough": [
+            "The source is the <strong>controlled release of heat</strong> from radioactive elements such as <strong>uranium and plutonium</strong>.",
+            "That heat changes <strong>water to steam</strong>.",
+            "The steam <strong>moves turbines</strong>.",
+            "The turbines generate <strong>electricity</strong>.",
+            "Two marks: one for heat producing steam, one for steam driving turbines. Note <strong>controlled</strong> — uncontrolled release is an atomic bomb."
+          ]
+        },
+        {
+          "type": "multi",
+          "marks": 3,
+          "stem": "<p>Which of these are costs or risks of nuclear energy? Select all that apply.</p>",
+          "options": [
+            "Nuclear waste must be disposed of properly",
+            "Accidents can cause loss of lives and environmental pollution",
+            "It cannot be used where there is no access to oil",
+            "The same energy is used in atomic bombs, which are destructive",
+            "It produces no electricity at night"
+          ],
+          "answer": [0, 1, 3],
+          "explain": "Waste, accidents, and weapons.",
+          "whyWrong": {
+            "2": "The opposite. Nuclear energy is valuable <em>because</em> it works <strong>especially in places with no access to oil</strong>.",
+            "4": "That is a limitation of <strong>solar</strong> power. A nuclear plant runs continuously."
+          },
+          "workthrough": [
+            "Recall the three risks named: <strong>proper waste disposal</strong>, <strong>accidents</strong> causing loss of life and pollution, and <strong>atomic bombs</strong>.",
+            "Now test the distractors. Working without oil is a <strong>benefit</strong>.",
+            "Producing nothing at night describes solar power.",
+            "Read carefully — separate what the chapter actually claims from what merely sounds plausible."
+          ]
+        },
+        {
+          "type": "sort",
+          "stem": "<p>Sort each application by the field it belongs to.</p>",
+          "bins": ["Healthcare", "Nuclear energy", "New materials"],
+          "items": [
+            {"text":"Radiation therapy to cure diseases", "bin":0, "why":"A medical use of the properties of atoms."},
+            {"text":"Uranium and plutonium heating water to steam", "bin":1, "why":"The controlled release of heat to drive turbines."},
+            {"text":"Gold-plated orchids", "bin":2, "why":"A local biochemist coated living plant material with gold atoms."},
+            {"text":"MRI and X-ray scans", "bin":0, "why":"Medical imaging, operated by a radiographer."},
+            {"text":"Nanorobots delivering drugs into the bloodstream", "bin":2, "why":"An application of nanotechnology — creating new materials and machines at nanoscale."},
+            {"text":"Atomic bombs", "bin":1, "why":"The same energy from atoms as in a power plant, released destructively."}
+          ],
+          "workthrough": [
+            "Ask what each application is <em>for</em>.",
+            "Diagnosing or treating a patient → <strong>healthcare</strong>: radiation therapy, MRI, X-ray.",
+            "Releasing energy from atoms → <strong>nuclear energy</strong>: power plants and, destructively, atomic bombs.",
+            "Building something new at atomic scale → <strong>new materials</strong>: gold-plated orchids, nanorobots.",
+            "Notice that atomic bombs and power plants sit in the same box. It is the <em>same</em> energy — controlled in one case, not in the other."
+          ]
+        },
+        {
+          "type": "mcq",
+          "marks": 1,
+          "stem": "<p>What does the chapter say is needed to resolve the social and ethical issues raised by scientific discoveries?</p>",
+          "options": [
+            "Banning any technology that carries risk",
+            "A good understanding of scientific applications and sound moral values, with active debate to make wise decisions",
+            "Leaving the decisions entirely to scientists",
+            "Waiting until a technology is proven completely safe"
+          ],
+          "answer": 1,
+          "explain": "Understanding, moral values, and debate.",
+          "whyWrong": {
+            "0": "The chapter never argues for banning — it presents benefits alongside risks and asks for judgement.",
+            "2": "It asks for sound moral values from <strong>everyone</strong>, and for us all to debate the issues.",
+            "3": "No technology is ever entirely risk-free, so this would mean using none of it."
+          },
+          "workthrough": [
+            "Social and ethical issues often <strong>arise from</strong> scientific discoveries.",
+            "Resolving them needs <strong>a good understanding of scientific applications</strong>.",
+            "It also needs <strong>sound moral values from everyone</strong> — not only from experts.",
+            "And we must actively <strong>understand and debate</strong> these issues to make wise decisions that benefit mankind.",
+            "That is why the chapter ends with a discussion rather than a rule."
+          ]
+        }
+      ]
+    }
+    </script>
+  </div>
+
+  <nav class="lesson-nav">
+    <a href="map.html">← Chapter map</a>
+    <a class="next" href="index.html">Chapter home ↺</a>
+  </nav>
+</div>
+<script src="../../js/quiz-engine.js"></script>
+</body>
+</html>

@@ -1,0 +1,237 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>2 · Inside the atom — Atoms and Molecules</title>
+<meta name="description" content="Textbook 8.1 — protons, neutrons and electrons, the planetary model, why an atom is electrically neutral, and the earlier models it replaced.">
+<meta name="theme-color" content="#E4EAF0">
+<link rel="icon" type="image/svg+xml" href="../../../favicon.svg">
+<link rel="stylesheet" href="../../../css/style.css">
+<link rel="stylesheet" href="../../../css/interactive.css">
+</head>
+<body>
+<div class="sheet">
+  <header>
+    <div>
+      <a class="crumb" href="../index.html">← Atoms and Molecules</a>
+      <p class="eyebrow" style="margin-top:10px">Lesson 2 of 7 · Textbook 8.1</p>
+      <h1>Inside the atom</h1>
+    </div>
+    <p class="sub">“Cannot be cut” turned out to be wrong. There are three kinds of particle inside, and where each one sits matters as much as what it is.</p>
+  </header>
+
+  <div class="prose">
+    <h2 class="section">Three sub-atomic particles</h2>
+    <p>An atom contains three types of <strong>sub-atomic particle</strong>: the <strong>proton</strong>, the <strong>neutron</strong> and the <strong>electron</strong>.</p>
+    <div class="callout">
+      <span class="callout-label">Where each one sits</span>
+      Protons and neutrons form the <strong>nucleus</strong> of the atom.<br>
+      Electrons <strong>move around the nucleus</strong>, at high speed.
+    </div>
+
+    <table class="cmp" style="margin-bottom:20px">
+      <tr>
+        <td class="h" style="border-bottom:1.5px solid var(--ink);width:24%">Particle</td>
+        <td class="h" style="border-bottom:1.5px solid var(--ink)">Relative charge</td>
+        <td class="h" style="border-bottom:1.5px solid var(--ink)">Relative mass</td>
+        <td class="h" style="border-bottom:1.5px solid var(--ink)">Position</td>
+      </tr>
+      <tr><td><strong>proton</strong> (p)</td><td><strong>+1</strong></td><td>1</td><td>within the nucleus</td></tr>
+      <tr><td><strong>neutron</strong> (n)</td><td><strong>0</strong></td><td>1</td><td>within the nucleus</td></tr>
+      <tr><td><strong>electron</strong> (e)</td><td><strong>−1</strong></td><td>1/1840</td><td>around the nucleus</td></tr>
+    </table>
+
+    <div class="callout think">
+      <span class="callout-label">Two things that table is quietly telling you</span>
+      <p style="margin:0 0 8px"><strong>Why an atom is neutral.</strong> In an atom the number of protons <strong>equals</strong> the number of electrons, so the +1s and the −1s cancel exactly. The atom is <strong>electrically neutral</strong>. Neutrons have <strong>no charge</strong>, so they never affect it either way.</p>
+      <p style="margin:0"><strong>Where the mass is.</strong> An electron has only <strong>1/1840</strong> of the mass of a proton — so small that it is treated as <strong>negligible</strong>. The mass of an atom is therefore contributed almost entirely by the <strong>protons and neutrons in its nucleus</strong>.</p>
+    </div>
+
+    <h2 class="section">Build an atom</h2>
+    <p>Set the protons and neutrons and watch what changes — and, more importantly, what does not.</p>
+
+    <div class="sim" id="atomBuilder">
+      <div class="sim-head">
+        <h4>Atom builder</h4>
+        <div class="picker">
+          <button type="button" class="ab-preset" data-p="1" data-n="0">Hydrogen</button>
+          <button type="button" class="ab-preset" data-p="2" data-n="2">Helium</button>
+          <button type="button" class="ab-preset" data-p="3" data-n="4">Lithium</button>
+          <button type="button" class="ab-preset" data-p="6" data-n="6">Carbon</button>
+          <button type="button" class="ab-preset" data-p="6" data-n="8">Carbon-14</button>
+        </div>
+      </div>
+      <div class="sim-body">
+        <div class="at-ctl">
+          <div><label>Protons · <b class="ab-pv">6</b></label>
+            <input type="range" class="ab-p" min="1" max="20" step="1" value="6" aria-label="Number of protons"></div>
+          <div><label>Neutrons · <b class="ab-nv">6</b></label>
+            <input type="range" class="ab-n" min="0" max="24" step="1" value="6" aria-label="Number of neutrons"></div>
+        </div>
+        <div class="ab-id">
+          <span class="ab-sym">C</span>
+          <span class="ab-name">carbon</span>
+        </div>
+        <svg viewBox="0 0 220 200" role="img" aria-label="An atom with a nucleus of protons and neutrons, surrounded by electron shells" style="max-width:280px;margin:0 auto">
+          <g class="ab-shells"></g>
+          <g class="ab-nucleus"></g>
+        </svg>
+        <div class="readout-grid">
+          <div class="readout-box"><span class="rl">Proton number</span><span class="rv ab-pn">—</span></div>
+          <div class="readout-box"><span class="rl">Nucleon number</span><span class="rv ab-nn">—</span></div>
+          <div class="readout-box"><span class="rl">Electrons</span><span class="rv ab-ne">—</span></div>
+          <div class="readout-box"><span class="rl">Overall charge</span><span class="rv ab-chg">—</span></div>
+        </div>
+        <p class="sep-out ab-note"></p>
+      </div>
+      <div class="sim-foot">Red <strong>+</strong> = proton, grey <strong>0</strong> = neutron, blue = electron. The electron count follows the proton count automatically — that is what keeps the atom neutral.</div>
+    </div>
+
+    <h2 class="section">The planetary model</h2>
+    <p>An atom cannot be seen, so scientists represent it with <strong>models</strong>. The one your textbook uses is the <strong>planetary model</strong>: electrons move around the nucleus rather as planets move around the sun.</p>
+    <p>Two things it shows well:</p>
+    <ul>
+      <li>The nucleus is made of neutrons and protons, and is therefore <strong>positively charged</strong> — the protons are positive and the neutrons contribute nothing.</li>
+      <li>The atom is <strong>mostly empty space</strong>. If an atom were the size of a <strong>football stadium</strong>, the nucleus would be like a <strong>marble placed in the middle</strong>.</li>
+    </ul>
+
+    <h2 class="section">The models it replaced</h2>
+    <div class="sim" id="modelHistory">
+      <div class="sim-head"><h4>How the model changed</h4></div>
+      <div class="sim-body">
+        <div class="mh-tabs">
+          <button type="button" class="mh-btn" data-k="dalton">Billiard ball</button>
+          <button type="button" class="mh-btn" data-k="thomson">Plum pudding</button>
+          <button type="button" class="mh-btn" data-k="planetary">Planetary</button>
+        </div>
+        <div class="mh-figs">
+          <svg class="mh-fig" data-k="dalton" viewBox="0 0 180 150" width="180" height="150" role="img" aria-label="A plain solid sphere">
+            <circle cx="90" cy="72" r="56" fill="#E9C6D8" stroke="#0F2436" stroke-width="2"/>
+          </svg>
+          <svg class="mh-fig" data-k="thomson" viewBox="0 0 180 150" width="180" height="150" role="img" aria-label="A sphere with positive and negative charges spread through it" style="display:none">
+            <circle cx="90" cy="72" r="56" fill="#E9C6D8" stroke="#0F2436" stroke-width="2"/>
+            <g font-family="Space Mono, monospace" font-size="13" font-weight="700" text-anchor="middle">
+              <circle cx="66" cy="48" r="9" fill="#8E9AC8"/><text x="66" y="53" fill="#0F2436">−</text>
+              <circle cx="110" cy="52" r="9" fill="#8E9AC8"/><text x="110" y="57" fill="#0F2436">−</text>
+              <circle cx="78" cy="94" r="9" fill="#8E9AC8"/><text x="78" y="99" fill="#0F2436">−</text>
+              <circle cx="116" cy="92" r="9" fill="#8E9AC8"/><text x="116" y="97" fill="#0F2436">−</text>
+              <text x="90" y="46" fill="#0F2436">+</text><text x="52" y="76" fill="#0F2436">+</text>
+              <text x="128" y="72" fill="#0F2436">+</text><text x="94" y="112" fill="#0F2436">+</text>
+              <text x="66" y="72" fill="#0F2436">+</text>
+            </g>
+          </svg>
+          <svg class="mh-fig" data-k="planetary" viewBox="0 0 180 150" width="180" height="150" role="img" aria-label="A small nucleus with electrons orbiting it" style="display:none">
+            <ellipse cx="90" cy="72" rx="66" ry="26" fill="none" stroke="#9FB2C4" stroke-width="1.6"/>
+            <ellipse cx="90" cy="72" rx="26" ry="66" fill="none" stroke="#9FB2C4" stroke-width="1.6"/>
+            <ellipse cx="90" cy="72" rx="52" ry="52" fill="none" stroke="#9FB2C4" stroke-width="1.6"/>
+            <circle cx="90" cy="72" r="13" fill="#D93F2B" stroke="#0F2436" stroke-width="1.6"/>
+            <circle cx="156" cy="72" r="5.5" fill="#2E7A8C" stroke="#0F2436" stroke-width="1.1"/>
+            <circle cx="90" cy="6" r="5.5" fill="#2E7A8C" stroke="#0F2436" stroke-width="1.1"/>
+            <circle cx="53" cy="35" r="5.5" fill="#2E7A8C" stroke="#0F2436" stroke-width="1.1"/>
+            <circle cx="127" cy="109" r="5.5" fill="#2E7A8C" stroke="#0F2436" stroke-width="1.1"/>
+          </svg>
+        </div>
+        <div class="mh-panel"></div>
+      </div>
+      <div class="sim-foot">Science involves <strong>constant revision</strong> so that it stays current and reliable. As new evidence is found, what scientists accept today may be changed or replaced in future.</div>
+    </div>
+
+    <div class="callout">
+      <span class="callout-label">A model is not a photograph</span>
+      <strong>No one knows what an atom looks like exactly.</strong> The planetary model is only a <em>simplified representation</em> that allows atoms to be studied scientifically. Saying “an atom looks like this” loses marks; saying “this model represents an atom as…” does not.
+    </div>
+
+    <h2 class="section">Check yourself</h2>
+    <div id="quiz">
+      <script type="application/json">
+      {
+        "questions": [
+          {
+            "type": "mcq",
+            "marks": 2,
+            "stem": "<p>Why is an atom electrically neutral?</p>",
+            "options": [
+              "Because neutrons cancel out the protons",
+              "Because it has equal numbers of protons and electrons, so the +1 and −1 charges cancel",
+              "Because electrons have almost no mass",
+              "Because the nucleus is very small compared with the whole atom"
+            ],
+            "answer": 1,
+            "explain": "Equal numbers of + and − charges, exactly balanced.",
+            "whyWrong": {
+              "0": "Neutrons have <strong>no charge at all</strong>, so they cannot cancel anything. That is precisely why they are irrelevant to the overall charge.",
+              "2": "Electron <em>mass</em> is negligible, which matters for the mass of an atom — but charge and mass are different properties. An electron still carries a full −1 charge.",
+              "3": "Size has nothing to do with charge. A large atom and a small atom are both neutral for the same reason."
+            },
+            "workthrough": [
+              "Recall the charges: proton <strong>+1</strong>, electron <strong>−1</strong>, neutron <strong>0</strong>.",
+              "Recall the count: in an atom the number of protons <strong>equals</strong> the number of electrons.",
+              "So the positive and negative charges are <strong>balanced</strong> and cancel exactly.",
+              "Neutrons do not contribute to the overall charge, because they have no charge.",
+              "Two marks: one for equal numbers of protons and electrons, one for the opposite charges cancelling."
+            ]
+          },
+          {
+            "type": "mcq",
+            "marks": 1,
+            "stem": "<p>The mass of an atom is contributed mainly by which particles?</p>",
+            "options": [
+              "The electrons",
+              "The protons and neutrons in the nucleus",
+              "The protons only",
+              "All three equally"
+            ],
+            "answer": 1,
+            "explain": "Protons and neutrons each have relative mass 1; an electron has 1/1840.",
+            "whyWrong": {
+              "0": "An electron has a relative mass of only <strong>1/1840</strong> — so light that its mass is treated as <strong>negligible</strong>.",
+              "2": "Neutrons have the same relative mass as protons (1), so leaving them out would badly underestimate the mass. Helium has 2 protons but a relative atomic mass of 4.",
+              "3": "Far from equal — a proton is about 1840 times heavier than an electron."
+            },
+            "workthrough": [
+              "Compare the relative masses: proton <strong>1</strong>, neutron <strong>1</strong>, electron <strong>1/1840</strong>.",
+              "An electron is roughly <strong>1840 times lighter</strong> than a proton.",
+              "So the electrons' total mass is negligible and <strong>does not add up to the mass of the atom</strong>.",
+              "Protons and neutrons both sit in the <strong>nucleus</strong>, so the mass of an atom is mainly the mass of its nucleus."
+            ]
+          },
+          {
+            "type": "mcq",
+            "marks": 1,
+            "stem": "<p>Why is the nucleus of an atom positively charged?</p>",
+            "options": [
+              "Because it contains protons (+1) and neutrons (0), so the only charge present is positive",
+              "Because it contains more protons than electrons",
+              "Because the electrons have moved away from it",
+              "Because neutrons carry a small positive charge"
+            ],
+            "answer": 0,
+            "explain": "Positive protons plus uncharged neutrons gives a net positive.",
+            "whyWrong": {
+              "1": "Electrons are not in the nucleus at all, so there is nothing to compare protons <em>against</em> inside it.",
+              "2": "Electrons were never in the nucleus, so they cannot have moved away from it. They occupy the space around it.",
+              "3": "A neutron's relative charge is <strong>0</strong>. The name is the clue — it is neutral."
+            },
+            "workthrough": [
+              "Recall what the nucleus contains: <strong>protons and neutrons only</strong>. Electrons move around it, outside.",
+              "Recall their charges: proton <strong>+1</strong>, neutron <strong>0</strong>.",
+              "Adding those gives a total that is positive — there is no negative charge inside the nucleus to offset it.",
+              "So the nucleus is <strong>positively charged</strong>, even though the atom as a whole is neutral."
+            ]
+          }
+        ]
+      }
+      </script>
+    </div>
+  </div>
+
+  <nav class="lesson-nav">
+    <a href="1-what-is-an-atom.html">← The atom</a>
+    <a class="next" href="3-proton-number.html">Next: The proton number →</a>
+  </nav>
+</div>
+<script src="../../../js/atom-widgets.js"></script>
+<script src="../../../js/quiz-engine.js"></script>
+</body>
+</html>

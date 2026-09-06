@@ -1,0 +1,173 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>6 · Chemical formulae — Atoms and Molecules</title>
+<meta name="description" content="Textbook 8.3 — reading a chemical formula, counting atoms from subscripts, and telling an element from a compound by the formula alone.">
+<meta name="theme-color" content="#E4EAF0">
+<link rel="icon" type="image/svg+xml" href="../../../favicon.svg">
+<link rel="stylesheet" href="../../../css/style.css">
+<link rel="stylesheet" href="../../../css/interactive.css">
+</head>
+<body>
+<div class="sheet">
+  <header>
+    <div>
+      <a class="crumb" href="../index.html">← Atoms and Molecules</a>
+      <p class="eyebrow" style="margin-top:10px">Lesson 6 of 7 · Textbook 8.3</p>
+      <h1>Chemical formulae</h1>
+    </div>
+    <p class="sub">Drawing circles gets slow. A chemical formula says the same thing in a few characters — once you know how to read the small numbers.</p>
+  </header>
+
+  <div class="prose">
+    <h2 class="section">What a formula tells you</h2>
+    <div class="callout">
+      <span class="callout-label">Definition</span>
+      The <strong>chemical formula</strong> is another way to represent molecules. It identifies <strong>each constituent element by its chemical symbol</strong>, and <strong>indicates the number of atoms</strong> of that element.
+    </div>
+
+    <table class="cmp" style="margin-bottom:20px">
+      <tr>
+        <td class="h" style="border-bottom:1.5px solid var(--ink);width:24%">Molecule</td>
+        <td class="h" style="border-bottom:1.5px solid var(--ink);width:20%">Formula</td>
+        <td class="h" style="border-bottom:1.5px solid var(--ink)">Type of atom</td>
+        <td class="h" style="border-bottom:1.5px solid var(--ink)">Number of atoms</td>
+      </tr>
+      <tr><td><strong>hydrogen</strong></td><td>H<sub>2</sub></td><td>hydrogen</td><td>2</td></tr>
+      <tr><td rowspan="2" style="vertical-align:top"><strong>water</strong></td><td rowspan="2" style="vertical-align:top">H<sub>2</sub>O</td><td>hydrogen</td><td>2</td></tr>
+      <tr><td>oxygen</td><td>1</td></tr>
+    </table>
+
+    <div class="callout think">
+      <span class="callout-label">Two rules people get wrong</span>
+      <p style="margin:0 0 8px">A <strong>subscript</strong> — the small number after a symbol — counts the atoms of the symbol <em>immediately before it</em>. In H<sub>2</sub>O the 2 belongs to the hydrogen, not to the whole formula.</p>
+      <p style="margin:0">A symbol with <strong>no subscript means one atom</strong>. In H<sub>2</sub>O there is exactly <strong>one</strong> oxygen atom, even though no number is written.</p>
+    </div>
+
+    <div class="sim" id="formulaLab">
+      <div class="sim-head">
+        <h4>Read a formula</h4>
+        <div class="picker fl-pick">
+          <button type="button" data-f="H2O">H₂O</button>
+          <button type="button" data-f="S8">S₈</button>
+          <button type="button" data-f="CH4">CH₄</button>
+          <button type="button" data-f="C6H12O6">C₆H₁₂O₆</button>
+          <button type="button" data-f="NH3">NH₃</button>
+          <button type="button" data-f="CO2">CO₂</button>
+          <button type="button" data-f="HCl">HCl</button>
+          <button type="button" data-f="N2">N₂</button>
+        </div>
+      </div>
+      <div class="sim-body">
+        <div class="fl-formula"></div>
+        <div class="fl-table"></div>
+        <div class="readout-grid">
+          <div class="readout-box"><span class="rl">Total atoms in one molecule</span><span class="rv fl-total">—</span></div>
+          <div class="readout-box"><span class="rl">Element or compound?</span><span class="rv fl-kind">—</span></div>
+        </div>
+        <p class="sep-out fl-note"></p>
+      </div>
+      <div class="sim-foot">S₈, CH₄ and C₆H₁₂O₆ are the three from the Learning Point on page 76 — work them out first, then check.</div>
+    </div>
+
+    <h2 class="section">Telling element from compound at a glance</h2>
+    <p>You do not need to know what the substance <em>is</em>. Just count the different <strong>chemical symbols</strong> in the formula.</p>
+    <table class="cmp" style="margin-bottom:20px">
+      <tr><td class="h" style="border-bottom:1.5px solid var(--ink);width:50%">One symbol → <strong>element</strong></td><td class="h" style="border-bottom:1.5px solid var(--ink)">Two or more symbols → <strong>compound</strong></td></tr>
+      <tr>
+        <td>hydrogen H<sub>2</sub> · oxygen O<sub>2</sub> · nitrogen N<sub>2</sub> · chlorine Cl<sub>2</sub> · iodine I<sub>2</sub> · sulfur S<sub>8</sub></td>
+        <td>water H<sub>2</sub>O · ammonia NH<sub>3</sub> · carbon monoxide CO · carbon dioxide CO<sub>2</sub> · hydrogen chloride HCl</td>
+      </tr>
+    </table>
+    <p>Notice that <strong>S<sub>8</sub> is an element</strong> despite having eight atoms, and <strong>CO is a compound</strong> despite having only two. The number of atoms is irrelevant — only the number of <em>different symbols</em> counts.</p>
+
+    <div class="callout">
+      <span class="callout-label">Structural formulae — how far this can go</span>
+      A <strong>structural formula</strong> is another way to represent a molecule: it shows <strong>how the atoms in a molecule are chemically combined</strong>, not just how many there are.
+      <p style="margin:10px 0 0">Nobel Prize winner <strong>R. B. Woodward</strong> believed there are trends in how different molecules behave. With his colleagues he created molecules of <strong>cholesterol</strong> (C<sub>27</sub>H<sub>46</sub>O), <strong>chlorophyll</strong> (C<sub>55</sub>H<sub>72</sub>O<sub>5</sub>N<sub>4</sub>Mg) and <strong>vitamin B12</strong> (C<sub>63</sub>H<sub>88</sub>CoN<sub>14</sub>O<sub>14</sub>P) in the laboratory — something that had once seemed impossible. With careful planning, experimentation and an understanding of existing molecules, it is possible to <strong>create new molecules</strong>.</p>
+    </div>
+
+    <h2 class="section">Check yourself</h2>
+    <div id="quiz">
+      <script type="application/json">
+      {
+        "questions": [
+          {
+            "type": "numeric",
+            "marks": 1,
+            "unit": "atoms",
+            "answer": 24,
+            "tolerance": 0.5,
+            "stem": "<p>How many atoms are there in one molecule of glucose, C₆H₁₂O₆?</p>",
+            "explain": "6 carbon + 12 hydrogen + 6 oxygen = 24.",
+            "whyWrong": [
+              {"near": 3, "tol": 0.4, "msg": "You counted the number of <em>elements</em> (carbon, hydrogen, oxygen), not the number of atoms. Add the subscripts instead."},
+              {"near": 12, "tol": 0.4, "msg": "That is the hydrogen count alone. You need the carbon and oxygen atoms too."},
+              {"near": 18, "tol": 0.4, "msg": "You have missed one of the three groups. 6 + 12 + 6 — check you have included all three."},
+              {"near": 432, "tol": 3, "msg": "You multiplied the subscripts. Subscripts are counts of atoms, so they are <strong>added</strong>, not multiplied."}
+            ],
+            "workthrough": [
+              "Read each symbol with its subscript in turn.",
+              "<strong>C₆</strong> → 6 carbon atoms.",
+              "<strong>H₁₂</strong> → 12 hydrogen atoms.",
+              "<strong>O₆</strong> → 6 oxygen atoms.",
+              "Add them: 6 + 12 + 6 = <strong>24 atoms</strong> in one molecule.",
+              "Do not confuse this with the number of <em>elements</em>, which is 3."
+            ]
+          },
+          {
+            "type": "sort",
+            "stem": "<p>Sort each chemical formula by what it represents.</p>",
+            "bins": ["Element", "Compound"],
+            "items": [
+              {"text":"S₈", "bin":0, "why":"Only one symbol appears, so every one of the eight atoms is sulfur."},
+              {"text":"CH₄", "bin":1, "why":"Two different symbols — carbon and hydrogen chemically combined."},
+              {"text":"C₆H₁₂O₆", "bin":1, "why":"Three different symbols — carbon, hydrogen and oxygen."},
+              {"text":"I₂", "bin":0, "why":"One symbol only — two iodine atoms joined."},
+              {"text":"HCl", "bin":1, "why":"Hydrogen and chlorine — two different elements combined."},
+              {"text":"O₂", "bin":0, "why":"One symbol. Joining two oxygen atoms still gives oxygen."}
+            ],
+            "workthrough": [
+              "Ignore how many atoms there are. Count the number of <strong>different chemical symbols</strong>.",
+              "<strong>One symbol</strong> → <strong>element</strong>. S₈, I₂ and O₂ all qualify, however many atoms they contain.",
+              "<strong>Two or more symbols</strong> → <strong>compound</strong>. CH₄, C₆H₁₂O₆ and HCl.",
+              "S₈ is the trap: eight atoms, but all sulfur, so it is still an element.",
+              "HCl is the mirror trap: only two atoms, but two <em>different</em> elements, so it is a compound."
+            ]
+          },
+          {
+            "type": "mcq",
+            "marks": 1,
+            "stem": "<p>How many oxygen atoms are there in one molecule of water, H₂O?</p>",
+            "options": ["None — there is no number after the O", "One", "Two", "Three"],
+            "answer": 1,
+            "explain": "A symbol with no subscript means one atom.",
+            "whyWrong": {
+              "0": "No subscript does not mean zero. If there were no oxygen, the symbol would not be written at all — and water would not be water.",
+              "2": "The 2 belongs to the <strong>hydrogen</strong> immediately before it, not to the oxygen.",
+              "3": "Three is the <em>total</em> number of atoms in a water molecule (2 hydrogen + 1 oxygen), not the number of oxygen atoms."
+            },
+            "workthrough": [
+              "Recall the rule: a subscript counts the atoms of the symbol <strong>immediately before it</strong>.",
+              "In H₂O the subscript 2 sits directly after H, so it counts <strong>hydrogen</strong> atoms.",
+              "The O has no subscript at all — and a symbol with no subscript means <strong>one</strong> atom.",
+              "So a water molecule has 2 hydrogen atoms and <strong>1 oxygen atom</strong>, 3 atoms in total."
+            ]
+          }
+        ]
+      }
+      </script>
+    </div>
+  </div>
+
+  <nav class="lesson-nav">
+    <a href="5-atoms-and-molecules.html">← Atoms and molecules</a>
+    <a class="next" href="7-atomic-technologies.html">Next: Atomic technologies →</a>
+  </nav>
+</div>
+<script src="../../../js/atom-widgets.js"></script>
+<script src="../../../js/quiz-engine.js"></script>
+</body>
+</html>

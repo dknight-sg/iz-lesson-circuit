@@ -1,0 +1,196 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>5 · Distillation — Separation Techniques</title>
+<meta name="description" content="Textbook 4.2 — distillation separates substances with different boiling points through boiling and condensation. The apparatus, the distillate, the water cycle and the solar still.">
+<meta name="theme-color" content="#E4EAF0">
+<link rel="icon" type="image/svg+xml" href="../../../favicon.svg">
+<link rel="stylesheet" href="../../../css/style.css">
+<link rel="stylesheet" href="../../../css/interactive.css">
+</head>
+<body>
+<div class="sheet">
+  <header>
+    <div>
+      <a class="crumb" href="../index.html">← Separation Techniques</a>
+      <p class="eyebrow" style="margin-top:10px">Lesson 5 of 7 · Textbook 4.2</p>
+      <h1>Distillation</h1>
+    </div>
+    <p class="sub">Evaporation with the vapour caught and cooled back into liquid. That one addition flips which half of the mixture you get to keep.</p>
+  </header>
+
+  <div class="prose">
+    <h2 class="section">The property being used</h2>
+    <div class="callout">
+      <span class="callout-label">Definition</span>
+      <strong>Distillation</strong> is a process that separates substances with <strong>different boiling points</strong>, through <strong>boiling and condensation</strong>.
+    </div>
+    <p>A mixture is boiled, and the vapour of the substance with the <strong>lowest boiling point enters the condenser first</strong>. That vapour then condenses when it meets a surface at a lower temperature. The condensed vapour is collected, leaving the other substances behind.</p>
+    <p>The liquid you collect is called the <strong>distillate</strong>.</p>
+
+    <div class="sim" id="distillLab">
+      <div class="sim-head">
+        <h4>Distilling salt solution</h4>
+        <div class="picker">
+          <button type="button" class="dt-go">Start heating</button>
+          <button type="button" class="dt-reset">Reset</button>
+        </div>
+      </div>
+      <div class="sim-body">
+        <svg viewBox="0 0 460 250" role="img" aria-label="Distillation apparatus: flask, thermometer, condenser and collecting beaker">
+          <!-- stand -->
+          <line x1="34" y1="30" x2="34" y2="228" stroke="#0F2436" stroke-width="3"/>
+          <rect x="14" y="228" width="60" height="8" fill="#0F2436"/>
+          <!-- thermometer -->
+          <line x1="104" y1="20" x2="104" y2="86" stroke="#0F2436" stroke-width="3"/>
+          <circle cx="104" cy="90" r="6" fill="#D93F2B" stroke="#0F2436" stroke-width="1.6"/>
+          <text x="112" y="26" font-family="Space Mono, monospace" font-size="10" fill="#4A6076">thermometer</text>
+          <text class="dt-temp" x="112" y="42" font-family="Space Mono, monospace" font-size="13" font-weight="700" fill="#D93F2B">25 °C</text>
+          <!-- flask neck + bulb -->
+          <path d="M 92 96 L 92 122 A 40 40 0 1 0 116 122 L 116 96 Z" fill="rgba(247,250,252,.8)" stroke="#0F2436" stroke-width="2.4"/>
+          <path class="dt-flaskliq" d="M 67 144 A 38 38 0 0 0 141 144 Z" fill="rgba(200,220,235,.7)"/>
+          <g class="dt-bubbles" style="opacity:0;transition:opacity .4s">
+            <circle cx="92" cy="150" r="3" fill="#F7FAFC" stroke="#0F2436" stroke-width="1"/>
+            <circle cx="110" cy="158" r="2.5" fill="#F7FAFC" stroke="#0F2436" stroke-width="1"/>
+            <circle cx="118" cy="146" r="3" fill="#F7FAFC" stroke="#0F2436" stroke-width="1"/>
+          </g>
+          <line x1="124" y1="172" x2="146" y2="212" stroke="#0F2436" stroke-width="1.2"/>
+          <text x="140" y="228" font-family="Space Mono, monospace" font-size="10" fill="#4A6076">salt solution</text>
+          <!-- side arm to condenser -->
+          <path d="M 116 104 L 168 104 L 250 148" fill="none" stroke="#0F2436" stroke-width="2.4" stroke-linejoin="round"/>
+          <path d="M 116 116 L 174 116 L 246 156" fill="none" stroke="#0F2436" stroke-width="2.4" stroke-linejoin="round"/>
+          <!-- vapour -->
+          <path class="dt-vapour" d="M 130 110 L 240 152" fill="none" stroke="#9FB2C4" stroke-width="5" stroke-linecap="round" stroke-dasharray="7 8" style="opacity:0;transition:opacity .4s"/>
+          <!-- condenser jacket -->
+          <path d="M 172 92 L 262 142 L 250 164 L 160 114 Z" fill="rgba(159,208,232,.3)" stroke="#0F2436" stroke-width="2.2" stroke-linejoin="round"/>
+          <text x="196" y="86" font-family="Space Mono, monospace" font-size="10" fill="#4A6076">condenser</text>
+          <line x1="176" y1="96" x2="160" y2="76" stroke="#0F2436" stroke-width="2.2"/>
+          <text x="150" y="70" font-family="Space Mono, monospace" font-size="9" fill="#4A6076">water out</text>
+          <line x1="256" y1="158" x2="248" y2="184" stroke="#0F2436" stroke-width="2.2"/>
+          <text x="228" y="198" font-family="Space Mono, monospace" font-size="9" fill="#4A6076">water in</text>
+          <!-- delivery to beaker -->
+          <path d="M 252 156 L 268 166 L 300 166" fill="none" stroke="#0F2436" stroke-width="2.4" stroke-linejoin="round"/>
+          <g class="dt-drops" style="opacity:0;transition:opacity .4s">
+            <circle cx="312" cy="158" r="3.4" fill="#9FD0E8" stroke="#0F2436" stroke-width="1.2"/>
+            <circle cx="312" cy="142" r="2.6" fill="#9FD0E8" stroke="#0F2436" stroke-width="1.2"/>
+          </g>
+          <!-- collecting beaker -->
+          <path d="M 288 132 L 288 176 Q 288 190 302 190 L 356 190 Q 370 190 370 176 L 370 132" fill="none" stroke="#0F2436" stroke-width="2.4"/>
+          <rect class="dt-collected" x="290" y="176" width="78" height="0" fill="rgba(159,208,232,.75)"/>
+          <text x="329" y="216" text-anchor="middle" font-family="Space Mono, monospace" font-size="10" fill="#4A6076">pure water (distillate)</text>
+          <!-- flame -->
+          <g class="dt-flame" style="opacity:.35;transition:opacity .4s">
+            <path d="M 104 214 Q 90 194 104 180 Q 118 194 104 214 Z" fill="#F0871E"/>
+            <line x1="104" y1="214" x2="104" y2="234" stroke="#0F2436" stroke-width="3"/>
+          </g>
+        </svg>
+        <div class="readout-grid">
+          <div class="readout-box"><span class="rl">You keep</span><span class="rv dt-kept" style="font-size:12px;font-weight:400;font-family:inherit">—</span></div>
+          <div class="readout-box"><span class="rl">Left in the flask</span><span class="rv dt-left" style="font-size:12px;font-weight:400;font-family:inherit">—</span></div>
+        </div>
+        <p class="sep-out dt-stage"></p>
+      </div>
+      <div class="sim-foot">Watch the thermometer stop at <strong>100 °C</strong> and stay there. It reads the temperature of the vapour entering the condenser — the boiling point of whatever is coming across.</div>
+    </div>
+
+    <div class="callout">
+      <span class="callout-label">The three steps, in the words the exam wants</span>
+      <strong>1.</strong> The salt solution in the distillation flask is heated until it <strong>boils</strong>.<br>
+      <strong>2.</strong> Water changes into <strong>steam</strong>, which passes through the <strong>condenser</strong>. The condenser has cold water running through it continuously.<br>
+      <strong>3.</strong> The steam cools and <strong>condenses</strong> into pure water, called the <strong>distillate</strong>. The salt remains in the distillation flask.
+      <p style="margin:10px 0 0"><strong>Boiling chips</strong> smoothen the boiling process — they stop the flask shaking too much.</p>
+    </div>
+
+    <h2 class="section">Distillation in nature</h2>
+    <p>The <strong>water cycle</strong> is distillation on a planetary scale: heating (<strong>evaporation</strong>) lifts water into the air, and cooling (<strong>condensation</strong>) turns it back into liquid, which returns to the ground as rain.</p>
+    <p>A <strong>solar still</strong> uses the same processes, and can be used to collect water where the supply is irregular. Water evaporates from the ground, condenses on the cool plastic sheet, runs down to the lowest point under the pebble, and drips into a glass as pure water.</p>
+
+    <h2 class="section">Where it is used</h2>
+    <ul>
+      <li><strong>Perfume making</strong> — one of the earliest uses. Petals are boiled in water and the vapour collected as the distillate is made into perfume.</li>
+      <li><strong>Distilled water</strong> — water from natural sources contains minerals and impurities, which distillation removes. Used for drinking and in industries needing pure water.</li>
+      <li><strong>Food flavourings</strong> — citrus oil and liquid extracts of herbs and spices.</li>
+      <li><strong>Drinking water from seawater</strong> — desalination.</li>
+      <li><strong>Oil refineries</strong> — on Pulau Bukom and Jurong Island, chemical engineers use distillation to produce a variety of fuels from crude oil.</li>
+    </ul>
+
+    <div class="callout think">
+      <span class="callout-label">Evaporation and distillation, side by side</span>
+      <table class="cmp" style="margin:8px 0 0">
+        <tr><td class="h" style="border-bottom:1.5px solid var(--ink);width:50%">Evaporation</td><td class="h" style="border-bottom:1.5px solid var(--ink)">Distillation</td></tr>
+        <tr><td>You collect the <strong>solid</strong></td><td>You collect the <strong>liquid</strong></td></tr>
+        <tr><td>The liquid escapes as vapour and is lost</td><td>The vapour is <strong>condensed and collected</strong></td></tr>
+        <tr><td>Simple apparatus — a dish and a flame</td><td>Needs a condenser with cold water running through</td></tr>
+        <tr><td>Salt from seawater</td><td>Pure water from seawater</td></tr>
+      </table>
+    </div>
+
+    <h2 class="section">Check yourself</h2>
+    <div id="quiz">
+      <script type="application/json">
+      {
+        "questions": [
+          {
+            "type": "mcq",
+            "marks": 1,
+            "stem": "<p>What is the purpose of the condenser in a distillation?</p>",
+            "options": [
+              "To heat the vapour so that it separates",
+              "To cool the vapour so that it condenses back into a liquid that can be collected",
+              "To trap the salt so it does not travel over",
+              "To measure the boiling point of the mixture"
+            ],
+            "answer": 1,
+            "explain": "Cold water running through the jacket provides the cool surface the vapour needs.",
+            "whyWrong": {
+              "0": "The condenser does the opposite — it has <strong>cold water running through it continuously</strong>. Heating is the flask's job.",
+              "2": "The salt never leaves the distillation flask in the first place; its boiling point is far too high to vaporise. The condenser has nothing to trap.",
+              "3": "That is the <strong>thermometer</strong>, which sits at the neck of the flask reading the temperature of the vapour passing into the condenser."
+            },
+            "workthrough": [
+              "Recall the definition: distillation separates by <strong>boiling and condensation</strong>. The flask does the boiling.",
+              "So something must do the condensing — that is the condenser.",
+              "How: it has <strong>cold water running through it continuously</strong>, giving a surface at a lower temperature.",
+              "When the steam meets that cool surface it <strong>condenses</strong> into liquid water, which runs into the beaker as the <strong>distillate</strong>.",
+              "Without the condenser you would just have evaporation, and the water would be lost to the air."
+            ]
+          },
+          {
+            "type": "numeric",
+            "marks": 1,
+            "unit": "°C",
+            "answer": 100,
+            "tolerance": 0.5,
+            "stem": "<p>Salt solution is distilled. What temperature does the thermometer read while the distillate is being collected?</p>",
+            "explain": "It reads the boiling point of the substance coming across — water, at 100 °C.",
+            "whyWrong": [
+              {"near": 0, "tol": 0.5, "msg": "0 °C is the <em>freezing</em> point of water. Distillation involves boiling, not freezing."},
+              {"near": 25, "tol": 1, "msg": "That is room temperature — the reading before heating starts, not while the distillate is coming over."},
+              {"near": 50, "tol": 1, "msg": "The thermometer rises past this on the way up, but it settles at the boiling point of the substance vaporising."},
+              {"near": 1465, "tol": 40, "msg": "That is roughly the boiling point of salt — but the salt never vaporises here. It stays in the flask while only the water boils off."}
+            ],
+            "workthrough": [
+              "Ask what the thermometer is actually measuring: the temperature of the <strong>vapour</strong> passing into the condenser.",
+              "Which substance is vaporising? The one with the <strong>lowest boiling point</strong> — the water.",
+              "Water boils at <strong>100 °C</strong>, so that is what the thermometer reads while distillate is collected.",
+              "It stays steady at 100 °C, because the temperature does not rise while a substance is changing state.",
+              "The salt is not vaporising at all — its boiling point is far higher, so it simply remains in the flask."
+            ]
+          }
+        ]
+      }
+      </script>
+    </div>
+  </div>
+
+  <nav class="lesson-nav">
+    <a href="4-evaporation.html">← Evaporation</a>
+    <a class="next" href="6-chromatography.html">Next: Chromatography →</a>
+  </nav>
+</div>
+<script src="../../../js/separation-widgets.js"></script>
+<script src="../../../js/quiz-engine.js"></script>
+</body>
+</html>

@@ -1,0 +1,935 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Practice — Separation Techniques</title>
+<meta name="description" content="30 interactive practice questions on Chapter 4 — magnetic attraction, filtration, evaporation, distillation, chromatography and Singapore's water. Every wrong answer explains why and walks through the reasoning.">
+<meta name="theme-color" content="#E4EAF0">
+<link rel="icon" type="image/svg+xml" href="../../favicon.svg">
+<link rel="stylesheet" href="../../css/style.css">
+<link rel="stylesheet" href="../../css/interactive.css">
+</head>
+<body>
+<div class="sheet">
+  <header>
+    <div>
+      <a class="crumb" href="index.html">← Separation Techniques</a>
+      <p class="eyebrow" style="margin-top:10px">Practice</p>
+      <h1>30 questions</h1>
+    </div>
+    <p class="sub">Label the apparatus, read a chromatogram, plan a multi-step separation. Get one wrong and you'll be told exactly which idea slipped, then walked to the right answer.</p>
+  </header>
+
+  <div class="scorebar" id="scorebar">
+    <span>Score <span class="sc">0 / 0</span></span>
+    <span class="bar"><span></span></span>
+    <span class="dn">0 of 30 answered</span>
+    <button class="qz-reset" type="button">Start again</button>
+  </div>
+
+  <!-- distillation apparatus, cloned into the label question -->
+  <svg id="distilSheet" viewBox="0 0 460 250" style="display:none" role="img" aria-label="Distillation apparatus with four numbered parts">
+    <line x1="104" y1="20" x2="104" y2="86" stroke="#0F2436" stroke-width="3"/>
+    <circle cx="104" cy="90" r="6" fill="#D93F2B" stroke="#0F2436" stroke-width="1.6"/>
+    <path d="M 92 96 L 92 122 A 40 40 0 1 0 116 122 L 116 96 Z" fill="rgba(247,250,252,.8)" stroke="#0F2436" stroke-width="2.4"/>
+    <path d="M 67 144 A 38 38 0 0 0 141 144 Z" fill="rgba(200,220,235,.7)"/>
+    <path d="M 116 104 L 168 104 L 250 148" fill="none" stroke="#0F2436" stroke-width="2.4" stroke-linejoin="round"/>
+    <path d="M 116 116 L 174 116 L 246 156" fill="none" stroke="#0F2436" stroke-width="2.4" stroke-linejoin="round"/>
+    <path d="M 172 92 L 262 142 L 250 164 L 160 114 Z" fill="rgba(159,208,232,.3)" stroke="#0F2436" stroke-width="2.2" stroke-linejoin="round"/>
+    <line x1="176" y1="96" x2="160" y2="76" stroke="#0F2436" stroke-width="2.2"/>
+    <line x1="256" y1="158" x2="248" y2="182" stroke="#0F2436" stroke-width="2.2"/>
+    <path d="M 252 156 L 268 166 L 300 166" fill="none" stroke="#0F2436" stroke-width="2.4" stroke-linejoin="round"/>
+    <path d="M 288 132 L 288 176 Q 288 190 302 190 L 356 190 Q 370 190 370 176 L 370 132" fill="none" stroke="#0F2436" stroke-width="2.4"/>
+    <rect x="290" y="166" width="78" height="24" fill="rgba(159,208,232,.75)"/>
+    <path d="M 104 214 Q 90 194 104 180 Q 118 194 104 214 Z" fill="#F0871E"/>
+    <line x1="104" y1="214" x2="104" y2="234" stroke="#0F2436" stroke-width="3"/>
+    <g class="callout-num">
+      <path class="callout-line" d="M 104 34 L 60 30"/><circle cx="44" cy="29" r="15"/><text x="44" y="34">1</text>
+      <path class="callout-line" d="M 78 160 L 40 178"/><circle cx="24" cy="184" r="15"/><text x="24" y="189">2</text>
+      <path class="callout-line" d="M 210 118 L 224 78"/><circle cx="228" cy="62" r="15"/><text x="228" y="67">3</text>
+      <path class="callout-line" d="M 340 186 L 372 214"/><circle cx="388" cy="224" r="15"/><text x="388" y="229">4</text>
+    </g>
+  </svg>
+
+  <!-- chromatogram, cloned into the label question -->
+  <svg id="chromSheet" viewBox="0 0 300 240" style="display:none" role="img" aria-label="A finished chromatogram with four numbered spots">
+    <rect x="96" y="20" width="108" height="190" fill="#F7FAFC" stroke="#0F2436" stroke-width="1.8"/>
+    <line x1="96" y1="186" x2="204" y2="186" stroke="#0F2436" stroke-width="1.6" stroke-dasharray="4 3"/>
+    <text x="212" y="190" font-family="Space Mono, monospace" font-size="10" fill="#4A6076">start line</text>
+    <line x1="96" y1="44" x2="204" y2="44" stroke="#9FB2C4" stroke-width="1.6"/>
+    <text x="212" y="48" font-family="Space Mono, monospace" font-size="10" fill="#4A6076">solvent front</text>
+    <circle cx="150" cy="60"  r="9" fill="#E8C33B" stroke="#0F2436" stroke-width="1.2"/>
+    <circle cx="150" cy="106" r="9" fill="#4E9E6A" stroke="#0F2436" stroke-width="1.2"/>
+    <circle cx="150" cy="152" r="9" fill="#D93F2B" stroke="#0F2436" stroke-width="1.2"/>
+    <circle cx="150" cy="186" r="9" fill="#8894A0" stroke="#0F2436" stroke-width="1.2"/>
+    <g class="callout-num">
+      <path class="callout-line" d="M 141 60 L 74 60"/><circle cx="58" cy="60" r="15"/><text x="58" y="65">1</text>
+      <path class="callout-line" d="M 141 106 L 74 106"/><circle cx="58" cy="106" r="15"/><text x="58" y="111">2</text>
+      <path class="callout-line" d="M 141 152 L 74 152"/><circle cx="58" cy="152" r="15"/><text x="58" y="157">3</text>
+      <path class="callout-line" d="M 141 186 L 74 190"/><circle cx="58" cy="192" r="15"/><text x="58" y="197">4</text>
+    </g>
+  </svg>
+
+  <div class="qlist" id="quiz">
+    <script type="application/json">
+    {
+      "questions": [
+        {
+          "type": "sort",
+          "stem": "<p>Choose the technique for each job.</p>",
+          "bins": [
+            "Filtration",
+            "Evaporation",
+            "Distillation"
+          ],
+          "items": [
+            {
+              "text": "Obtain water from muddy water",
+              "bin": 0,
+              "why": "The mud is insoluble, so it is retained by the filter paper while the water passes through as the filtrate."
+            },
+            {
+              "text": "Obtain pure water from sugar solution",
+              "bin": 2,
+              "why": "The sugar has dissolved and you want the liquid — so boil it off and condense it. Filtration would do nothing and evaporation would lose the water."
+            },
+            {
+              "text": "Obtain salt from salt solution",
+              "bin": 1,
+              "why": "You want the dissolved solid, so let the water go as vapour and keep the residue."
+            },
+            {
+              "text": "Separate sand from water",
+              "bin": 0,
+              "why": "Sand is insoluble and its particles are bigger than the pores."
+            },
+            {
+              "text": "Obtain drinking water from seawater",
+              "bin": 2,
+              "why": "You want the liquid, so the vapour must be condensed and collected."
+            },
+            {
+              "text": "Obtain salt crystals from seawater in a salt pan",
+              "bin": 1,
+              "why": "You want the solid, so let the sun evaporate the water away."
+            }
+          ],
+          "workthrough": [
+            "First ask: <strong>is the solid dissolved or undissolved?</strong> Undissolved → <strong>filtration</strong>. That handles muddy water and sand.",
+            "If it <em>is</em> dissolved, filtration is useless — the particles pass straight through the pores.",
+            "So ask the second question: <strong>which one do I want to keep?</strong>",
+            "Want the <strong>solid</strong> → <strong>evaporation</strong>. Want the <strong>liquid</strong> → <strong>distillation</strong>.",
+            "Notice that seawater appears twice with two different answers. Same mixture — the goal is what decides."
+          ]
+        },
+        {
+          "type": "mcq",
+          "marks": 1,
+          "stem": "<p>What makes it possible to separate the constituents of a mixture?</p>",
+          "options": [
+            "They are chemically combined",
+            "They retain their own physical properties, so the differences between those properties can be exploited",
+            "They are always present in a fixed proportion",
+            "Every mixture contains a magnetic substance"
+          ],
+          "answer": 1,
+          "explain": "Retained properties, and the differences between them, are the handle every technique uses.",
+          "whyWrong": {
+            "0": "In a mixture the constituents are <strong>not</strong> chemically combined. Chemical combination describes a compound — which is precisely what you <em>cannot</em> easily separate.",
+            "2": "Fixed proportion is a property of compounds. A mixture's proportions vary, and in any case proportion is not what lets you separate it.",
+            "3": "Most mixtures contain nothing magnetic at all — salt solution, ink, seawater. Magnetic attraction is only one of five techniques."
+          },
+          "workthrough": [
+            "Recall from Chapter 3 that a mixture's constituents are <strong>not chemically combined</strong>.",
+            "So each one keeps its own physical properties: iron stays magnetic, salt stays soluble, water still boils at 100 °C.",
+            "Any <strong>difference</strong> between those properties is something you can grab hold of.",
+            "That is why the whole chapter reduces to one move: find the property that differs, then use the technique that exploits it."
+          ]
+        },
+        {
+          "type": "multi",
+          "marks": 3,
+          "stem": "<p>A strong magnet is passed over scrap metal. Which items will it remove? Select all that apply.</p>",
+          "options": [
+            "Steel bolts and nuts",
+            "Aluminium sheets",
+            "An iron chain",
+            "A rubber tyre",
+            "Copper wire",
+            "A steel pipe"
+          ],
+          "answer": [
+            0,
+            2,
+            5
+          ],
+          "explain": "Only iron and steel are magnetic — being a metal is not enough.",
+          "whyWrong": {
+            "1": "Aluminium is a metal but is <strong>not magnetic</strong>. This is the single commonest error in this topic.",
+            "3": "Rubber is non-magnetic — tyres are among the items the textbook shows being left behind.",
+            "4": "Copper is a metal and a superb conductor, but a magnet will not touch it."
+          },
+          "workthrough": [
+            "Recall which substances are magnetic: <strong>iron</strong> and <strong>steel</strong> (steel is a mixture of iron with other elements).",
+            "Go through the list asking one question of each: does it contain iron?",
+            "Steel bolts ✓ · iron chain ✓ · steel pipe ✓.",
+            "Aluminium, copper and rubber contain no iron, so they stay behind.",
+            "Hold on to the rule: <strong>metal does not mean magnetic</strong>."
+          ]
+        },
+        {
+          "type": "label",
+          "diagramRef": "#distilSheet",
+          "stem": "<p>Name the four numbered parts of this distillation apparatus.</p>",
+          "labels": [
+            "Thermometer",
+            "Distillation flask",
+            "Condenser",
+            "Distillate",
+            "Filter funnel",
+            "Crucible",
+            "Boiling chips"
+          ],
+          "parts": [
+            {
+              "n": 1,
+              "answer": "Thermometer",
+              "why": "It sits at the neck of the flask and reads the temperature of the vapour passing into the condenser — 100 °C while water comes across."
+            },
+            {
+              "n": 2,
+              "answer": "Distillation flask",
+              "why": "Holds the mixture being heated. The salt stays in here throughout."
+            },
+            {
+              "n": 3,
+              "answer": "Condenser",
+              "why": "Cold water runs through the outer jacket continuously, cooling the steam so it condenses back into liquid."
+            },
+            {
+              "n": 4,
+              "answer": "Distillate",
+              "why": "The condensed liquid collected in the beaker — here, pure water."
+            }
+          ],
+          "explain": "Four parts, four jobs: measure, boil, cool, collect.",
+          "workthrough": [
+            "Work along the path the substance takes, left to right.",
+            "It starts in the round flask being heated — the <strong>distillation flask</strong>.",
+            "The vapour rises past the bulb at the neck, which is the <strong>thermometer</strong> measuring the vapour's temperature.",
+            "It then enters the angled tube with the water jacket — the <strong>condenser</strong>, cooled by cold water running through continuously.",
+            "It emerges as liquid into the beaker. That collected liquid is the <strong>distillate</strong>.",
+            "A memory hook: measure → boil → cool → collect."
+          ]
+        },
+        {
+          "type": "mcq",
+          "marks": 1,
+          "stem": "<p>A mixture of chalk and water is filtered. What is the <strong>residue</strong>?</p>",
+          "options": [
+            "The water that passes through",
+            "The chalk left on the filter paper",
+            "The filter paper itself",
+            "Nothing — chalk dissolves"
+          ],
+          "answer": 1,
+          "explain": "Residue = the solid retained on the paper.",
+          "whyWrong": {
+            "0": "The liquid that passes through is the <strong>filtrate</strong>, not the residue. These two terms are often swapped — be careful.",
+            "2": "The filter paper is the sieve, not part of the mixture.",
+            "3": "Chalk is <strong>insoluble</strong> in water. If it dissolved, filtration would not work at all."
+          },
+          "workthrough": [
+            "Recall the two words: <strong>residue</strong> = solid left on the filter paper; <strong>filtrate</strong> = liquid that passes through.",
+            "Ask which constituent is bigger than the pores. Chalk is insoluble, so it stays as solid particles.",
+            "Those particles are retained on the paper → the chalk is the residue.",
+            "Memory hook: what <em>resides</em> on the paper is the <strong>residue</strong>."
+          ]
+        },
+        {
+          "type": "mcq",
+          "marks": 2,
+          "stem": "<p>A student pours salt solution through filter paper hoping to obtain the salt. What happens?</p>",
+          "options": [
+            "The salt is trapped on the paper, because salt is a solid",
+            "All of the solution passes through, because the dissolved salt particles are smaller than the pores",
+            "The water is trapped and the salt passes through",
+            "The salt dissolves the filter paper"
+          ],
+          "answer": 1,
+          "explain": "Dissolved particles are as small as the solvent particles, so no sieve can hold them.",
+          "whyWrong": {
+            "0": "The salt <em>was</em> a solid, but it has <strong>dissolved</strong>. Its particles are now spread among the water particles and are far smaller than the pores.",
+            "2": "Backwards — water passes through filter paper very easily. That is the whole basis of filtration.",
+            "3": "Salt solution does not dissolve filter paper. The paper is intact; it simply cannot stop dissolved particles."
+          },
+          "workthrough": [
+            "Ask the deciding question for filtration: <strong>is the solid dissolved or undissolved?</strong>",
+            "Salt in water has dissolved — the solution is clear and nothing settles out.",
+            "Filter paper stops only particles <strong>bigger than its pores</strong>.",
+            "Dissolved salt particles are as small as water particles, so everything goes straight through and nothing is separated.",
+            "The correct technique for recovering the salt is <strong>evaporation</strong>."
+          ]
+        },
+        {
+          "type": "mcq",
+          "marks": 1,
+          "stem": "<p>How does a tea strainer work as a filter?</p>",
+          "options": [
+            "It dissolves the tea leaves",
+            "Its holes let the tea through but are too small for the tea leaves to pass",
+            "It heats the tea so the leaves evaporate",
+            "It attracts the tea leaves magnetically"
+          ],
+          "answer": 1,
+          "explain": "A difference in particle size, exactly like filter paper.",
+          "whyWrong": {
+            "0": "Tea leaves do not dissolve — that is why they can be strained out at all. What dissolves is the coloured, flavoured substances that make the tea.",
+            "2": "A strainer applies no heat. And leaves would not evaporate in any case.",
+            "3": "Tea leaves contain no iron and are not magnetic."
+          },
+          "workthrough": [
+            "Identify the two constituents: liquid tea, and solid tea leaves.",
+            "Identify the property that differs: <strong>particle size</strong>. Leaves are large; the tea is a liquid.",
+            "The strainer's holes are sized between the two — big enough for tea, too small for leaves.",
+            "So the leaves are retained (the residue) and the tea passes through (the filtrate). Same physics as filter paper, bigger holes."
+          ]
+        },
+        {
+          "type": "mcq",
+          "marks": 1,
+          "stem": "<p>How does your nose act as a filter?</p>",
+          "options": [
+            "It dissolves dust in mucus and absorbs it into the blood",
+            "Nostril hairs and mucus trap large solid particles, preventing them from entering the lungs",
+            "It heats the air so particles evaporate",
+            "It uses static electricity to attract particles"
+          ],
+          "answer": 1,
+          "explain": "Hairs and mucus are the sieve; large particles are the residue.",
+          "whyWrong": {
+            "0": "The particles are trapped, not dissolved and absorbed. The whole point is to keep them out of the body.",
+            "2": "Your nose does warm the air, but it cannot evaporate solid dust particles.",
+            "3": "Static electricity is used in some industrial air filters, but the textbook's mechanism here is physical trapping by hairs and mucus."
+          },
+          "workthrough": [
+            "Recall the textbook's wording: the <strong>hairs in our nostrils</strong>, and <strong>mucus</strong>, help trap large solid particles in the air we breathe.",
+            "Map it onto filtration: the hairs and sticky mucus act as the sieve.",
+            "Large solid particles are retained, like a residue; clean air passes on, like a filtrate.",
+            "The purpose: preventing such particles from entering the <strong>lungs</strong>."
+          ]
+        },
+        {
+          "type": "mcq",
+          "marks": 1,
+          "stem": "<p>In a siltation pond, what does the filtering?</p>",
+          "options": [
+            "A sheet of filter paper laid across the pond",
+            "Layers of sand and rocks of different sizes, with groundwater flowing through the holes between them",
+            "Chemicals added to the water",
+            "Aquatic plants growing in the pond"
+          ],
+          "answer": 1,
+          "explain": "The gaps between sand grains and rocks are the pores.",
+          "whyWrong": {
+            "0": "Filter paper is a laboratory material. A construction site uses sand and rocks laid as filters.",
+            "2": "Chemical treatment happens at the waterworks, not in a siltation pond. This is purely physical.",
+            "3": "Aquatic plants filter rainwater at <strong>Gardens by the Bay</strong> — a different example. A siltation pond uses sand and rocks."
+          },
+          "workthrough": [
+            "Recall the setup: sand and rocks are laid as filters during construction of the pond.",
+            "Ask where the pores are — in the <strong>holes between the sand and rocks of different sizes</strong>.",
+            "Groundwater flows through those gaps; solid particles too big to fit are held back.",
+            "So clean water reaches the pond. It is filtration on a construction-site scale."
+          ]
+        },
+        {
+          "type": "mcq",
+          "marks": 1,
+          "stem": "<p>Salt solution is heated in a crucible until all the water has gone. Why is the salt left behind?</p>",
+          "options": [
+            "Salt is denser than water",
+            "Water changes state at a much lower temperature than salt, so the water leaves as vapour first",
+            "Salt is unaffected by heat",
+            "The crucible physically traps the salt"
+          ],
+          "answer": 1,
+          "explain": "The gap between the two change-of-state temperatures is the whole mechanism.",
+          "whyWrong": {
+            "0": "Density is irrelevant. What matters is the temperature at which each substance changes state.",
+            "2": "Salt would eventually melt at a very high temperature. It simply needs a far higher one than water does.",
+            "3": "The crucible is only a container — a salt pan in the sun does the same job with no container walls at all."
+          },
+          "workthrough": [
+            "Recall the definition of evaporation: the <strong>solvent changes from a liquid to a gas at a much lower temperature than the solute</strong>.",
+            "Water becomes vapour at 100 °C; salt needs far more.",
+            "So the water leaves as vapour and the salt cannot follow.",
+            "The salt stays as the <strong>residue</strong> — and the water escapes into the air, uncollected."
+          ]
+        },
+        {
+          "type": "mcq",
+          "marks": 2,
+          "stem": "<p>A student wants to obtain <strong>drinking water</strong> from seawater. Why is evaporation the wrong choice?</p>",
+          "options": [
+            "Evaporation would fail to remove the salt",
+            "Evaporation gives you the salt and lets the water escape as vapour — the opposite of what is wanted",
+            "Seawater is too salty to evaporate",
+            "The water collected would still taste salty"
+          ],
+          "answer": 1,
+          "explain": "The technique works — it just hands you the wrong half.",
+          "whyWrong": {
+            "0": "It removes the salt from the water extremely well; that is exactly how salt pans operate. The problem is what becomes of the water.",
+            "2": "Seawater evaporates readily. Salt harvesting depends on it.",
+            "3": "The vapour leaving is pure water; the salt stays in the pan. Taste is not the issue — collection is."
+          },
+          "workthrough": [
+            "Ask the deciding question: <strong>which constituent do I want to end up holding?</strong> Here, the water.",
+            "Recall what evaporation delivers: the <strong>dissolved solid</strong>. The solvent escapes as vapour and is not collected.",
+            "So the student would be left with a pan of salt and no water at all.",
+            "The right technique is <strong>distillation</strong> — it boils the water, condenses the steam and <strong>collects</strong> it.",
+            "Two marks: one for evaporation giving the solid, one for the water being lost rather than collected."
+          ]
+        },
+        {
+          "type": "mcq",
+          "marks": 1,
+          "stem": "<p>Why does vacuum drying remove water from food faster than ordinary drying?</p>",
+          "options": [
+            "The oven is much hotter",
+            "Air is removed, which allows water to evaporate more quickly than at normal temperature and pressure",
+            "A magnet pulls the water out",
+            "The food is filtered first"
+          ],
+          "answer": 1,
+          "explain": "Removing the air is the mechanism — and it protects the flavour.",
+          "whyWrong": {
+            "0": "The advantage is not extra heat. In fact vacuum drying is preferred precisely because ordinary drying makes food <strong>deteriorate in flavour</strong>.",
+            "2": "Magnets act on iron and steel, not on water.",
+            "3": "Filtration separates an insoluble solid from a liquid. It cannot pull water out of a piece of food."
+          },
+          "workthrough": [
+            "Recall the mechanism: in a vacuum oven the <strong>air is removed</strong>.",
+            "That removal allows water to evaporate <strong>more quickly</strong> than under normal temperature and pressure.",
+            "Now recall why this method is preferred: normal drying causes food to <strong>deteriorate in flavour</strong>.",
+            "So vacuum drying is both faster and better at preserving taste."
+          ]
+        },
+        {
+          "type": "mcq",
+          "marks": 1,
+          "stem": "<p>In a salt mine, hot water is pumped underground to dissolve the salt and the solution is pumped into pans. What happens next?</p>",
+          "options": [
+            "The solution is filtered to remove the salt",
+            "Water in the solution evaporates under the sun, leaving solid salt in the pans",
+            "The solution is distilled to collect the salt",
+            "A magnet is passed over the pans"
+          ],
+          "answer": 1,
+          "explain": "Sunlight does the evaporating; the salt is the residue.",
+          "whyWrong": {
+            "0": "The salt has dissolved, so it passes straight through any filter. Filtration cannot separate a solution.",
+            "2": "Distillation would collect the <em>water</em> and leave the salt behind in the flask. Here the salt is the product, and no one is collecting the water — so it is evaporation.",
+            "3": "Salt is not magnetic."
+          },
+          "workthrough": [
+            "Identify the mixture: salt dissolved in water — a solution.",
+            "Identify the product wanted: the <strong>solid salt</strong>.",
+            "Dissolved solid + you want the solid → <strong>evaporation</strong>.",
+            "The sun supplies the heat, the water leaves as vapour, and solid salt is left in the pans."
+          ]
+        },
+        {
+          "type": "mcq",
+          "marks": 1,
+          "stem": "<p>What is the <strong>distillate</strong>?</p>",
+          "options": [
+            "The solid left behind in the distillation flask",
+            "The condensed vapour that is collected",
+            "The cold water running through the condenser",
+            "The mixture before heating"
+          ],
+          "answer": 1,
+          "explain": "It is the product you collect at the far end.",
+          "whyWrong": {
+            "0": "In the distillation of salt solution the salt stays in the flask — it is the substance left behind, not the distillate.",
+            "2": "That cooling water is in a separate jacket and never mixes with the vapour. It is not collected as a product.",
+            "3": "The mixture before heating is just the mixture. The distillate only exists after boiling and condensation."
+          },
+          "workthrough": [
+            "Follow the process: boil the mixture → vapour → condenser → liquid collected.",
+            "Recall the definition: the steam cools and condenses into pure water, which is called the <strong>distillate</strong>.",
+            "So the distillate is the <strong>condensed vapour that is collected</strong>.",
+            "Distinguish it from what stays behind — in salt solution, that is the salt in the flask."
+          ]
+        },
+        {
+          "type": "mcq",
+          "marks": 1,
+          "stem": "<p>What is the purpose of the condenser?</p>",
+          "options": [
+            "To heat the vapour further",
+            "To cool the vapour so it condenses back into a liquid that can be collected",
+            "To trap the salt so it does not travel over",
+            "To measure the boiling point"
+          ],
+          "answer": 1,
+          "explain": "Cold water in the jacket gives the vapour a cool surface to condense on.",
+          "whyWrong": {
+            "0": "The opposite — it has <strong>cold water running through it continuously</strong>. Heating is the flask's job.",
+            "2": "The salt never leaves the flask; its boiling point is far too high. The condenser has nothing to trap.",
+            "3": "That is the <strong>thermometer</strong> at the neck of the flask."
+          },
+          "workthrough": [
+            "Recall the definition: distillation separates by <strong>boiling and condensation</strong>.",
+            "The flask does the boiling, so something must do the condensing.",
+            "The condenser has cold water running through it continuously, providing a surface at a lower temperature.",
+            "Steam meeting that cool surface <strong>condenses</strong> into liquid, which runs into the beaker as the distillate.",
+            "Without it you would have plain evaporation, and the water would be lost to the air."
+          ]
+        },
+        {
+          "type": "mcq",
+          "marks": 1,
+          "stem": "<p>A mixture contains two liquids with different boiling points. Which vaporises and enters the condenser first?</p>",
+          "options": [
+            "The one with the higher boiling point",
+            "The one with the lower boiling point",
+            "The one present in the larger amount",
+            "They both vaporise at the same time"
+          ],
+          "answer": 1,
+          "explain": "Lower boiling point means it boils sooner as the temperature rises.",
+          "whyWrong": {
+            "0": "A higher boiling point means <em>more</em> heat is needed, so that substance boils later, not first.",
+            "2": "Amount does not change a substance's boiling point. A small amount of a low-boiling liquid still comes over first.",
+            "3": "If they vaporised together nothing would be separated — which is the whole reason the technique works."
+          },
+          "workthrough": [
+            "Picture the temperature climbing steadily as the mixture is heated.",
+            "The first substance to reach <em>its</em> boiling point is the one with the <strong>lowest</strong> boiling point.",
+            "So its vapour enters the condenser first, and it is collected first.",
+            "Recall the textbook wording directly: “the vapour of the substance with the <strong>lowest boiling point</strong> in the mixture enters the condenser first”."
+          ]
+        },
+        {
+          "type": "numeric",
+          "marks": 1,
+          "unit": "°C",
+          "answer": 100,
+          "tolerance": 0.5,
+          "stem": "<p>Salt solution is distilled. What does the thermometer read while pure water is being collected?</p>",
+          "explain": "It reads the boiling point of the substance vaporising — water, 100 °C.",
+          "whyWrong": [
+            {
+              "near": 0,
+              "tol": 0.5,
+              "msg": "0 °C is the <em>freezing</em> point of water. Distillation involves boiling."
+            },
+            {
+              "near": 25,
+              "tol": 1,
+              "msg": "Room temperature — the reading before heating begins, not while distillate is coming across."
+            },
+            {
+              "near": 50,
+              "tol": 1,
+              "msg": "The thermometer passes through this on the way up, but it settles at the boiling point of whatever is vaporising."
+            },
+            {
+              "near": 1465,
+              "tol": 40,
+              "msg": "That is roughly the boiling point of salt — but the salt never vaporises. It stays in the flask while only the water boils off."
+            }
+          ],
+          "workthrough": [
+            "Ask what the thermometer measures: the temperature of the <strong>vapour</strong> entering the condenser.",
+            "Which substance is vaporising? The one with the lowest boiling point — the <strong>water</strong>.",
+            "Water boils at <strong>100 °C</strong>, so that is the reading.",
+            "It holds steady there, because temperature does not rise while a substance changes state.",
+            "The salt is not vaporising at all; its boiling point is far higher."
+          ]
+        },
+        {
+          "type": "mcq",
+          "marks": 1,
+          "stem": "<p>Which natural process works in the same way as distillation?</p>",
+          "options": [
+            "Rusting of iron",
+            "The water cycle — evaporation followed by condensation",
+            "Photosynthesis in plants",
+            "Erosion of rock by wind"
+          ],
+          "answer": 1,
+          "explain": "Heating then cooling, exactly as in the apparatus.",
+          "whyWrong": {
+            "0": "Rusting is a chemical change in which iron gains oxygen. No boiling or condensation is involved.",
+            "2": "Photosynthesis is a chemical reaction driven by light, not a separation by boiling and condensing.",
+            "3": "Erosion physically wears rock away. Nothing vaporises and nothing condenses."
+          },
+          "workthrough": [
+            "Break distillation into its two stages: <strong>heating</strong> (evaporation) and <strong>cooling</strong> (condensation).",
+            "Now look for a natural process with the same two stages.",
+            "In the <strong>water cycle</strong>, the sun evaporates water from the sea, and the vapour condenses into clouds and falls as rain.",
+            "Same two steps, planetary scale. A <strong>solar still</strong> is the deliberate version — water evaporates from the ground, condenses on a cool plastic sheet, and drips into a glass as pure water."
+          ]
+        },
+        {
+          "type": "multi",
+          "marks": 3,
+          "stem": "<p>Which of these are applications of distillation? Select all that apply.</p>",
+          "options": [
+            "Making perfumes by boiling petals in water",
+            "Straining tea leaves from tea",
+            "Producing distilled water free of minerals and impurities",
+            "Removing iron from scrap metal",
+            "Producing fuels from crude oil at an oil refinery"
+          ],
+          "answer": [
+            0,
+            2,
+            4
+          ],
+          "explain": "Perfume, distilled water and refinery fuels — all separations by boiling point.",
+          "whyWrong": {
+            "1": "A tea strainer is <strong>filtration</strong> — a difference in particle size, with no boiling involved.",
+            "3": "That is <strong>magnetic attraction</strong>, which uses a completely different property."
+          },
+          "workthrough": [
+            "Test each option: does it separate substances by <strong>boiling and condensing</strong> them?",
+            "Perfume — plant parts are boiled in water and the vapour collected as distillate ✓",
+            "Distilled water — boiling removes minerals and impurities, which stay behind ✓",
+            "Oil refineries on Pulau Bukom and Jurong Island — distillation produces a variety of fuels from crude oil ✓",
+            "Tea straining involves no heat, and magnets involve no boiling. Neither is distillation."
+          ]
+        },
+        {
+          "type": "mcq",
+          "marks": 1,
+          "stem": "<p>On a chromatogram, which substance has travelled furthest from the start line?</p>",
+          "options": [
+            "The heaviest one",
+            "The one that is most soluble in the solvent",
+            "The one added to the paper first",
+            "The one with the lowest boiling point"
+          ],
+          "answer": 1,
+          "explain": "Distance travelled is a direct measure of solubility in that solvent.",
+          "whyWrong": {
+            "0": "Chromatography does not sort by weight. Two substances of similar mass can travel very different distances.",
+            "2": "All the substances started together in one spot, at the same moment.",
+            "3": "Boiling point is what <strong>distillation</strong> exploits. Chromatography runs on solubility."
+          },
+          "workthrough": [
+            "Recall the rule: substances that are <strong>more soluble</strong> in the solvent travel <strong>longer distances</strong> from the start.",
+            "So height up the paper measures solubility in that solvent.",
+            "The spot nearest the solvent front is therefore the most soluble.",
+            "Phrase it carefully in an answer: “most soluble <em>in the solvent</em>”, since solubility depends on which solvent is used."
+          ]
+        },
+        {
+          "type": "label",
+          "diagramRef": "#chromSheet",
+          "stem": "<p>This chromatogram was made using water as the solvent. Classify each numbered spot.</p>",
+          "labels": [
+            "Most soluble in water",
+            "Second most soluble",
+            "Third most soluble",
+            "Insoluble in water"
+          ],
+          "parts": [
+            {
+              "n": 1,
+              "answer": "Most soluble in water",
+              "why": "It travelled furthest from the start line, so the water carried it the greatest distance."
+            },
+            {
+              "n": 2,
+              "answer": "Second most soluble",
+              "why": "It travelled less far than spot 1 but further than spots 3 and 4."
+            },
+            {
+              "n": 3,
+              "answer": "Third most soluble",
+              "why": "It moved up the paper, so it does dissolve — but less readily than 1 and 2."
+            },
+            {
+              "n": 4,
+              "answer": "Insoluble in water",
+              "why": "It is still sitting exactly on the start line. It did not dissolve, so the solvent could not carry it at all."
+            }
+          ],
+          "explain": "Read a chromatogram from the top down: furthest = most soluble; still on the line = insoluble.",
+          "workthrough": [
+            "Find the <strong>start line</strong> first — every distance is measured from there.",
+            "Rank the spots by how far they travelled. Furthest = <strong>most soluble</strong> in that solvent.",
+            "Work down in order: spot 1, then 2, then 3.",
+            "Now look at spot 4 — it has not moved from the start line at all.",
+            "A substance can only move if it dissolves and is carried by the solvent, so an unmoved spot is <strong>insoluble</strong> in that solvent. That is a result, not a failed experiment."
+          ]
+        },
+        {
+          "type": "mcq",
+          "marks": 1,
+          "stem": "<p>What is the paper with the separated coloured spots called?</p>",
+          "options": [
+            "A filtrate",
+            "A chromatogram",
+            "A distillate",
+            "A residue"
+          ],
+          "answer": 1,
+          "explain": "Chromatogram — from the Greek for colour-writing.",
+          "whyWrong": {
+            "0": "A filtrate is the liquid that passes through filter paper during filtration.",
+            "2": "A distillate is the condensed liquid collected during distillation.",
+            "3": "A residue is the solid retained on filter paper during filtration."
+          },
+          "workthrough": [
+            "Recall the wording: “the paper with the different coloured spots is called a <strong>chromatogram</strong>”.",
+            "The name makes sense of itself: in Greek <em>chrom</em> means colour and <em>graphy</em> means writing.",
+            "Keep the four product words apart — <strong>residue</strong> and <strong>filtrate</strong> come from filtration, <strong>distillate</strong> from distillation, <strong>chromatogram</strong> from chromatography."
+          ]
+        },
+        {
+          "type": "multi",
+          "marks": 3,
+          "stem": "<p>Which of these are uses of chromatography? Select all that apply.</p>",
+          "options": [
+            "Identifying the colours in dyes",
+            "Removing sand from water",
+            "Identifying coloured substances in food products",
+            "Detecting water pollutants",
+            "Obtaining salt from seawater"
+          ],
+          "answer": [
+            0,
+            2,
+            3
+          ],
+          "explain": "Dyes, food colours and pollutants — all mixtures of substances with different solubilities.",
+          "whyWrong": {
+            "1": "Sand is insoluble and its particles are large, so that is <strong>filtration</strong>.",
+            "4": "That is <strong>evaporation</strong> — you want the dissolved solid and let the water go."
+          },
+          "workthrough": [
+            "Ask of each option: are we separating substances that <strong>dissolve to different extents</strong> in a solvent?",
+            "Dyes are mixtures of coloured substances ✓ · food colourings likewise ✓ · pollutants dissolved in water ✓",
+            "Sand does not dissolve at all — that is a particle-size problem, so filtration.",
+            "Salt from seawater is a dissolved solid you want to keep — evaporation.",
+            "Also worth knowing: the SFA uses <strong>gas chromatography</strong> for food testing, which uses a gas as the solvent."
+          ]
+        },
+        {
+          "type": "structured",
+          "marks": 4,
+          "stem": "<p>You are given a mixture of <strong>iron filings, salt and sawdust</strong>.</p>",
+          "parts": [
+            {
+              "stem": "Describe how you would separate all three constituents. Give the steps in order.",
+              "marks": 3,
+              "model": [
+                "Step 1 — Pass a magnet over the dry mixture. The iron filings are magnetic and are attracted to it; salt and sawdust are not, so they are left behind.",
+                "Step 2 — Add water and stir. The salt dissolves; the sawdust is insoluble and does not.",
+                "Step 3 — Filter the mixture. The sawdust is retained on the filter paper as the residue; the salt solution passes through as the filtrate.",
+                "Step 4 — Evaporate the filtrate. The water escapes as vapour and the salt is left behind as the residue."
+              ],
+              "note": "One mark for the magnet first, one for dissolving and filtering out the sawdust, one for evaporating to recover the salt."
+            },
+            {
+              "stem": "Explain why the magnet must be used before the water is added.",
+              "marks": 1,
+              "model": [
+                "Once water is added, the iron filings become wet and mixed into the solution, so they are much harder to collect completely and cleanly. Using the magnet on the dry mixture first recovers them cleanly."
+              ]
+            }
+          ],
+          "explain": "Three constituents, three different physical properties — magnetism, solubility, then particle size.",
+          "workthrough": [
+            "List the three constituents and the property that makes each one distinctive.",
+            "<strong>Iron</strong> — the only magnetic one. <strong>Salt</strong> — the only soluble one. <strong>Sawdust</strong> — insoluble and non-magnetic.",
+            "Take out the one with the most convenient property first: the magnet gets the iron, cleanly and dry.",
+            "Now use solubility to split the remaining two: add water, and only the salt dissolves.",
+            "<strong>Filter</strong> to remove the insoluble sawdust as the residue, leaving salt solution as the filtrate.",
+            "Finally <strong>evaporate</strong> the filtrate to recover the salt. Three properties, three steps, in the only order that works cleanly."
+          ]
+        },
+        {
+          "type": "structured",
+          "marks": 3,
+          "stem": "<p>A beaker contains sand and salt stirred into water.</p>",
+          "parts": [
+            {
+              "stem": "How would you obtain dry sand from the mixture, and what is the sand called at that stage?",
+              "marks": 2,
+              "model": [
+                "Filter the mixture. The sand is insoluble and its particles are bigger than the pores, so it is retained on the filter paper as the residue.",
+                "Then leave it to dry, or dry it in an oven."
+              ],
+              "note": "One mark for filtration, one for naming the sand as the residue."
+            },
+            {
+              "stem": "The filtrate is salt solution. Name the technique you would use to obtain pure water from it.",
+              "marks": 1,
+              "model": [
+                "Distillation — because the water is the product wanted, so the steam must be condensed and collected rather than allowed to escape."
+              ]
+            }
+          ],
+          "explain": "Filtration removes the insoluble solid; the choice after that depends on what you want to keep.",
+          "workthrough": [
+            "Sort the constituents by behaviour in water: sand is <strong>insoluble</strong>, salt is <strong>soluble</strong>.",
+            "An insoluble solid in a liquid → <strong>filtration</strong>. The sand is retained as the <strong>residue</strong>.",
+            "The filtrate that passes through is salt solution — still a mixture.",
+            "Now ask the deciding question: what do we want? Part (b) says <strong>pure water</strong>.",
+            "Wanting the liquid → <strong>distillation</strong>. (Had it asked for the salt instead, the answer would be evaporation.)"
+          ]
+        },
+        {
+          "type": "multi",
+          "marks": 4,
+          "stem": "<p>Which are the Four National Taps? Select all four.</p>",
+          "options": [
+            "Water from local catchment",
+            "Bottled mineral water",
+            "Imported water",
+            "NEWater",
+            "Desalinated water",
+            "Water from underground wells"
+          ],
+          "answer": [
+            0,
+            2,
+            3,
+            4
+          ],
+          "explain": "Catchment, imported, NEWater, desalinated.",
+          "whyWrong": {
+            "1": "Bottled mineral water is a product you buy, not one of Singapore's national water sources.",
+            "5": "Singapore does not rely on underground wells. The four taps are catchment, imported, NEWater and desalinated water."
+          },
+          "workthrough": [
+            "Recall the list of four: <strong>water from local catchment</strong>, <strong>imported water</strong>, <strong>NEWater</strong>, <strong>desalinated water</strong>.",
+            "Notice the logic — two natural sources (rain we catch, water we buy) and two we manufacture (recycled, and from the sea).",
+            "The reason there are four rather than one: as a small country Singapore cannot collect and store all the water it needs, so the supply must be spread across several sources.",
+            "This also links to cost and reliability — no single technique is affordable and dependable enough on its own."
+          ]
+        },
+        {
+          "type": "mcq",
+          "marks": 1,
+          "stem": "<p>Which is the correct order of the three steps used to produce NEWater?</p>",
+          "options": [
+            "Reverse osmosis → microfiltration → ultraviolet disinfection",
+            "Microfiltration → reverse osmosis → ultraviolet disinfection",
+            "Ultraviolet disinfection → microfiltration → reverse osmosis",
+            "Microfiltration → ultraviolet disinfection → reverse osmosis"
+          ],
+          "answer": 1,
+          "explain": "Coarsest first, finest second, final kill step last.",
+          "whyWrong": {
+            "0": "Reverse osmosis membranes have very fine pores. Feeding them unfiltered water first would clog them with the larger particles microfiltration is meant to remove.",
+            "2": "UV is the <strong>final</strong> step. Disinfecting first is pointless when physical purification still has to happen afterwards.",
+            "3": "UV must come after every physical purification stage, so that it kills anything that survived them."
+          },
+          "workthrough": [
+            "Think about what each step removes, largest to smallest.",
+            "<strong>Microfiltration</strong> — microscopic particles and bacteria.",
+            "<strong>Reverse osmosis</strong> — much smaller undesirable contaminants, including viruses.",
+            "<strong>Ultraviolet disinfection</strong> — destroys anything still living; chemicals are then added.",
+            "Coarse → fine → final kill. Any other order either clogs the membranes or wastes the disinfection."
+          ]
+        },
+        {
+          "type": "mcq",
+          "marks": 2,
+          "stem": "<p>Desalination can be done by distillation or by reverse osmosis. Why does Singapore use reverse osmosis?</p>",
+          "options": [
+            "Distillation cannot remove salt from seawater",
+            "Distillation needs a large amount of fuel to heat a big volume of seawater, so it uses a lot of energy and is unsustainable",
+            "Reverse osmosis is the cheapest method available",
+            "Distillation would leave the water tasting salty"
+          ],
+          "answer": 1,
+          "explain": "Both work; energy use and sustainability decide it.",
+          "whyWrong": {
+            "0": "Distillation removes salt from seawater very effectively — Figure 4.22 shows exactly that. Effectiveness is not the problem.",
+            "2": "Reverse osmosis is described as <strong>costly</strong> in this same textbook, which is why it cannot be the only method used. It wins here on energy, not price.",
+            "3": "The distillate is pure water and the salt stays behind. Taste is not the issue."
+          },
+          "workthrough": [
+            "Note first that <strong>both</strong> methods work, so the reason must be practical rather than scientific.",
+            "Recall what distillation requires: heating the salt solution until it <strong>boils</strong>.",
+            "Scale that up to a city's water supply — a <strong>large amount of fuel</strong> to heat a big volume of seawater.",
+            "That is a lot of energy, which makes the process <strong>unsustainable</strong>.",
+            "Two marks: one for the fuel and energy demand, one for the word unsustainable."
+          ]
+        },
+        {
+          "type": "mcq",
+          "marks": 1,
+          "stem": "<p>In reverse osmosis, what passes through the partially permeable membrane?</p>",
+          "options": [
+            "Salt particles only",
+            "Water particles, but not salt particles, microorganisms or chemical contaminants",
+            "Everything, at high pressure",
+            "Only bacteria"
+          ],
+          "answer": 1,
+          "explain": "Very small pores let the smallest particles through and stop everything else.",
+          "whyWrong": {
+            "0": "Backwards. The salt is what must be kept out — otherwise the water would still be seawater.",
+            "2": "If everything passed through, nothing would be separated and the process would be pointless.",
+            "3": "The membrane <strong>stops</strong> microorganisms such as bacteria. Letting them through would defeat the purpose."
+          },
+          "workthrough": [
+            "Recall the setup: pre-treated seawater is pumped through <strong>partially permeable membranes at high pressure</strong>.",
+            "Each membrane is a thin material with <strong>very small pores</strong>.",
+            "Those pores allow <strong>water particles</strong> through but not salt particles.",
+            "They also stop microorganisms such as bacteria, and chemical contaminants.",
+            "So pure water is obtained on the far side. It is filtration taken to an extreme — pores fine enough to stop dissolved salt."
+          ]
+        },
+        {
+          "type": "multi",
+          "marks": 3,
+          "stem": "<p>Besides physical properties, which factors are considered when choosing a separation technique? Select all that apply.</p>",
+          "options": [
+            "Cost",
+            "The colour of the mixture",
+            "Reliability",
+            "Environmental impact",
+            "The alphabetical order of the technique"
+          ],
+          "answer": [
+            0,
+            2,
+            3
+          ],
+          "explain": "Cost, reliability, environmental impact — the three practical constraints.",
+          "whyWrong": {
+            "1": "Colour matters in chromatography as something you observe, but it is not a factor in <em>choosing</em> a technique.",
+            "4": "Not a real consideration — included to check you are reading rather than pattern-matching."
+          },
+          "workthrough": [
+            "Recall the sentence directly: other factors to consider include <strong>cost, reliability and environmental impact</strong>.",
+            "See them at work in the textbook's own example: reverse osmosis produces potable water but is <strong>costly</strong>, so it cannot be the only method used.",
+            "And again with desalination: distillation would work, but its energy demand makes it <strong>unsustainable</strong> — an environmental-impact judgement.",
+            "So physical properties tell you what <em>could</em> work; these three decide what actually gets used."
+          ]
+        }
+      ]
+    }
+    </script>
+  </div>
+
+  <nav class="lesson-nav">
+    <a href="map.html">← Chapter map</a>
+    <a class="next" href="index.html">Chapter home ↺</a>
+  </nav>
+</div>
+<script src="../../js/quiz-engine.js"></script>
+</body>
+</html>

@@ -1,0 +1,161 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>3 · Filtration — Separation Techniques</title>
+<meta name="description" content="Textbook 4.2 — filtration separates substances with different particle sizes. Residue and filtrate, pores in filter paper, and why filtration cannot separate a solution.">
+<meta name="theme-color" content="#E4EAF0">
+<link rel="icon" type="image/svg+xml" href="../../../favicon.svg">
+<link rel="stylesheet" href="../../../css/style.css">
+<link rel="stylesheet" href="../../../css/interactive.css">
+</head>
+<body>
+<div class="sheet">
+  <header>
+    <div>
+      <a class="crumb" href="../index.html">← Separation Techniques</a>
+      <p class="eyebrow" style="margin-top:10px">Lesson 3 of 7 · Textbook 4.2</p>
+      <h1>Filtration</h1>
+    </div>
+    <p class="sub">A sieve with very small holes. Everything about filtration follows from one fact: the holes are a particular size.</p>
+  </header>
+
+  <div class="prose">
+    <h2 class="section">The property being used</h2>
+    <div class="callout">
+      <span class="callout-label">Definition</span>
+      <strong>Filtration</strong> is the process of separating substances of <strong>different particle sizes</strong> using a sieve.
+    </div>
+    <p>A sieve has small holes called <strong>pores</strong>. Particles <strong>smaller</strong> than the pores pass through; particles <strong>bigger</strong> than the pores are retained. In the laboratory the sieve is a piece of <strong>filter paper</strong> in a filter funnel.</p>
+
+    <div class="callout">
+      <span class="callout-label">Two words you will be asked to name</span>
+      The solid left on the filter paper is the <strong>residue</strong>.<br>
+      The liquid that passes through is the <strong>filtrate</strong>.
+    </div>
+
+    <div class="sim" id="filterLab">
+      <div class="sim-head">
+        <h4>Filtration</h4>
+        <div class="picker fl-pick">
+          <button type="button" data-s="chalk">Chalk + water</button>
+          <button type="button" data-s="salt">Salt solution</button>
+        </div>
+      </div>
+      <div class="sim-body">
+        <div class="sim-row" style="margin-bottom:12px">
+          <button type="button" class="fl-pour">Pour it through</button>
+          <button type="button" class="fl-reset">Reset</button>
+        </div>
+        <svg viewBox="0 0 420 240" role="img" aria-label="A filter funnel lined with filter paper above a beaker">
+          <!-- beaker of mixture, top left -->
+          <path d="M 26 30 L 26 92 Q 26 102 36 102 L 96 102 Q 106 102 106 92 L 106 30" fill="none" stroke="#0F2436" stroke-width="2.2"/>
+          <path class="fl-mix" d="M 28 52 L 28 92 Q 28 100 36 100 L 96 100 Q 104 100 104 92 L 104 52 Z" fill="rgba(200,220,235,.5)" style="transition:opacity .5s"/>
+          <text x="66" y="120" text-anchor="middle" font-family="Space Mono, monospace" font-size="10" fill="#4A6076">mixture</text>
+          <!-- funnel -->
+          <path d="M 160 60 L 300 60 L 240 150 L 240 176 L 220 176 L 220 150 Z" fill="rgba(247,250,252,.7)" stroke="#0F2436" stroke-width="2.2" stroke-linejoin="round"/>
+          <!-- filter paper -->
+          <path d="M 172 68 L 288 68 L 232 152 L 228 152 Z" fill="#EDF2F6" stroke="#0F2436" stroke-width="1.6" stroke-dasharray="4 3"/>
+          <text x="316" y="74" font-family="Space Mono, monospace" font-size="10" fill="#4A6076">filter paper</text>
+          <!-- residue -->
+          <path class="fl-residue" d="M 200 116 L 260 116 L 234 152 L 226 152 Z" fill="#C9D3DC" stroke="#0F2436" stroke-width="1.4" style="opacity:0;transition:opacity .5s"/>
+          <!-- receiving beaker -->
+          <path d="M 186 178 L 186 218 Q 186 230 198 230 L 262 230 Q 274 230 274 218 L 274 178" fill="none" stroke="#0F2436" stroke-width="2.2"/>
+          <path class="fl-filtrate" d="M 188 200 L 188 218 Q 188 228 198 228 L 262 228 Q 272 228 272 218 L 272 200 Z" fill="rgba(200,220,235,.5)" style="opacity:0;transition:opacity .6s"/>
+          <text x="300" y="214" font-family="Space Mono, monospace" font-size="10" fill="#4A6076">filtrate</text>
+        </svg>
+        <div class="readout-grid">
+          <div class="readout-box"><span class="rl">Residue (on the paper)</span><span class="rv fl-rres" style="font-size:12px;font-weight:400;font-family:inherit">—</span></div>
+          <div class="readout-box"><span class="rl">Filtrate (through the paper)</span><span class="rv fl-rfil" style="font-size:12px;font-weight:400;font-family:inherit">—</span></div>
+        </div>
+        <p class="sep-out fl-verdict"></p>
+      </div>
+      <div class="sim-foot">Run <strong>salt solution</strong> through and watch nothing happen. That is the most examinable fact in this lesson.</div>
+    </div>
+
+    <div class="callout think">
+      <span class="callout-label">Filtration cannot separate a solution</span>
+      Salt dissolves in water to form salt solution, and <strong>all of the salt solution passes through the filter paper</strong>. The dissolved particles are as small as the water particles, so the pores cannot stop them. To get salt out of salt solution you must use <strong>evaporation</strong> — the next lesson.
+      <p style="margin:10px 0 0">Rule of thumb: filtration works on <strong>insoluble</strong> solids only. If it has dissolved, filtering is pointless.</p>
+    </div>
+
+    <h2 class="section">Filtration around you</h2>
+    <table class="cmp" style="margin-bottom:20px">
+      <tr><td class="h" style="border-bottom:1.5px solid var(--ink);width:30%">Where</td><td class="h" style="border-bottom:1.5px solid var(--ink)">What acts as the sieve, and what it traps</td></tr>
+      <tr><td><strong>Tea strainer</strong></td><td>The mesh holes let tea through but retain the <strong>tea leaves</strong>.</td></tr>
+      <tr><td><strong>Siltation pond</strong></td><td>Layers of <strong>sand and rocks of different sizes</strong> are laid as filters. Groundwater flows through the holes between them, so clean water reaches the pond.</td></tr>
+      <tr><td><strong>Your nose</strong></td><td>The <strong>hairs in your nostrils and mucus</strong> trap large solid particles in the air you breathe, preventing them from reaching your lungs.</td></tr>
+      <tr><td><strong>Waterworks</strong></td><td>Rainwater from local catchment and imported water are chemically treated, <strong>filtered</strong> and disinfected to make tap water.</td></tr>
+    </table>
+
+    <h2 class="section">Check yourself</h2>
+    <div id="quiz">
+      <script type="application/json">
+      {
+        "questions": [
+          {
+            "type": "mcq",
+            "marks": 2,
+            "stem": "<p>A student pours salt solution through a filter funnel lined with filter paper, hoping to obtain the salt. What happens, and why?</p>",
+            "options": [
+              "The salt is trapped on the filter paper, because salt is a solid",
+              "All of the solution passes through, because the dissolved salt particles are small enough to fit through the pores",
+              "Half the salt is trapped and half passes through",
+              "The water is trapped and the salt passes through"
+            ],
+            "answer": 1,
+            "explain": "Dissolved particles are as small as the solvent particles, so no sieve can stop them.",
+            "whyWrong": {
+              "0": "Salt <em>was</em> a solid, but it has <strong>dissolved</strong>. Its particles are now spread among the water particles and are far smaller than the pores.",
+              "2": "Filtration is not partial like this. The pores either stop a particle or they do not — and dissolved particles always pass.",
+              "3": "This has it backwards. Water passes through filter paper easily; that is the whole basis of the technique."
+            },
+            "workthrough": [
+              "Ask the deciding question for filtration: <strong>is the solid dissolved or undissolved?</strong>",
+              "Salt in water has <strong>dissolved</strong> — the solution is clear and nothing settles.",
+              "Recall how filter paper works: it stops particles <strong>bigger than its pores</strong>.",
+              "Dissolved salt particles are as small as water particles, so they go straight through with the water.",
+              "Result: nothing is separated. The correct technique for recovering the salt is <strong>evaporation</strong>."
+            ]
+          },
+          {
+            "type": "mcq",
+            "marks": 1,
+            "stem": "<p>A mixture of chalk and water is filtered. What are the residue and the filtrate?</p>",
+            "options": [
+              "Residue: water. Filtrate: chalk",
+              "Residue: chalk. Filtrate: water",
+              "Residue: chalk and water. Filtrate: nothing",
+              "Residue: nothing. Filtrate: chalk and water"
+            ],
+            "answer": 1,
+            "explain": "Residue is the solid on the paper; filtrate is the liquid that got through.",
+            "whyWrong": {
+              "0": "Swapped. The <strong>residue</strong> is always the solid retained <em>on</em> the paper — here the chalk.",
+              "2": "The water is not retained; it passes through the pores. If nothing came through, the funnel would simply overflow.",
+              "3": "Chalk is <strong>insoluble</strong>, so it does not pass through. It is retained as the residue — that is why filtration works here at all."
+            },
+            "workthrough": [
+              "Recall the two terms: <strong>residue</strong> = the solid left on the filter paper; <strong>filtrate</strong> = the liquid that passes through.",
+              "Ask which constituent is bigger than the pores. Chalk is <strong>insoluble</strong>, so it stays as solid particles — bigger than the pores.",
+              "So chalk is retained → chalk is the residue.",
+              "Water particles are small enough to pass → water is the filtrate.",
+              "A memory hook: what <em>resides</em> on the paper is the <strong>residue</strong>."
+            ]
+          }
+        ]
+      }
+      </script>
+    </div>
+  </div>
+
+  <nav class="lesson-nav">
+    <a href="2-magnetic-attraction.html">← Magnetic attraction</a>
+    <a class="next" href="4-evaporation.html">Next: Evaporation →</a>
+  </nav>
+</div>
+<script src="../../../js/separation-widgets.js"></script>
+<script src="../../../js/quiz-engine.js"></script>
+</body>
+</html>

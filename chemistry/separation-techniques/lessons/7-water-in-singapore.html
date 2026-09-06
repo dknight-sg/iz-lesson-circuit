@@ -1,0 +1,160 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>7 · Potable water in Singapore — Separation Techniques</title>
+<meta name="description" content="Textbook 4.3 — the Four National Taps, NEWater's three-step process, desalination by reverse osmosis, and conserving water.">
+<meta name="theme-color" content="#E4EAF0">
+<link rel="icon" type="image/svg+xml" href="../../../favicon.svg">
+<link rel="stylesheet" href="../../../css/style.css">
+<link rel="stylesheet" href="../../../css/interactive.css">
+</head>
+<body>
+<div class="sheet">
+  <header>
+    <div>
+      <a class="crumb" href="../index.html">← Separation Techniques</a>
+      <p class="eyebrow" style="margin-top:10px">Lesson 7 of 7 · Textbook 4.3</p>
+      <h1>Potable water in Singapore</h1>
+    </div>
+    <p class="sub">Everything in this chapter, applied to one problem: a small island that cannot store all the water it needs.</p>
+  </header>
+
+  <div class="prose">
+    <h2 class="section">Why this is hard here</h2>
+    <p>Water is essential to life — our cells, tissues and organs use it to regulate temperature and keep working. Industries need it to fabricate, process, wash, dilute, cool and transport products. Homes need it for cooking, washing and cleaning, and activities such as swimming and canoeing need it too.</p>
+    <p>But <strong>as a small country, Singapore does not have enough space to collect and store all the water we need.</strong> In 2015 the World Resources Institute ranked Singapore among the most <strong>water-stressed</strong> countries in the world, and one of eight countries most likely to face disruptions in water supply by <strong>2040</strong>.</p>
+    <p>The answer is not one solution but four.</p>
+
+    <h2 class="section">The Four National Taps</h2>
+    <div class="sim" id="waterLab">
+      <div class="sim-head"><h4>The Four National Taps</h4></div>
+      <div class="sim-body">
+        <div class="wl-taps">
+          <button type="button" class="wl-btn wl-tap" data-k="catchment">1 · Water from local catchment</button>
+          <button type="button" class="wl-btn wl-tap" data-k="imported">2 · Imported water</button>
+          <button type="button" class="wl-btn wl-tap" data-k="newater">3 · NEWater</button>
+          <button type="button" class="wl-btn wl-tap" data-k="desal">4 · Desalinated water</button>
+        </div>
+        <p style="font-size:12px;color:var(--ink-soft);margin:0 0 8px;font-family:'Space Mono',monospace;letter-spacing:.06em;text-transform:uppercase">The three steps of NEWater</p>
+        <div class="wl-steps">
+          <button type="button" class="wl-btn wl-step" data-k="micro">Microfiltration</button>
+          <button type="button" class="wl-btn wl-step" data-k="ro">Reverse osmosis</button>
+          <button type="button" class="wl-btn wl-step" data-k="uv">UV disinfection</button>
+        </div>
+        <div class="wl-panel"></div>
+      </div>
+      <div class="sim-foot">Note the order of the NEWater steps — microfiltration, then reverse osmosis, then UV. Each removes something the one before it could not.</div>
+    </div>
+
+    <h2 class="section">Rainwater and imported water</h2>
+    <p>Rainwater is collected through a network of <strong>drains, canals and rivers</strong> and channelled to <strong>17 reservoirs</strong>. Singapore also imports water from <strong>Johor, Malaysia</strong>.</p>
+    <p>Both are piped to the <strong>waterworks</strong>, where the water is <strong>chemically treated, filtered and disinfected</strong>. This removes harmful bacteria and makes the water clear, odourless and safe. It is then supplied as <strong>tap water</strong>, well within World Health Organisation guidelines for potable water — safe to drink straight from the tap.</p>
+
+    <h2 class="section">NEWater</h2>
+    <p>NEWater is <strong>ultra-clean, high-grade recycled water</strong>, made from treated used water. Used water from homes and industries is collected through sewers and sent to <strong>water reclamation plants</strong>; the treated used water then goes to <strong>NEWater plants</strong> for further purification in three steps:</p>
+    <ol>
+      <li><strong>Microfiltration</strong> — removes microscopic particles and bacteria.</li>
+      <li><strong>Reverse osmosis</strong> — removes undesirable contaminants, <strong>including viruses</strong>.</li>
+      <li><strong>Ultraviolet disinfection</strong> — UV light destroys any remaining bacteria and viruses; chemicals are then added so it fully meets requirements.</li>
+    </ol>
+    <p>NEWater has passed more than <strong>150 000 scientific tests</strong> and is well within WHO guidelines. It is mainly supplied to <strong>industries</strong>, and during dry weather it is also added to our reservoirs.</p>
+
+    <h2 class="section">Desalinated water</h2>
+    <p><strong>Desalination</strong> obtains pure drinking water from seawater. It can be done by <strong>distillation</strong> or by <strong>reverse osmosis</strong>.</p>
+
+    <div class="callout think">
+      <span class="callout-label">Why Singapore does not use distillation for this</span>
+      Distillation would work — heat the salt solution, collect the distillate. But a <strong>large amount of fuel</strong> is needed to heat such a big volume of seawater, so the process <strong>uses up a lot of energy and is unsustainable</strong>.
+      <p style="margin:10px 0 0">Singapore therefore desalinates using <strong>reverse osmosis</strong> instead. This is the clearest example in the chapter of the point from Lesson 1: physical properties tell you what <em>could</em> work, but <strong>cost, reliability and environmental impact</strong> decide what is actually used.</p>
+    </div>
+
+    <p>In reverse osmosis, pre-treated seawater is pumped through <strong>partially permeable membranes at high pressure</strong>. Each membrane is a thin material with <strong>very small pores</strong> that allow water particles through but <strong>not salt particles</strong> — and which also stop microorganisms such as bacteria, and chemical contaminants. Pure water is obtained on the far side.</p>
+
+    <h2 class="section">Conserving our water</h2>
+    <p>Water is readily available here but remains a <strong>scarce resource</strong>, so conservation matters — we conserve by <strong>reducing wastage</strong> and <strong>reusing water</strong>.</p>
+    <table class="cmp" style="margin-bottom:20px">
+      <tr><td class="h" style="border-bottom:1.5px solid var(--ink);width:50%">Reduce</td><td class="h" style="border-bottom:1.5px solid var(--ink)">Reuse</td></tr>
+      <tr>
+        <td>Turn the tap off while brushing your teeth · turn the shower off while soaping · wash vegetables in a container · use half-flush · wash the car with a pail rather than a hose · use a water-efficient washing machine on a full load</td>
+        <td>Water plants with the water used to wash vegetables or fruit · reuse washing-machine water to flush the toilet or wash the floor</td>
+      </tr>
+    </table>
+    <p>We can also protect our water resources by <strong>not throwing litter or releasing animals into waterways or reservoirs</strong>.</p>
+
+    <div class="callout">
+      <span class="callout-label">Gardens by the Bay</span>
+      Rainwater captured within the Gardens is <strong>filtered by aquatic plants</strong> as it flows into the lake. Water from the lake is then used for watering the plants, and excess water is released into the adjoining <strong>Marina Reservoir</strong>. Filtration again — just with plants doing the work.
+    </div>
+
+    <h2 class="section">Check yourself</h2>
+    <div id="quiz">
+      <script type="application/json">
+      {
+        "questions": [
+          {
+            "type": "mcq",
+            "marks": 2,
+            "stem": "<p>Desalination can be done by distillation or by reverse osmosis. Why does Singapore use reverse osmosis?</p>",
+            "options": [
+              "Distillation cannot remove salt from seawater",
+              "Distillation needs a large amount of fuel to heat a big volume of seawater, so it uses a lot of energy and is unsustainable",
+              "Reverse osmosis is cheaper than every other method",
+              "Distillation would leave the water tasting salty"
+            ],
+            "answer": 1,
+            "explain": "Both work; the deciding factor is energy use and sustainability.",
+            "whyWrong": {
+              "0": "Distillation removes salt from seawater very effectively — that is exactly what Figure 4.22 shows. Effectiveness is not the problem.",
+              "2": "Reverse osmosis is described as <strong>costly</strong> in this very textbook — which is why it cannot be Singapore's only method. It wins here on energy, not on price.",
+              "3": "The distillate is pure water; the salt stays behind in the flask. Taste is not the issue."
+            },
+            "workthrough": [
+              "Note first that <strong>both</strong> methods genuinely work — so the reason must be practical, not scientific.",
+              "Recall what distillation requires: the salt solution must be <strong>heated until it boils</strong>.",
+              "Now scale that up to a whole city's water supply — a <strong>large amount of fuel</strong> to heat a big volume of seawater.",
+              "That means a lot of energy, which makes the process <strong>unsustainable</strong>.",
+              "So Singapore uses <strong>reverse osmosis</strong> instead. Two marks: one for the energy/fuel demand, one for the word unsustainable."
+            ]
+          },
+          {
+            "type": "mcq",
+            "marks": 1,
+            "stem": "<p>Which is the correct order of the three steps used to produce NEWater?</p>",
+            "options": [
+              "Reverse osmosis → microfiltration → ultraviolet disinfection",
+              "Microfiltration → reverse osmosis → ultraviolet disinfection",
+              "Ultraviolet disinfection → microfiltration → reverse osmosis",
+              "Microfiltration → ultraviolet disinfection → reverse osmosis"
+            ],
+            "answer": 1,
+            "explain": "Coarsest filtering first, finest second, then a final kill step.",
+            "whyWrong": {
+              "0": "Reverse osmosis membranes have very fine pores. Sending unfiltered water at them first would clog them with the larger particles that microfiltration is there to remove.",
+              "2": "UV is the <strong>final</strong> step. Disinfecting first would be pointless, since the later stages still have particles and contaminants to take out.",
+              "3": "UV must come last, after every physical purification stage, so that it kills anything that survived them."
+            },
+            "workthrough": [
+              "Think about what each step removes, from biggest to smallest.",
+              "<strong>Microfiltration</strong> takes out microscopic particles and bacteria — the larger material.",
+              "<strong>Reverse osmosis</strong> then removes much smaller undesirable contaminants, including viruses.",
+              "<strong>Ultraviolet disinfection</strong> finishes by destroying anything still alive, and chemicals are added afterwards.",
+              "The logic is coarse → fine → final kill. Reordering it would either clog the fine membranes or waste the disinfection."
+            ]
+          }
+        ]
+      }
+      </script>
+    </div>
+  </div>
+
+  <nav class="lesson-nav">
+    <a href="6-chromatography.html">← Chromatography</a>
+    <a class="next" href="../practice.html">Next: Practice questions →</a>
+  </nav>
+</div>
+<script src="../../../js/separation-widgets.js"></script>
+<script src="../../../js/quiz-engine.js"></script>
+</body>
+</html>

@@ -1,0 +1,175 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>6 · Chromatography — Separation Techniques</title>
+<meta name="description" content="Textbook 4.2 — paper chromatography separates substances that dissolve to different extents in a solvent. The chromatogram, and how it is used in dyes, food testing and pollution detection.">
+<meta name="theme-color" content="#E4EAF0">
+<link rel="icon" type="image/svg+xml" href="../../../favicon.svg">
+<link rel="stylesheet" href="../../../css/style.css">
+<link rel="stylesheet" href="../../../css/interactive.css">
+</head>
+<body>
+<div class="sheet">
+  <header>
+    <div>
+      <a class="crumb" href="../index.html">← Separation Techniques</a>
+      <p class="eyebrow" style="margin-top:10px">Lesson 6 of 7 · Textbook 4.2</p>
+      <h1>Chromatography</h1>
+    </div>
+    <p class="sub">The only technique here that separates several substances at once — and it works on a difference of degree, not of kind.</p>
+  </header>
+
+  <div class="prose">
+    <h2 class="section">The property being used</h2>
+    <p>Every other technique in this chapter runs on a yes-or-no difference: magnetic or not, dissolved or not, boils or does not. Chromatography is different. It separates substances that <strong>all dissolve</strong> — just to <strong>different extents</strong>.</p>
+
+    <div class="callout">
+      <span class="callout-label">The rule that explains every chromatogram</span>
+      Substances that are <strong>more soluble</strong> in the solvent travel <strong>longer distances</strong> from the starting point.<br>
+      Substances that are <strong>insoluble</strong> in the solvent <strong>remain at the starting point</strong>.
+    </div>
+
+    <p>Many inks and dyes are mixtures of coloured substances, so <strong>paper chromatography</strong> is used to separate them.</p>
+
+    <div class="sim" id="chromLab">
+      <div class="sim-head">
+        <h4>Separating the substances in ink</h4>
+        <div class="picker">
+          <button type="button" class="ch-go">Run the chromatogram</button>
+          <button type="button" class="ch-reset">Reset</button>
+        </div>
+      </div>
+      <div class="sim-body">
+        <svg viewBox="0 0 300 250" role="img" aria-label="A strip of filter paper in a boiling tube with an ink spot separating into four coloured spots">
+          <!-- boiling tube -->
+          <path d="M 96 22 L 96 210 Q 96 236 150 236 Q 204 236 204 210 L 204 22" fill="none" stroke="#0F2436" stroke-width="2.4"/>
+          <rect x="92" y="12" width="116" height="12" rx="3" fill="#C9A06A" stroke="#0F2436" stroke-width="1.8"/>
+          <!-- water -->
+          <path d="M 98 206 L 98 210 Q 98 234 150 234 Q 202 234 202 210 L 202 206 Z" fill="rgba(159,208,232,.6)"/>
+          <text x="216" y="222" font-family="Space Mono, monospace" font-size="10" fill="#4A6076">water</text>
+          <text x="216" y="234" font-family="Space Mono, monospace" font-size="9" fill="#4A6076">(solvent)</text>
+          <!-- paper strip -->
+          <rect x="126" y="34" width="48" height="180" fill="#F7FAFC" stroke="#0F2436" stroke-width="1.6"/>
+          <text x="60" y="40" font-family="Space Mono, monospace" font-size="10" fill="#4A6076">filter</text>
+          <text x="60" y="52" font-family="Space Mono, monospace" font-size="10" fill="#4A6076">paper</text>
+          <!-- start line -->
+          <line x1="126" y1="196" x2="174" y2="196" stroke="#0F2436" stroke-width="1.6" stroke-dasharray="4 3"/>
+          <text x="34" y="200" font-family="Space Mono, monospace" font-size="10" fill="#4A6076">start line</text>
+          <!-- solvent front -->
+          <line class="ch-front" x1="126" y1="196" x2="174" y2="196" stroke="#9FB2C4" stroke-width="1.6" style="opacity:0"/>
+          <!-- spots: rise = fraction of the solvent front -->
+          <circle class="ch-spot" data-rise="0.90" cx="150" cy="196" r="7" fill="#E8C33B" stroke="#0F2436" stroke-width="1.2"/>
+          <circle class="ch-spot" data-rise="0.58" cx="150" cy="196" r="7" fill="#4E9E6A" stroke="#0F2436" stroke-width="1.2"/>
+          <circle class="ch-spot" data-rise="0.30" cx="150" cy="196" r="7" fill="#D93F2B" stroke="#0F2436" stroke-width="1.2"/>
+          <circle class="ch-spot" data-rise="0"    cx="150" cy="196" r="7" fill="#8894A0" stroke="#0F2436" stroke-width="1.2"/>
+          <!-- arrow -->
+          <line x1="230" y1="190" x2="230" y2="70" stroke="#0F2436" stroke-width="2"/>
+          <path d="M 230 62 l -5 10 l 10 0 Z" fill="#0F2436"/>
+          <text x="240" y="130" font-family="Space Mono, monospace" font-size="9" fill="#4A6076">solvent</text>
+          <text x="240" y="142" font-family="Space Mono, monospace" font-size="9" fill="#4A6076">moves up</text>
+        </svg>
+        <p class="sep-out ch-stage"></p>
+        <p class="sep-out ch-order"></p>
+      </div>
+      <div class="sim-foot">Four substances went in as one black spot. The grey one never leaves the start line — that is your evidence it is insoluble in water.</div>
+    </div>
+
+    <div class="callout">
+      <span class="callout-label">How the experiment is set up</span>
+      <strong>1.</strong> A drop of ink is placed near the bottom of a strip of filter paper, on the <strong>start line</strong>. The strip is dipped into water, which is the <strong>solvent</strong>.<br>
+      <strong>2.</strong> Water travels up the paper, carrying the substances in the ink with it. They separate because they are carried different distances.<br>
+      <strong>3.</strong> The paper with the different coloured spots is called a <strong>chromatogram</strong>.
+      <p style="margin:10px 0 0">Chromatography is used to separate <strong>small amounts</strong> of substances that dissolve to different extents in a particular solvent.</p>
+    </div>
+
+    <div class="callout think">
+      <span class="callout-label">Reading a chromatogram in the exam</span>
+      You will be shown spots at different heights and asked which substance is most soluble. The answer is always the one <strong>furthest from the start line</strong>. And a spot still <em>on</em> the start line is not a mistake — it is the signature of a substance that is <strong>insoluble</strong> in that solvent.
+      <p style="margin:10px 0 0">Careful with the wording: the start line must sit <em>above</em> the water. If it were below, the ink would simply dissolve into the water in the tube instead of travelling up the paper.</p>
+    </div>
+
+    <h2 class="section">Where it is used</h2>
+    <ul>
+      <li><strong>Identifying colours in dyes</strong> — paper chromatography reveals which coloured substances a dye is made of.</li>
+      <li><strong>Identifying coloured substances in food products</strong> — canned food and confectionery.</li>
+      <li><strong>Detecting water pollutants</strong> — environmental agencies use it to check that water is clean.</li>
+    </ul>
+
+    <div class="callout">
+      <span class="callout-label">Science at work: the Singapore Food Agency</span>
+      Scientists at the <strong>SFA</strong> test food that is imported or sold in local supermarkets to make sure it is safe to eat. One method they use is <strong>gas chromatography</strong>, which works on the same principle but uses <strong>a gas as the solvent</strong> instead of a liquid.
+      <p style="margin:10px 0 0">In Greek, <em>chrom</em> means "colour" and <em>graphy</em> means "writing".</p>
+    </div>
+
+    <h2 class="section">Check yourself</h2>
+    <div id="quiz">
+      <script type="application/json">
+      {
+        "questions": [
+          {
+            "type": "mcq",
+            "marks": 1,
+            "stem": "<p>On a chromatogram, one spot has travelled almost to the top of the paper and another has barely moved. What does this tell you?</p>",
+            "options": [
+              "The top spot is heavier than the bottom spot",
+              "The top spot is more soluble in the solvent than the bottom spot",
+              "The top spot was added to the paper first",
+              "The bottom spot has a higher boiling point"
+            ],
+            "answer": 1,
+            "explain": "Distance travelled measures solubility in that solvent — nothing else.",
+            "whyWrong": {
+              "0": "Chromatography does not sort by weight. Two substances of similar mass can travel very different distances if their solubilities differ.",
+              "2": "All the substances started together in a single spot on the start line, at the same moment.",
+              "3": "Boiling point is what <strong>distillation</strong> exploits. Chromatography runs on solubility."
+            },
+            "workthrough": [
+              "Recall the rule: substances that are <strong>more soluble</strong> in the solvent travel <strong>longer distances</strong> from the start.",
+              "So distance up the paper is a direct measure of solubility in that solvent.",
+              "The spot near the top is therefore the <strong>most soluble</strong>.",
+              "The spot that barely moved is the least soluble — and one that has not moved <em>at all</em> is <strong>insoluble</strong> in that solvent.",
+              "Watch the wording of your answer: always say “more soluble <em>in the solvent</em>”, since a substance can be soluble in one solvent and not another."
+            ]
+          },
+          {
+            "type": "mcq",
+            "marks": 2,
+            "stem": "<p>After a chromatogram is run, one grey spot is still sitting exactly on the start line. What is the best explanation?</p>",
+            "options": [
+              "The experiment failed and should be repeated",
+              "That substance is insoluble in the solvent, so the solvent could not carry it up the paper",
+              "The grey substance is the heaviest",
+              "The start line was drawn in the wrong place"
+            ],
+            "answer": 1,
+            "explain": "An unmoved spot is a result, not a failure.",
+            "whyWrong": {
+              "0": "Nothing has failed — the other spots separated perfectly well. A stationary spot is a genuine finding about that substance.",
+              "2": "Weight is not what moves a substance up the paper; being dissolved and carried by the solvent is. A dense substance that dissolves well would still travel.",
+              "3": "The start line is meant to be just above the water so the solvent can carry substances up from it — exactly where it is. Had it been below the water, <em>every</em> spot would have washed away, not just one."
+            },
+            "workthrough": [
+              "Ask how a substance moves up the paper at all: it has to <strong>dissolve</strong> in the solvent and be carried along.",
+              "A substance that does not dissolve cannot be carried, so it stays exactly where it was placed.",
+              "Recall the textbook's wording: substances that are <strong>insoluble in the solvent remain at the starting point</strong>.",
+              "So the grey spot is insoluble in water — a real result about that substance.",
+              "Two marks: one for identifying it as insoluble, one for explaining that the solvent therefore cannot carry it up the paper."
+            ]
+          }
+        ]
+      }
+      </script>
+    </div>
+  </div>
+
+  <nav class="lesson-nav">
+    <a href="5-distillation.html">← Distillation</a>
+    <a class="next" href="7-water-in-singapore.html">Next: Water in Singapore →</a>
+  </nav>
+</div>
+<script src="../../../js/separation-widgets.js"></script>
+<script src="../../../js/quiz-engine.js"></script>
+</body>
+</html>

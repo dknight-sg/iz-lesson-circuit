@@ -1,0 +1,164 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>4 · Evaporation — Separation Techniques</title>
+<meta name="description" content="Textbook 4.2 — evaporation obtains the dissolved solid from a solution. Salt pans, dried food, vacuum drying, and why the liquid is lost.">
+<meta name="theme-color" content="#E4EAF0">
+<link rel="icon" type="image/svg+xml" href="../../../favicon.svg">
+<link rel="stylesheet" href="../../../css/style.css">
+<link rel="stylesheet" href="../../../css/interactive.css">
+</head>
+<body>
+<div class="sheet">
+  <header>
+    <div>
+      <a class="crumb" href="../index.html">← Separation Techniques</a>
+      <p class="eyebrow" style="margin-top:10px">Lesson 4 of 7 · Textbook 4.2</p>
+      <h1>Evaporation</h1>
+    </div>
+    <p class="sub">The technique that gets a dissolved solid back — by deliberately throwing the liquid away.</p>
+  </header>
+
+  <div class="prose">
+    <h2 class="section">The property being used</h2>
+    <div class="callout">
+      <span class="callout-label">Definition</span>
+      <strong>Evaporation</strong> is a process used to obtain a <strong>dissolved solid (solute)</strong> from a <strong>liquid (solvent)</strong>.
+    </div>
+    <p>It works because the <strong>solvent changes from a liquid to a gas at a much lower temperature than the solute</strong>. Heat a salt solution and the water turns to vapour and leaves; the salt has a far higher boiling point, so it simply stays where it is, as the <strong>residue</strong>.</p>
+    <p>This is the answer to the problem from the last lesson. Salt cannot be filtered out of salt solution because it has dissolved — <strong>evaporation should be used instead</strong>.</p>
+
+    <div class="sim" id="evapLab">
+      <div class="sim-head">
+        <h4>Evaporating salt solution</h4>
+        <div class="picker">
+          <button type="button" class="ev-go">Heat it</button>
+          <button type="button" class="ev-reset">Reset</button>
+        </div>
+      </div>
+      <div class="sim-body">
+        <svg viewBox="0 0 420 240" role="img" aria-label="A crucible of salt solution being heated over a Bunsen flame">
+          <!-- steam -->
+          <g class="ev-steam" style="opacity:0;transition:opacity .6s">
+            <path d="M 186 92 q -8 -16 0 -30 q 8 -14 0 -28" fill="none" stroke="#9FB2C4" stroke-width="2.4" stroke-linecap="round"/>
+            <path d="M 210 88 q -8 -18 0 -32 q 8 -14 0 -26" fill="none" stroke="#9FB2C4" stroke-width="2.4" stroke-linecap="round"/>
+            <path d="M 234 92 q -8 -16 0 -30 q 8 -14 0 -28" fill="none" stroke="#9FB2C4" stroke-width="2.4" stroke-linecap="round"/>
+          </g>
+          <!-- crucible -->
+          <path d="M 148 108 Q 148 148 210 148 Q 272 148 272 108 Z" fill="rgba(247,250,252,.7)" stroke="#0F2436" stroke-width="2.4"/>
+          <line x1="142" y1="108" x2="278" y2="108" stroke="#0F2436" stroke-width="2.4"/>
+          <!-- liquid -->
+          <path class="ev-liquid" d="M 152 112 Q 152 144 210 144 Q 268 144 268 112 Z" fill="rgba(200,220,235,.6)" style="transform-origin:210px 144px;transition:transform .1s linear,opacity .1s linear"/>
+          <!-- salt residue -->
+          <path class="ev-solid" d="M 176 138 Q 210 126 244 138 Q 244 146 210 146 Q 176 146 176 138 Z" fill="#F2F5F8" stroke="#0F2436" stroke-width="1.4" style="opacity:0;transition:opacity .3s"/>
+          <!-- tripod + gauze -->
+          <line x1="130" y1="152" x2="290" y2="152" stroke="#0F2436" stroke-width="3"/>
+          <line x1="140" y1="152" x2="128" y2="206" stroke="#0F2436" stroke-width="2.6"/>
+          <line x1="280" y1="152" x2="292" y2="206" stroke="#0F2436" stroke-width="2.6"/>
+          <!-- flame -->
+          <g class="ev-flame" style="opacity:.35;transition:opacity .4s">
+            <path d="M 210 200 Q 194 176 210 160 Q 226 176 210 200 Z" fill="#F0871E"/>
+            <path d="M 210 194 q -8 -14 0 -24 q 8 10 0 24 Z" fill="#FFD79A"/>
+            <line x1="210" y1="200" x2="210" y2="224" stroke="#0F2436" stroke-width="3"/>
+          </g>
+          <text x="210" y="238" text-anchor="middle" font-family="Space Mono, monospace" font-size="10" fill="#4A6076">heat</text>
+        </svg>
+        <div class="readout-grid">
+          <div class="readout-box"><span class="rl">You keep</span><span class="rv ev-kept" style="font-size:12px;font-weight:400;font-family:inherit">—</span></div>
+          <div class="readout-box"><span class="rl">You lose</span><span class="rv ev-lost" style="font-size:12px;font-weight:400;font-family:inherit">—</span></div>
+        </div>
+        <p class="sep-out ev-note"></p>
+      </div>
+      <div class="sim-foot">Watch the right-hand box. Evaporation always costs you the liquid — that is the trade you are making.</div>
+    </div>
+
+    <div class="callout think">
+      <span class="callout-label">The question that decides evaporation vs distillation</span>
+      Both work on a solid dissolved in a liquid. Ask: <strong>which one do I want to end up holding?</strong>
+      <p style="margin:10px 0 0">Want the <strong>solid</strong> (salt from seawater) → <strong>evaporation</strong>. Want the <strong>liquid</strong> (drinking water from seawater) → <strong>distillation</strong>. Same mixture, opposite techniques, decided entirely by the goal.</p>
+    </div>
+
+    <h2 class="section">Where it is used</h2>
+    <h3 style="margin-bottom:6px">Making salt</h3>
+    <p>In a <strong>salt mine</strong>, hot water is pumped deep into the ground to dissolve the salt. The salt solution is pumped up into pans on the ground, and the water is allowed to <strong>evaporate under the sun</strong>, leaving solid salt behind in the pans.</p>
+
+    <h3 style="margin-bottom:6px">Preserving food</h3>
+    <p>Water is essential for decomposition, so removing it preserves food. Evaporation is used to dry <strong>herbs, spices and small fish</strong> — galangal, wolfberries, dried shrimp and <em>ikan bilis</em>. This also extends shelf life and so <strong>reduces food wastage</strong>.</p>
+
+    <div class="callout">
+      <span class="callout-label">Vacuum drying</span>
+      Food can also be dried in a <strong>vacuum oven</strong>, where the air is removed. Removing the air allows water to evaporate <strong>more quickly</strong> than at normal temperature and pressure. It is the preferred method because normal drying causes food to <strong>deteriorate in flavour</strong>.
+    </div>
+
+    <h2 class="section">Check yourself</h2>
+    <div id="quiz">
+      <script type="application/json">
+      {
+        "questions": [
+          {
+            "type": "mcq",
+            "marks": 1,
+            "stem": "<p>Salt solution is heated in a crucible until all the water has gone. Why is the salt left behind?</p>",
+            "options": [
+              "Salt is heavier than water",
+              "Water changes state at a much lower temperature than salt, so the water leaves as vapour first",
+              "Salt is not affected by heat",
+              "The crucible traps the salt"
+            ],
+            "answer": 1,
+            "explain": "The difference in the temperature at which each changes state is the whole mechanism.",
+            "whyWrong": {
+              "0": "Density has nothing to do with it. A dense solid dissolved in water would behave the same way — what matters is the temperature at which each changes state.",
+              "2": "Salt is affected by heat; it would eventually melt at a very high temperature. It simply needs a <em>far</em> higher temperature than the water does.",
+              "3": "The crucible is just a container. Swap it for an evaporating dish or a salt pan in the sun and the same thing happens."
+            },
+            "workthrough": [
+              "Recall the definition: the <strong>solvent changes from a liquid to a gas at a much lower temperature than the solute</strong>.",
+              "Apply it: water becomes vapour at 100 °C, while salt needs a far higher temperature to change state.",
+              "So on heating, the water leaves the crucible as vapour and the salt cannot follow.",
+              "The salt is therefore left behind as the <strong>residue</strong>.",
+              "Note what happens to the water: it escapes into the air and is <em>not</em> collected. Evaporation always sacrifices the liquid."
+            ]
+          },
+          {
+            "type": "mcq",
+            "marks": 2,
+            "stem": "<p>A student wants to obtain <strong>drinking water</strong> from seawater. Why is evaporation the wrong choice?</p>",
+            "options": [
+              "Evaporation would not remove the salt",
+              "Evaporation gives you the salt and lets the water escape as vapour — the opposite of what is wanted",
+              "Seawater cannot be evaporated",
+              "Evaporation would make the water taste salty"
+            ],
+            "answer": 1,
+            "explain": "The technique works perfectly — it just delivers the wrong half of the mixture.",
+            "whyWrong": {
+              "0": "It does remove the salt from the water — very effectively. That is precisely how salt pans work. The problem is what happens to the water.",
+              "2": "Seawater evaporates readily; salt harvesting depends on exactly that.",
+              "3": "The vapour that leaves is pure water. The saltiness stays in the pan. Taste is not the issue."
+            },
+            "workthrough": [
+              "Ask the deciding question: <strong>which constituent do I want to end up holding?</strong> Here it is the <strong>water</strong>.",
+              "Recall what evaporation delivers: the <strong>dissolved solid</strong>. The solvent escapes as vapour and is not collected.",
+              "So evaporation would leave the student holding a pan of salt and no water at all.",
+              "The right technique is <strong>distillation</strong>, which boils the water, condenses the steam and <strong>collects</strong> it as the distillate.",
+              "Two marks: one for saying evaporation gives the solid, one for saying the water is lost rather than collected."
+            ]
+          }
+        ]
+      }
+      </script>
+    </div>
+  </div>
+
+  <nav class="lesson-nav">
+    <a href="3-filtration.html">← Filtration</a>
+    <a class="next" href="5-distillation.html">Next: Distillation →</a>
+  </nav>
+</div>
+<script src="../../../js/separation-widgets.js"></script>
+<script src="../../../js/quiz-engine.js"></script>
+</body>
+</html>

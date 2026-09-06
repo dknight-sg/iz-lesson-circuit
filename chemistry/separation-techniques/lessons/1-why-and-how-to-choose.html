@@ -1,0 +1,171 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>1 · Why separate, and how to choose — Separation Techniques</title>
+<meta name="description" content="Textbook 4.1–4.2 — why separation matters for sustainable living, and the single decision that picks the right technique. With a step-by-step separation planner.">
+<meta name="theme-color" content="#E4EAF0">
+<link rel="icon" type="image/svg+xml" href="../../../favicon.svg">
+<link rel="stylesheet" href="../../../css/style.css">
+<link rel="stylesheet" href="../../../css/interactive.css">
+</head>
+<body>
+<div class="sheet">
+  <header>
+    <div>
+      <a class="crumb" href="../index.html">← Separation Techniques</a>
+      <p class="eyebrow" style="margin-top:10px">Lesson 1 of 7 · Textbook 4.1–4.2</p>
+      <h1>Why separate, and how to choose</h1>
+    </div>
+    <p class="sub">There are only five techniques in this chapter. The skill worth having is knowing which one to reach for — and that always comes down to a single question.</p>
+  </header>
+
+  <div class="prose">
+    <h2 class="section">Why bother separating mixtures?</h2>
+    <p>Mixtures are everywhere — <em>"from the food we eat to the waste we discard"</em>. Being able to pull a mixture apart into its constituents is what makes it possible to <strong>reduce, reuse and recycle</strong>, and so to live sustainably.</p>
+    <p>Water is the clearest case. Millions of people worldwide lack access to clean water, and climate change has left fewer sources of drinking (<strong>potable</strong>) water. Separation techniques are how we boost the supply — and in Singapore they are the reason NEWater exists.</p>
+
+    <table class="cmp" style="margin-bottom:20px">
+      <tr><td class="h" style="border-bottom:1.5px solid var(--ink);width:34%">Where it is used</td><td class="h" style="border-bottom:1.5px solid var(--ink)">Example from your textbook</td></tr>
+      <tr><td><strong>Waste management</strong></td><td>Magnetic attraction pulls iron out of scrap metal so it can be reused or recycled (Figure 4.1).</td></tr>
+      <tr><td><strong>Food safety</strong></td><td>Evaporation dries <em>ikan bilis</em> to extend shelf life and cut food waste (4.2). Chromatography tests food for harmful substances (4.3).</td></tr>
+      <tr><td><strong>Water purification</strong></td><td>Filtration and reverse osmosis recycle used water into potable water (4.4).</td></tr>
+    </table>
+
+    <h2 class="section">The decision that runs the chapter</h2>
+    <p>Here is the sentence everything rests on:</p>
+    <div class="callout">
+      <span class="callout-label">The principle</span>
+      The different constituents of a mixture <strong>retain their physical properties</strong>. The <strong>differences</strong> between those properties are what allow us to choose a separation technique.
+    </div>
+    <p>So you never have to guess. Find the property that differs, and the technique is decided for you:</p>
+
+    <table class="decide" style="margin-bottom:20px">
+      <tr>
+        <td class="h" style="border-bottom:1.5px solid var(--ink);width:56%"><strong>What is different about the constituents?</strong></td>
+        <td class="h" style="border-bottom:1.5px solid var(--ink)"><strong>Technique</strong></td>
+      </tr>
+      <tr><td class="prop">One is magnetic, the other is not</td><td class="tech">magnetic attraction</td></tr>
+      <tr><td class="prop">They have different particle sizes (one is an insoluble solid in a liquid)</td><td class="tech">filtration</td></tr>
+      <tr><td class="prop">A solid is dissolved in a liquid — and you want the <strong>solid</strong></td><td class="tech">evaporation</td></tr>
+      <tr><td class="prop">They have different boiling points — and you want the <strong>liquid</strong></td><td class="tech">distillation</td></tr>
+      <tr><td class="prop">They dissolve to <em>different extents</em> in the same solvent</td><td class="tech">chromatography</td></tr>
+    </table>
+
+    <div class="callout think">
+      <span class="callout-label">Evaporation and distillation are the pair people confuse</span>
+      Both separate a dissolved solid from a liquid. The difference is <strong>which one you end up holding</strong>. Evaporation keeps the <strong>solid</strong> and the liquid escapes as vapour. Distillation keeps the <strong>liquid</strong> and the solid stays behind in the flask. So the question to ask is not "what is in the mixture?" but "<strong>what do I want to collect?</strong>"
+    </div>
+
+    <h2 class="section">Three more things that decide the choice</h2>
+    <p>Physical properties tell you what <em>would</em> work. In the real world three other factors decide what is actually used:</p>
+    <ul>
+      <li><strong>Cost</strong></li>
+      <li><strong>Reliability</strong></li>
+      <li><strong>Environmental impact</strong></li>
+    </ul>
+    <p>The textbook's own example: <strong>reverse osmosis</strong> gives Singapore potable water, but it is <strong>costly</strong>. That is why it cannot be the only method we use — and it is why the Four National Taps exist rather than one national tap.</p>
+
+    <h2 class="section">Plan a separation yourself</h2>
+    <p>Pick a mixture, then choose your steps in order. The planner tells you what happens each time — including when a step is the wrong one, or the right one done too early.</p>
+
+    <div class="sim" id="planLab">
+      <div class="sim-head">
+        <h4>Separation planner</h4>
+        <div class="picker pn-pick">
+          <button type="button" data-t="a">iron + sulfur</button>
+          <button type="button" data-t="b">chalk + water</button>
+          <button type="button" data-t="c">salt solution</button>
+          <button type="button" data-t="d">sand + salt + water</button>
+          <button type="button" data-t="e">iron + salt + sawdust</button>
+        </div>
+      </div>
+      <div class="sim-body">
+        <div class="pn-act">
+          <button type="button" data-a="magnet">Use a magnet</button>
+          <button type="button" data-a="water">Add water &amp; stir</button>
+          <button type="button" data-a="filter">Filter</button>
+          <button type="button" data-a="evaporate">Evaporate</button>
+          <button type="button" data-a="distil">Distil</button>
+          <button type="button" class="pn-reset">Start again</button>
+        </div>
+        <div class="pn-grid">
+          <div class="pn-box"><h5>In the beaker <span class="pn-water"></span></h5><div class="pn-beaker"></div></div>
+          <div class="pn-box"><h5>Collected</h5><div class="pn-tray"></div></div>
+        </div>
+        <div class="pn-log"></div>
+        <div class="pn-verdict"></div>
+      </div>
+      <div class="sim-foot">Try <strong>iron + salt + sawdust</strong> in the wrong order — add water before using the magnet — and see what goes wrong. That mixture is a real exam question, and the order is the whole answer.</div>
+    </div>
+
+    <h2 class="section">Check yourself</h2>
+    <div id="quiz">
+      <script type="application/json">
+      {
+        "questions": [
+          {
+            "type": "mcq",
+            "marks": 1,
+            "stem": "<p>What makes it possible to separate the constituents of a mixture?</p>",
+            "options": [
+              "The constituents are chemically combined, so a reaction can split them",
+              "The constituents retain their own physical properties, and the differences between those properties can be exploited",
+              "All mixtures can be separated by filtration",
+              "The constituents are always in a fixed proportion"
+            ],
+            "answer": 1,
+            "explain": "Differences in retained physical properties are the handle every technique grabs.",
+            "whyWrong": {
+              "0": "In a mixture the constituents are <strong>not</strong> chemically combined — that is what makes a mixture a mixture. Chemical combination describes a compound, which is exactly what you <em>cannot</em> easily separate.",
+              "2": "Filtration only works when the particle sizes differ. It does nothing to a salt solution, where the dissolved particles are as small as the water particles.",
+              "3": "Fixed proportion is a property of <em>compounds</em>. A mixture's proportions vary — and in any case the proportion is not what lets you separate it."
+            },
+            "workthrough": [
+              "Recall from Chapter 3: in a mixture the constituents are <strong>not chemically combined</strong>, so each keeps its own physical properties.",
+              "That means iron in a mixture is still magnetic, salt in water is still soluble, and water still boils at 100 °C.",
+              "Any <strong>difference</strong> between those retained properties gives you something to grab.",
+              "So the whole chapter is one move: find the property that differs, then use the technique that exploits it."
+            ]
+          },
+          {
+            "type": "mcq",
+            "marks": 2,
+            "stem": "<p>Reverse osmosis produces potable water in Singapore. Why is it not the only method used?</p>",
+            "options": [
+              "It does not remove bacteria",
+              "It is costly, and cost is one of the factors that decides which technique is used",
+              "It only works on rainwater",
+              "It is banned for drinking water"
+            ],
+            "answer": 1,
+            "explain": "Besides physical properties, the choice weighs cost, reliability and environmental impact.",
+            "whyWrong": {
+              "0": "Reverse osmosis membranes <em>do</em> stop microorganisms such as bacteria, along with salt particles and chemical contaminants. Effectiveness is not the problem.",
+              "2": "It is used on seawater for desalination and on treated used water for NEWater — not on rainwater in particular.",
+              "3": "Far from banned: NEWater has passed more than 150 000 scientific tests and sits well within WHO guidelines."
+            },
+            "workthrough": [
+              "Recall the three practical factors beyond physical properties: <strong>cost</strong>, <strong>reliability</strong> and <strong>environmental impact</strong>.",
+              "The textbook applies them to reverse osmosis directly: it works, but it is <strong>costly</strong>.",
+              "So relying on it alone would be expensive and risky.",
+              "That is the reasoning behind the <strong>Four National Taps</strong> — several sources and several techniques, rather than betting everything on one.",
+              "Two marks: one for naming cost, one for connecting it to how techniques are chosen."
+            ]
+          }
+        ]
+      }
+      </script>
+    </div>
+  </div>
+
+  <nav class="lesson-nav">
+    <a href="../index.html">← Chapter home</a>
+    <a class="next" href="2-magnetic-attraction.html">Next: Magnetic attraction →</a>
+  </nav>
+</div>
+<script src="../../../js/separation-widgets.js"></script>
+<script src="../../../js/quiz-engine.js"></script>
+</body>
+</html>

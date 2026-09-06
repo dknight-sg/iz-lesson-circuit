@@ -1,0 +1,158 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>2 · Magnetic attraction — Separation Techniques</title>
+<meta name="description" content="Textbook 4.2 — separating magnetic from non-magnetic substances, iron filings and sulfur, and recovering iron from scrap metal in a scrapyard.">
+<meta name="theme-color" content="#E4EAF0">
+<link rel="icon" type="image/svg+xml" href="../../../favicon.svg">
+<link rel="stylesheet" href="../../../css/style.css">
+<link rel="stylesheet" href="../../../css/interactive.css">
+</head>
+<body>
+<div class="sheet">
+  <header>
+    <div>
+      <a class="crumb" href="../index.html">← Separation Techniques</a>
+      <p class="eyebrow" style="margin-top:10px">Lesson 2 of 7 · Textbook 4.2</p>
+      <h1>Magnetic attraction</h1>
+    </div>
+    <p class="sub">The simplest technique in the chapter, and the one you almost always use <em>first</em> when a mixture has several parts.</p>
+  </header>
+
+  <div class="prose">
+    <h2 class="section">The property being used</h2>
+    <div class="callout">
+      <span class="callout-label">Definition</span>
+      <strong>Magnetic attraction</strong> is used to separate <strong>magnetic substances</strong> from <strong>non-magnetic substances</strong>.
+    </div>
+    <p>Magnetic substances such as <strong>iron</strong> and <strong>steel</strong> are attracted to a magnet. (Steel is a mixture of iron and other elements — which is why it is magnetic too.) Substances such as plastic, paper, glass, rubber and sulfur are <strong>non-magnetic</strong> and are left behind.</p>
+
+    <div class="sim" id="magnetLab">
+      <div class="sim-head">
+        <h4>Iron filings and sulfur</h4>
+        <div class="picker">
+          <button type="button" class="mg-sweep">Lower the magnet</button>
+          <button type="button" class="mg-reset">Reset</button>
+        </div>
+      </div>
+      <div class="sim-body">
+        <svg viewBox="0 0 420 220" role="img" aria-label="A magnet held over a dish of iron filings and sulfur">
+          <g class="mg-magnet" style="transition:transform .7s ease">
+            <rect x="150" y="18" width="120" height="26" rx="3" fill="#D93F2B" stroke="#0F2436" stroke-width="2"/>
+            <text x="210" y="36" text-anchor="middle" font-family="Space Mono, monospace" font-size="12" fill="#F7FAFC">MAGNET</text>
+          </g>
+          <!-- dish -->
+          <path d="M 90 150 Q 90 186 210 186 Q 330 186 330 150" fill="rgba(247,250,252,.6)" stroke="#0F2436" stroke-width="2.4"/>
+          <line x1="86" y1="150" x2="334" y2="150" stroke="#0F2436" stroke-width="2.4"/>
+          <!-- sulfur bed -->
+          <path d="M 110 150 Q 130 168 210 170 Q 290 168 310 150 Z" fill="#E8C33B" stroke="#0F2436" stroke-width="1.4"/>
+          <!-- iron filings -->
+          <g fill="#3E4954">
+            <g class="mg-iron" style="transition:transform .7s ease"><rect x="168" y="138" width="9" height="4" rx="1"/></g>
+            <g class="mg-iron" style="transition:transform .72s ease"><rect x="190" y="141" width="10" height="4" rx="1"/></g>
+            <g class="mg-iron" style="transition:transform .68s ease"><rect x="214" y="137" width="9" height="4" rx="1"/></g>
+            <g class="mg-iron" style="transition:transform .74s ease"><rect x="236" y="142" width="10" height="4" rx="1"/></g>
+            <g class="mg-iron" style="transition:transform .70s ease"><rect x="256" y="139" width="9" height="4" rx="1"/></g>
+            <g class="mg-iron" style="transition:transform .76s ease"><rect x="148" y="143" width="10" height="4" rx="1"/></g>
+          </g>
+          <text x="210" y="208" text-anchor="middle" font-family="Space Mono, monospace" font-size="11" fill="#4A6076">watch glass</text>
+        </svg>
+        <div class="readout-grid">
+          <div class="readout-box"><span class="rl">On the magnet</span><span class="rv mg-out" style="font-size:12px;font-weight:400;font-family:inherit">—</span></div>
+          <div class="readout-box"><span class="rl">Left in the dish</span><span class="rv mg-left" style="font-size:12px;font-weight:400;font-family:inherit">—</span></div>
+        </div>
+      </div>
+      <div class="sim-foot">Only the iron moves. Sulfur is non-magnetic, so the magnet passes straight over it.</div>
+    </div>
+
+    <h2 class="section">Where it is used: the scrapyard</h2>
+    <p>In Singapore, <strong>scrap metal</strong> is one of the many waste materials generated. Scrap metal is a mixture of metals such as <strong>aluminium, copper and iron</strong>. Iron is magnetic, so passing a <strong>strong magnet</strong> over the scrap removes it. The iron obtained can then be <strong>reused or recycled</strong>, which helps to reduce waste.</p>
+
+    <table class="cmp" style="margin-bottom:20px">
+      <tr>
+        <td class="h" style="border-bottom:1.5px solid var(--ink);width:50%">Removed by the magnet</td>
+        <td class="h" style="border-bottom:1.5px solid var(--ink)">Left behind</td>
+      </tr>
+      <tr>
+        <td>steel bolts and nuts · iron bar · steel pipe · iron chain</td>
+        <td>glass mirror · rubber tyre · plastic car parts such as a bumper</td>
+      </tr>
+    </table>
+
+    <div class="callout think">
+      <span class="callout-label">The trap: not all metals are magnetic</span>
+      Aluminium and copper are <strong>metals</strong>, but they are <strong>not magnetic</strong>. A magnet passed over scrap metal removes only the iron and steel — the aluminium and copper stay behind with the plastic and glass. If a question asks whether a magnet can separate copper from aluminium, the answer is <strong>no</strong>: neither is magnetic, so there is no difference to exploit.
+    </div>
+
+    <div class="callout">
+      <span class="callout-label">Why this technique usually goes first</span>
+      Magnetic attraction needs <strong>no water, no heat and no waiting</strong>, and it takes its target out cleanly and dry. In a multi-step separation such as iron filings + salt + sawdust, use the magnet <em>before</em> you add water — otherwise you have to fish wet iron filings out of a solution.
+    </div>
+
+    <h2 class="section">Check yourself</h2>
+    <div id="quiz">
+      <script type="application/json">
+      {
+        "questions": [
+          {
+            "type": "multi",
+            "marks": 3,
+            "stem": "<p>A strong magnet is passed over a pile of scrap. Which items will it pick up? Select all that apply.</p>",
+            "options": ["Steel bolts", "Aluminium drink cans", "An iron chain", "A rubber tyre", "A steel pipe", "Copper wire"],
+            "answer": [0, 2, 4],
+            "explain": "Only iron and steel are magnetic — being a metal is not enough.",
+            "whyWrong": {
+              "1": "Aluminium is a metal but is <strong>not magnetic</strong>. This is the commonest slip in this topic — metal does not mean magnetic.",
+              "3": "Rubber is non-magnetic, which is exactly why tyres are among the items left behind in the textbook's scrapyard figure.",
+              "5": "Copper is a metal and an excellent conductor, but it is <strong>not magnetic</strong> either."
+            },
+            "workthrough": [
+              "Recall which substances are magnetic: <strong>iron</strong> and <strong>steel</strong> (steel is a mixture of iron with other elements).",
+              "Go through the list and ask of each one: does it contain iron?",
+              "Steel bolts ✓ · iron chain ✓ · steel pipe ✓ — all three contain iron.",
+              "Aluminium, copper and rubber contain no iron, so the magnet ignores them.",
+              "Guard against the trap: <strong>metal ≠ magnetic</strong>. Aluminium and copper are metals that a magnet will not touch."
+            ]
+          },
+          {
+            "type": "mcq",
+            "marks": 1,
+            "stem": "<p>A mixture contains iron filings, salt and sawdust. Why should the magnet be used <strong>before</strong> adding water?</p>",
+            "options": [
+              "Water would make the iron non-magnetic",
+              "Once water is added the iron filings are wet and mixed into a solution, making them much harder to collect cleanly",
+              "Water dissolves iron filings",
+              "The magnet would rust immediately"
+            ],
+            "answer": 1,
+            "explain": "The magnet still works when wet — it is just a far messier and less complete separation.",
+            "whyWrong": {
+              "0": "Water does not switch off magnetism. Iron is still attracted to a magnet when wet.",
+              "2": "Iron is <strong>insoluble</strong> in water. Only the salt dissolves — that is why adding water is useful at all, just not first.",
+              "3": "Rusting needs time, and a laboratory magnet is not left sitting in water. This is not the reason."
+            },
+            "workthrough": [
+              "Ask what each step is <em>for</em>. The magnet targets the iron; the water targets the salt.",
+              "Both steps still work in either order — magnetism does not stop underwater.",
+              "But a practical separation should recover each constituent <strong>cleanly and completely</strong>.",
+              "Doing the magnet first gives you dry iron filings straight out of a dry mixture.",
+              "Doing it after adding water means fishing wet filings out of a beaker, with some inevitably left behind. Same physics, worse result — and exam mark schemes reward the sensible order."
+            ]
+          }
+        ]
+      }
+      </script>
+    </div>
+  </div>
+
+  <nav class="lesson-nav">
+    <a href="1-why-and-how-to-choose.html">← Why separate</a>
+    <a class="next" href="3-filtration.html">Next: Filtration →</a>
+  </nav>
+</div>
+<script src="../../../js/separation-widgets.js"></script>
+<script src="../../../js/quiz-engine.js"></script>
+</body>
+</html>

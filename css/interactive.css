@@ -627,3 +627,43 @@ table.cmp td.h{font-family:"Space Mono",monospace;font-size:10px;letter-spacing:
 table.decide td{vertical-align:top;padding:9px 10px;font-size:14px}
 table.decide .prop{font-weight:600}
 table.decide .tech{font-family:"Space Mono",monospace;font-size:12px;color:var(--charge);font-weight:700}
+
+/* ============================================================
+   Physics: Ray Model of Light (Chapter 5)
+   ============================================================ */
+.lg-ctl{display:grid;grid-template-columns:repeat(auto-fit,minmax(190px,1fr));gap:14px;margin-bottom:12px}
+.lg-ctl label{display:block;font-family:"Space Mono",monospace;font-size:10px;letter-spacing:.1em;
+  text-transform:uppercase;color:var(--ink-soft);margin-bottom:6px}
+.lg-ctl input[type=range]{width:100%}
+.lg-ctl b{font-family:"Space Mono",monospace;font-size:13px;color:var(--ink)}
+
+/* concave / convex info panel */
+.cv-body{display:grid;grid-template-columns:1fr 1fr;gap:16px;margin-top:14px}
+@media (max-width:620px){.cv-body{grid-template-columns:1fr}}
+.cv-facts{border:1.5px solid var(--ink);background:#F7FAFC;padding:12px 14px}
+.cv-facts p{margin:0 0 8px;font-size:14px}
+.cv-facts ul{margin:0;padding-left:18px;font-size:14px}
+.cv-facts li{margin-bottom:6px}
+.cv-tag{font-family:"Space Mono",monospace;font-size:11px;letter-spacing:.08em;text-transform:uppercase;
+  color:var(--charge);display:block;margin-bottom:6px}
+
+/* electromagnetic radiation panel */
+.em-tabs{display:grid;grid-template-columns:repeat(auto-fit,minmax(150px,1fr));gap:8px;margin-bottom:12px}
+.em-btn{font-family:"Spline Sans",system-ui,sans-serif;font-size:14px;text-transform:none;letter-spacing:0;
+  padding:11px 12px;min-height:44px;border:1.5px solid var(--ink);background:#FFF;cursor:pointer;
+  box-shadow:none;color:var(--ink)}
+.em-btn[aria-pressed="true"]{background:var(--ink);color:#F7FAFC}
+.em-panel{border:1.5px solid var(--ink);background:#F7FAFC;padding:14px 18px}
+.em-panel h5{margin:0 0 4px;font-family:"Space Mono",monospace;font-size:12px;letter-spacing:.1em;
+  text-transform:uppercase;color:var(--charge);font-weight:400}
+.em-panel .em-vis{margin:0 0 12px;font-size:13px;color:var(--ink-soft);font-style:italic}
+.em-panel h6{margin:12px 0 6px;font-family:"Space Mono",monospace;font-size:10px;letter-spacing:.1em;
+  text-transform:uppercase;font-weight:400}
+.em-panel h6.em-good{color:var(--cool)}
+.em-panel h6.em-bad{color:var(--hot)}
+.em-panel ul{margin:0;padding-left:18px;font-size:14px}
+.em-panel li{margin-bottom:7px;line-height:1.55}
+
+/* image-characteristics readout */
+.mi-list{margin:12px 0 0;padding-left:18px;font-size:14px}
+.mi-list li{margin-bottom:6px}

@@ -1,0 +1,946 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Practice — Ray Model of Light</title>
+<meta name="description" content="30 interactive practice questions on Chapter 5 — rays, reflection, mirrors, smooth and rough surfaces, refraction, dispersion and radiation. Every wrong answer explains why and walks through the reasoning.">
+<meta name="theme-color" content="#E4EAF0">
+<link rel="icon" type="image/svg+xml" href="../../favicon.svg">
+<link rel="stylesheet" href="../../css/style.css">
+<link rel="stylesheet" href="../../css/interactive.css">
+</head>
+<body>
+<div class="sheet">
+  <header>
+    <div>
+      <a class="crumb" href="index.html">← Ray Model of Light</a>
+      <p class="eyebrow" style="margin-top:10px">Practice</p>
+      <h1>30 questions</h1>
+    </div>
+    <p class="sub">Label a ray diagram, type angles, sort the radiations. Get one wrong and you'll be told exactly which idea slipped, then walked to the right answer.</p>
+  </header>
+
+  <div class="scorebar" id="scorebar">
+    <span>Score <span class="sc">0 / 0</span></span>
+    <span class="bar"><span></span></span>
+    <span class="dn">0 of 30 answered</span>
+    <button class="qz-reset" type="button">Start again</button>
+  </div>
+
+  <!-- reflection ray diagram, cloned into the label question -->
+  <svg id="reflSheet" viewBox="0 0 460 220" style="display:none" role="img" aria-label="A reflection ray diagram with five numbered parts">
+    <line x1="40" y1="176" x2="420" y2="176" stroke="#0F2436" stroke-width="2.6"/>
+    <g stroke="#8E9AA6" stroke-width="1.8">
+      <line x1="56" y1="176" x2="48" y2="186"/><line x1="86" y1="176" x2="78" y2="186"/>
+      <line x1="116" y1="176" x2="108" y2="186"/><line x1="146" y1="176" x2="138" y2="186"/>
+      <line x1="176" y1="176" x2="168" y2="186"/><line x1="206" y1="176" x2="198" y2="186"/>
+      <line x1="266" y1="176" x2="258" y2="186"/><line x1="296" y1="176" x2="288" y2="186"/>
+      <line x1="326" y1="176" x2="318" y2="186"/><line x1="356" y1="176" x2="348" y2="186"/>
+      <line x1="386" y1="176" x2="378" y2="186"/>
+    </g>
+    <line x1="230" y1="34" x2="230" y2="176" stroke="#0F2436" stroke-width="1.6" stroke-dasharray="6 4"/>
+    <line x1="130" y1="92" x2="230" y2="176" stroke="#D93F2B" stroke-width="2.8"/>
+    <polygon points="196,148 186,138 178,152" fill="#D93F2B"/>
+    <line x1="230" y1="176" x2="330" y2="92" stroke="#2E7A8C" stroke-width="2.8"/>
+    <polygon points="296,120 286,110 306,110" fill="#2E7A8C" transform="rotate(40 296 116)"/>
+    <circle cx="230" cy="176" r="4.5" fill="#0F2436"/>
+    <path d="M 230 132 A 44 44 0 0 0 199 145" fill="none" stroke="#D93F2B" stroke-width="1.8"/>
+    <path d="M 230 132 A 44 44 0 0 1 261 145" fill="none" stroke="#2E7A8C" stroke-width="1.8"/>
+    <g class="callout-num">
+      <path class="callout-line" d="M 150 106 L 104 68"/><circle cx="90" cy="58" r="15"/><text x="90" y="63">1</text>
+      <path class="callout-line" d="M 230 70 L 286 46"/><circle cx="302" cy="40" r="15"/><text x="302" y="45">2</text>
+      <path class="callout-line" d="M 214 148 L 150 152"/><circle cx="134" cy="153" r="15"/><text x="134" y="158">3</text>
+      <path class="callout-line" d="M 236 176 L 236 206"/><circle cx="236" cy="206" r="15"/><text x="236" y="211">4</text>
+      <path class="callout-line" d="M 312 108 L 366 78"/><circle cx="382" cy="70" r="15"/><text x="382" y="75">5</text>
+    </g>
+  </svg>
+
+  <div class="qlist" id="quiz">
+    <script type="application/json">
+    {
+      "questions": [
+        {
+          "type": "mcq",
+          "marks": 1,
+          "stem": "<p>What is the difference between a ray and a beam of light?</p>",
+          "options": [
+            "A ray is brighter than a beam",
+            "A ray is a single straight-line path of light; a beam is a bundle of rays",
+            "A beam is a single path; a ray is a bundle of paths",
+            "A ray travels faster than a beam"
+          ],
+          "answer": 1,
+          "explain": "One path versus many together.",
+          "whyWrong": {
+            "0": "Brightness is a consequence — a beam contains many rays so it looks brighter — but it is not the definition.",
+            "2": "Swapped. The <strong>ray</strong> is the single path; the <strong>beam</strong> is the bundle.",
+            "3": "All light travels at the same speed in a given medium. Speed does not separate the two."
+          },
+          "workthrough": [
+            "Recall the textbook wording: light travels along straight line paths, known as <strong>rays</strong>.",
+            "And: a <strong>beam</strong> of light is a <strong>bundle of light rays</strong>.",
+            "So it is a one-to-many relationship — a beam is made of rays, like a rope made of threads.",
+            "Each green laser line at a light show is a beam, made of countless individual rays."
+          ]
+        },
+        {
+          "type": "mcq",
+          "marks": 2,
+          "stem": "<p>In the three-card experiment, one card is moved out of line and the flame can no longer be seen. What does this show?</p>",
+          "options": [
+            "Light has been used up by the card",
+            "Light travels in straight lines, so it cannot bend around the displaced card to reach the eye",
+            "The candle stopped emitting light",
+            "The holes became too small"
+          ],
+          "answer": 1,
+          "explain": "The blocked view is the evidence — light has no way round.",
+          "whyWrong": {
+            "0": "Light is not consumed. It is simply <em>blocked</em> from reaching the eye along that path.",
+            "2": "The candle burns exactly as before. Only the path to the eye changed.",
+            "3": "The holes worked a moment ago when aligned. Their size did not change."
+          },
+          "workthrough": [
+            "Compare the two cases: aligned → flame visible; one card moved → flame invisible.",
+            "The only difference is whether a <strong>straight path</strong> exists from flame to eye.",
+            "If light could curve, it would bend around the card and still arrive.",
+            "It does not, so light travels in <strong>straight lines</strong>.",
+            "Two marks: one for straight lines, one for it being unable to bend around the card."
+          ]
+        },
+        {
+          "type": "sort",
+          "stem": "<p>Sort each object by whether it emits its own light.</p>",
+          "bins": [
+            "Luminous",
+            "Non-luminous"
+          ],
+          "items": [
+            {
+              "text": "The sun",
+              "bin": 0,
+              "why": "It makes its own heat and light by nuclear fusion in its core."
+            },
+            {
+              "text": "The moon",
+              "bin": 1,
+              "why": "It emits nothing — we see it because it reflects sunlight to Earth."
+            },
+            {
+              "text": "A firefly",
+              "bin": 0,
+              "why": "A natural source of light, alongside the northern lights and the Milky Way."
+            },
+            {
+              "text": "A mirror",
+              "bin": 1,
+              "why": "The best reflector in the chapter, and it still makes no light of its own."
+            },
+            {
+              "text": "A mobile phone screen",
+              "bin": 0,
+              "why": "A man-made object that emits light."
+            },
+            {
+              "text": "A red flower",
+              "bin": 1,
+              "why": "Visible only in the presence of a light source such as the sun."
+            }
+          ],
+          "workthrough": [
+            "Ask one question of each: <strong>does it make its own light?</strong>",
+            "Yes → <strong>luminous</strong>. No → <strong>non-luminous</strong>, seen only by reflected light.",
+            "The moon is the classic trap — it is bright, but every bit of that light started at the sun.",
+            "A mirror is the second trap. Reflecting brilliantly is not the same as emitting."
+          ]
+        },
+        {
+          "type": "mcq",
+          "marks": 2,
+          "stem": "<p>A white ball and a black ball are placed in a <strong>totally dark</strong> room. Which can you see?</p>",
+          "options": [
+            "Only the white ball, because white reflects light well",
+            "Neither ball, because there is no light source for them to reflect",
+            "Both, once your eyes adjust",
+            "Only the black ball"
+          ],
+          "answer": 1,
+          "explain": "Both are non-luminous, and there is nothing to reflect.",
+          "whyWrong": {
+            "0": "White does reflect well — but only when light is arriving. In total darkness nothing arrives, so there is nothing to reflect. Colour is irrelevant.",
+            "2": "Adjusting helps you use <em>dim</em> light. In total darkness there is none at all.",
+            "3": "Absorbing light makes an object harder to see, not easier — and there is no light to absorb."
+          },
+          "workthrough": [
+            "Classify the objects: neither emits light, so both are <strong>non-luminous</strong>.",
+            "Recall how you see a non-luminous object: light from a source must bounce off it into your eyes.",
+            "The room is <strong>totally dark</strong>, so no light reaches either ball.",
+            "With nothing to reflect, you see <strong>neither</strong>.",
+            "Two marks: one for “neither”, one for the reason."
+          ]
+        },
+        {
+          "type": "mcq",
+          "marks": 1,
+          "stem": "<p>Avani sees a flower on a sunny day. Which describes the path of the light?</p>",
+          "options": [
+            "From Avani's eyes to the flower",
+            "From the sun to the flower, then from the flower to Avani's eyes",
+            "From the flower to the sun, then to Avani's eyes",
+            "From the sun directly to Avani's eyes"
+          ],
+          "answer": 1,
+          "explain": "Source → object → eye. Two straight lines.",
+          "whyWrong": {
+            "0": "Eyes do not emit light. Vision works by light arriving <em>at</em> the eye, never leaving it.",
+            "2": "Backwards — the sun is the source, so light starts there.",
+            "3": "That path lets her see the <em>sun</em>. To see the flower, light must bounce off the flower first."
+          },
+          "workthrough": [
+            "Identify the luminous object: the <strong>sun</strong>. The flower is non-luminous.",
+            "Light starts at the sun and travels in a straight line to the flower.",
+            "There it is <strong>reflected</strong>, and travels in a second straight line into Avani's eyes.",
+            "Draw <em>both</em> arrows in an exam answer — one arrow, or an arrow leaving the eye, loses the mark."
+          ]
+        },
+        {
+          "type": "label",
+          "diagramRef": "#reflSheet",
+          "stem": "<p>Name the five numbered parts of this reflection ray diagram.</p>",
+          "labels": [
+            "Incident ray",
+            "Normal",
+            "Angle of incidence",
+            "Point of incidence",
+            "Reflected ray",
+            "Angle of reflection",
+            "Refracted ray"
+          ],
+          "parts": [
+            {
+              "n": 1,
+              "answer": "Incident ray",
+              "why": "The ray arriving at the surface — note the arrow pointing towards it."
+            },
+            {
+              "n": 2,
+              "answer": "Normal",
+              "why": "The dashed line perpendicular to the surface at the point of incidence. Dashed because no light travels along it."
+            },
+            {
+              "n": 3,
+              "answer": "Angle of incidence",
+              "why": "The angle between the incident ray and the normal — never between the ray and the surface."
+            },
+            {
+              "n": 4,
+              "answer": "Point of incidence",
+              "why": "Where the incident ray meets the surface, and where the normal is drawn from."
+            },
+            {
+              "n": 5,
+              "answer": "Reflected ray",
+              "why": "The ray leaving the surface — the arrow points away from it."
+            }
+          ],
+          "explain": "Follow the light: it arrives, meets the surface, and leaves.",
+          "workthrough": [
+            "Use the <strong>arrows</strong> to tell the two rays apart. An arrow pointing <em>towards</em> the surface marks the <strong>incident ray</strong>; pointing <em>away</em> marks the <strong>reflected ray</strong>.",
+            "The <strong>dashed</strong> line is always the <strong>normal</strong> — perpendicular to the surface, and drawn dashed because it is a construction line, not a light path.",
+            "The dot where everything meets is the <strong>point of incidence</strong>.",
+            "The arc between the incident ray and the normal is the <strong>angle of incidence</strong>; the matching arc on the other side is the angle of reflection.",
+            "Both angles are measured from the <strong>normal</strong>. That is the single most common source of lost marks in this topic."
+          ]
+        },
+        {
+          "type": "numeric",
+          "marks": 1,
+          "unit": "°",
+          "answer": 42,
+          "tolerance": 0.5,
+          "stem": "<p>A ray strikes a plane mirror at an angle of incidence of 42°. What is the angle of reflection?</p>",
+          "explain": "The law of reflection: r = i.",
+          "whyWrong": [
+            {
+              "near": 48,
+              "tol": 0.5,
+              "msg": "You subtracted from 90. That would be the angle to the <em>surface</em> — but both i and r are measured from the <strong>normal</strong>, and the question already gave you the angle of incidence."
+            },
+            {
+              "near": 84,
+              "tol": 0.5,
+              "msg": "You doubled it. 84° is the angle between the incident and reflected rays, not the angle of reflection."
+            },
+            {
+              "near": 138,
+              "tol": 1,
+              "msg": "You subtracted from 180. An angle measured from the normal can never exceed 90°."
+            }
+          ],
+          "workthrough": [
+            "Recall the law: the angle of reflection is <strong>equal</strong> to the angle of incidence.",
+            "So r = i = <strong>42°</strong>.",
+            "Check what you were given: the question said “angle of incidence”, which is already measured from the normal — no conversion needed.",
+            "Had it said “42° to the mirror surface”, the angle of incidence would have been 90 − 42 = 48°."
+          ]
+        },
+        {
+          "type": "numeric",
+          "marks": 2,
+          "unit": "°",
+          "answer": 60,
+          "tolerance": 0.5,
+          "stem": "<p>A ray hits a plane mirror at <strong>30° to the mirror surface</strong>. What is the angle of reflection?</p>",
+          "explain": "Convert to the normal first (90 − 30 = 60°), then r = i.",
+          "whyWrong": [
+            {
+              "near": 30,
+              "tol": 0.5,
+              "msg": "You used the angle as given. But 30° was measured from the <strong>surface</strong>, and both angles must be measured from the <strong>normal</strong>. Convert first."
+            },
+            {
+              "near": 120,
+              "tol": 1,
+              "msg": "You doubled the correct answer. 60° is the angle of reflection; 120° would be the total angle between the two rays."
+            },
+            {
+              "near": 150,
+              "tol": 1,
+              "msg": "You subtracted from 180. The normal is perpendicular to the surface, so convert from 90°."
+            }
+          ],
+          "workthrough": [
+            "Spot the trap: the angle is given <strong>to the mirror surface</strong>, not to the normal.",
+            "The normal is <strong>perpendicular</strong> to the surface, so the two angles add to 90°.",
+            "Convert: angle of incidence = 90 − 30 = <strong>60°</strong>.",
+            "Apply the law: r = i = <strong>60°</strong>.",
+            "Two marks: one for the conversion, one for applying r = i."
+          ]
+        },
+        {
+          "type": "multi",
+          "marks": 5,
+          "stem": "<p>Which are characteristics of the image formed by a plane mirror? Select all that apply.</p>",
+          "options": [
+            "Same size as the object",
+            "Upright",
+            "Magnified",
+            "Virtual",
+            "Laterally inverted",
+            "At the same distance from the mirror as the object",
+            "Can be formed on a screen"
+          ],
+          "answer": [
+            0,
+            1,
+            3,
+            4,
+            5
+          ],
+          "explain": "Five characteristics — neither magnified nor projectable.",
+          "whyWrong": {
+            "2": "A plane mirror never magnifies; the image is exactly the <strong>same size</strong>. Magnification is what a <em>concave</em> mirror does.",
+            "6": "The opposite is true. A <strong>virtual</strong> image cannot be formed on a screen — that is what virtual means."
+          },
+          "workthrough": [
+            "Recall the five: same size, upright, virtual, laterally inverted, same distance.",
+            "“Magnified” contradicts <strong>same size</strong>, and belongs to a concave mirror.",
+            "“Can be formed on a screen” contradicts <strong>virtual</strong> — the image appears to be inside the mirror.",
+            "Five ticks, two crosses."
+          ]
+        },
+        {
+          "type": "mcq",
+          "marks": 1,
+          "stem": "<p>What does it mean to say an image is <strong>virtual</strong>?</p>",
+          "options": [
+            "It is smaller than the object",
+            "It appears to be formed inside the mirror and cannot be formed on a screen",
+            "It is upside down",
+            "It exists only when the mirror is lit"
+          ],
+          "answer": 1,
+          "explain": "No light actually arrives where the image appears to be, so nothing can catch it.",
+          "whyWrong": {
+            "0": "Size is a separate characteristic. A plane-mirror image is virtual <em>and</em> the same size.",
+            "2": "Upside down would be <em>inverted</em>. A plane-mirror image is upright — it is laterally inverted, meaning left–right, not top–bottom.",
+            "3": "Every image needs light. That does not distinguish virtual from real."
+          },
+          "workthrough": [
+            "Recall the definition: a virtual image is formed <strong>inside the mirror</strong> and <strong>cannot be formed on a screen</strong>.",
+            "Remember what “screen” means here: any physical object — a wall, a piece of paper — that could catch an image.",
+            "So you could hold paper anywhere behind the mirror and nothing would appear on it.",
+            "Contrast it with the projector at the front of a classroom: that image <em>is</em> caught on a surface, so it is real, not virtual."
+          ]
+        },
+        {
+          "type": "mcq",
+          "marks": 2,
+          "stem": "<p>Why are the words on the front of an ambulance printed in reverse?</p>",
+          "options": [
+            "To make the ambulance look distinctive",
+            "So a driver ahead sees the word the right way round in their rear-view mirror, because a mirror laterally inverts the image",
+            "Because the lettering is applied from inside the vehicle",
+            "So it can be read from both sides of the road"
+          ],
+          "answer": 1,
+          "explain": "The mirror reverses it back — lateral inversion put to work.",
+          "whyWrong": {
+            "0": "Distinctive it certainly is, but that is a side effect of a specific optical design choice.",
+            "2": "The lettering is applied normally to the outside. Manufacture is not the reason.",
+            "3": "Reversing makes it <em>harder</em> to read directly. It only helps through a mirror."
+          },
+          "workthrough": [
+            "Ask who is meant to read it: a driver <strong>in front</strong>, looking in their <strong>rear-view mirror</strong>.",
+            "Recall what a plane mirror does: the image is <strong>laterally inverted</strong> — left and right swapped.",
+            "So the mirror reverses whatever it shows.",
+            "Print the word reversed and the mirror reverses it a second time, so it reads correctly.",
+            "Two marks: one for lateral inversion, one for the driver reading it normally and giving way."
+          ]
+        },
+        {
+          "type": "numeric",
+          "marks": 1,
+          "unit": "m",
+          "answer": 2.4,
+          "tolerance": 0.05,
+          "stem": "<p>A boy stands 1.2 m in front of a plane mirror. How far is he from his image?</p>",
+          "explain": "1.2 m to the mirror, plus 1.2 m from the mirror to the image.",
+          "whyWrong": [
+            {
+              "near": 1.2,
+              "tol": 0.05,
+              "msg": "That is his distance from the <em>mirror</em>. The question asks for the distance to his <strong>image</strong>, which is a further 1.2 m behind it."
+            },
+            {
+              "near": 0.6,
+              "tol": 0.05,
+              "msg": "You halved it. The image is the same distance behind as the object is in front — not half."
+            },
+            {
+              "near": 3.6,
+              "tol": 0.1,
+              "msg": "You tripled it. There are only two equal parts: object to mirror, and mirror to image."
+            }
+          ],
+          "workthrough": [
+            "Recall the fifth characteristic: image-to-mirror distance <strong>equals</strong> object-to-mirror distance.",
+            "He is 1.2 m in front, so the image is <strong>1.2 m behind</strong> the mirror.",
+            "The question asks how far he is <em>from his image</em>, so add both parts.",
+            "1.2 + 1.2 = <strong>2.4 m</strong>.",
+            "Watch the wording — “from the mirror” and “from the image” have different answers."
+          ]
+        },
+        {
+          "type": "multi",
+          "marks": 4,
+          "stem": "<p>Which of these are uses of <strong>plane</strong> mirrors? Select all that apply.</p>",
+          "options": [
+            "Checking your appearance",
+            "Lining the walls of a building to make the interior look wider",
+            "A periscope in a submarine",
+            "A mirror at a blind road junction",
+            "Reflecting an eye chart so it appears further away",
+            "A dentist's mirror for examining teeth"
+          ],
+          "answer": [
+            0,
+            1,
+            2,
+            4
+          ],
+          "explain": "Four plane-mirror uses; the other two need curved mirrors.",
+          "whyWrong": {
+            "3": "That needs a <strong>convex</strong> mirror — it diverges light to give a wide field of view around the corner.",
+            "5": "That needs a <strong>concave</strong> mirror — it converges light to form a magnified image of the teeth."
+          },
+          "workthrough": [
+            "Recall the four plane-mirror uses: checking appearance · lining walls · periscopes · eye charts.",
+            "Now test the other two. A blind road junction needs a <strong>wide view</strong> → diverging → convex.",
+            "A dentist needs a <strong>magnified</strong> image → converging → concave.",
+            "A plane mirror gives a same-size image, so it is used where you want things to look as they really are — or to redirect a view, as in a periscope."
+          ]
+        },
+        {
+          "type": "sort",
+          "stem": "<p>Sort each use by the type of curved mirror it needs.</p>",
+          "bins": [
+            "Convex mirror",
+            "Concave mirror"
+          ],
+          "items": [
+            {
+              "text": "A mirror at a blind road junction",
+              "bin": 0,
+              "why": "Diverging rays give a wide field of view around the corner."
+            },
+            {
+              "text": "A dentist's mirror",
+              "bin": 1,
+              "why": "Converging rays form a magnified image of the teeth."
+            },
+            {
+              "text": "A car's rear-view mirror",
+              "bin": 0,
+              "why": "A wide view of traffic behind matters more than true size."
+            },
+            {
+              "text": "The reflector behind a car headlight bulb",
+              "bin": 1,
+              "why": "It gathers the bulb's light into a strong forward beam."
+            },
+            {
+              "text": "A mirror at the corner of a shop",
+              "bin": 0,
+              "why": "One mirror lets a shopkeeper watch a large area from one place."
+            },
+            {
+              "text": "The mirror at the base of a microscope",
+              "bin": 1,
+              "why": "It reflects lamp light onto the specimen to brighten it."
+            }
+          ],
+          "workthrough": [
+            "Ask of each: <strong>do I want to see MORE, or to see BIGGER?</strong>",
+            "See <strong>more</strong> — a wide area from one spot → rays spread out → <strong>convex</strong> (diverging).",
+            "See <strong>bigger</strong>, or gather light into a beam → rays come together → <strong>concave</strong> (converging).",
+            "Road junctions, shop corners and car mirrors are all about coverage.",
+            "Dentist's mirrors, headlights and microscope mirrors are all about magnifying or concentrating."
+          ]
+        },
+        {
+          "type": "mcq",
+          "marks": 1,
+          "stem": "<p>A spoon is held up as a mirror. Which is correct?</p>",
+          "options": [
+            "Both sides are convex",
+            "The top (hollow) side is concave and the bottom is convex",
+            "The top is convex and the bottom is concave",
+            "A spoon is a plane mirror because it is metal"
+          ],
+          "answer": 1,
+          "explain": "The hollow side caves inwards, so it is concave.",
+          "whyWrong": {
+            "0": "The two sides curve in opposite directions — which is exactly why the textbook uses a spoon as the example.",
+            "2": "Swapped. The hollow, scooping side caves <em>inwards</em>, making it concave.",
+            "3": "Being metal makes it reflective, not flat. A plane mirror must be smooth and <strong>flat</strong>."
+          },
+          "workthrough": [
+            "Picture the spoon: the <strong>top</strong> is the hollow that holds the soup.",
+            "A hollow caves inwards — like a cave — so it is <strong>concave</strong>.",
+            "The <strong>bottom</strong> therefore bulges outwards, making it <strong>convex</strong>.",
+            "Memory hook: a <strong>cave</strong> goes <em>into</em> the hillside."
+          ]
+        },
+        {
+          "type": "mcq",
+          "marks": 2,
+          "stem": "<p>Why is a convex mirror used as a car's rear-view mirror rather than a plane mirror?</p>",
+          "options": [
+            "It makes objects look closer, so drivers react faster",
+            "It curves outwards and diverges the light, giving a wider field of view so the driver sees more of the traffic behind",
+            "It produces a real image that can be formed on a screen",
+            "It magnifies the traffic behind"
+          ],
+          "answer": 1,
+          "explain": "A wider field of view is the point, even though it costs apparent size.",
+          "whyWrong": {
+            "0": "The opposite. Diverging the light makes objects look <strong>smaller and further away</strong> — hence the warning on some mirrors.",
+            "2": "The image is still virtual, and a real image on a screen would be no use to a driver glancing up.",
+            "3": "Magnifying is what a <strong>concave</strong> mirror does."
+          },
+          "workthrough": [
+            "Ask what the driver needs: to see <strong>as much of the road behind as possible</strong>.",
+            "Recall what a convex mirror does: it <strong>curves outwards</strong> and <strong>diverges</strong> the rays.",
+            "Diverging rays gather light from a wider angle, so a wider view fits into the same small mirror.",
+            "A plane mirror of the same size would show only a narrow strip.",
+            "Two marks: one for the diverging mechanism, one for the wider field of view."
+          ]
+        },
+        {
+          "type": "mcq",
+          "marks": 2,
+          "stem": "<p>Parallel rays fall on a <strong>rough</strong> surface. What happens to the angle of reflection of each individual ray?</p>",
+          "options": [
+            "It is no longer equal to the angle of incidence, because the surface is uneven",
+            "It is still equal to the angle of incidence — but each normal points a different way, so the rays scatter",
+            "It becomes zero, because the light is absorbed",
+            "It is equal only for rays landing on a flat part"
+          ],
+          "answer": 1,
+          "explain": "The law holds everywhere; the normals are what differ.",
+          "whyWrong": {
+            "0": "This is exactly the misconception the textbook's Take Note exists to prevent. The law of reflection is <strong>never</strong> broken.",
+            "2": "Some light is absorbed by any surface, but scattering is not absorption. The rays are reflected — just in different directions.",
+            "3": "It holds for <em>every</em> ray. Even on a steeply tilted facet, i = r measured from <em>that facet's</em> normal."
+          },
+          "workthrough": [
+            "Recall the Take Note: for <strong>both</strong> smooth and rough surfaces, the angle of reflection of each ray equals the angle of incidence.",
+            "So the law does not change. Something else must.",
+            "Ask what the angles are measured from: the <strong>normal</strong>, perpendicular to the surface <em>at that point</em>.",
+            "On a rough surface the tilt varies from point to point, so each normal points a <strong>different way</strong>.",
+            "Each ray obeys i = r but leaves in its own direction — so the light scatters and no image forms.",
+            "Two marks: one for i = r still holding, one for the normals differing."
+          ]
+        },
+        {
+          "type": "mcq",
+          "marks": 1,
+          "stem": "<p>Why can you see your reflection in a mirror but not in a sheet of white paper?</p>",
+          "options": [
+            "Paper absorbs all the light falling on it",
+            "The paper's surface is uneven under a microscope, so it scatters light instead of reflecting it all one way",
+            "Paper is not shiny enough to reflect any light",
+            "Light passes straight through paper"
+          ],
+          "answer": 1,
+          "explain": "Paper is rough at the microscopic scale, so reflected rays scatter.",
+          "whyWrong": {
+            "0": "If it absorbed all the light it would look <strong>black</strong>. White paper is white because it reflects most of the light — just in scattered directions.",
+            "2": "Paper reflects plenty of light; that is how you see the paper at all. The issue is direction, not amount.",
+            "3": "Paper is opaque, and none of the light that gets through forms an image."
+          },
+          "workthrough": [
+            "Note that paper <em>does</em> reflect light — you can see the paper, so light from it reaches your eyes.",
+            "So the question is about <strong>direction</strong>, not amount.",
+            "Recall: although white paper looks smooth, its surface is <strong>uneven under a microscope</strong>.",
+            "Uneven means normals pointing many ways, so parallel rays leave in many directions — the light is <strong>scattered</strong>.",
+            "Scattered light carries no organised image, so no reflection of your face survives."
+          ]
+        },
+        {
+          "type": "mcq",
+          "marks": 1,
+          "stem": "<p>On a windy day, the reflection of trees in a reservoir breaks up. Why?</p>",
+          "options": [
+            "The wind blows the light away",
+            "Ripples make the water's surface uneven, so the normals point in different directions and the light scatters",
+            "The water becomes less transparent",
+            "The law of reflection stops applying to moving water"
+          ],
+          "answer": 1,
+          "explain": "Same water, same law — different roughness.",
+          "whyWrong": {
+            "0": "Wind moves air and water, not light. Light is unaffected by a breeze.",
+            "2": "Transparency has not changed. It is the <em>shape</em> of the surface that has.",
+            "3": "The law of reflection always applies. Each ripple still reflects with i = r — but each ripple faces a different way."
+          },
+          "workthrough": [
+            "Compare the two states. On a <strong>non-windy</strong> day the water is smooth and flat, like a plane mirror, so a clear image forms.",
+            "Wind creates ripples, making the surface <strong>uneven</strong>.",
+            "Each ripple faces a different direction, so each has a <strong>normal pointing a different way</strong>.",
+            "Parallel rays therefore leave in scattered directions and the image breaks up into shimmer.",
+            "It is the <em>state</em> of the surface that decides, not the material."
+          ]
+        },
+        {
+          "type": "mcq",
+          "marks": 2,
+          "stem": "<p>A ray of light travels from air into a glass block at an angle. What happens?</p>",
+          "options": [
+            "It speeds up and bends away from the normal",
+            "It slows down and bends towards the normal",
+            "It slows down and bends away from the normal",
+            "It continues in a straight line"
+          ],
+          "answer": 1,
+          "explain": "Glass is optically denser, so the light slows — and slowing bends it towards the normal.",
+          "whyWrong": {
+            "0": "Both halves wrong. Light travels <em>faster</em> in air than in glass, so entering the glass it slows down.",
+            "2": "Speed right, direction wrong. Slowing bends light <strong>towards</strong> the normal; bending away happens when it speeds up.",
+            "3": "It would travel straight only if it entered <strong>along the normal</strong>. The question says at an angle."
+          },
+          "workthrough": [
+            "Compare the mediums: light travels <strong>faster in air than in glass</strong>, so glass is optically denser.",
+            "Air → glass therefore means the light <strong>slows down</strong>.",
+            "Recall the pairing: slowing down → bends <strong>towards</strong> the normal.",
+            "Check with the cart: the wheel reaching the grass first slows first, travels a shorter distance, and swings the cart towards the perpendicular.",
+            "Two marks: one for the speed change, one for the direction of the bend."
+          ]
+        },
+        {
+          "type": "mcq",
+          "marks": 1,
+          "stem": "<p>A ray travels from inside a glass block out into the air, at an angle. What happens?</p>",
+          "options": [
+            "It slows down and bends towards the normal",
+            "It speeds up and bends away from the normal",
+            "It speeds up and bends towards the normal",
+            "Nothing — refraction only happens on entering a material"
+          ],
+          "answer": 1,
+          "explain": "Denser to less dense means speeding up, which bends it away.",
+          "whyWrong": {
+            "0": "Both halves wrong. Leaving the glass for air, the light enters a <em>less</em> dense medium, so it speeds up.",
+            "2": "The speed is right but the direction is not. Speeding up bends light <strong>away</strong> from the normal.",
+            "3": "Refraction happens at <strong>any</strong> boundary between two transparent mediums, in either direction."
+          },
+          "workthrough": [
+            "Identify the direction: glass → air, so denser → less dense.",
+            "Light travels faster in air, so leaving the glass it <strong>speeds up</strong>.",
+            "Recall the pairing: speeding up → bends <strong>away from</strong> the normal.",
+            "The cart again: the wheel reaching the pavement first speeds up first and travels <em>further</em>, swinging the cart the opposite way.",
+            "This is the half of refraction students forget, and it is the half that explains why a pool looks shallow."
+          ]
+        },
+        {
+          "type": "mcq",
+          "marks": 1,
+          "stem": "<p>A ray enters a glass block <strong>along the normal</strong> (angle of incidence 0°). What happens?</p>",
+          "options": [
+            "It bends towards the normal",
+            "It passes straight through without changing direction, though it does slow down",
+            "It bends away from the normal",
+            "It is reflected straight back"
+          ],
+          "answer": 1,
+          "explain": "Speed changes; direction does not.",
+          "whyWrong": {
+            "0": "There is nothing to bend towards — the ray already travels along the normal.",
+            "2": "Same problem: it cannot bend away from its own path.",
+            "3": "A little light is reflected at any boundary, but the transmitted ray carries straight on."
+          },
+          "workthrough": [
+            "Use the cart model: entering the grass <strong>perpendicularly</strong>, both wheels cross at the same instant.",
+            "Both slow together, so neither travels further — nothing swings the cart round.",
+            "It continues <strong>in a straight line at a lower speed</strong>.",
+            "Light behaves identically at 0° incidence.",
+            "Note the wording: refraction is defined by the <em>speed change</em>, which still happens even when no bending is visible."
+          ]
+        },
+        {
+          "type": "mcq",
+          "marks": 1,
+          "stem": "<p>What is <strong>optical density</strong>?</p>",
+          "options": [
+            "The mass per unit volume of a material",
+            "A property that affects the speed at which light travels through a medium",
+            "How transparent a material is",
+            "The brightness of light inside a material"
+          ],
+          "answer": 1,
+          "explain": "It governs the speed of light — the more optically dense, the slower.",
+          "whyWrong": {
+            "0": "That is the density from Chapter 2. The textbook's Take Note warns explicitly that optical density is <strong>different</strong> from it.",
+            "2": "Transparency is whether light gets through at all. Optical density is about how <em>fast</em> it goes once it does.",
+            "3": "Brightness is not a property of the material."
+          },
+          "workthrough": [
+            "Recall the definition: an optical medium has a property called <strong>optical density</strong> that affects the <strong>speed at which light travels through it</strong>.",
+            "The rule: the <strong>more optically dense</strong> a material, the <strong>slower</strong> light travels through it.",
+            "That is why glass (denser) slows light compared with air.",
+            "Keep it separate from mass-per-volume density — the textbook flags the confusion deliberately."
+          ]
+        },
+        {
+          "type": "mcq",
+          "marks": 1,
+          "stem": "<p>A swimming pool looks shallower than it really is. Why?</p>",
+          "options": [
+            "Water absorbs light, making the bottom look closer",
+            "Light from the bottom bends away from the normal as it leaves the water, so the eye traces it back to a shallower image",
+            "The water magnifies the pool floor",
+            "Light travels faster in water, so it arrives sooner"
+          ],
+          "answer": 1,
+          "explain": "Refraction on leaving the water, plus the brain assuming a straight line.",
+          "whyWrong": {
+            "0": "Absorption makes deep water dimmer and bluer, but cannot change where the bottom <em>appears</em> to be.",
+            "2": "Magnification changes apparent size, not apparent depth. The floor looks nearer, not bigger.",
+            "3": "Light travels <strong>slower</strong> in water, since water is optically denser — and arrival time is not how your eye judges depth."
+          },
+          "workthrough": [
+            "Follow the light: from the pool floor, up through the water, across into the air.",
+            "Water → air is denser → less dense, so the light <strong>speeds up</strong> and bends <strong>away from the normal</strong>.",
+            "Your eye assumes light travelled in a <strong>straight line</strong> the whole way.",
+            "Tracing that final direction straight back lands you <em>above</em> the real object.",
+            "So <strong>perceived depth</strong> is less than <strong>actual depth</strong> — a genuine safety point, not just a curiosity."
+          ]
+        },
+        {
+          "type": "mcq",
+          "marks": 1,
+          "stem": "<p>White light passes through a prism and splits into seven colours. Which bends the most?</p>",
+          "options": [
+            "Red",
+            "Green",
+            "Violet",
+            "They all bend equally"
+          ],
+          "answer": 2,
+          "explain": "Violet bends most; red bends least.",
+          "whyWrong": {
+            "0": "Red is the opposite extreme — it bends the <strong>least</strong>, which is why it sits at the other end of the spectrum.",
+            "1": "Green is in the middle of ROYGBIV, so it bends by a middling amount.",
+            "3": "If they all bent equally the light would stay white. Unequal bending is what causes dispersion."
+          },
+          "workthrough": [
+            "Recall the cause: each colour <strong>slows to a different extent</strong> on entering the glass, so each bends by a different angle.",
+            "Recall the extremes: <strong>violet bends the most, red bends the least</strong>.",
+            "That produces the order ROYGBIV — red deviated least, violet deviated most.",
+            "Memory hook: violet is last in ROYGBIV and last in the bending too; red is first in both."
+          ]
+        },
+        {
+          "type": "mcq",
+          "marks": 1,
+          "stem": "<p>What is <strong>dispersion</strong>?</p>",
+          "options": [
+            "The bouncing of light off a surface",
+            "The splitting of white light into its component colours",
+            "The scattering of light by a rough surface",
+            "The bending of light at a boundary"
+          ],
+          "answer": 1,
+          "explain": "Seven colours out of one white beam.",
+          "whyWrong": {
+            "0": "That is <strong>reflection</strong>.",
+            "2": "Scattering is what a rough surface does to parallel rays. Dispersion separates <em>colours</em>, which is different.",
+            "3": "That is <strong>refraction</strong>. Dispersion is a <em>consequence</em> of refraction acting unequally on different colours — related, but not the same word."
+          },
+          "workthrough": [
+            "Recall the definition: the splitting of white light into its <strong>component colours</strong> is known as dispersion.",
+            "Keep the three words apart: <strong>reflection</strong> = bouncing · <strong>refraction</strong> = bending · <strong>dispersion</strong> = splitting into colours.",
+            "Note the link: dispersion happens <em>because</em> refraction bends each colour by a different angle.",
+            "So a question asking “what causes dispersion?” wants refraction plus unequal speeds — but “what is dispersion?” wants the splitting."
+          ]
+        },
+        {
+          "type": "sort",
+          "stem": "<p>Sort each application by the type of radiation it uses.</p>",
+          "bins": [
+            "Infrared",
+            "Ultraviolet",
+            "Visible light"
+          ],
+          "items": [
+            {
+              "text": "A thermal imaging camera screening for fever",
+              "bin": 0,
+              "why": "It detects the infrared a person emits and maps their body temperature."
+            },
+            {
+              "text": "Sterilising medical equipment without chemicals",
+              "bin": 1,
+              "why": "UV sterilisation disinfects with no harmful chemicals or by-products."
+            },
+            {
+              "text": "A plant photosynthesising",
+              "bin": 2,
+              "why": "Plants use the energy of visible light to make sugars."
+            },
+            {
+              "text": "A robotic vacuum cleaner avoiding the stairs",
+              "bin": 0,
+              "why": "Infrared sensors lose their reflected signal at a step, so the cleaner turns away."
+            },
+            {
+              "text": "Increasing vitamin D production in the body",
+              "bin": 1,
+              "why": "A small amount of UV exposure is good for health for this reason."
+            },
+            {
+              "text": "Reading a book by lamplight",
+              "bin": 2,
+              "why": "Visible light lets us carry out daily activities."
+            }
+          ],
+          "workthrough": [
+            "Ask what each application is really using.",
+            "Heat, temperature or invisible sensing → <strong>infrared</strong>.",
+            "Chemical or biological change — killing microbes, making vitamin D, treating skin → <strong>ultraviolet</strong>.",
+            "Anything you can see, or that plants use → <strong>visible light</strong>.",
+            "The vacuum cleaner is the one people miss: it is not seeing the stairs, it is bouncing invisible infrared off the floor and noticing when the reflection vanishes."
+          ]
+        },
+        {
+          "type": "multi",
+          "marks": 3,
+          "stem": "<p>Which are harmful effects of <strong>ultraviolet</strong> radiation, or ways of reducing them? Select all that apply.</p>",
+          "options": [
+            "Overexposure can harm our eyes",
+            "Overexposure can cause skin cancer",
+            "Trapped in the atmosphere it contributes to climate change",
+            "Wearing sunscreen helps, because it filters out UV",
+            "It causes migratory birds to migrate at the wrong time"
+          ],
+          "answer": [
+            0,
+            1,
+            3
+          ],
+          "explain": "Eyes, skin cancer, and sunscreen as the protection.",
+          "whyWrong": {
+            "2": "That is <strong>infrared</strong> radiation trapped in the atmosphere, not UV.",
+            "4": "That is <strong>light pollution</strong> from too much artificial visible light."
+          },
+          "workthrough": [
+            "Recall UV's harmful effects: overexposure harms the <strong>eyes</strong> and causes <strong>skin cancer</strong>.",
+            "Recall the protection: <strong>sunscreen</strong> filters out UV radiation.",
+            "Now place the two distractors: climate change belongs to <strong>infrared</strong>.",
+            "Disrupted bird migration belongs to <strong>light pollution</strong> — excessive artificial visible light."
+          ]
+        },
+        {
+          "type": "mcq",
+          "marks": 2,
+          "stem": "<p>Why do turtle hatchlings die because of artificial lighting near beaches?</p>",
+          "options": [
+            "The lights make the sand too hot for the eggs",
+            "Hatchlings are guided to the sea by natural light in the sky, and artificial lamps draw them away from it",
+            "The lights attract predators to the beach",
+            "Bright light damages the hatchlings' eyes"
+          ],
+          "answer": 1,
+          "explain": "They navigate by light, so a brighter false light wins.",
+          "whyWrong": {
+            "0": "Heat is not the mechanism given. The problem happens after hatching, once the young turtles are moving.",
+            "2": "Predators are a real danger, but the textbook attributes these deaths specifically to being <em>misdirected</em> by artificial light.",
+            "3": "Eye damage is a harmful effect of UV overexposure in humans, not the cause here."
+          },
+          "workthrough": [
+            "Recall how hatchlings navigate: they hatch <strong>at night</strong> and head towards the <strong>natural light in the sky</strong>.",
+            "So their survival strategy is “move towards the brightest light”.",
+            "Artificial lamps on the shore are brighter, and in the wrong direction.",
+            "The hatchlings follow them <strong>away from the sea</strong> and die.",
+            "Two marks: one for natural-light navigation, one for artificial light drawing them the wrong way. Name it as <strong>light pollution</strong> if the question asks about pollution."
+          ]
+        },
+        {
+          "type": "mcq",
+          "marks": 1,
+          "stem": "<p>Why is flash photography disallowed in some museums?</p>",
+          "options": [
+            "The flash startles other visitors",
+            "Visible light can cause chemical changes in some materials, so old documents, photographs and paintings deteriorate",
+            "The flash heats the display cases",
+            "Cameras interfere with security systems"
+          ],
+          "answer": 1,
+          "explain": "Light causes chemical change — which is why some objects are stored in the dark.",
+          "whyWrong": {
+            "0": "It may well annoy people, but the reason given is about protecting the exhibits.",
+            "2": "A camera flash delivers very little heat, and heat is not the mechanism.",
+            "3": "Not a scientific reason, and nothing to do with this chapter."
+          },
+          "workthrough": [
+            "Recall the harmful effect of <strong>visible light</strong>: it can cause <strong>chemical changes</strong> in some materials, deteriorating their quality.",
+            "Apply it: very old documents, photographs and paintings are exactly such materials.",
+            "Repeated flashes would gradually degrade them.",
+            "Confirm with the related fact: some objects are <strong>stored in the dark</strong> to avoid discolouration by light."
+          ]
+        }
+      ]
+    }
+    </script>
+  </div>
+
+  <nav class="lesson-nav">
+    <a href="map.html">← Chapter map</a>
+    <a class="next" href="index.html">Chapter home ↺</a>
+  </nav>
+</div>
+<script src="../../js/quiz-engine.js"></script>
+</body>
+</html>

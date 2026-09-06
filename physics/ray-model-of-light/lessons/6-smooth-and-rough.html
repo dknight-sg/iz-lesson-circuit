@@ -1,0 +1,167 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>6 · Smooth and rough surfaces — Ray Model of Light</title>
+<meta name="description" content="Textbook 5.3 — why parallel rays reflect in one direction from a smooth surface but scatter from a rough one, and why i = r is still true in both cases.">
+<meta name="theme-color" content="#E4EAF0">
+<link rel="icon" type="image/svg+xml" href="../../../favicon.svg">
+<link rel="stylesheet" href="../../../css/style.css">
+<link rel="stylesheet" href="../../../css/interactive.css">
+</head>
+<body>
+<div class="sheet">
+  <header>
+    <div>
+      <a class="crumb" href="../index.html">← Ray Model of Light</a>
+      <p class="eyebrow" style="margin-top:10px">Lesson 6 of 8 · Textbook 5.3</p>
+      <h1>Smooth and rough surfaces</h1>
+    </div>
+    <p class="sub">You can see yourself in a mirror but not in a sheet of paper. Both reflect light — the difference is entirely about which way the surface is facing.</p>
+  </header>
+
+  <div class="prose">
+    <h2 class="section">The two cases</h2>
+    <p>When <strong>parallel rays of light</strong> fall on a <strong>smooth</strong> surface, each ray is reflected <strong>in the same direction</strong>. When they fall on a <strong>rough</strong> surface, each ray is reflected <strong>in a different direction</strong>.</p>
+
+    <div class="sim" id="surfaceLab">
+      <div class="sim-head">
+        <h4>Parallel rays meeting a surface</h4>
+        <div class="picker su-pick">
+          <button type="button" data-m="smooth">Smooth surface</button>
+          <button type="button" data-m="rough">Rough surface</button>
+        </div>
+      </div>
+      <div class="sim-body">
+        <svg class="su-stage" viewBox="0 0 420 210" role="img" aria-label="Parallel rays reflecting from a smooth or rough surface, with normals shown"></svg>
+        <p class="sep-out su-note"></p>
+        <p class="sep-out su-verdict"></p>
+      </div>
+      <div class="sim-foot">The dashed lines are the normals. On the rough surface they point in different directions — and that, not any change in the law, is what scatters the light.</div>
+    </div>
+
+    <div class="callout think">
+      <span class="callout-label">The point the exam actually tests</span>
+      For <strong>both</strong> smooth and rough surfaces, the angle of reflection of each light ray is <strong>equal to the angle of incidence</strong>. The law of reflection is never broken.
+      <p style="margin:10px 0 0">What changes on a rough surface is the <strong>direction of the normal</strong> at each point. The surface tilts differently from place to place, so each ray meets its own normal at its own angle and leaves in its own direction. Saying “on a rough surface <em>i</em> is not equal to <em>r</em>” is wrong, and it is the answer examiners are watching for.</p>
+    </div>
+
+    <h2 class="section">Where each one happens</h2>
+    <table class="cmp" style="margin-bottom:20px">
+      <tr>
+        <td class="h" style="border-bottom:1.5px solid var(--ink);width:50%">Reflection on a smooth surface</td>
+        <td class="h" style="border-bottom:1.5px solid var(--ink)">Reflection on a rough surface</td>
+      </tr>
+      <tr>
+        <td>Each ray reflected <strong>in the same direction</strong></td>
+        <td>Each ray reflected <strong>in a different direction</strong></td>
+      </tr>
+      <tr>
+        <td><strong>Clear images</strong> are formed</td>
+        <td>Light is <strong>scattered</strong>; no image forms</td>
+      </tr>
+      <tr>
+        <td>A plane mirror · a highly polished metallic surface · the <strong>calm</strong> surface of a water body</td>
+        <td>A sheet of paper · a wall · most everyday objects</td>
+      </tr>
+    </table>
+
+    <p>Although a piece of white paper <em>looks</em> smooth, its surface is <strong>uneven and rough when viewed under a microscope</strong>. Since the rough surface of the paper scatters light, we are not able to see our reflection in it.</p>
+
+    <div class="callout">
+      <span class="callout-label">Why a reservoir works like a mirror</span>
+      On a <strong>non-windy</strong> day a still body of water forms a smooth, flat surface — much like a plane mirror — so you see the trees and the sky reflected in it. Add wind, and the surface becomes uneven: the normals scatter, and the reflection breaks up into shimmer.
+      <p style="margin:10px 0 0">Same water, same law, different roughness. That is the whole of this lesson in one example.</p>
+    </div>
+
+    <h2 class="section">Check yourself</h2>
+    <div id="quiz">
+      <script type="application/json">
+      {
+        "questions": [
+          {
+            "type": "mcq",
+            "marks": 2,
+            "stem": "<p>Parallel rays of light fall on a rough surface. What happens to the angle of reflection of each individual ray?</p>",
+            "options": [
+              "It is no longer equal to the angle of incidence, because the surface is uneven",
+              "It is still equal to the angle of incidence — but each normal points in a different direction, so the reflected rays scatter",
+              "It becomes zero, because the light is absorbed",
+              "It is equal to the angle of incidence only for the rays that hit a flat part"
+            ],
+            "answer": 1,
+            "explain": "The law holds everywhere; the normals are what differ.",
+            "whyWrong": {
+              "0": "This is the misconception the textbook's Take Note exists to prevent. The law of reflection is <strong>never</strong> broken — it holds for every single ray on any surface.",
+              "2": "Some light is absorbed by any surface, but that is not what scattering means. The rays are reflected; they simply go in different directions.",
+              "3": "It holds for <em>every</em> ray, not just those landing on flat patches. Even on a steeply tilted facet, i and r are equal — measured from <em>that facet's</em> normal."
+            },
+            "workthrough": [
+              "Recall the Take Note exactly: for <strong>both</strong> smooth and rough surfaces, the angle of reflection of each light ray is equal to the angle of incidence.",
+              "So the law itself does not change. Something else must.",
+              "Ask what the angles are measured from: the <strong>normal</strong>, which is perpendicular to the surface <em>at that point</em>.",
+              "On a rough surface the surface tilts differently from point to point, so each normal points a <strong>different way</strong>.",
+              "Each ray therefore obeys i = r but leaves in its own direction — which is why the light scatters and no image forms.",
+              "Two marks: one for i = r still holding, one for the normals pointing in different directions."
+            ]
+          },
+          {
+            "type": "mcq",
+            "marks": 1,
+            "stem": "<p>Why can you see your reflection in a mirror but not in a sheet of white paper?</p>",
+            "options": [
+              "Paper absorbs all the light that falls on it",
+              "The paper's surface is uneven when viewed under a microscope, so it scatters light instead of reflecting it all one way",
+              "Paper is not shiny enough to reflect any light",
+              "Light passes straight through paper"
+            ],
+            "answer": 1,
+            "explain": "Paper is rough at the microscopic scale, so the reflected rays scatter.",
+            "whyWrong": {
+              "0": "If paper absorbed all the light it would look <strong>black</strong>. White paper is white precisely because it reflects most of the light that hits it — just in scattered directions.",
+              "2": "Paper reflects plenty of light — that is how you see the paper at all. The issue is the <em>direction</em> of the reflection, not the amount.",
+              "3": "Paper is opaque. Hold it up to a lamp and very little gets through, and none of it forms an image."
+            },
+            "workthrough": [
+              "Note first that paper <em>does</em> reflect light — you can see the paper, so light from it is reaching your eyes.",
+              "So the question is not whether it reflects, but <strong>in which directions</strong>.",
+              "Recall the textbook: although white paper looks smooth, its surface is <strong>uneven and rough under a microscope</strong>.",
+              "A rough surface means normals pointing many ways, so parallel rays leave in many directions — the light is <strong>scattered</strong>.",
+              "Scattered light carries no organised image, so no reflection of your face forms. A mirror's surface is smooth, so all the rays stay in step and an image survives."
+            ]
+          },
+          {
+            "type": "sort",
+            "stem": "<p>Sort each surface by the kind of reflection it produces.</p>",
+            "bins": ["Reflection on a smooth surface", "Reflection on a rough surface"],
+            "items": [
+              {"text":"A plane mirror", "bin":0, "why":"The textbook's definition of a smooth, flat reflecting surface."},
+              {"text":"A sheet of white paper", "bin":1, "why":"Looks smooth, but is uneven under a microscope — so it scatters light."},
+              {"text":"A highly polished metallic surface", "bin":0, "why":"Polishing removes the unevenness, so clear images form in it."},
+              {"text":"The calm surface of a water body", "bin":0, "why":"On a non-windy day it is smooth and flat, like a plane mirror."},
+              {"text":"A brick wall", "bin":1, "why":"Deeply uneven, so the normals point every which way and the light scatters."},
+              {"text":"A lake on a very windy day", "bin":1, "why":"The ripples make the surface uneven, so the reflection breaks up."}
+            ],
+            "workthrough": [
+              "Ask of each surface: <strong>is it uniformly flat at a small scale?</strong>",
+              "If yes → all the normals point the same way → rays stay parallel → <strong>smooth</strong> reflection and a clear image.",
+              "If no → the normals point in different directions → rays scatter → <strong>rough</strong> reflection and no image.",
+              "Notice water appears in both bins. Calm water is smooth; windy water is rough. It is the <em>state</em> of the surface that decides, not the material."
+            ]
+          }
+        ]
+      }
+      </script>
+    </div>
+  </div>
+
+  <nav class="lesson-nav">
+    <a href="5-curved-mirrors.html">← Curved mirrors</a>
+    <a class="next" href="7-refraction-and-dispersion.html">Next: Refraction and dispersion →</a>
+  </nav>
+</div>
+<script src="../../../js/light-widgets.js"></script>
+<script src="../../../js/quiz-engine.js"></script>
+</body>
+</html>

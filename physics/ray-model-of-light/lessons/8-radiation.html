@@ -1,0 +1,197 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>8 · Radiation: benefits and harms — Ray Model of Light</title>
+<meta name="description" content="Textbook 5.5 — infrared, ultraviolet and visible light: thermal imaging, sterilisation, vitamin D, skin cancer, light pollution and its effect on birds and turtle hatchlings.">
+<meta name="theme-color" content="#E4EAF0">
+<link rel="icon" type="image/svg+xml" href="../../../favicon.svg">
+<link rel="stylesheet" href="../../../css/style.css">
+<link rel="stylesheet" href="../../../css/interactive.css">
+</head>
+<body>
+<div class="sheet">
+  <header>
+    <div>
+      <a class="crumb" href="../index.html">← Ray Model of Light</a>
+      <p class="eyebrow" style="margin-top:10px">Lesson 8 of 8 · Textbook 5.5</p>
+      <h1>Radiation: benefits and harms</h1>
+    </div>
+    <p class="sub">Three kinds of radiation, and the same pattern in every one: the property that makes it useful is the property that makes it dangerous.</p>
+  </header>
+
+  <div class="prose">
+    <h2 class="section">Light is only one kind</h2>
+    <p>The light we see is only one type of <strong>electromagnetic (EM) radiation</strong>. While we can see the rainbow colours of <strong>visible light</strong>, there are other types of EM radiation that we <strong>cannot see</strong> — including <strong>infrared</strong> radiation and <strong>ultraviolet (UV)</strong> radiation.</p>
+    <p>Sunlight contains more than white light: it carries UV radiation too, which is invisible.</p>
+
+    <div class="callout think">
+      <span class="callout-label">Some animals can see what we cannot</span>
+      <strong>Snakes</strong> can see <strong>infrared</strong> radiation — which is why a warm animal glows to them in the dark. <strong>Bees</strong> can see <strong>ultraviolet</strong>, so many patterns on flowers that are invisible to us are obvious to a bee, helping it find nectar easily.
+    </div>
+
+    <div class="sim" id="emLab">
+      <div class="sim-head"><h4>The three radiations</h4></div>
+      <div class="sim-body">
+        <div class="em-tabs">
+          <button type="button" class="em-btn" data-k="infrared">Infrared</button>
+          <button type="button" class="em-btn" data-k="uv">Ultraviolet</button>
+          <button type="button" class="em-btn" data-k="visible">Visible light</button>
+        </div>
+        <div class="em-panel"></div>
+      </div>
+      <div class="sim-foot">Read the two lists side by side. In every case the useful property and the harmful one are the same property — it is the <em>dose</em> and the <em>context</em> that differ.</div>
+    </div>
+
+    <h2 class="section">The pattern to notice</h2>
+    <table class="cmp" style="margin-bottom:20px">
+      <tr>
+        <td class="h" style="border-bottom:1.5px solid var(--ink);width:22%">Radiation</td>
+        <td class="h" style="border-bottom:1.5px solid var(--ink);width:39%">Useful because…</td>
+        <td class="h" style="border-bottom:1.5px solid var(--ink)">Harmful because…</td>
+      </tr>
+      <tr>
+        <td><strong>Infrared</strong></td>
+        <td>…warm objects emit it, so a camera can map body temperature and screen for <strong>fever</strong>.</td>
+        <td>…it carries heat energy. Overexposure in welding and furnaces damages the eyes, and infrared trapped in the atmosphere drives <strong>climate change</strong>.</td>
+      </tr>
+      <tr>
+        <td><strong>Ultraviolet</strong></td>
+        <td>…it triggers chemical changes in living tissue — making <strong>vitamin D</strong>, treating psoriasis, and <strong>killing microorganisms</strong> in sterilisation.</td>
+        <td>…the same chemical changes damage the cells of our eyes and skin, causing <strong>skin cancer</strong>.</td>
+      </tr>
+      <tr>
+        <td><strong>Visible light</strong></td>
+        <td>…it lets plants <strong>photosynthesise</strong> and lets us see, work and travel safely after dark.</td>
+        <td>…it causes chemical changes that fade documents and paintings, and too much artificial light becomes <strong>light pollution</strong>.</td>
+      </tr>
+    </table>
+
+    <h2 class="section">Light pollution</h2>
+    <p><strong>Light pollution</strong> is where there is <strong>too much artificial light in the environment</strong>. It harms living things that depend on Earth's cycle of day and night to carry out life-sustaining activities such as <strong>migration, reproduction, searching for food, sleeping and escaping from predators</strong>.</p>
+    <ul>
+      <li><strong>Migratory birds</strong> gauge the change of seasons from the amount of sunlight, and so decide when to migrate. Artificial lights disrupt this, making them migrate <strong>too early or too late</strong> — which can be fatal, as they may miss the ideal climate for nesting and an adequate food supply.</li>
+      <li><strong>Turtle hatchlings</strong> hatch at night and are guided to the sea by <strong>natural light in the sky</strong>. Artificial lamps draw them <strong>away from the sea</strong>, resulting in their deaths. In 2018 NParks launched Singapore's first turtle hatchery at the <strong>Sisters' Islands Marine Park</strong>.</li>
+      <li>Lighting the streets also <strong>uses a lot of electricity</strong>. Energy-efficient lighting such as <strong>LEDs</strong> and <strong>compact fluorescents (CFLs)</strong> reduces both light pollution and energy use.</li>
+    </ul>
+
+    <div class="callout">
+      <span class="callout-label">From Edison to LEDs</span>
+      <strong>Thomas Edison</strong> developed the first commercial <strong>incandescent light bulb</strong> in <strong>1879</strong>. Earlier inventors had made bulbs, but Edison's became popular because it was <strong>relatively inexpensive and long-lasting</strong>. He failed many times first, and regarded those failures not as failures but as <em>discovering ways in which things did not work</em>. Since then we have moved to energy-saving <strong>fluorescent lamps and LEDs</strong>.
+    </div>
+
+    <h2 class="section">Check yourself</h2>
+    <div id="quiz">
+      <script type="application/json">
+      {
+        "questions": [
+          {
+            "type": "sort",
+            "stem": "<p>Sort each application by the type of radiation it uses.</p>",
+            "bins": ["Infrared", "Ultraviolet", "Visible light"],
+            "items": [
+              {"text":"A thermal imaging camera screening for fever", "bin":0, "why":"It detects the infrared a person emits and forms an image of their body temperature."},
+              {"text":"Sterilising medical equipment without chemicals", "bin":1, "why":"UV sterilisation disinfects equipment, food and water with no harmful chemicals or by-products."},
+              {"text":"A plant making sugars by photosynthesis", "bin":2, "why":"Plants rely on the energy of visible light to make sugars from carbon dioxide and water."},
+              {"text":"A robotic vacuum cleaner avoiding the stairs", "bin":0, "why":"Infrared sensors send signals that the floor reflects back; at a step the reflection is lost and the cleaner turns away."},
+              {"text":"Increasing the body's production of vitamin D", "bin":1, "why":"A small amount of UV exposure is good for health for exactly this reason."},
+              {"text":"Reading a book by lamplight", "bin":2, "why":"Visible light lets us carry out daily activities."}
+            ],
+            "workthrough": [
+              "Ask what the application is really detecting or using.",
+              "Anything to do with <strong>heat, temperature or invisible sensing</strong> → <strong>infrared</strong>. Thermal cameras and the robot vacuum both fall here.",
+              "Anything to do with <strong>chemical or biological change</strong> — killing microbes, making vitamin D, treating skin — → <strong>ultraviolet</strong>.",
+              "Anything you can actually <strong>see</strong>, or that plants use → <strong>visible light</strong>.",
+              "The vacuum cleaner is the one people miss. It is not seeing the stairs; it is bouncing invisible infrared off the floor and noticing when the reflection disappears."
+            ]
+          },
+          {
+            "type": "mcq",
+            "marks": 2,
+            "stem": "<p>Why do turtle hatchlings die because of artificial lighting near beaches?</p>",
+            "options": [
+              "The lights make the sand too hot for the eggs",
+              "Hatchlings are guided to the sea by natural light in the sky, and artificial lamps draw them away from the sea instead",
+              "The lights attract predators to the beach",
+              "Bright light damages the hatchlings' eyes"
+            ],
+            "answer": 1,
+            "explain": "They navigate by light, so a brighter false light wins.",
+            "whyWrong": {
+              "0": "Heat is not the mechanism the textbook gives. The problem happens after hatching, when the young turtles are moving.",
+              "2": "Predators are a real danger to hatchlings, but the textbook attributes these deaths specifically to being <em>misdirected</em> by artificial light.",
+              "3": "Eye damage is a harmful effect of overexposure to UV in humans, not the cause of hatchling deaths here."
+            },
+            "workthrough": [
+              "Recall how hatchlings navigate: they hatch <strong>at night</strong> and are guided towards the sea by <strong>natural light in the sky</strong>.",
+              "So their whole survival strategy is “head for the brightest light”.",
+              "Now add artificial lamps on the shore. These are brighter and in the wrong direction.",
+              "The hatchlings follow them <strong>away from the sea</strong>, and die.",
+              "Two marks: one for the natural-light navigation, one for artificial light drawing them the wrong way. This is a light-pollution example, so mention that term if the question asks about pollution."
+            ]
+          },
+          {
+            "type": "mcq",
+            "marks": 1,
+            "stem": "<p>Why is flash photography disallowed in some museums?</p>",
+            "options": [
+              "The flash startles other visitors",
+              "Visible light can cause chemical changes in some materials, causing old documents, photographs and paintings to deteriorate",
+              "The flash heats the display cases",
+              "Cameras interfere with the security systems"
+            ],
+            "answer": 1,
+            "explain": "Light causes chemical change, which is why some objects are stored in the dark.",
+            "whyWrong": {
+              "0": "It might well annoy people, but the textbook's reason is about protecting the exhibits, not the visitors.",
+              "2": "A camera flash delivers very little heat, and heat is not the mechanism given.",
+              "3": "Not a scientific reason, and nothing to do with this chapter."
+            },
+            "workthrough": [
+              "Recall the harmful effect of <strong>visible light</strong>: it can cause <strong>chemical changes</strong> in some materials, resulting in the deterioration of their quality.",
+              "Apply it to a museum: very old documents, photographs and paintings are exactly such materials.",
+              "So repeated flashes would gradually degrade them.",
+              "Confirm with the related fact: some of these objects are <strong>stored in the dark</strong> to avoid discolouration by light. Same reason, stronger measure."
+            ]
+          },
+          {
+            "type": "multi",
+            "marks": 3,
+            "stem": "<p>Which are harmful effects of <strong>ultraviolet</strong> radiation or ways of reducing them? Select all that apply.</p>",
+            "options": [
+              "Overexposure can harm our eyes",
+              "Overexposure can cause skin cancer",
+              "It contributes to climate change when trapped in the atmosphere",
+              "Wearing sunscreen helps, because it filters out UV radiation",
+              "It causes migratory birds to migrate at the wrong time"
+            ],
+            "answer": [0, 1, 3],
+            "explain": "Eyes, skin cancer, and sunscreen as the protection.",
+            "whyWrong": {
+              "2": "That is <strong>infrared</strong> radiation trapped in the atmosphere, not UV.",
+              "4": "That is <strong>light pollution</strong> from too much artificial visible light, which disrupts the birds' reading of the seasons."
+            },
+            "workthrough": [
+              "Recall the UV harmful effects: overexposure can <strong>harm our eyes</strong> and cause <strong>skin cancer</strong>.",
+              "Recall the protection: <strong>sunscreen</strong> filters out UV radiation, which is why we are encouraged to wear it outdoors.",
+              "Now check the two distractors against the other radiations.",
+              "Climate change belongs to <strong>infrared</strong> trapped in the atmosphere.",
+              "Disrupted bird migration belongs to <strong>light pollution</strong> — excessive artificial visible light."
+            ]
+          }
+        ]
+      }
+      </script>
+    </div>
+  </div>
+
+  <nav class="lesson-nav">
+    <a href="7-refraction-and-dispersion.html">← Refraction and dispersion</a>
+    <a class="next" href="../practice.html">Next: Practice questions →</a>
+  </nav>
+</div>
+<script src="../../../js/light-widgets.js"></script>
+<script src="../../../js/quiz-engine.js"></script>
+</body>
+</html>

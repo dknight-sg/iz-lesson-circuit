@@ -1,0 +1,190 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>2 · How we see things — Ray Model of Light</title>
+<meta name="description" content="Textbook 5.1–5.2 — luminous and non-luminous objects, why we need a light source, and reflection as the reason we see most things.">
+<meta name="theme-color" content="#E4EAF0">
+<link rel="icon" type="image/svg+xml" href="../../../favicon.svg">
+<link rel="stylesheet" href="../../../css/style.css">
+<link rel="stylesheet" href="../../../css/interactive.css">
+</head>
+<body>
+<div class="sheet">
+  <header>
+    <div>
+      <a class="crumb" href="../index.html">← Ray Model of Light</a>
+      <p class="eyebrow" style="margin-top:10px">Lesson 2 of 8 · Textbook 5.1–5.2</p>
+      <h1>How we see things</h1>
+    </div>
+    <p class="sub">You see something only when light from it enters your eyes. Everything in this lesson comes from taking that sentence literally.</p>
+  </header>
+
+  <div class="prose">
+    <h2 class="section">Objects that make their own light</h2>
+    <div class="callout">
+      <span class="callout-label">Definition</span>
+      Objects that are able to <strong>emit light on their own</strong> are called <strong>luminous objects</strong>, or <strong>sources of light</strong>.
+    </div>
+    <p>Luminous objects emit light <strong>in all directions</strong>. The light then travels in straight lines from the object to our eyes, which is how we see it.</p>
+    <table class="cmp" style="margin-bottom:20px">
+      <tr><td class="h" style="border-bottom:1.5px solid var(--ink);width:34%">Natural sources</td><td class="h" style="border-bottom:1.5px solid var(--ink)">Man-made sources</td></tr>
+      <tr>
+        <td>The <strong>sun</strong> · the northern lights · the Milky Way · fireflies</td>
+        <td>A lamp · a candle · a mobile phone screen · a light bulb</td>
+      </tr>
+    </table>
+    <div class="callout think">
+      <span class="callout-label">Where the sun's light comes from</span>
+      The <strong>core of the sun</strong> reaches about <strong>15 million degrees Celsius</strong>. It produces its enormous heat and light through <strong>nuclear fusion</strong>, in which hydrogen nuclei combine to form helium nuclei.
+    </div>
+
+    <h2 class="section">Objects that do not</h2>
+    <p>Most objects around you emit no light of their own — they are <strong>non-luminous</strong>. You can see them only in the presence of a light source, because light from that source <strong>bounces off them</strong> and enters your eyes.</p>
+    <div class="callout">
+      <span class="callout-label">Definition</span>
+      The <strong>bouncing of light off a surface</strong> is called <strong>reflection</strong>. Light travels in straight lines even when it bounces off a surface.
+    </div>
+    <p>So seeing a flower takes <strong>two straight lines</strong>: one from the sun to the flower, and a second from the flower to your eye. Miss either and you see nothing.</p>
+
+    <div class="sim" id="seeingLab">
+      <div class="sim-head">
+        <h4>A totally dark room</h4>
+        <div class="picker"><button type="button" class="se-toggle">Blow the candle out</button></div>
+      </div>
+      <div class="sim-body">
+        <svg viewBox="0 0 440 200" role="img" aria-label="A candle, a white ball and a black ball, with an eye watching">
+          <rect x="6" y="10" width="428" height="150" fill="#EDF2F6" stroke="#0F2436" stroke-width="2"/>
+          <!-- candle -->
+          <circle class="se-glow" cx="360" cy="96" r="46" fill="rgba(240,135,30,.22)"/>
+          <rect x="350" y="98" width="20" height="46" rx="3" fill="#C9D3DC" stroke="#0F2436" stroke-width="1.6"/>
+          <g class="se-flameg"><path d="M 360 96 q -9 -14 0 -24 q 9 10 0 24 Z" fill="#F0871E"/></g>
+          <text x="360" y="158" text-anchor="middle" font-family="Space Mono, monospace" font-size="10" fill="#4A6076">candle</text>
+          <!-- balls -->
+          <circle class="se-white" cx="196" cy="82" r="22" fill="#F7FAFC" stroke="#0F2436" stroke-width="1.8"/>
+          <text x="196" y="122" text-anchor="middle" font-family="Space Mono, monospace" font-size="10" fill="#4A6076">white ball</text>
+          <circle class="se-black" cx="264" cy="126" r="22" fill="#3E4954" stroke="#0F2436" stroke-width="1.8"/>
+          <text x="264" y="158" text-anchor="middle" font-family="Space Mono, monospace" font-size="10" fill="#4A6076">black ball</text>
+          <!-- eye -->
+          <g><path d="M 28 86 l 24 -13 l 0 26 Z" fill="#0F2436"/><circle cx="44" cy="86" r="6" fill="#F0871E" stroke="#0F2436" stroke-width="1.6"/></g>
+          <text x="40" y="122" text-anchor="middle" font-family="Space Mono, monospace" font-size="10" fill="#4A6076">eye</text>
+          <!-- rays: source to ball, ball to eye -->
+          <line class="se-ray" x1="344" y1="92" x2="216" y2="80" stroke="#F0871E" stroke-width="2"/>
+          <line class="se-ray" x1="176" y1="84" x2="56" y2="86" stroke="#F0871E" stroke-width="2"/>
+          <line class="se-ray" x1="346" y1="106" x2="284" y2="122" stroke="#F0871E" stroke-width="2"/>
+          <line class="se-ray" x1="244" y1="130" x2="56" y2="92" stroke="#F0871E" stroke-width="2"/>
+          <line class="se-ray" x1="344" y1="98" x2="56" y2="88" stroke="#F0871E" stroke-width="1.4" stroke-dasharray="5 4"/>
+          <!-- darkness overlay -->
+          <rect class="se-dark" x="6" y="10" width="428" height="150" fill="#0F2436" style="opacity:0;transition:opacity .5s"/>
+        </svg>
+        <div class="readout-grid">
+          <div class="readout-box"><span class="rl">The candle</span><span class="rv se-rc" style="font-size:12px;font-weight:400;font-family:inherit">—</span></div>
+          <div class="readout-box"><span class="rl">The white ball</span><span class="rv se-rw" style="font-size:12px;font-weight:400;font-family:inherit">—</span></div>
+          <div class="readout-box"><span class="rl">The black ball</span><span class="rv se-rb" style="font-size:12px;font-weight:400;font-family:inherit">—</span></div>
+        </div>
+        <p class="sep-out se-note"></p>
+      </div>
+      <div class="sim-foot">Blow the candle out and <em>both</em> balls disappear. This is the Learning Point on page 11, and “you can see the white one” is the wrong answer.</div>
+    </div>
+
+    <h2 class="section">The moon is not a light source</h2>
+    <p>The moon is a <strong>non-luminous</strong> object. We see it because its surface <strong>reflects light from the sun</strong> into our eyes. The moon completes one orbit of Earth in about <strong>27 days</strong>, and during each orbit it is lit from different angles by the sun — which is why the intensity of moonlight varies.</p>
+
+    <div class="callout">
+      <span class="callout-label">Two straight lines, every time</span>
+      For a <strong>luminous</strong> object: light travels from the object → your eye. <strong>One</strong> line.<br>
+      For a <strong>non-luminous</strong> object: light travels from a source → the object → your eye. <strong>Two</strong> lines.
+      <p style="margin:10px 0 0">If a question asks you to explain how someone sees a flower, a book or the moon, draw <em>both</em> lines and label the source. Drawing only the second one loses the mark.</p>
+    </div>
+
+    <h2 class="section">Check yourself</h2>
+    <div id="quiz">
+      <script type="application/json">
+      {
+        "questions": [
+          {
+            "type": "mcq",
+            "marks": 2,
+            "stem": "<p>A white ball and a black ball are placed in a <strong>totally dark</strong> room. Which can you see?</p>",
+            "options": [
+              "Only the white ball, because white reflects light well",
+              "Neither ball, because there is no light source for them to reflect",
+              "Both, once your eyes adjust to the darkness",
+              "Only the black ball, because it absorbs light"
+            ],
+            "answer": 1,
+            "explain": "Both balls are non-luminous, and there is nothing for them to reflect.",
+            "whyWrong": {
+              "0": "White does reflect light well — but only when there <em>is</em> light. In total darkness there is nothing arriving at the ball, so there is nothing for it to reflect. Colour is irrelevant here.",
+              "2": "Adjusting to dim light lets you see a <em>little</em> light better. In <strong>total</strong> darkness there is no light at all, so there is nothing to adjust to.",
+              "3": "Absorbing light would make an object <em>harder</em> to see, not easier — and in any case there is no light to absorb."
+            },
+            "workthrough": [
+              "Classify the objects first. Neither ball emits light of its own, so both are <strong>non-luminous</strong>.",
+              "Recall how you see a non-luminous object: light from a <strong>source</strong> must bounce off it and enter your eyes.",
+              "Now check the room: it is <strong>totally dark</strong>, so there is no source and no light arriving at either ball.",
+              "With no light to reflect, neither ball can send anything to your eyes. You see <strong>neither</strong>.",
+              "Two marks: one for “neither”, one for explaining that a non-luminous object needs a light source to reflect."
+            ]
+          },
+          {
+            "type": "sort",
+            "stem": "<p>Sort each object by whether it emits its own light.</p>",
+            "bins": ["Luminous", "Non-luminous"],
+            "items": [
+              {"text":"The sun", "bin":0, "why":"It produces its own heat and light by nuclear fusion in its core."},
+              {"text":"The moon", "bin":1, "why":"It emits no light of its own — we see it because it reflects sunlight to Earth."},
+              {"text":"A firefly", "bin":0, "why":"A natural source of light, listed with the northern lights and the Milky Way."},
+              {"text":"A mirror", "bin":1, "why":"A mirror reflects light extremely well, but it never makes any of its own."},
+              {"text":"A mobile phone screen", "bin":0, "why":"A man-made object that emits light, alongside the lamp and the candle."},
+              {"text":"A flower", "bin":1, "why":"You can see it only in the presence of a light source such as the sun."}
+            ],
+            "workthrough": [
+              "Ask one question of each object: <strong>does it make its own light?</strong>",
+              "If yes → <strong>luminous</strong>: the sun, a firefly, a phone screen, a lamp, a candle.",
+              "If no → <strong>non-luminous</strong>: you see it only because light from somewhere else bounces off it.",
+              "The moon is the classic trap. It is bright in the night sky, but every bit of that light started at the sun.",
+              "A mirror is the second trap — it is the <em>best</em> reflector in the chapter and still emits nothing at all."
+            ]
+          },
+          {
+            "type": "mcq",
+            "marks": 1,
+            "stem": "<p>Avani sees a red flower in a garden on a sunny day. Which correctly describes the path of the light?</p>",
+            "options": [
+              "From Avani's eyes to the flower",
+              "From the sun to the flower, and then from the flower to Avani's eyes",
+              "From the flower to the sun, and then to Avani's eyes",
+              "From the sun directly to Avani's eyes"
+            ],
+            "answer": 1,
+            "explain": "Source → object → eye. Two straight lines.",
+            "whyWrong": {
+              "0": "Eyes do not send light out. This is a very old and very common misconception — vision works by light arriving <em>at</em> the eye, never leaving it.",
+              "2": "Backwards. The sun is the source, so light starts there. The flower is what redirects it.",
+              "3": "That path would let her see the <em>sun</em>, not the flower. To see the flower, light must bounce off the flower first."
+            },
+            "workthrough": [
+              "Identify which object is luminous: the <strong>sun</strong>. The flower is non-luminous.",
+              "So light must start at the sun.",
+              "It travels in a straight line to the flower, where it is <strong>reflected</strong>.",
+              "It then travels in a second straight line from the flower into Avani's eyes — and only then does she see it.",
+              "Draw both arrows in an exam answer. A single arrow, or one pointing out of the eye, does not earn the mark."
+            ]
+          }
+        ]
+      }
+      </script>
+    </div>
+  </div>
+
+  <nav class="lesson-nav">
+    <a href="1-representing-light.html">← Rays and ray diagrams</a>
+    <a class="next" href="3-plane-mirrors.html">Next: Plane mirrors →</a>
+  </nav>
+</div>
+<script src="../../../js/light-widgets.js"></script>
+<script src="../../../js/quiz-engine.js"></script>
+</body>
+</html>

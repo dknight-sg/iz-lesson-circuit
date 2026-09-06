@@ -1,0 +1,187 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>1 · Rays, beams and ray diagrams — Ray Model of Light</title>
+<meta name="description" content="Textbook 5.1 — light travels in straight lines called rays, a beam is a bundle of rays, and a ray diagram represents the path of light.">
+<meta name="theme-color" content="#E4EAF0">
+<link rel="icon" type="image/svg+xml" href="../../../favicon.svg">
+<link rel="stylesheet" href="../../../css/style.css">
+<link rel="stylesheet" href="../../../css/interactive.css">
+</head>
+<body>
+<div class="sheet">
+  <header>
+    <div>
+      <a class="crumb" href="../index.html">← Ray Model of Light</a>
+      <p class="eyebrow" style="margin-top:10px">Lesson 1 of 8 · Textbook 5.1</p>
+      <h1>Rays, beams and ray diagrams</h1>
+    </div>
+    <p class="sub">One straight line with an arrow on it. That is the entire model — and it is enough to explain everything else in the chapter.</p>
+  </header>
+
+  <div class="prose">
+    <h2 class="section">Rays and beams</h2>
+    <p>Shine a beam of light in the dark and watch what it does. Light travels along <strong>straight line paths</strong>, and each of those paths is called a <strong>ray</strong>.</p>
+    <div class="callout">
+      <span class="callout-label">Two words that are often muddled</span>
+      A <strong>ray</strong> is a single straight-line path taken by light.<br>
+      A <strong>beam</strong> is a <strong>bundle of light rays</strong> — like the green laser beams in a light show at Marina Bay Sands.
+    </div>
+    <p>We use the <strong>ray model of light</strong> to help us represent the path taken by light.</p>
+
+    <h2 class="section">Proving light travels in straight lines</h2>
+    <p>A candle and three cards, each with one hole, are placed in a black box. When all three holes line up, light travels from the flame into your eye and you see it. Move one card out of position and the light is blocked — you cannot see the flame at all.</p>
+    <p>Slide the middle card and watch what happens.</p>
+
+    <div class="sim" id="straightLab">
+      <div class="sim-head">
+        <h4>The three-card experiment</h4>
+        <div class="picker"><button type="button" class="st-reset">Re-align the cards</button></div>
+      </div>
+      <div class="sim-body">
+        <div class="lg-ctl">
+          <div><label>Position of the middle card · <b class="st-shiftv">aligned</b></label>
+            <input type="range" class="st-shift" min="-34" max="34" step="2" value="0" aria-label="Vertical position of the middle card"></div>
+        </div>
+        <svg viewBox="0 0 460 190" role="img" aria-label="A candle, three cards with holes, and an eye inside a black box">
+          <rect x="8" y="14" width="444" height="150" fill="rgba(15,36,54,.05)" stroke="#0F2436" stroke-width="2"/>
+          <!-- eye -->
+          <g><path d="M 26 104 l 26 -14 l 0 28 Z" fill="#0F2436"/>
+             <circle class="st-eye" cx="44" cy="104" r="6" fill="#F0871E" stroke="#0F2436" stroke-width="1.6"/></g>
+          <text x="40" y="150" text-anchor="middle" font-family="Space Mono, monospace" font-size="10" fill="#4A6076">eye</text>
+          <!-- card 1 -->
+          <rect x="118" y="46" width="9" height="116" fill="#8E9AA6" stroke="#0F2436" stroke-width="1.6"/>
+          <rect x="117" y="98" width="11" height="12" fill="#E4EAF0"/>
+          <!-- card 2 (moves) -->
+          <g class="st-card2">
+            <rect x="228" y="46" width="9" height="116" fill="#8E9AA6" stroke="#0F2436" stroke-width="1.6"/>
+            <rect class="st-hole2" x="227" y="98" width="11" height="12" fill="#E4EAF0"/>
+          </g>
+          <!-- card 3 -->
+          <rect x="338" y="46" width="9" height="116" fill="#8E9AA6" stroke="#0F2436" stroke-width="1.6"/>
+          <rect x="337" y="98" width="11" height="12" fill="#E4EAF0"/>
+          <!-- candle -->
+          <rect x="404" y="102" width="20" height="46" rx="3" fill="#C9D3DC" stroke="#0F2436" stroke-width="1.6"/>
+          <g class="st-flame"><path d="M 414 100 q -9 -14 0 -24 q 9 10 0 24 Z" fill="#F0871E"/>
+             <path d="M 414 96 q -4 -8 0 -14 q 4 6 0 14 Z" fill="#FFD79A"/></g>
+          <text x="414" y="164" text-anchor="middle" font-family="Space Mono, monospace" font-size="10" fill="#4A6076">candle</text>
+          <!-- the ray -->
+          <line class="st-ray" x1="404" y1="104" x2="54" y2="104" stroke="#F0871E" stroke-width="2.6"/>
+          <polygon class="st-ray" points="66,104 78,99 78,109" fill="#F0871E"/>
+          <!-- blocked ray -->
+          <line class="st-blocked" x1="404" y1="104" x2="240" y2="104" stroke="#F0871E" stroke-width="2.6" style="opacity:0"/>
+          <text class="st-blocked" x="196" y="90" font-family="Space Mono, monospace" font-size="11" fill="#D93F2B" style="opacity:0">blocked</text>
+        </svg>
+        <p class="sep-out st-out"></p>
+      </div>
+      <div class="sim-foot">If light could bend, it would curve around the displaced card and you would still see the flame. It cannot — so it does not.</div>
+    </div>
+
+    <h2 class="section">Drawing a ray diagram</h2>
+    <p>Because light behaves this way, we can represent it with a <strong>straight line in a ray diagram</strong>. The line shows the <strong>path</strong> taken by the light, and the <strong>arrow</strong> shows the <strong>direction</strong> of travel.</p>
+    <div class="callout">
+      <span class="callout-label">What a model is for</span>
+      The ray diagram is an example of a <strong>model</strong> — a scientific representation of something. A model can be <strong>used to explain and predict</strong> our observations of how light behaves. It is not a photograph of light; it is a tool for reasoning about it.
+    </div>
+
+    <div class="callout think">
+      <span class="callout-label">How fast is it going?</span>
+      In a <strong>vacuum</strong> — space containing no matter — light travels <strong>300 million metres in one second</strong>. At that speed you would go round the Earth <strong>7.5 times in one second</strong>.
+      <p style="margin:10px 0 0">For comparison, signals in your brain travel at about <strong>120 metres per second</strong>. An AI recognition system that identifies objects at the speed of light is therefore working millions of times faster than the nerve signals doing the same job in your head.</p>
+    </div>
+
+    <h2 class="section">Check yourself</h2>
+    <div id="quiz">
+      <script type="application/json">
+      {
+        "questions": [
+          {
+            "type": "mcq",
+            "marks": 2,
+            "stem": "<p>In the three-card experiment, one card is moved out of position and the flame can no longer be seen. What does this show?</p>",
+            "options": [
+              "Light has been used up by the cards",
+              "Light travels in straight lines, so it cannot bend around the displaced card to reach the eye",
+              "The candle stopped emitting light",
+              "The holes are too small for light to pass through"
+            ],
+            "answer": 1,
+            "explain": "The blocked view is the evidence — light has no way round the card.",
+            "whyWrong": {
+              "0": "Light is not consumed by the card. It is simply <em>blocked</em> — stopped from reaching the eye along that path.",
+              "2": "The candle is burning exactly as before. Nothing about the light source has changed; only the path to the eye has.",
+              "3": "The holes worked perfectly well a moment ago, when all three were in line. Their size is not what changed."
+            },
+            "workthrough": [
+              "Compare the two situations. Holes aligned → flame visible. One card moved → flame invisible.",
+              "Ask what is different: the only change is whether a <strong>straight path</strong> exists from the flame to the eye.",
+              "If light could travel along a curved path, it would simply bend around the displaced card and still reach the eye.",
+              "It does not. So light must travel in <strong>straight lines</strong>.",
+              "Two marks: one for stating that light travels in straight lines, one for saying it therefore cannot bend around the card."
+            ]
+          },
+          {
+            "type": "mcq",
+            "marks": 1,
+            "stem": "<p>What is the difference between a ray and a beam of light?</p>",
+            "options": [
+              "A ray is brighter than a beam",
+              "A ray is a single straight-line path of light; a beam is a bundle of rays",
+              "A ray travels faster than a beam",
+              "A beam is a single path; a ray is a bundle of paths"
+            ],
+            "answer": 1,
+            "explain": "One path versus many paths together.",
+            "whyWrong": {
+              "0": "Brightness is not what distinguishes them. A beam is usually brighter because it contains many rays — but that is a consequence, not the definition.",
+              "2": "All light travels at the same speed in a given medium. Speed does not separate the two ideas.",
+              "3": "Swapped. The <strong>ray</strong> is the single path; the <strong>beam</strong> is the bundle."
+            },
+            "workthrough": [
+              "Recall the textbook wording: light travels along straight line paths, known as <strong>rays</strong>.",
+              "Then: a <strong>beam</strong> of light is a <strong>bundle of light rays</strong>.",
+              "So the relationship is one-to-many — a beam is made of rays, the way a rope is made of threads.",
+              "Picture the laser beams at a light show: each visible green line is a beam, made up of countless individual rays."
+            ]
+          },
+          {
+            "type": "mcq",
+            "marks": 1,
+            "stem": "<p>In a ray diagram, what does the <strong>arrow</strong> on the straight line show?</p>",
+            "options": [
+              "The brightness of the light",
+              "The direction in which the light is travelling",
+              "The speed of the light",
+              "The colour of the light"
+            ],
+            "answer": 1,
+            "explain": "The line gives the path; the arrow gives the direction along it.",
+            "whyWrong": {
+              "0": "A ray diagram says nothing about brightness. A dim ray and a bright ray are drawn identically.",
+              "2": "Speed is not shown either. All the rays in a diagram are drawn the same regardless of the medium.",
+              "3": "Colour is not represented — except in a dispersion diagram, where separate coloured rays are drawn deliberately."
+            },
+            "workthrough": [
+              "Split the drawing into its two parts and ask what each one carries.",
+              "The <strong>straight line</strong> shows the <strong>path</strong> taken by the light.",
+              "The <strong>arrow</strong> shows the <strong>direction of its travel</strong>.",
+              "That matters in reflection questions, where an incident ray points <em>towards</em> the surface and a reflected ray points <em>away</em> from it. Get the arrows wrong and the diagram means something else."
+            ]
+          }
+        ]
+      }
+      </script>
+    </div>
+  </div>
+
+  <nav class="lesson-nav">
+    <a href="../index.html">← Chapter home</a>
+    <a class="next" href="2-how-we-see.html">Next: How we see things →</a>
+  </nav>
+</div>
+<script src="../../../js/light-widgets.js"></script>
+<script src="../../../js/quiz-engine.js"></script>
+</body>
+</html>

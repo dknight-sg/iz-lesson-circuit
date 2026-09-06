@@ -1,0 +1,261 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>7 · Refraction and dispersion — Ray Model of Light</title>
+<meta name="description" content="Textbook 5.4 — refraction as the bending of light caused by a change in speed, optical density, the cart-on-grass model, apparent depth, and the dispersion of white light into seven colours.">
+<meta name="theme-color" content="#E4EAF0">
+<link rel="icon" type="image/svg+xml" href="../../../favicon.svg">
+<link rel="stylesheet" href="../../../css/style.css">
+<link rel="stylesheet" href="../../../css/interactive.css">
+</head>
+<body>
+<div class="sheet">
+  <header>
+    <div>
+      <a class="crumb" href="../index.html">← Ray Model of Light</a>
+      <p class="eyebrow" style="margin-top:10px">Lesson 7 of 8 · Textbook 5.4</p>
+      <h1>Refraction and dispersion</h1>
+    </div>
+    <p class="sub">A pencil in water looks broken and a swimming pool looks shallower than it is. Both are the same straight line, bent once at a boundary.</p>
+  </header>
+
+  <div class="prose">
+    <h2 class="section">What refraction is</h2>
+    <div class="callout">
+      <span class="callout-label">Definition</span>
+      <strong>Refraction</strong> is the <strong>bending of light at the boundary between two different transparent materials</strong> (optical mediums), due to a <strong>change in the speed of light</strong> as it passes from one material into the other.
+    </div>
+    <p>Every part of that sentence is doing work. It happens <strong>at the boundary</strong>, between <strong>transparent</strong> materials, and it is caused by a <strong>change in speed</strong> — not by the material being "thicker" in any everyday sense.</p>
+
+    <div class="callout think">
+      <span class="callout-label">Optical density is not the density from Chapter 2</span>
+      An optical medium has a physical property called <strong>optical density</strong>, which affects the <strong>speed</strong> at which light travels through it. The <strong>more optically dense</strong> a material is, the <strong>slower</strong> light travels through it.
+      <p style="margin:10px 0 0">This is a different property from the mass-per-volume density you met in Chapter 2. Do not use one to argue about the other.</p>
+    </div>
+
+    <h2 class="section">Which way does it bend?</h2>
+    <p>Light travels <strong>faster in air than in glass</strong>. That single fact settles the direction of every bend.</p>
+
+    <div class="sim" id="refractLab">
+      <div class="sim-head">
+        <h4>Crossing the boundary</h4>
+        <div class="picker re-pick">
+          <button type="button" data-d="in">Air → glass</button>
+          <button type="button" data-d="out">Glass → air</button>
+        </div>
+      </div>
+      <div class="sim-body">
+        <div class="lg-ctl">
+          <div><label>Angle of incidence</label>
+            <input type="range" class="re-ang" min="0" max="80" step="1" value="45" aria-label="Angle of incidence in degrees"></div>
+        </div>
+        <svg viewBox="0 0 420 240" role="img" aria-label="A ray of light crossing the boundary between air and glass">
+          <rect x="10" y="10" width="400" height="110" fill="rgba(240,244,248,.5)"/>
+          <rect class="re-band" x="10" y="120" width="400" height="110" fill="rgba(159,208,232,.35)"/>
+          <line x1="10" y1="120" x2="410" y2="120" stroke="#0F2436" stroke-width="2.4"/>
+          <text class="re-top" x="24" y="40" font-family="Space Mono, monospace" font-size="12" fill="#4A6076">air</text>
+          <text class="re-bot" x="24" y="212" font-family="Space Mono, monospace" font-size="12" fill="#4A6076">glass</text>
+          <line x1="210" y1="20" x2="210" y2="226" stroke="#0F2436" stroke-width="1.5" stroke-dasharray="6 4"/>
+          <text x="218" y="30" font-family="Space Mono, monospace" font-size="10" fill="#4A6076">normal</text>
+          <line class="re-inc" x1="0" y1="0" x2="0" y2="0" stroke="#D93F2B" stroke-width="2.8"/>
+          <line class="re-out" x1="0" y1="0" x2="0" y2="0" stroke="#2E7A8C" stroke-width="2.8"/>
+          <circle cx="210" cy="120" r="4" fill="#0F2436"/>
+        </svg>
+        <div class="readout-grid">
+          <div class="readout-box"><span class="rl">Angle in the first medium</span><span class="rv re-vi">—</span></div>
+          <div class="readout-box"><span class="rl">Angle in the second</span><span class="rv re-vr">—</span></div>
+          <div class="readout-box"><span class="rl">The light…</span><span class="rv re-speed" style="font-size:13px">—</span></div>
+        </div>
+        <p class="sep-out re-note"></p>
+      </div>
+      <div class="sim-foot">Set the angle to 0° and the ray goes straight through without bending — entering along the normal, there is no sideways difference for the speed change to act on.</div>
+    </div>
+
+    <table class="cmp" style="margin-bottom:20px">
+      <tr>
+        <td class="h" style="border-bottom:1.5px solid var(--ink);width:28%">Going from</td>
+        <td class="h" style="border-bottom:1.5px solid var(--ink);width:24%">Speed</td>
+        <td class="h" style="border-bottom:1.5px solid var(--ink)">Bends</td>
+      </tr>
+      <tr><td><strong>Air → glass</strong><br><span style="color:var(--ink-soft);font-size:12px">less dense → denser</span></td><td><strong>slows down</strong></td><td><strong>towards</strong> the normal</td></tr>
+      <tr><td><strong>Glass → air</strong><br><span style="color:var(--ink-soft);font-size:12px">denser → less dense</span></td><td><strong>speeds up</strong></td><td><strong>away from</strong> the normal</td></tr>
+    </table>
+
+    <div class="callout">
+      <span class="callout-label">The cart on the grass</span>
+      Roll a cart from a pavement onto a grass patch at an angle. Wheel <strong>A</strong> reaches the grass first and, because of the increased friction, <strong>slows down first</strong>. It therefore travels a <strong>shorter distance</strong> than wheel B while the cart is crossing the boundary — and that difference swings the cart into a new direction. Once both wheels are on the grass they roll straight again, just more slowly.
+      <p style="margin:10px 0 0">Coming back the other way, wheel A reaches the pavement first and <strong>speeds up</strong> first, so it travels <strong>further</strong> than B and the cart swings the opposite way.</p>
+      <p style="margin:10px 0 0">If the wheels cross <strong>perpendicularly</strong>, both change speed at the same instant, so the cart carries straight on — exactly like a ray entering along the normal.</p>
+    </div>
+
+    <h2 class="section">What refraction makes you see</h2>
+    <ul>
+      <li>A <strong>pencil or spoon in water looks bent or broken</strong> — the bending of light makes the submerged part appear shorter than it is.</li>
+      <li>Letters under a <strong>glass block appear nearer to the surface</strong> than they really are.</li>
+      <li>A swimming pool looks <strong>shallower</strong> than it is: the <strong>perceived depth</strong> is less than the <strong>actual depth</strong>, because light from the object bends away from the normal as it leaves the water, and your brain traces it back along a straight line to a shallower image.</li>
+    </ul>
+    <div class="callout think">
+      <span class="callout-label">Why that last one matters</span>
+      A pool always looks shallower than it is. That is a genuine safety point, not just an optical curiosity — and it is a favourite exam context for the perceived-depth diagram.
+    </div>
+
+    <h2 class="section">Dispersion — splitting white light</h2>
+    <p><strong>White light is made up of a spectrum of seven colours</strong>: <strong>r</strong>ed, <strong>o</strong>range, <strong>y</strong>ellow, <strong>g</strong>reen, <strong>b</strong>lue, <strong>i</strong>ndigo and <strong>v</strong>iolet — <strong>ROYGBIV</strong>.</p>
+    <p>When light crosses into a new medium, <strong>each colour slows down to a different extent</strong>, so each bends by a different angle. <strong>Violet bends the most; red bends the least.</strong> The splitting of white light into its component colours is called <strong>dispersion</strong>.</p>
+
+    <div class="sim" id="dispersionLab">
+      <div class="sim-head">
+        <h4>White light through a prism</h4>
+        <div class="picker">
+          <button type="button" class="dp-go">Send the light in</button>
+          <button type="button" class="dp-reset">Reset</button>
+        </div>
+      </div>
+      <div class="sim-body">
+        <svg viewBox="0 0 440 210" role="img" aria-label="White light entering a glass prism and emerging as a spectrum of seven colours">
+          <polygon points="150,40 210,150 90,150" fill="rgba(200,220,235,.4)" stroke="#0F2436" stroke-width="2.2" stroke-linejoin="round"/>
+          <text x="150" y="30" text-anchor="middle" font-family="Space Mono, monospace" font-size="10" fill="#4A6076">glass prism</text>
+          <line class="dp-white" x1="16" y1="96" x2="122" y2="112" stroke="#0F2436" stroke-width="3"/>
+          <text x="18" y="86" font-family="Space Mono, monospace" font-size="10" fill="#4A6076">white light</text>
+          <g stroke-width="3" stroke-linecap="round">
+            <line class="dp-band" data-spread="0"  x1="176" y1="128" x2="404" y2="128" stroke="#D93F2B" style="opacity:0;transition:opacity .4s,transform 1.2s"/>
+            <line class="dp-band" data-spread="7"  x1="176" y1="128" x2="404" y2="128" stroke="#E8781E" style="opacity:0;transition:opacity .4s,transform 1.2s"/>
+            <line class="dp-band" data-spread="14" x1="176" y1="128" x2="404" y2="128" stroke="#E8C33B" style="opacity:0;transition:opacity .4s,transform 1.2s"/>
+            <line class="dp-band" data-spread="21" x1="176" y1="128" x2="404" y2="128" stroke="#4E9E6A" style="opacity:0;transition:opacity .4s,transform 1.2s"/>
+            <line class="dp-band" data-spread="28" x1="176" y1="128" x2="404" y2="128" stroke="#2E7A8C" style="opacity:0;transition:opacity .4s,transform 1.2s"/>
+            <line class="dp-band" data-spread="35" x1="176" y1="128" x2="404" y2="128" stroke="#3B4FA8" style="opacity:0;transition:opacity .4s,transform 1.2s"/>
+            <line class="dp-band" data-spread="42" x1="176" y1="128" x2="404" y2="128" stroke="#7A3FBF" style="opacity:0;transition:opacity .4s,transform 1.2s"/>
+          </g>
+          <rect x="408" y="86" width="10" height="104" fill="#F7FAFC" stroke="#0F2436" stroke-width="1.8"/>
+          <text x="413" y="204" text-anchor="middle" font-family="Space Mono, monospace" font-size="10" fill="#4A6076">screen</text>
+        </svg>
+        <p class="sep-out dp-stage"></p>
+        <p class="sep-out dp-order"></p>
+      </div>
+      <div class="sim-foot">Red stays highest because it bends least; violet ends up lowest because it bends most. In a real experiment the spectrum is only visible on a white screen placed far from the prism.</div>
+    </div>
+
+    <p>A <strong>rainbow</strong> is the same process in the sky. After rain there are raindrops in the air; as sunlight crosses the air-water boundary into each drop, each colour slows by a different amount and the sunlight separates into the seven colours.</p>
+
+    <div class="callout">
+      <span class="callout-label">Two extras worth knowing</span>
+      <strong>Newton's colour disc</strong> — a disc painted with the seven colours. Turn it quickly and it appears <strong>white</strong>, recombining the colours.
+      <p style="margin:10px 0 0"><strong>Double rainbows</strong> — the secondary rainbow forms when sunlight is <strong>reflected twice</strong> inside each water droplet. It is <strong>fainter</strong>, harder to spot, and its colours appear in the <strong>reverse order</strong> of the primary rainbow's.</p>
+    </div>
+
+    <h2 class="section">Check yourself</h2>
+    <div id="quiz">
+      <script type="application/json">
+      {
+        "questions": [
+          {
+            "type": "mcq",
+            "marks": 2,
+            "stem": "<p>A ray of light travels from air into a glass block at an angle. What happens to it?</p>",
+            "options": [
+              "It speeds up and bends away from the normal",
+              "It slows down and bends towards the normal",
+              "It slows down and bends away from the normal",
+              "It continues in a straight line without bending"
+            ],
+            "answer": 1,
+            "explain": "Glass is optically denser, so the light slows — and slowing bends it towards the normal.",
+            "whyWrong": {
+              "0": "Both halves are wrong. Light travels <em>faster</em> in air than in glass, so entering the glass it must slow down, not speed up.",
+              "2": "The speed is right but the direction is not. Slowing down bends light <strong>towards</strong> the normal; bending away happens when it speeds up.",
+              "3": "It would travel straight only if it entered <strong>along the normal</strong>, at 0° incidence. The question says it enters at an angle."
+            },
+            "workthrough": [
+              "Compare the two mediums: light travels <strong>faster in air than in glass</strong>, so glass is optically denser.",
+              "Going air → glass therefore means the light <strong>slows down</strong>.",
+              "Recall the pairing: slowing down → bends <strong>towards</strong> the normal.",
+              "Check it with the cart: the wheel reaching the grass first slows first and travels a shorter distance, swinging the cart towards the perpendicular.",
+              "Two marks: one for the speed change, one for the direction of the bend."
+            ]
+          },
+          {
+            "type": "mcq",
+            "marks": 1,
+            "stem": "<p>A ray of light enters a glass block <strong>along the normal</strong> — that is, at an angle of incidence of 0°. What happens?</p>",
+            "options": [
+              "It bends towards the normal",
+              "It passes straight through without changing direction, though it does slow down",
+              "It bends away from the normal",
+              "It is reflected straight back"
+            ],
+            "answer": 1,
+            "explain": "Speed changes, direction does not — there is no sideways difference to swing it.",
+            "whyWrong": {
+              "0": "There is nothing to bend towards — the ray is already travelling along the normal.",
+              "2": "Same problem. Bending away from the normal would mean bending away from its own path.",
+              "3": "A little light is always reflected at a boundary, but the transmitted ray carries straight on into the glass. It is not sent back."
+            },
+            "workthrough": [
+              "Use the cart model. When the wheels enter the grass <strong>perpendicularly</strong>, both wheels cross the boundary at the same instant.",
+              "So both slow down together — neither travels further than the other, and there is nothing to swing the cart round.",
+              "The cart continues <strong>in a straight line, at a lower speed</strong>.",
+              "Light behaves identically: at 0° incidence it slows but does not change direction.",
+              "Note the careful wording of the right answer — refraction is defined by the <em>speed change</em>, and that still happens even when no bending is visible."
+            ]
+          },
+          {
+            "type": "mcq",
+            "marks": 1,
+            "stem": "<p>A swimming pool looks shallower than it really is. Why?</p>",
+            "options": [
+              "Water absorbs some of the light, making the bottom look closer",
+              "Light from the bottom bends away from the normal as it leaves the water, so the eye traces it back to a shallower image",
+              "The water magnifies the bottom of the pool",
+              "Light travels faster in water, so it arrives sooner"
+            ],
+            "answer": 1,
+            "explain": "Refraction on leaving the water, plus the brain assuming light travelled in a straight line.",
+            "whyWrong": {
+              "0": "Absorption makes deep water look dimmer and bluer, but it cannot change where the bottom <em>appears</em> to be. That is a matter of direction, not brightness.",
+              "2": "Magnification would change apparent size, not apparent depth. The pool floor does not look bigger — it looks nearer.",
+              "3": "Light travels <strong>slower</strong> in water than in air, since water is optically denser. And arrival time is not what your eye judges depth from."
+            },
+            "workthrough": [
+              "Follow the light: it starts at the pool floor, travels up through the water, and crosses into the air.",
+              "Water → air means denser → less dense, so the light <strong>speeds up</strong> and bends <strong>away from the normal</strong>.",
+              "Now think about what your eye does with the ray that arrives. It assumes light has travelled in a <strong>straight line</strong> all the way.",
+              "Tracing that final direction straight back into the water lands you <em>above</em> the real object.",
+              "So the <strong>perceived depth</strong> is less than the <strong>actual depth</strong> — the pool looks shallower than it is."
+            ]
+          },
+          {
+            "type": "mcq",
+            "marks": 1,
+            "stem": "<p>White light passes through a prism and separates into seven colours. Which colour is bent the most?</p>",
+            "options": ["Red", "Green", "Violet", "They are all bent equally"],
+            "answer": 2,
+            "explain": "Violet bends most; red bends least.",
+            "whyWrong": {
+              "0": "Red is the opposite extreme — it bends the <strong>least</strong>, which is why it sits at the other end of the spectrum.",
+              "1": "Green is in the middle of ROYGBIV, so it bends by a middling amount — neither the most nor the least.",
+              "3": "If they were all bent equally the light would stay white and no spectrum would appear. Unequal bending is precisely what causes dispersion."
+            },
+            "workthrough": [
+              "Recall the cause: each colour <strong>slows down to a different extent</strong> on entering the glass, so each bends by a different angle.",
+              "Recall the two extremes stated in the textbook: <strong>violet bends the most, red bends the least</strong>.",
+              "That is why the spectrum comes out in the order ROYGBIV — red deviated least at one end, violet deviated most at the other.",
+              "Memory hook: violet is at the end of ROYGBIV <em>and</em> at the extreme of the bending. Red is first in both."
+            ]
+          }
+        ]
+      }
+      </script>
+    </div>
+  </div>
+
+  <nav class="lesson-nav">
+    <a href="6-smooth-and-rough.html">← Smooth and rough surfaces</a>
+    <a class="next" href="8-radiation.html">Next: Radiation →</a>
+  </nav>
+</div>
+<script src="../../../js/light-widgets.js"></script>
+<script src="../../../js/quiz-engine.js"></script>
+</body>
+</html>

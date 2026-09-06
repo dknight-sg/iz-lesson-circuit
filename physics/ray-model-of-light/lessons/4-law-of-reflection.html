@@ -1,0 +1,182 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>4 · The law of reflection — Ray Model of Light</title>
+<meta name="description" content="Textbook 5.2 — incident ray, normal, point of incidence, angle of incidence, angle of reflection, reflected ray, and the rule i = r.">
+<meta name="theme-color" content="#E4EAF0">
+<link rel="icon" type="image/svg+xml" href="../../../favicon.svg">
+<link rel="stylesheet" href="../../../css/style.css">
+<link rel="stylesheet" href="../../../css/interactive.css">
+</head>
+<body>
+<div class="sheet">
+  <header>
+    <div>
+      <a class="crumb" href="../index.html">← Ray Model of Light</a>
+      <p class="eyebrow" style="margin-top:10px">Lesson 4 of 8 · Textbook 5.2</p>
+      <h1>The law of reflection</h1>
+    </div>
+    <p class="sub">Six labels and one rule. Get the labels right and the rule is almost trivial — get them wrong and every angle you calculate will be wrong too.</p>
+  </header>
+
+  <div class="prose">
+    <h2 class="section">The six things you must be able to label</h2>
+    <table class="cmp" style="margin-bottom:20px">
+      <tr><td class="h" style="border-bottom:1.5px solid var(--ink);width:32%">Term</td><td class="h" style="border-bottom:1.5px solid var(--ink)">Definition</td></tr>
+      <tr><td><strong>Incident ray</strong></td><td>The light ray <strong>hitting</strong> the reflecting surface.</td></tr>
+      <tr><td><strong>Point of incidence</strong></td><td>The point where the incident ray meets the surface.</td></tr>
+      <tr><td><strong>Normal</strong></td><td>The line <strong>perpendicular to the surface</strong> at the point of incidence. Always drawn dashed.</td></tr>
+      <tr><td><strong>Angle of incidence, <em>i</em></strong></td><td>The angle between the <strong>incident ray and the normal</strong>.</td></tr>
+      <tr><td><strong>Angle of reflection, <em>r</em></strong></td><td>The angle between the <strong>reflected ray and the normal</strong>.</td></tr>
+      <tr><td><strong>Reflected ray</strong></td><td>The light ray travelling <strong>away</strong> from the surface after bouncing off it.</td></tr>
+    </table>
+
+    <div class="callout">
+      <span class="callout-label">The law</span>
+      <strong>The angle of reflection is equal to the angle of incidence.</strong> &nbsp;<em>i = r</em>
+    </div>
+
+    <div class="sim" id="reflectLab">
+      <div class="sim-head"><h4>Drag the incident ray</h4></div>
+      <div class="sim-body">
+        <div class="lg-ctl">
+          <div><label>Angle of incidence</label>
+            <input type="range" class="rf-ang" min="0" max="80" step="1" value="40" aria-label="Angle of incidence in degrees"></div>
+        </div>
+        <svg viewBox="0 0 460 210" role="img" aria-label="An incident ray, a normal and a reflected ray at a smooth flat surface">
+          <!-- surface -->
+          <line x1="40" y1="170" x2="420" y2="170" stroke="#0F2436" stroke-width="2.6"/>
+          <g stroke="#8E9AA6" stroke-width="1.8">
+            <line x1="48" y1="170" x2="40" y2="180"/><line x1="68" y1="170" x2="60" y2="180"/>
+            <line x1="88" y1="170" x2="80" y2="180"/><line x1="108" y1="170" x2="100" y2="180"/>
+            <line x1="128" y1="170" x2="120" y2="180"/><line x1="148" y1="170" x2="140" y2="180"/>
+            <line x1="168" y1="170" x2="160" y2="180"/><line x1="188" y1="170" x2="180" y2="180"/>
+            <line x1="208" y1="170" x2="200" y2="180"/><line x1="228" y1="170" x2="220" y2="180"/>
+            <line x1="248" y1="170" x2="240" y2="180"/><line x1="268" y1="170" x2="260" y2="180"/>
+            <line x1="288" y1="170" x2="280" y2="180"/><line x1="308" y1="170" x2="300" y2="180"/>
+            <line x1="328" y1="170" x2="320" y2="180"/><line x1="348" y1="170" x2="340" y2="180"/>
+            <line x1="368" y1="170" x2="360" y2="180"/><line x1="388" y1="170" x2="380" y2="180"/>
+            <line x1="408" y1="170" x2="400" y2="180"/>
+          </g>
+          <text x="94" y="196" font-family="Space Mono, monospace" font-size="10" fill="#4A6076">smooth, flat surface</text>
+          <!-- normal -->
+          <line x1="230" y1="24" x2="230" y2="170" stroke="#0F2436" stroke-width="1.6" stroke-dasharray="6 4"/>
+          <text x="238" y="30" font-family="Space Mono, monospace" font-size="10" fill="#4A6076">normal</text>
+          <!-- angle arcs -->
+          <path class="rf-arci" d="" fill="none" stroke="#D93F2B" stroke-width="1.8"/>
+          <path class="rf-arcr" d="" fill="none" stroke="#2E7A8C" stroke-width="1.8"/>
+          <text x="198" y="140" font-family="Space Mono, monospace" font-size="13" font-style="italic" fill="#D93F2B">i</text>
+          <text x="252" y="140" font-family="Space Mono, monospace" font-size="13" font-style="italic" fill="#2E7A8C">r</text>
+          <!-- rays -->
+          <line class="rf-inc" x1="0" y1="0" x2="0" y2="0" stroke="#D93F2B" stroke-width="2.8"/>
+          <line class="rf-ref" x1="0" y1="0" x2="0" y2="0" stroke="#2E7A8C" stroke-width="2.8"/>
+          <circle cx="230" cy="170" r="4" fill="#0F2436"/>
+          <text x="196" y="164" font-family="Space Mono, monospace" font-size="9" fill="#4A6076">point of incidence</text>
+        </svg>
+        <div class="readout-grid">
+          <div class="readout-box"><span class="rl">Angle of incidence <em>i</em></span><span class="rv rf-vi">—</span></div>
+          <div class="readout-box"><span class="rl">Angle of reflection <em>r</em></span><span class="rv rf-vr">—</span></div>
+        </div>
+        <p class="sep-out rf-note"></p>
+      </div>
+      <div class="sim-foot">The red ray is the incident ray, arriving at the surface. The blue ray is the reflected ray, leaving it.</div>
+    </div>
+
+    <div class="callout think">
+      <span class="callout-label">The mistake that loses the most marks</span>
+      Both angles are measured from the <strong>normal</strong>, never from the surface. If an exam diagram shows a ray at 30° to the <em>surface</em>, the angle of incidence is <strong>90 − 30 = 60°</strong>, and the reflected ray leaves at 60° from the normal too.
+      <p style="margin:10px 0 0">Whenever a question gives you an angle, check which line it is measured from before you use it.</p>
+    </div>
+
+    <div class="callout">
+      <span class="callout-label">Science at work — lighting technical director</span>
+      In films, a lighting technical director studies how light is <strong>reflected off different surfaces</strong> in the real world, then reproduces objects as computer-generated imagery. Shadows add depth to characters and lighting enhances a scene, so the characters come to life.
+    </div>
+
+    <h2 class="section">Check yourself</h2>
+    <div id="quiz">
+      <script type="application/json">
+      {
+        "questions": [
+          {
+            "type": "numeric",
+            "marks": 1,
+            "unit": "°",
+            "answer": 35,
+            "tolerance": 0.5,
+            "stem": "<p>A ray of light strikes a plane mirror at an angle of incidence of 35°. What is the angle of reflection?</p>",
+            "explain": "The law of reflection: r = i.",
+            "whyWrong": [
+              {"near": 55, "tol": 0.5, "msg": "You subtracted from 90. That would be the angle measured from the <em>surface</em> — but both i and r are measured from the <strong>normal</strong>."},
+              {"near": 70, "tol": 0.5, "msg": "You doubled it. That is the angle between the incident and reflected rays, not the angle of reflection itself."},
+              {"near": 145, "tol": 1, "msg": "You subtracted from 180. The angle of reflection is measured from the normal, and can never exceed 90°."}
+            ],
+            "workthrough": [
+              "Recall the law: <strong>the angle of reflection is equal to the angle of incidence</strong>.",
+              "So r = i = <strong>35°</strong>.",
+              "Check what the question gave you: it said “angle of incidence”, which is already measured from the normal, so no conversion is needed.",
+              "Had it said “35° to the mirror surface”, the angle of incidence would have been 90 − 35 = 55° instead."
+            ]
+          },
+          {
+            "type": "numeric",
+            "marks": 2,
+            "unit": "°",
+            "answer": 65,
+            "tolerance": 0.5,
+            "stem": "<p>A ray of light hits a plane mirror at <strong>25° to the mirror surface</strong>. What is the angle of reflection?</p>",
+            "explain": "Convert to the normal first: 90 − 25 = 65°, and then r = i.",
+            "whyWrong": [
+              {"near": 25, "tol": 0.5, "msg": "You used the angle as given. But 25° was measured from the <strong>surface</strong>, and both i and r must be measured from the <strong>normal</strong>. Convert first."},
+              {"near": 130, "tol": 1, "msg": "You doubled the correct answer. 65° is the angle of reflection; 130° would be the total angle between the incident and reflected rays."},
+              {"near": 155, "tol": 1, "msg": "You subtracted 25 from 180. The normal is perpendicular to the surface, so the conversion is from 90°, not 180°."}
+            ],
+            "workthrough": [
+              "Spot the trap in the wording: the angle is given <strong>to the mirror surface</strong>, not to the normal.",
+              "The normal is <strong>perpendicular</strong> to the surface, so the two angles must add to 90°.",
+              "Convert: angle of incidence = 90 − 25 = <strong>65°</strong>.",
+              "Now apply the law: r = i = <strong>65°</strong>.",
+              "Two marks: one for the conversion, one for applying r = i. Skipping the conversion is the single commonest error in this topic."
+            ]
+          },
+          {
+            "type": "mcq",
+            "marks": 1,
+            "stem": "<p>What is the <strong>normal</strong> in a ray diagram?</p>",
+            "options": [
+              "The line along the reflecting surface",
+              "The line drawn perpendicular to the surface at the point of incidence",
+              "The path of the reflected ray",
+              "The average of the incident and reflected rays"
+            ],
+            "answer": 1,
+            "explain": "Perpendicular to the surface, at the point where the ray lands.",
+            "whyWrong": {
+              "0": "That is the surface itself. The normal is at right angles to it, which is why angles measured from the two differ by 90°.",
+              "2": "The reflected ray is a real light path. The normal is a construction line — it is drawn dashed precisely because no light travels along it.",
+              "3": "It does happen to sit halfway between them, because i = r. But that is a <em>consequence</em> of the law, not the definition — and the normal exists even before you draw the reflected ray."
+            },
+            "workthrough": [
+              "Recall the definition: the normal is the line <strong>perpendicular to the surface</strong> at the <strong>point of incidence</strong>.",
+              "Two parts to it — perpendicular, and located exactly where the ray lands.",
+              "It is a construction line, not a light ray, which is why it is drawn <strong>dashed</strong>.",
+              "Its whole purpose is to give you a fixed reference for measuring both angles. Without it, “the angle” would be ambiguous."
+            ]
+          }
+        ]
+      }
+      </script>
+    </div>
+  </div>
+
+  <nav class="lesson-nav">
+    <a href="3-plane-mirrors.html">← Plane mirrors</a>
+    <a class="next" href="5-curved-mirrors.html">Next: Curved mirrors →</a>
+  </nav>
+</div>
+<script src="../../../js/light-widgets.js"></script>
+<script src="../../../js/quiz-engine.js"></script>
+</body>
+</html>

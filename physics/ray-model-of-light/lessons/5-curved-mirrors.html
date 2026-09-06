@@ -1,0 +1,180 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>5 · Curved mirrors — Ray Model of Light</title>
+<meta name="description" content="Textbook 5.2 — convex mirrors curve outwards and diverge light for a wider view; concave mirrors curve inwards and converge light to magnify.">
+<meta name="theme-color" content="#E4EAF0">
+<link rel="icon" type="image/svg+xml" href="../../../favicon.svg">
+<link rel="stylesheet" href="../../../css/style.css">
+<link rel="stylesheet" href="../../../css/interactive.css">
+</head>
+<body>
+<div class="sheet">
+  <header>
+    <div>
+      <a class="crumb" href="../index.html">← Ray Model of Light</a>
+      <p class="eyebrow" style="margin-top:10px">Lesson 5 of 8 · Textbook 5.2</p>
+      <h1>Curved mirrors</h1>
+    </div>
+    <p class="sub">Two shapes, two opposite jobs. Once you know which way each one curves, you can work out its use from first principles rather than memorising a list.</p>
+  </header>
+
+  <div class="prose">
+    <h2 class="section">Why funhouse mirrors distort</h2>
+    <p>A funhouse mirror makes your reflection taller, shorter or wider. Look closely and you will see that its surface is <strong>not flat</strong>. Such mirrors are <strong>curved mirrors</strong>, and curved mirrors <strong>distort</strong> the images they form.</p>
+    <p>There are two types, and a spoon shows both at once: the <strong>top of a spoon is concave</strong>, and its <strong>bottom is convex</strong>.</p>
+
+    <div class="callout">
+      <span class="callout-label">Which way is which</span>
+      A <strong>convex</strong> surface curves <strong>outwards</strong> — it bulges towards you. Also called a <strong>diverging</strong> mirror.<br>
+      A <strong>concave</strong> surface curves <strong>inwards</strong> — it caves away from you. Also called a <strong>converging</strong> mirror.
+      <p style="margin:10px 0 0">A memory hook: a <strong>cave</strong> goes <em>into</em> a hillside, so <strong>con<em>cave</em></strong> curves inwards.</p>
+    </div>
+
+    <div class="sim" id="curvedLab">
+      <div class="sim-head">
+        <h4>What each shape does to parallel rays</h4>
+        <div class="picker cv-pick">
+          <button type="button" data-m="concave">Concave</button>
+          <button type="button" data-m="convex">Convex</button>
+        </div>
+      </div>
+      <div class="sim-body">
+        <svg viewBox="0 0 460 220" role="img" aria-label="Parallel light rays striking a curved mirror">
+          <path class="cv-arc" d="" fill="none" stroke="#0F2436" stroke-width="3.4"/>
+          <g class="cv-rays"></g>
+          <text x="44" y="212" font-family="Space Mono, monospace" font-size="10" fill="#D93F2B">parallel rays in</text>
+          <text x="300" y="212" font-family="Space Mono, monospace" font-size="10" fill="#2E7A8C">reflected rays</text>
+        </svg>
+        <div class="cv-body">
+          <div class="cv-facts">
+            <span class="cv-tag">The surface</span>
+            <p class="cv-shape"></p>
+            <p style="margin:0">Also called a <strong class="cv-other"></strong>.</p>
+            <p class="cv-note" style="margin-top:10px"></p>
+          </div>
+          <div class="cv-facts">
+            <span class="cv-tag">Where you meet it</span>
+            <ul class="cv-uses"></ul>
+          </div>
+        </div>
+      </div>
+      <div class="sim-foot">Watch what happens to the blue reflected rays. Concave brings them together; convex spreads them apart. Every application follows from that.</div>
+    </div>
+
+    <h2 class="section">Reasoning out the uses</h2>
+    <p>You do not need to memorise the application lists if you hold on to what each mirror <em>does</em>.</p>
+    <table class="cmp" style="margin-bottom:20px">
+      <tr>
+        <td class="h" style="border-bottom:1.5px solid var(--ink);width:22%">Mirror</td>
+        <td class="h" style="border-bottom:1.5px solid var(--ink);width:30%">What it does to light</td>
+        <td class="h" style="border-bottom:1.5px solid var(--ink)">So it is used where you want…</td>
+      </tr>
+      <tr>
+        <td><strong>Convex</strong><br><span style="color:var(--ink-soft);font-size:12px">curves outwards<br>diverging</span></td>
+        <td>Spreads rays <strong>apart</strong></td>
+        <td>…to see a <strong>wide area</strong> from one place: road junctions (around blind corners), shop corners, rear-view and side mirrors of cars.</td>
+      </tr>
+      <tr>
+        <td><strong>Concave</strong><br><span style="color:var(--ink-soft);font-size:12px">curves inwards<br>converging</span></td>
+        <td>Brings rays <strong>together</strong></td>
+        <td>…to <strong>magnify</strong> something (dentist's mirror, shaving and make-up mirrors) or to <strong>concentrate</strong> light into a beam (car headlights, a microscope mirror lighting the specimen).</td>
+      </tr>
+    </table>
+
+    <div class="callout think">
+      <span class="callout-label">The trade-off in a car mirror</span>
+      A convex rear-view mirror shows a driver much more of the road behind — but because it spreads the rays out, everything in it looks <strong>smaller and further away</strong> than it really is. That is the price of the wider field of view, and it is why some car mirrors carry a warning that objects are closer than they appear.
+    </div>
+
+    <h2 class="section">Check yourself</h2>
+    <div id="quiz">
+      <script type="application/json">
+      {
+        "questions": [
+          {
+            "type": "sort",
+            "stem": "<p>Sort each use by the type of curved mirror it needs.</p>",
+            "bins": ["Convex mirror", "Concave mirror"],
+            "items": [
+              {"text":"A mirror at a blind road junction", "bin":0, "why":"Diverging rays give a wide field of view, so drivers can see around the corner."},
+              {"text":"A dentist's mirror for examining teeth", "bin":1, "why":"Converging rays form a magnified image, so the dentist can look closely."},
+              {"text":"The rear-view mirror of a car", "bin":0, "why":"A wide view of the traffic behind matters more than true size."},
+              {"text":"The reflector behind a car headlight bulb", "bin":1, "why":"It gathers the bulb's light into a strong forward beam to light the road."},
+              {"text":"A mirror at the corner of a shop", "bin":0, "why":"One mirror lets the shopkeeper watch a large area from a single location."},
+              {"text":"A shaving or make-up mirror", "bin":1, "why":"A magnified image of the face makes close work easier."}
+            ],
+            "workthrough": [
+              "For each use, ask: <strong>do I want to see MORE, or to see BIGGER?</strong>",
+              "Want to see <strong>more</strong> — a wide area from one spot → the rays must spread out → <strong>convex</strong> (diverging).",
+              "Want to see <strong>bigger</strong>, or to gather light into a beam → the rays must come together → <strong>concave</strong> (converging).",
+              "Road junctions, shop corners and car mirrors are all about coverage, so all three are convex.",
+              "Dentist's mirrors, shaving mirrors, headlights and microscope mirrors are all about magnifying or concentrating, so all four are concave."
+            ]
+          },
+          {
+            "type": "mcq",
+            "marks": 2,
+            "stem": "<p>Why is a convex mirror used as a car's rear-view mirror rather than a plane mirror?</p>",
+            "options": [
+              "It makes objects behind look closer, so drivers react faster",
+              "It curves outwards and diverges the light, giving a wider field of view so the driver sees a larger area of the traffic behind",
+              "It produces a real image that can be formed on a screen",
+              "It magnifies the image of the traffic behind"
+            ],
+            "answer": 1,
+            "explain": "A wider field of view is the whole point — even though it costs apparent size.",
+            "whyWrong": {
+              "0": "The opposite happens. Because a convex mirror diverges the light, objects look <strong>smaller and further away</strong> than they really are — which is why some mirrors carry a warning about it.",
+              "2": "Curved mirror images here are still virtual. And a real image formed on a screen would be no use at all to a driver glancing upwards.",
+              "3": "Magnifying is what a <strong>concave</strong> mirror does. A convex mirror does the reverse."
+            },
+            "workthrough": [
+              "Ask what a driver actually needs from that mirror: to see <strong>as much of the road behind as possible</strong>.",
+              "Recall what a convex mirror does to light: it <strong>curves outwards</strong> and <strong>diverges</strong> the rays.",
+              "Diverging rays gather light from a wider angle, so a <strong>wider range of vision</strong> fits into the same small mirror.",
+              "A plane mirror of the same size would show only a narrow strip directly behind.",
+              "Two marks: one for the diverging/curving-outwards mechanism, one for the wider field of view."
+            ]
+          },
+          {
+            "type": "mcq",
+            "marks": 1,
+            "stem": "<p>A spoon is held up as a mirror. Which statement is correct?</p>",
+            "options": [
+              "Both sides of the spoon are convex",
+              "The top (hollow) side is concave and the bottom is convex",
+              "The top is convex and the bottom is concave",
+              "A spoon is a plane mirror because it is metal"
+            ],
+            "answer": 1,
+            "explain": "The hollow side caves inwards, so it is concave.",
+            "whyWrong": {
+              "0": "The two sides curve in opposite directions — that is exactly why a spoon is the textbook's example.",
+              "2": "Swapped. The hollow, scooping side caves <em>inwards</em>, which makes it concave.",
+              "3": "Being metal makes it reflective, not flat. A plane mirror must be <strong>smooth and flat</strong>, and a spoon is curved."
+            },
+            "workthrough": [
+              "Picture the spoon you eat with. The <strong>top</strong> is the hollow that holds the soup.",
+              "A hollow caves inwards — like a cave — so it is <strong>concave</strong>.",
+              "The <strong>bottom</strong> therefore bulges outwards, making it <strong>convex</strong>.",
+              "Test it yourself: look into the hollow side up close and your face is magnified and eventually flips. Look at the back and you see a small, wide-angle version of the room."
+            ]
+          }
+        ]
+      }
+      </script>
+    </div>
+  </div>
+
+  <nav class="lesson-nav">
+    <a href="4-law-of-reflection.html">← The law of reflection</a>
+    <a class="next" href="6-smooth-and-rough.html">Next: Smooth and rough surfaces →</a>
+  </nav>
+</div>
+<script src="../../../js/light-widgets.js"></script>
+<script src="../../../js/quiz-engine.js"></script>
+</body>
+</html>

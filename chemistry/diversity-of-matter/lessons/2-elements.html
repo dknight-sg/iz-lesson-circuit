@@ -1,0 +1,137 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>2 · Elements — Diversity of Matter</title>
+<meta name="description" content="Textbook 3.2 — elements as the basic building blocks of matter, the 118 known elements, the Periodic Table, metals and non-metals, with a clickable explorer.">
+<meta name="theme-color" content="#E4EAF0">
+<link rel="icon" type="image/svg+xml" href="../../../favicon.svg">
+<link rel="stylesheet" href="../../../css/style.css">
+<link rel="stylesheet" href="../../../css/interactive.css">
+</head>
+<body>
+<div class="sheet">
+  <header>
+    <div>
+      <a class="crumb" href="../index.html">← Diversity of Matter</a>
+      <p class="eyebrow" style="margin-top:10px">Lesson 2 of 6 · Textbook 3.2</p>
+      <h1>Elements</h1>
+    </div>
+    <p class="sub">The 118 building blocks that everything — living or not — is made from.</p>
+  </header>
+
+  <div class="prose">
+    <h2 class="section">What an element is</h2>
+    <div class="callout">
+      <span class="callout-label">Definition — learn it word for word</span>
+      Elements are the <strong>basic building blocks</strong> of living and non-living matter. They <strong>cannot be broken down into simpler substances</strong>.
+    </div>
+    <p>That second sentence is the test. Water can be broken down into hydrogen and oxygen, so water is not an element. Hydrogen cannot be broken down into anything simpler, so hydrogen is. At the particle level, an element contains <strong>only one kind of atom</strong>.</p>
+    <p>There are <strong>118</strong> known elements at present. Each has a <strong>chemical symbol</strong> — one or two letters, the first always a capital: O for oxygen, Na for sodium, Cl for chlorine.</p>
+
+    <h2 class="section">The Periodic Table</h2>
+    <p>All 118 are arranged in the <strong>Periodic Table of Elements</strong>. The arrangement is not alphabetical and not random — elements are placed <strong>according to their properties</strong>, so elements with similar properties end up near each other. That is why the table is useful: it lets us <strong>predict patterns</strong> in the properties of elements we have never handled.</p>
+    <p>The most basic pattern is the split into <strong>metals</strong> (on the left and in the middle) and <strong>non-metals</strong> (on the right). Click through the explorer.</p>
+
+    <div class="sim" id="ptLab">
+      <div class="sim-head"><h4>Periodic Table explorer</h4></div>
+      <div class="sim-body">
+        <div class="pt-keyrow"></div>
+        <div class="ptscroll"><div class="ptgrid" role="group" aria-label="Simplified periodic table"></div></div>
+        <div class="pt-info"></div>
+      </div>
+      <div class="sim-foot">Periods 1–4 shown in full, plus a few familiar heavier metals and iodine. The full table has 118 elements; the gaps are where the rest go.</div>
+    </div>
+
+    <div class="callout think">
+      <span class="callout-label">A few patterns to notice as you click</span>
+      <p style="margin:0 0 6px">Most elements are <strong>metals</strong>. Non-metals are a minority, crowded into the top right.</p>
+      <p style="margin:0 0 6px"><strong>Hydrogen</strong> sits alone at the top — it is a non-metal but does not fit neatly into any column.</p>
+      <p style="margin:0">Two elements are liquids at room temperature: <strong>mercury</strong> (a metal) and <strong>bromine</strong> (a non-metal). Everything else is a solid or a gas.</p>
+    </div>
+
+    <h2 class="section">Elements you already use</h2>
+    <p>Elements have very different properties — hardness, thermal conductivity, and so on — which is why different elements are chosen for different jobs.</p>
+    <table class="cmp" style="margin-bottom:20px">
+      <tr><td class="h" style="border-bottom:1.5px solid var(--ink);width:28%">Object</td><td class="h" style="border-bottom:1.5px solid var(--ink)">Main element, and why it is chosen</td></tr>
+      <tr><td>Coins</td><td><strong>Copper</strong> — hard-wearing and does not corrode quickly.</td></tr>
+      <tr><td>Pencil “lead”</td><td><strong>Carbon</strong> (as graphite) — soft enough to leave a mark on paper.</td></tr>
+      <tr><td>Instant ice cream</td><td><strong>Nitrogen</strong>, as a liquid at −196 °C — freezes the mixture in seconds.</td></tr>
+      <tr><td>Glowing shop signs</td><td><strong>Neon</strong> — glows when electricity passes through it.</td></tr>
+      <tr><td>Cooking pot</td><td><strong>Aluminium</strong> — light, conducts heat well, does not rust.</td></tr>
+    </table>
+
+    <div class="callout">
+      <span class="callout-label">Not all elements are natural</span>
+      <strong>Technetium</strong> (element 43, symbol Tc) was the first element created artificially, in 1937. It is too unstable to exist naturally on Earth. The researchers who made it also proved it <em>cannot</em> occur naturally — and their open-mindedness encouraged others to create new elements, which is how the table grew to 118.
+    </div>
+
+    <h2 class="section">Check yourself</h2>
+    <div id="quiz">
+      <script type="application/json">
+      {
+        "questions": [
+          {
+            "type": "mcq",
+            "marks": 1,
+            "stem": "<p>Which statement correctly defines an element?</p>",
+            "options": [
+              "A substance that is found naturally on Earth",
+              "A substance that cannot be broken down into simpler substances",
+              "A substance made of two or more different atoms",
+              "A substance that is a metal"
+            ],
+            "answer": 1,
+            "explain": "One kind of atom only — nothing simpler to break it into.",
+            "whyWrong": {
+              "0": "Plenty of natural substances are not elements — water, salt and air are all natural. And technetium is an element that is <em>not</em> found naturally.",
+              "2": "Two or more different kinds of atom joined together describes a <strong>compound</strong>. An element has only one kind.",
+              "3": "Most elements are metals, but oxygen, carbon and nitrogen are elements too — and none of them is a metal."
+            },
+            "workthrough": [
+              "Recall the textbook definition: elements are the basic building blocks of matter and <strong>cannot be broken down into simpler substances</strong>.",
+              "Test each option against that. “Found naturally” is neither necessary (technetium) nor sufficient (water).",
+              "“Two or more different atoms” is the opposite — that is a compound.",
+              "“A metal” is only some elements. The defining feature is that there is <strong>nothing simpler inside it</strong>."
+            ]
+          },
+          {
+            "type": "mcq",
+            "marks": 1,
+            "stem": "<p>Why is the Periodic Table arranged the way it is?</p>",
+            "options": [
+              "Elements are listed in alphabetical order of their names",
+              "Elements are arranged by their properties, so patterns in properties can be predicted",
+              "Elements are arranged in the order they were discovered",
+              "Metals are listed first, then non-metals"
+            ],
+            "answer": 1,
+            "explain": "Arranging by properties is what makes the table predictive.",
+            "whyWrong": {
+              "0": "Look at the table — hydrogen, helium, lithium, beryllium. That is not alphabetical, and it never becomes so.",
+              "2": "Discovery order would put technetium (1937) after elements found centuries earlier, yet it sits at number 43 between 42 and 44.",
+              "3": "Metals and non-metals <em>are</em> separated — but as a consequence of arranging by properties, not as the rule itself. Hydrogen, a non-metal, sits at the top left."
+            },
+            "workthrough": [
+              "Recall the textbook: elements are “arranged based on their properties”.",
+              "Ask what that achieves — elements with similar properties end up near each other.",
+              "That is why the table lets us <strong>predict patterns</strong>, such as which elements are metals and which are non-metals.",
+              "The metal/non-metal split is a <em>result</em> of the arrangement, not the arrangement itself."
+            ]
+          }
+        ]
+      }
+      </script>
+    </div>
+  </div>
+
+  <nav class="lesson-nav">
+    <a href="1-why-composition-matters.html">← Why composition matters</a>
+    <a class="next" href="3-compounds.html">Next: Compounds →</a>
+  </nav>
+</div>
+<script src="../../../js/matter-widgets.js"></script>
+<script src="../../../js/quiz-engine.js"></script>
+</body>
+</html>

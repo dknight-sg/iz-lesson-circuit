@@ -1,0 +1,931 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Practice — Diversity of Matter</title>
+<meta name="description" content="30 interactive practice questions on Chapter 3 — elements, compounds and mixtures, air, solutions, suspensions, rate of dissolving and solubility. Every wrong answer explains why and walks through the reasoning.">
+<meta name="theme-color" content="#E4EAF0">
+<link rel="icon" type="image/svg+xml" href="../../favicon.svg">
+<link rel="stylesheet" href="../../css/style.css">
+<link rel="stylesheet" href="../../css/interactive.css">
+</head>
+<body>
+<div class="sheet">
+  <header>
+    <div>
+      <a class="crumb" href="index.html">← Diversity of Matter</a>
+      <p class="eyebrow" style="margin-top:10px">Practice</p>
+      <h1>30 questions</h1>
+    </div>
+    <p class="sub">Sorting, labelling particle diagrams, typed numbers, structured answers. Get one wrong and you will be told exactly which idea went astray, then walked to the right answer.</p>
+  </header>
+
+  <div class="scorebar" id="scorebar">
+    <span>Score <span class="sc">0 / 0</span></span>
+    <span class="bar"><span></span></span>
+    <span class="dn">0 of 30 answered</span>
+    <button class="qz-reset" type="button">Start again</button>
+  </div>
+
+  <!-- particle diagrams, cloned into the label question -->
+  <svg id="particleSheet" viewBox="0 0 560 150" style="display:none" role="img" aria-label="Four boxes of particles, numbered 1 to 4">
+    <defs>
+      <g id="pA"><circle r="8" fill="#C8813A" stroke="#0F2436" stroke-width="1.5"/></g>
+      <g id="pB"><line x1="-7" y1="0" x2="7" y2="0" stroke="#0F2436" stroke-width="3"/><circle cx="-7" r="7" fill="#D93F2B" stroke="#0F2436" stroke-width="1.5"/><circle cx="7" r="7" fill="#D93F2B" stroke="#0F2436" stroke-width="1.5"/></g>
+      <g id="pC"><line x1="0" y1="0" x2="-8" y2="-7" stroke="#0F2436" stroke-width="3"/><line x1="0" y1="0" x2="8" y2="-7" stroke="#0F2436" stroke-width="3"/><circle r="8" fill="#D93F2B" stroke="#0F2436" stroke-width="1.5"/><circle cx="-8" cy="-7" r="5" fill="#E9EEF3" stroke="#0F2436" stroke-width="1.5"/><circle cx="8" cy="-7" r="5" fill="#E9EEF3" stroke="#0F2436" stroke-width="1.5"/></g>
+      <g id="pD"><line x1="-7" y1="0" x2="7" y2="0" stroke="#0F2436" stroke-width="3"/><circle cx="-7" r="7" fill="#4C8FCB" stroke="#0F2436" stroke-width="1.5"/><circle cx="7" r="7" fill="#4C8FCB" stroke="#0F2436" stroke-width="1.5"/></g>
+    </defs>
+    <!-- 1: single atoms, all same -->
+    <rect x="4" y="4" width="128" height="112" fill="#F7FAFC" stroke="#0F2436" stroke-width="2"/>
+    <use href="#pA" x="30" y="30"/><use href="#pA" x="70" y="26"/><use href="#pA" x="108" y="40"/><use href="#pA" x="40" y="70"/><use href="#pA" x="84" y="66"/><use href="#pA" x="26" y="100"/><use href="#pA" x="66" y="98"/><use href="#pA" x="108" y="92"/>
+    <circle class="sym-c" cx="68" cy="134" r="12"/><text class="sym-n" x="68" y="138">1</text>
+    <!-- 2: two different molecules mixed -->
+    <rect x="146" y="4" width="128" height="112" fill="#F7FAFC" stroke="#0F2436" stroke-width="2"/>
+    <use href="#pB" x="176" y="30"/><use href="#pD" x="236" y="34"/><use href="#pC" x="206" y="66"/><use href="#pD" x="172" y="92"/><use href="#pB" x="244" y="94"/><use href="#pD" x="212" y="24"/>
+    <circle class="sym-c" cx="210" cy="134" r="12"/><text class="sym-n" x="210" y="138">2</text>
+    <!-- 3: molecules of two atom types, all identical -->
+    <rect x="288" y="4" width="128" height="112" fill="#F7FAFC" stroke="#0F2436" stroke-width="2"/>
+    <use href="#pC" x="318" y="36"/><use href="#pC" x="376" y="30"/><use href="#pC" x="348" y="68"/><use href="#pC" x="312" y="100"/><use href="#pC" x="392" y="96"/>
+    <circle class="sym-c" cx="352" cy="134" r="12"/><text class="sym-n" x="352" y="138">3</text>
+    <!-- 4: diatomic molecules, all same -->
+    <rect x="430" y="4" width="128" height="112" fill="#F7FAFC" stroke="#0F2436" stroke-width="2"/>
+    <use href="#pB" x="460" y="30"/><use href="#pB" x="524" y="36"/><use href="#pB" x="490" y="66"/><use href="#pB" x="456" y="98"/><use href="#pB" x="526" y="96"/>
+    <circle class="sym-c" cx="494" cy="134" r="12"/><text class="sym-n" x="494" y="138">4</text>
+  </svg>
+
+  <div class="qlist" id="quiz">
+    <script type="application/json">
+    {
+      "questions": [
+        {
+          "type": "sort",
+          "stem": "<p>Sort each substance into the right box.</p>",
+          "bins": [
+            "Element",
+            "Compound",
+            "Mixture"
+          ],
+          "items": [
+            {
+              "text": "Copper",
+              "bin": 0,
+              "why": "One kind of atom only. Cannot be broken down into anything simpler."
+            },
+            {
+              "text": "Water",
+              "bin": 1,
+              "why": "Hydrogen and oxygen chemically combined in a fixed 2 : 1 ratio."
+            },
+            {
+              "text": "Air",
+              "bin": 2,
+              "why": "Nitrogen, oxygen, carbon dioxide and water vapour side by side, in amounts that vary from place to place."
+            },
+            {
+              "text": "Sodium chloride",
+              "bin": 1,
+              "why": "Sodium and chlorine chemically combined. Neither a fizzing metal nor a poisonous gas any more."
+            },
+            {
+              "text": "Seawater",
+              "bin": 2,
+              "why": "Several compounds and a little iodine dissolved in water. Some seas are saltier than others — no fixed proportion."
+            },
+            {
+              "text": "Oxygen",
+              "bin": 0,
+              "why": "Its atoms are joined in pairs, but they are all oxygen atoms — still one element."
+            }
+          ],
+          "workthrough": [
+            "Ask the first question: <strong>one kind of atom?</strong> Copper and oxygen — yes. Elements.",
+            "For the rest, ask: <strong>chemically combined in a fixed ratio?</strong> Water and sodium chloride — yes. Compounds.",
+            "What is left just shares space in variable amounts: air and seawater. Mixtures.",
+            "The one people get wrong is oxygen. Two atoms joined does not make a compound — they have to be <em>different</em> atoms."
+          ]
+        },
+        {
+          "type": "mcq",
+          "marks": 1,
+          "stem": "<p>Which statement is the definition of an element?</p>",
+          "options": [
+            "A substance that occurs naturally on Earth",
+            "A substance that cannot be broken down into simpler substances",
+            "A substance that contains only metal atoms",
+            "A substance formed when two substances react"
+          ],
+          "answer": 1,
+          "explain": "Nothing simpler inside — one kind of atom.",
+          "whyWrong": {
+            "0": "Water and salt occur naturally and are not elements; technetium is an element that does not occur naturally. Being natural is not the test.",
+            "2": "Oxygen, carbon and chlorine are elements and none is a metal.",
+            "3": "A substance formed by a reaction between two others is a <strong>compound</strong> — the opposite of an element."
+          },
+          "workthrough": [
+            "Recall the textbook wording: elements are the basic building blocks of matter and <strong>cannot be broken down into simpler substances</strong>.",
+            "Check the others against a counter-example each: natural (water is natural, not an element), metal (oxygen is not), formed by reaction (that makes compounds).",
+            "Only the second survives."
+          ]
+        },
+        {
+          "type": "numeric",
+          "marks": 1,
+          "unit": "elements",
+          "answer": 118,
+          "tolerance": 0.5,
+          "stem": "<p>How many elements are currently known?</p>",
+          "explain": "118 at present — the last few were made artificially in laboratories.",
+          "whyWrong": [
+            {
+              "near": 100,
+              "tol": 3,
+              "msg": "A round guess. The Periodic Table in your textbook runs to element 118, oganesson."
+            },
+            {
+              "near": 108,
+              "tol": 2,
+              "msg": "Close, but check the bottom-right corner of the table — it ends at 118."
+            },
+            {
+              "near": 92,
+              "tol": 2,
+              "msg": "92 (uranium) is the heaviest that occurs naturally in any quantity, but the known total includes the artificial ones — 118."
+            }
+          ],
+          "workthrough": [
+            "Find the last element on the Periodic Table in Figure 3.2: oganesson, number <strong>118</strong>.",
+            "The textbook states it directly: “At present, there are 118 known elements.”",
+            "The word “at present” matters — researchers keep creating new ones, starting with technetium in 1937."
+          ]
+        },
+        {
+          "type": "sort",
+          "stem": "<p>Sort these elements into metals and non-metals.</p>",
+          "bins": [
+            "Metal",
+            "Non-metal"
+          ],
+          "items": [
+            {
+              "text": "Copper",
+              "bin": 0,
+              "why": "Shiny, conducts electricity — the classic metal, used in wires and coins."
+            },
+            {
+              "text": "Sulfur",
+              "bin": 1,
+              "why": "A yellow, crumbly solid that does not conduct. A non-metal, on the right of the table."
+            },
+            {
+              "text": "Aluminium",
+              "bin": 0,
+              "why": "Light, shiny, conducts heat — cooking pots. A metal."
+            },
+            {
+              "text": "Oxygen",
+              "bin": 1,
+              "why": "A gas. Every gas on the table is a non-metal."
+            },
+            {
+              "text": "Iron",
+              "bin": 0,
+              "why": "The main constituent of steel. A metal."
+            },
+            {
+              "text": "Carbon",
+              "bin": 1,
+              "why": "Pencil lead is carbon — it is on the right of the table with the other non-metals, even though graphite does conduct."
+            }
+          ],
+          "workthrough": [
+            "Picture the Periodic Table: metals fill the <strong>left and middle</strong>, non-metals crowd the <strong>top right</strong>.",
+            "Use the everyday test for metals: shiny, conducts, usually solid. Copper, aluminium and iron pass.",
+            "Anything that is a gas is a non-metal — oxygen.",
+            "Sulfur and carbon are solids but dull and brittle, sitting on the right of the table. Non-metals.",
+            "Carbon is the trap: graphite conducts electricity, but that does not make it a metal. Position in the table decides."
+          ]
+        },
+        {
+          "type": "mcq",
+          "marks": 1,
+          "stem": "<p>Why does the Periodic Table let us predict which elements are metals and which are non-metals?</p>",
+          "options": [
+            "Because the elements are arranged in order of their properties, so similar elements sit near each other",
+            "Because metals were discovered before non-metals",
+            "Because the table lists the elements alphabetically",
+            "Because heavy elements are always metals"
+          ],
+          "answer": 0,
+          "explain": "Arrangement by properties is what makes patterns predictable.",
+          "whyWrong": {
+            "1": "Discovery order has nothing to do with position — technetium (1937) sits at 43, between elements known for centuries.",
+            "2": "Hydrogen, helium, lithium… nothing alphabetical about it.",
+            "3": "Radon (86) is heavier than iron (26) and is a non-metal. Mass alone does not decide."
+          },
+          "workthrough": [
+            "Recall: the elements are “arranged based on their properties”.",
+            "Consequence: elements with similar properties end up together, so the metals cluster on the left and middle, non-metals on the right.",
+            "That is why you can look at an unfamiliar element's position and predict it is a metal or non-metal."
+          ]
+        },
+        {
+          "type": "label",
+          "diagramRef": "#particleSheet",
+          "stem": "<p>Each box shows the particles in a substance. Classify each one.</p>",
+          "labels": [
+            "Element",
+            "Compound",
+            "Mixture"
+          ],
+          "parts": [
+            {
+              "n": 1,
+              "answer": "Element",
+              "why": "Every particle is a single atom, and every atom is the same kind. One element — like copper."
+            },
+            {
+              "n": 2,
+              "answer": "Mixture",
+              "why": "Three different kinds of particle sharing the box, none joined to the others. A mixture — like air."
+            },
+            {
+              "n": 3,
+              "answer": "Compound",
+              "why": "Every particle is identical and each contains two different kinds of atom chemically joined. A compound — like water."
+            },
+            {
+              "n": 4,
+              "answer": "Element",
+              "why": "The atoms are joined in pairs, but every atom is the same kind. Still one element — like oxygen."
+            }
+          ],
+          "explain": "Count the kinds of atom, then check whether different kinds are joined within one particle.",
+          "workthrough": [
+            "For each box, ask first: <strong>how many kinds of atom?</strong> One kind → element, whether the atoms are alone (box 1) or in pairs (box 4).",
+            "Two or more kinds → now ask: <strong>are the different kinds joined inside one particle?</strong>",
+            "Box 3: yes — every particle has a red atom bonded to two white ones, and every particle is the same. Compound.",
+            "Box 2: no — there are several different particles, each complete on its own, just sharing the space. Mixture.",
+            "Box 4 is the trap. Joined atoms do not mean compound. They must be <em>different</em> atoms."
+          ]
+        },
+        {
+          "type": "mcq",
+          "marks": 1,
+          "stem": "<p>Sodium is a soft metal that fizzes violently in water. Chlorine is a poisonous green gas. Sodium chloride is the white crystals you put on food. What does this show about compounds?</p>",
+          "options": [
+            "Compounds are always safe to eat",
+            "A compound has properties that are different from those of its constituent elements",
+            "Sodium and chlorine are mixed together in salt",
+            "Compounds are always white solids"
+          ],
+          "answer": 1,
+          "explain": "Chemical combination makes a new substance with its own properties.",
+          "whyWrong": {
+            "0": "Carbon monoxide is a compound and is lethal. Safety is a property of particular compounds, not of compounds in general.",
+            "2": "“Mixed” is the wrong word. If they were merely mixed, salt would still fizz and still be poisonous — a mixture keeps its constituents' properties.",
+            "3": "Water is a compound and is a colourless liquid; carbon dioxide is a colourless gas. Nothing about compounds requires white solids."
+          },
+          "workthrough": [
+            "Line up the properties: sodium (reactive metal), chlorine (toxic gas) → sodium chloride (harmless white crystals).",
+            "Ask which type of matter <em>changes</em> the properties of its constituents. A mixture keeps them; a <strong>compound</strong> replaces them.",
+            "The example is chosen because the change is so extreme — it is the clearest possible evidence that “chemically combined” means something new has been made."
+          ]
+        },
+        {
+          "type": "multi",
+          "marks": 3,
+          "stem": "<p>Which of these are true of every compound? Select all that apply.</p>",
+          "options": [
+            "Its elements are chemically combined",
+            "Its elements are combined in a fixed proportion by mass",
+            "It keeps the properties of its constituent elements",
+            "It is difficult to separate into its elements",
+            "It is formed by a physical change"
+          ],
+          "answer": [
+            0,
+            1,
+            3
+          ],
+          "explain": "Chemically combined, fixed proportion, hard to separate. The other two describe mixtures.",
+          "whyWrong": {
+            "2": "That is the mixture property. A compound's properties are <em>different</em> from its elements' — water is not a gas even though hydrogen and oxygen both are.",
+            "4": "Compounds are formed by <strong>chemical reactions</strong>. Physical changes make mixtures."
+          },
+          "workthrough": [
+            "Recall the three properties of compounds from Lesson 3: <strong>new properties</strong>, <strong>fixed proportion</strong>, <strong>hard to separate</strong>. Plus the definition: <strong>chemically combined</strong>.",
+            "Tick everything that matches: chemically combined ✓, fixed proportion ✓, difficult to separate ✓.",
+            "Now check the remaining two against the mixture column of Table 3.1 — “properties retained” and “formed by physical change” are both mixture facts.",
+            "Three ticks, two crosses."
+          ]
+        },
+        {
+          "type": "mcq",
+          "marks": 1,
+          "stem": "<p>Why is it difficult to separate water into hydrogen and oxygen?</p>",
+          "options": [
+            "Because hydrogen and oxygen are both invisible gases",
+            "Because the elements are chemically combined, and breaking those bonds needs a lot of energy",
+            "Because water is a mixture",
+            "Because hydrogen and oxygen dissolve in water"
+          ],
+          "answer": 1,
+          "explain": "Chemical bonds have to be broken — an electric current through the water does it.",
+          "whyWrong": {
+            "0": "Invisibility has nothing to do with it. Plenty of invisible gases are easy to separate from a mixture.",
+            "2": "Water is a compound, and that is precisely the reason it is hard to separate — mixtures are the easy ones.",
+            "3": "Hydrogen and oxygen are not <em>dissolved</em> in water; they <em>are</em> the water. They are joined chemically, not mixed."
+          },
+          "workthrough": [
+            "Recall the third property of compounds: they cannot be separated into their elements <strong>easily</strong>.",
+            "Recall why: the elements are <strong>chemically combined</strong>, and undoing a chemical combination takes <strong>a lot of energy</strong>.",
+            "Recall the example: passing an electric current through water (Figure 3.5) is what it takes to get hydrogen and oxygen back.",
+            "Contrast with a mixture: filtering or evaporating, no reaction needed."
+          ]
+        },
+        {
+          "type": "mcq",
+          "marks": 1,
+          "stem": "<p>Baking soda is sodium hydrogencarbonate. Which elements does it contain?</p>",
+          "options": [
+            "Sodium and carbon only",
+            "Sodium, hydrogen, carbon and oxygen",
+            "Sodium, hydrogen and chlorine",
+            "Calcium, carbon and oxygen"
+          ],
+          "answer": 1,
+          "explain": "Read the name: sodium · hydrogen · carbon · (carbon)ate means oxygen too.",
+          "whyWrong": {
+            "0": "The name says <em>hydrogen</em>carbonate — you have missed the hydrogen and the oxygen that “-ate” signals.",
+            "2": "Chlorine is in sodium <em>chloride</em> — common salt, a different compound. Baking soda has no chlorine.",
+            "3": "Calcium, carbon and oxygen make calcium carbonate — that is marble, not baking soda."
+          },
+          "workthrough": [
+            "Take the name apart: <strong>sodium</strong> — <strong>hydrogen</strong> — <strong>carbon</strong>ate.",
+            "The ending “-ate” tells you oxygen is present too (carbonate = carbon + oxygen).",
+            "So: sodium, hydrogen, carbon, oxygen — four elements, exactly as the textbook lists.",
+            "Its uses, for the exam: baking, and as an antacid when the stomach makes too much acid."
+          ]
+        },
+        {
+          "type": "numeric",
+          "marks": 1,
+          "unit": "%",
+          "answer": 21,
+          "tolerance": 0.5,
+          "stem": "<p>What percentage of the air is oxygen?</p>",
+          "explain": "Nitrogen 78%, oxygen 21%, other gases 1%.",
+          "whyWrong": [
+            {
+              "near": 78,
+              "tol": 0.5,
+              "msg": "That is nitrogen. Oxygen is the smaller of the two big slices."
+            },
+            {
+              "near": 20,
+              "tol": 0.4,
+              "msg": "Close — the textbook figure is 21%. 78 + 21 + 1 = 100."
+            },
+            {
+              "near": 1,
+              "tol": 0.5,
+              "msg": "That is the ‘everything else’ slice — carbon dioxide, water vapour and other gases."
+            }
+          ],
+          "workthrough": [
+            "Recall Figure 3.8: nitrogen 78%, <strong>oxygen 21%</strong>, others 1%.",
+            "Check the total: 78 + 21 + 1 = 100. ✓",
+            "The gas you need is about a fifth of every breath; the rest is mostly nitrogen, which you breathe straight back out."
+          ]
+        },
+        {
+          "type": "multi",
+          "marks": 3,
+          "stem": "<p>Which components of air vary depending on time and place? Select all that apply.</p>",
+          "options": [
+            "Nitrogen",
+            "Carbon dioxide",
+            "Oxygen",
+            "Water vapour",
+            "Dust particles"
+          ],
+          "answer": [
+            1,
+            3,
+            4
+          ],
+          "explain": "The big two are steady; the small components swing with weather and pollution.",
+          "whyWrong": {
+            "0": "Nitrogen is “usually constant over time” — about 78% everywhere.",
+            "2": "Oxygen too — about 21% at sea level, and the same <em>proportion</em> even up a mountain."
+          },
+          "workthrough": [
+            "Recall Figure 3.8's two labels. <strong>Constant:</strong> nitrogen and oxygen. <strong>Vary:</strong> carbon dioxide, water vapour and dust particles.",
+            "Think about why: a humid day adds water vapour; traffic adds carbon dioxide and dust. Nothing in daily life changes the nitrogen.",
+            "Three ticks: carbon dioxide, water vapour, dust."
+          ]
+        },
+        {
+          "type": "mcq",
+          "marks": 1,
+          "stem": "<p>Mountain climbers carry oxygen tanks. Which statement is correct about the air at high altitude?</p>",
+          "options": [
+            "The air contains a lower percentage of oxygen",
+            "The composition is the same as at sea level, but there is less air, so less oxygen is available",
+            "The air contains more nitrogen, which crowds out the oxygen",
+            "The oxygen at high altitude is a different substance"
+          ],
+          "answer": 1,
+          "explain": "Same 21% — just less of everything.",
+          "whyWrong": {
+            "0": "The percentage is unchanged — still about 21%. It is the <em>amount</em> of air that falls, not the proportion of oxygen in it.",
+            "2": "Nitrogen stays at 78%. Nothing crowds anything out; there is simply less of both.",
+            "3": "Oxygen is oxygen. The fun fact is about quantity, not identity."
+          },
+          "workthrough": [
+            "Recall the fun fact: composition at high altitude is the <strong>same</strong> as at sea level.",
+            "But <strong>less air is present</strong> — the air is thinner.",
+            "Same fraction of a smaller amount = less oxygen per breath. Hence the tanks.",
+            "The exam version of the trap is option A — “lower percentage” — and it is wrong."
+          ]
+        },
+        {
+          "type": "sort",
+          "stem": "<p>Sort each mixture by what it is made of.</p>",
+          "bins": [
+            "Elements only",
+            "Compounds only",
+            "Elements and compounds"
+          ],
+          "items": [
+            {
+              "text": "Steel (iron, carbon)",
+              "bin": 0,
+              "why": "Iron and carbon are both elements, mixed but not combined."
+            },
+            {
+              "text": "Pewter (tin, copper, silver)",
+              "bin": 0,
+              "why": "Three metals, all elements, mixed together."
+            },
+            {
+              "text": "Salt solution (sodium chloride, water)",
+              "bin": 1,
+              "why": "Two compounds dissolved together."
+            },
+            {
+              "text": "Concrete (calcium carbonate, silicon dioxide, water)",
+              "bin": 1,
+              "why": "Three compounds — nothing here is an element."
+            },
+            {
+              "text": "Seawater (sodium chloride, magnesium chloride, iodine)",
+              "bin": 2,
+              "why": "Two compounds plus the element iodine."
+            },
+            {
+              "text": "Milk (water, fats, sugars, iron, calcium)",
+              "bin": 2,
+              "why": "Compounds (water, fats, sugars) plus elements (iron, phosphorus, calcium)."
+            }
+          ],
+          "workthrough": [
+            "Go through each constituent and label it E (element) or C (compound). An element has a one-word name on the Periodic Table; a compound's name usually has two parts (sodium chloride) or is a familiar substance made of several elements (water, sugar).",
+            "All E → elements only: steel, pewter.",
+            "All C → compounds only: salt solution, concrete.",
+            "A mix of E and C → both: seawater (iodine is the element), milk (iron and calcium are the elements).",
+            "The trap is thinking metals are always elements-only mixtures. True here — but milk contains iron and calcium too, so read the list, do not guess from the name."
+          ]
+        },
+        {
+          "type": "mcq",
+          "marks": 1,
+          "stem": "<p>Fuel is a mixture of carbon-containing compounds and the element sulfur. Why is sulfur usually removed from fuel?</p>",
+          "options": [
+            "Because sulfur makes the fuel too heavy",
+            "Because sulfur is considered a contaminant",
+            "Because sulfur is worth more when sold separately",
+            "Because sulfur is a compound"
+          ],
+          "answer": 1,
+          "explain": "The textbook's exact word: contaminant.",
+          "whyWrong": {
+            "0": "Weight is not the issue; sulfur is present in small amounts.",
+            "2": "The textbook gives no economic reason — it says sulfur is removed because it is a contaminant.",
+            "3": "Sulfur is an element, not a compound — and being one or the other is not a reason to remove it."
+          },
+          "workthrough": [
+            "Recall Figure 3.12: fuel is a mixture of carbon-containing compounds and elements such as sulfur.",
+            "Recall the reason given: sulfur is “often removed from fuel as it is considered to be a <strong>contaminant</strong>”.",
+            "Why it counts as one, if asked: burning sulfur makes sulfur dioxide, an air pollutant. But the one-word answer the textbook wants is “contaminant”."
+          ]
+        },
+        {
+          "type": "mcq",
+          "marks": 1,
+          "stem": "<p>Common salt tastes salty. When it is dissolved in water, the salt solution tastes salty too. Which property of mixtures does this show?</p>",
+          "options": [
+            "A mixture has a fixed proportion of constituents",
+            "A mixture has the same characteristics as its constituents",
+            "A mixture is formed by a chemical reaction",
+            "A mixture cannot be separated easily"
+          ],
+          "answer": 1,
+          "explain": "Nothing new has been made, so the saltiness survives.",
+          "whyWrong": {
+            "0": "Mixtures do <em>not</em> have a fixed proportion — you can make salt solution with a pinch or a spoonful. And the taste evidence is about properties, not amounts.",
+            "2": "Mixtures form by <strong>physical</strong> change. If a chemical reaction had happened, the salty taste would probably be gone.",
+            "3": "Mixtures <em>can</em> be separated easily — you can evaporate the water and get the salt back. And again, the taste evidence is about properties."
+          },
+          "workthrough": [
+            "Identify what the evidence is about: the <strong>taste</strong> — a property.",
+            "Recall the first property of mixtures: “a mixture has the same characteristics as its constituents”.",
+            "Salt is salty; salt solution is salty. Property retained. ✓",
+            "Contrast with a compound, where properties change: sodium + chlorine → something that tastes nothing like either."
+          ]
+        },
+        {
+          "type": "structured",
+          "marks": 3,
+          "stem": "<p>Ice kacang is shaved ice, syrup, jelly, red beans, <em>attap chee</em> and corn.</p>",
+          "parts": [
+            {
+              "stem": "Give two pieces of evidence that ice kacang is a mixture.",
+              "marks": 2,
+              "model": [
+                "Each ingredient keeps its own properties — the beans still taste like beans, the syrup like syrup (properties retained).",
+                "The amounts are not fixed — different stalls use different quantities of each ingredient (no fixed proportion).",
+                "The ingredients can be separated easily — you can pick out the beans or corn with a spoon (easily separated)."
+              ],
+              "note": "Any two of the three properties, each linked to the actual dessert, earns full marks."
+            },
+            {
+              "stem": "Why is it wrong to call ice kacang a compound?",
+              "marks": 1,
+              "model": [
+                "The ingredients are not chemically combined — no reaction has taken place, so no new substance has been formed."
+              ]
+            }
+          ],
+          "explain": "Three properties of mixtures, each with evidence from the bowl.",
+          "workthrough": [
+            "Recall the three properties of a mixture: properties retained, proportion not fixed, easily separated.",
+            "Attach each to something you can actually observe in ice kacang: beans still taste like beans; every stall's recipe differs; you can spoon the corn out.",
+            "For part (b), name what a compound requires — <strong>chemical combination</strong> — and state that it has not happened.",
+            "Always link the property to the specific example. “It is a mixture because mixtures can be separated” earns nothing; “because you can pick the beans out” earns the mark."
+          ]
+        },
+        {
+          "type": "mcq",
+          "marks": 1,
+          "stem": "<p>Sugar is stirred into water to make sugar solution. Which is correct?</p>",
+          "options": [
+            "Sugar is the solvent and water is the solute",
+            "Sugar is the solute and water is the solvent",
+            "Both sugar and water are solutes",
+            "Sugar solution is the solvent"
+          ],
+          "answer": 1,
+          "explain": "The solute dissolves; the solvent does the dissolving.",
+          "whyWrong": {
+            "0": "Backwards. The substance that <em>dissolves</em> is the solute — that is the sugar.",
+            "2": "Only one thing dissolves here. Water is what it dissolves into.",
+            "3": "The solution is the result, not one of the ingredients."
+          },
+          "workthrough": [
+            "Recall the definitions: the substance that dissolves is the <strong>solute</strong>; the substance it dissolves in is the <strong>solvent</strong>.",
+            "Sugar dissolves → solute. Water is what it dissolves in → solvent.",
+            "Memory hook: sol<strong>ute</strong> is the one that gets <em>used up</em> into the liquid; sol<strong>vent</strong> is the one it <em>went</em> into."
+          ]
+        },
+        {
+          "type": "mcq",
+          "marks": 1,
+          "stem": "<p>Two beakers each hold 100 cm³ of water. One spoon of copper sulfate is dissolved in beaker A, four spoons in beaker B. Which is correct?</p>",
+          "options": [
+            "A is concentrated and B is dilute",
+            "A is dilute and B is concentrated",
+            "A and B are the same, because the volume of water is the same",
+            "B is a compound and A is a mixture"
+          ],
+          "answer": 1,
+          "explain": "More solute in the same volume of solvent = more concentrated.",
+          "whyWrong": {
+            "0": "Backwards. More dissolved solute means a higher percentage of solute — that is <em>concentrated</em>, and B has more.",
+            "2": "Same water, different solute — so a different percentage of solute. They are not the same solution.",
+            "3": "Both are solutions, which are mixtures. The amount of solute does not change what type of matter it is — in fact, being able to vary the amount is proof it is a mixture."
+          },
+          "workthrough": [
+            "Fix the solvent volume: 100 cm³ in each. Now compare solute: 1 spoon versus 4.",
+            "Recall: low percentage of dissolved solute → <strong>dilute</strong>; high percentage → <strong>concentrated</strong>.",
+            "A has less solute → dilute. B has more → concentrated.",
+            "Note the bonus point in option D: that you <em>can</em> make the same solution with different amounts is exactly why a solution is a mixture."
+          ]
+        },
+        {
+          "type": "multi",
+          "marks": 3,
+          "stem": "<p>Which factors affect the <strong>rate of dissolving</strong>? Select all that apply.</p>",
+          "options": [
+            "Size of the solute particles",
+            "Temperature of the solvent",
+            "Colour of the solute",
+            "Rate of stirring",
+            "Type of solvent"
+          ],
+          "answer": [
+            0,
+            1,
+            3
+          ],
+          "explain": "Size, temperature, stirring — the three rate factors.",
+          "whyWrong": {
+            "2": "Colour has no effect on anything in this chapter. It is a distractor.",
+            "4": "Type of solvent affects <strong>solubility</strong> — whether and how much a solute dissolves — not the rate. This is the confusion the chapter is designed to catch."
+          },
+          "workthrough": [
+            "Recall the rate list from Figure 3.18: <strong>size of solute particles</strong>, <strong>temperature of solvent</strong>, <strong>rate of stirring</strong>.",
+            "Recall the solubility list separately: type of solute, type of solvent.",
+            "Tick the three rate factors; leave type of solvent for the other list; ignore colour."
+          ]
+        },
+        {
+          "type": "mcq",
+          "marks": 1,
+          "stem": "<p>Which of these would make a spoonful of sugar dissolve <strong>fastest</strong>?</p>",
+          "options": [
+            "Sugar cube, cold water, no stirring",
+            "Granulated sugar, warm water, stirred slowly",
+            "Powdered sugar, hot water, stirred fast",
+            "Sugar cube, hot water, no stirring"
+          ],
+          "answer": 2,
+          "explain": "All three rate factors pushed the same way.",
+          "whyWrong": {
+            "0": "This is the slowest combination of all: largest particles, coldest water, no stirring.",
+            "1": "Better on all three counts than option A, but not the fastest — powder beats granules, hot beats warm, fast beats slow.",
+            "3": "Hot water helps, but a cube is the largest particle size and there is no stirring. Two of three factors are working against you."
+          },
+          "workthrough": [
+            "List the three rate factors and which direction speeds each up: <strong>smaller</strong> particles, <strong>hotter</strong> solvent, <strong>faster</strong> stirring.",
+            "Score each option on all three. Only option C is at the fast end of every factor.",
+            "Remember the amount of sugar that dissolves is the same in every case — the factors change speed, not quantity."
+          ]
+        },
+        {
+          "type": "mcq",
+          "marks": 2,
+          "stem": "<p>What is the difference between the <strong>rate of dissolving</strong> and the <strong>solubility</strong> of a solute?</p>",
+          "options": [
+            "There is no difference — they are two names for the same thing",
+            "Rate of dissolving is how quickly a solute dissolves; solubility is the largest amount that can dissolve in a fixed volume of solvent at a given temperature",
+            "Rate of dissolving applies to solids; solubility applies to liquids",
+            "Solubility is how quickly a solute dissolves; rate of dissolving is how much dissolves"
+          ],
+          "answer": 1,
+          "explain": "How fast versus how much.",
+          "whyWrong": {
+            "0": "They are different, and the difference is examinable: stirring changes one and not the other.",
+            "2": "Both apply to any solute. The distinction is fast-versus-much, not solid-versus-liquid.",
+            "3": "Swapped. <strong>Rate</strong> is speed; <strong>solubility</strong> is amount."
+          },
+          "workthrough": [
+            "Recall the textbook definition: “the solubility of a solute is <em>different</em> from its rate of dissolving”.",
+            "Rate of dissolving = <strong>how quickly</strong> a solute dissolves.",
+            "Solubility = the <strong>largest amount</strong> that can dissolve in a <strong>fixed volume</strong> of a particular solvent at a <strong>specific temperature</strong>.",
+            "Two marks: one for each definition. Include “fixed volume” and “specific temperature” — they are part of the definition."
+          ]
+        },
+        {
+          "type": "mcq",
+          "marks": 1,
+          "stem": "<p>Chalk is added to a beaker of water and stirred for several minutes. It does not dissolve. What does this show?</p>",
+          "options": [
+            "Chalk needs hotter water to dissolve",
+            "Chalk is insoluble in water",
+            "The water is already saturated",
+            "Chalk was not stirred for long enough"
+          ],
+          "answer": 1,
+          "explain": "Some substances simply do not dissolve in a given solvent.",
+          "whyWrong": {
+            "0": "Temperature changes how fast a soluble substance dissolves. It does not turn an insoluble one soluble — chalk stays insoluble in hot water too.",
+            "2": "Saturation means the water already holds as much of <em>that solute</em> as it can. Fresh water with only chalk in it is not saturated with anything.",
+            "3": "Stirring speeds up dissolving when dissolving is possible. When a substance is insoluble, no amount of stirring helps."
+          },
+          "workthrough": [
+            "Recall the definition: substances that do not dissolve in a given solvent are <strong>insoluble</strong>.",
+            "Recall the textbook example in Figure 3.19: chalk is insoluble in water.",
+            "Rule out the rate factors: they only affect how fast a <em>soluble</em> substance dissolves.",
+            "This is a solubility fact — type of solute — not a rate fact."
+          ]
+        },
+        {
+          "type": "mcq",
+          "marks": 1,
+          "stem": "<p>Common salt dissolves in water but not in cooking oil. Which factor affecting solubility does this show?</p>",
+          "options": [
+            "Type of solute",
+            "Type of solvent",
+            "Temperature of solvent",
+            "Rate of stirring"
+          ],
+          "answer": 1,
+          "explain": "Same solute, different solvents, different result.",
+          "whyWrong": {
+            "0": "The solute is the same in both cases — salt. What changed is the liquid it went into.",
+            "2": "Temperature is not mentioned and is not the difference between the two beakers.",
+            "3": "Stirring affects rate, not solubility — and it would not make salt dissolve in oil however long you stirred."
+          },
+          "workthrough": [
+            "Identify what is held constant and what changes. Constant: the solute (salt). Changed: the <strong>solvent</strong> (water → oil).",
+            "The result changed with the solvent, so the factor is <strong>type of solvent</strong>.",
+            "Compare Figure 3.20 (sugar vs salt in the same water) — that one shows type of <em>solute</em>."
+          ]
+        },
+        {
+          "type": "sort",
+          "stem": "<p>Sort each statement: does it describe a solution or a suspension?</p>",
+          "bins": [
+            "Solution",
+            "Suspension"
+          ],
+          "items": [
+            {
+              "text": "Particles of the solute cannot be seen",
+              "bin": 0,
+              "why": "Dissolved particles are spread out among the solvent particles — far too small to see."
+            },
+            {
+              "text": "Insoluble substances can settle to form solid deposits",
+              "bin": 1,
+              "why": "Undissolved particles are heavy enough to sink if left alone."
+            },
+            {
+              "text": "Light can pass through fully",
+              "bin": 0,
+              "why": "Nothing large enough to block the beam."
+            },
+            {
+              "text": "Insoluble substances can be seen",
+              "bin": 1,
+              "why": "The particles are big enough to see — cloudy or muddy."
+            },
+            {
+              "text": "The dissolved substance does not settle",
+              "bin": 0,
+              "why": "A solute never settles out, however long you wait."
+            },
+            {
+              "text": "Light cannot pass through fully",
+              "bin": 1,
+              "why": "The particles block and scatter it."
+            }
+          ],
+          "workthrough": [
+            "Everything comes from one difference: in a solution the solute has <strong>dissolved</strong>; in a suspension the substances are <strong>insoluble</strong>.",
+            "Dissolved particles are tiny → cannot be seen, let light through, never settle.",
+            "Insoluble particles are big → can be seen, block light, settle out.",
+            "Three properties each, and each suspension property is the exact opposite of a solution property (Table 3.2)."
+          ]
+        },
+        {
+          "type": "mcq",
+          "marks": 1,
+          "stem": "<p>Which of these is a suspension?</p>",
+          "options": [
+            "Mineral water",
+            "Soda water",
+            "Calamine lotion",
+            "Sugar solution"
+          ],
+          "answer": 2,
+          "explain": "Calamine lotion contains insoluble particles — which is why you shake it.",
+          "whyWrong": {
+            "0": "Mineral water is a solution — the dissolved minerals cannot be seen and never settle.",
+            "1": "Soda water is a solution of carbon dioxide gas in water. Clear, and nothing settles.",
+            "3": "Sugar solution is the textbook's example of a solution."
+          },
+          "workthrough": [
+            "Recall the textbook lists. Solutions: sugar solution, mineral water, soda water. Suspensions: dirty water, wastewater, <strong>calamine lotion</strong>, certain soups.",
+            "Apply the test if you forget the list: does it separate into layers when left standing? Calamine lotion does — hence “shake well before use”.",
+            "The others stay uniform forever, so they are solutions."
+          ]
+        },
+        {
+          "type": "mcq",
+          "marks": 1,
+          "stem": "<p>The insoluble substances in dirty water can be removed by which process?</p>",
+          "options": [
+            "Evaporation",
+            "Filtration",
+            "Dissolving",
+            "Electrolysis"
+          ],
+          "answer": 1,
+          "explain": "Insoluble particles are trapped by filter paper; the water passes through.",
+          "whyWrong": {
+            "0": "Evaporation removes the <em>water</em>, leaving everything else behind — the opposite of what you want.",
+            "2": "The substances are insoluble; they will not dissolve however you try.",
+            "3": "Electrolysis is for breaking down a <em>compound</em> such as water into elements. It does nothing to a suspension."
+          },
+          "workthrough": [
+            "Recall: the insoluble substances in a suspension can be removed by <strong>filtration</strong> (Chapter 4).",
+            "Why it works: insoluble particles are large enough to be stopped by the filter paper; water particles pass through.",
+            "Why it would not work on a solution: dissolved particles are as small as water particles and go straight through."
+          ]
+        },
+        {
+          "type": "structured",
+          "marks": 3,
+          "stem": "<p>A student is given a white powder. It always contains 40 g of element X for every 60 g of element Y, it does not resemble either X or Y, and the student cannot separate X from Y by heating, filtering or dissolving.</p>",
+          "parts": [
+            {
+              "stem": "Is the powder a compound or a mixture? Give two reasons from Table 3.3.",
+              "marks": 2,
+              "model": [
+                "A compound.",
+                "Its constituents are in a fixed proportion (always 40 : 60 by mass).",
+                "It does not have the same properties as its constituents / it cannot be separated easily."
+              ],
+              "note": "One mark for the classification plus one clearly-stated reason; second mark for a second reason. Any two of fixed proportion, changed properties, not easily separated."
+            },
+            {
+              "stem": "What kind of change would be needed to separate X from Y?",
+              "marks": 1,
+              "model": [
+                "A chemical reaction — a lot of energy is needed to break the chemical bonds, for example passing an electric current through it."
+              ]
+            }
+          ],
+          "explain": "Three pieces of evidence, all from the compound column of Table 3.3.",
+          "workthrough": [
+            "Run each observation through Table 3.3.",
+            "Always 40 : 60 → <strong>fixed proportion</strong> → compound column.",
+            "Does not resemble X or Y → <strong>properties not retained</strong> → compound column.",
+            "Cannot be separated by physical means → <strong>not easily separated</strong> → compound column.",
+            "Three for three. For part (b), separating a compound needs a <strong>chemical</strong> change, not a physical one — electrolysis of water is the textbook example."
+          ]
+        },
+        {
+          "type": "mcq",
+          "marks": 1,
+          "stem": "<p>Smoke from a fire contains carbon dioxide, water vapour, other gases and tiny solid particles. Smoke is best described as:</p>",
+          "options": [
+            "An element, because it comes from burning carbon",
+            "A compound, because it is produced by a chemical reaction",
+            "A mixture, because it contains several substances that are not chemically combined",
+            "A solution, because the particles are dissolved in the gases"
+          ],
+          "answer": 2,
+          "explain": "Several substances, variable amounts, separable — a mixture.",
+          "whyWrong": {
+            "0": "Smoke contains carbon dioxide and water vapour among other things — several kinds of atom, so not an element.",
+            "1": "The <em>individual substances</em> in smoke were produced by a reaction, but smoke itself is those substances sitting side by side. Being made by burning does not make the mixture a compound.",
+            "3": "The solid particles are not dissolved — they can be seen, they block light, and they settle as soot. That makes smoke closer to a suspension than a solution, and either way a mixture."
+          },
+          "workthrough": [
+            "List what smoke contains: carbon dioxide, water vapour, other gases, solid particles. Several substances.",
+            "Are they chemically combined with each other? No — each is its own substance, just sharing the air.",
+            "Apply the mixture properties: composition varies with what is burning; the soot can be filtered from the gases.",
+            "Mixture. This is Learning Point 1 on page 71; the evidence expected is the three mixture properties."
+          ]
+        },
+        {
+          "type": "mcq",
+          "marks": 1,
+          "stem": "<p>Melamine is used to make bowls and cups, but it is harmful in food. What is the best summary of what this teaches?</p>",
+          "options": [
+            "Melamine should be banned from all products",
+            "Whether a substance is useful or harmful depends on how and where it is used — so knowing the chemical composition of things matters",
+            "All plastics are dangerous",
+            "Health inspectors cannot be trusted"
+          ],
+          "answer": 1,
+          "explain": "Same substance, different context, opposite verdict — and only composition tells you which.",
+          "whyWrong": {
+            "0": "The textbook shows melamine is genuinely useful — light, strong, mouldable. The lesson is about where it belongs, not banning it.",
+            "2": "Far too broad, and not what the chapter argues. The point is specific: composition determines safety in context.",
+            "3": "The inspectors were deceived by a chemical similarity. The lesson is that better knowledge of composition is needed, not that inspection is pointless."
+          },
+          "workthrough": [
+            "Recall the concept map's last branch: knowledge of composition lets us understand <strong>benefits</strong> (melamine in plastics) and <strong>harmful effects</strong> (melamine in milk powder).",
+            "Notice it is the <em>same</em> substance in both. What changed is the use.",
+            "So the conclusion is about knowledge: only by knowing what things are made of can you tell which situation you are in.",
+            "That is the sentence the whole chapter opens with — section 3.1's title question."
+          ]
+        }
+      ]
+    }
+    </script>
+  </div>
+
+  <nav class="lesson-nav">
+    <a href="map.html">← Chapter map</a>
+    <a class="next" href="index.html">Chapter home ↺</a>
+  </nav>
+</div>
+<script src="../../js/quiz-engine.js"></script>
+</body>
+</html>

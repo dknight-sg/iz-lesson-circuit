@@ -1,0 +1,198 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>5 · Solutions, dissolving and solubility — Diversity of Matter</title>
+<meta name="description" content="Textbook 3.3 — solute and solvent, dilute and concentrated, the three factors that change the rate of dissolving, and solubility: how much can dissolve. Two labs.">
+<meta name="theme-color" content="#E4EAF0">
+<link rel="icon" type="image/svg+xml" href="../../../favicon.svg">
+<link rel="stylesheet" href="../../../css/style.css">
+<link rel="stylesheet" href="../../../css/interactive.css">
+</head>
+<body>
+<div class="sheet">
+  <header>
+    <div>
+      <a class="crumb" href="../index.html">← Diversity of Matter</a>
+      <p class="eyebrow" style="margin-top:10px">Lesson 5 of 6 · Textbook 3.3</p>
+      <h1>Solutions, dissolving and solubility</h1>
+    </div>
+    <p class="sub">How <em>fast</em> something dissolves and how <em>much</em> can dissolve are two different questions with two different sets of answers. Mixing them up is the classic mistake in this chapter.</p>
+  </header>
+
+  <div class="prose">
+    <h2 class="section">Solute, solvent, solution</h2>
+    <div class="callout">
+      <span class="callout-label">Three words</span>
+      A <strong>solution</strong> is a mixture in which one substance dissolves completely in another. The substance that dissolves is the <strong>solute</strong>; the substance it dissolves in is the <strong>solvent</strong>.
+    </div>
+    <p>Sugar in water: sugar is the solute, water is the solvent, and the result is sugar solution. Mineral water and soda water are solutions too. Most solvents are liquids, and water dissolves so many things it is called the <strong>universal solvent</strong>.</p>
+    <p>In a solution the solute particles <strong>cannot be seen</strong> — they are spread out among the solvent particles — and if you shine a torch through it, <strong>light passes through fully</strong>.</p>
+
+    <h3 style="margin-bottom:6px">Dilute and concentrated</h3>
+    <p>For a <em>fixed volume</em> of solvent: a small amount of dissolved solute gives a <strong>dilute</strong> solution; a large amount gives a <strong>concentrated</strong> one. Same solute, same solvent — different proportion. (Which, incidentally, proves a solution is a mixture: a compound could not vary like that.)</p>
+
+    <h2 class="section">Rate of dissolving — how fast</h2>
+    <p>A substance that dissolves completely in a solvent is <strong>soluble</strong> in it; one that does not is <strong>insoluble</strong>. The <strong>rate of dissolving</strong> is how <em>quickly</em> a soluble solute dissolves. Three things speed it up:</p>
+
+    <div class="sim" id="dissolveLab">
+      <div class="sim-head">
+        <h4>Rate of dissolving</h4>
+        <div class="picker"><button type="button" class="dl-go">Drop the sugar in</button></div>
+      </div>
+      <div class="sim-body">
+        <div class="dl-ctl">
+          <div><label>Size of solute particles</label>
+            <select class="dl-size"><option value="cube">One sugar cube</option><option value="granules">Granulated sugar</option><option value="powder">Fine powder</option></select></div>
+          <div><label>Temperature of solvent · <span class="dl-tempv">20 °C</span></label>
+            <input type="range" class="dl-temp" min="20" max="80" step="5" value="20" aria-label="Temperature of the water"></div>
+          <div><label>Rate of stirring</label>
+            <select class="dl-stir"><option value="none">Not stirred</option><option value="slow">Stirred slowly</option><option value="fast">Stirred fast</option></select></div>
+        </div>
+        <svg viewBox="0 0 420 200" role="img" aria-label="A beaker of water with sugar dissolving">
+          <path d="M 140 30 L 140 176 Q 140 190 154 190 L 266 190 Q 280 190 280 176 L 280 30" fill="none" stroke="#0F2436" stroke-width="2.4"/>
+          <path class="dl-liquid" d="M 142 70 L 142 176 Q 142 188 154 188 L 266 188 Q 278 188 278 176 L 278 70 Z" fill="rgba(200,220,235,.55)"/>
+          <g class="dl-crystal" transform="translate(210 148) scale(1)">
+            <rect x="-16" y="-16" width="32" height="32" fill="#F7FAFC" stroke="#0F2436" stroke-width="2"/>
+            <line x1="-16" y1="-6" x2="16" y2="-6" stroke="#C9D3DC" stroke-width="1.5"/>
+            <line x1="-16" y1="6" x2="16" y2="6" stroke="#C9D3DC" stroke-width="1.5"/>
+          </g>
+          <g class="dl-grains" style="opacity:0">
+            <circle cx="170" cy="120" r="3" fill="#F7FAFC" stroke="#0F2436"/><circle cx="250" cy="105" r="3" fill="#F7FAFC" stroke="#0F2436"/>
+            <circle cx="190" cy="95" r="3" fill="#F7FAFC" stroke="#0F2436"/><circle cx="235" cy="140" r="3" fill="#F7FAFC" stroke="#0F2436"/>
+            <circle cx="160" cy="160" r="3" fill="#F7FAFC" stroke="#0F2436"/><circle cx="262" cy="165" r="3" fill="#F7FAFC" stroke="#0F2436"/>
+          </g>
+          <text x="210" y="22" text-anchor="middle" font-family="Space Mono, monospace" font-size="11" fill="#4A6076">5 g of sugar in 100 cm³ of water</text>
+        </svg>
+        <div class="readout-grid">
+          <div class="readout-box"><span class="rl">Predicted time to dissolve</span><span class="rv dl-time">—</span></div>
+          <div class="readout-box"><span class="rl">Status</span><span class="rv dl-status" style="font-size:12px">Ready.</span></div>
+        </div>
+      </div>
+      <div class="sim-foot">Notice what does <em>not</em> change: it is 5 g of sugar every time, and all 5 g dissolves every time. The controls change how <strong>fast</strong>, never how <strong>much</strong>.</div>
+    </div>
+
+    <table class="cmp" style="margin-bottom:20px">
+      <tr><td class="h" style="border-bottom:1.5px solid var(--ink);width:34%">Factor</td><td class="h" style="border-bottom:1.5px solid var(--ink)">Effect on rate of dissolving</td></tr>
+      <tr><td><strong>Size of solute particles</strong></td><td>The <strong>smaller</strong> the particles, the faster the solute dissolves — powder beats a cube.</td></tr>
+      <tr><td><strong>Temperature of solvent</strong></td><td>The <strong>higher</strong> the temperature, the faster the solute dissolves — hot water beats cold.</td></tr>
+      <tr><td><strong>Rate of stirring</strong></td><td>The <strong>faster</strong> the stirring, the faster the solute dissolves.</td></tr>
+    </table>
+
+    <h2 class="section">Solubility — how much</h2>
+    <div class="callout">
+      <span class="callout-label">Definition — the one G2 skips and G3 must know</span>
+      <strong>Solubility</strong> is the <strong>largest amount of solute</strong> that can dissolve in a <strong>fixed volume</strong> of a particular solvent at a <strong>specific temperature</strong>.
+    </div>
+    <p>Solubility is <em>different</em> from rate of dissolving. Stirring makes sugar dissolve faster, but it does not let you dissolve more sugar than the water can hold. Keep adding spoonfuls and see what happens.</p>
+
+    <div class="sim" id="solubilityLab">
+      <div class="sim-head">
+        <h4>Solubility</h4>
+        <div class="picker">
+          <button type="button" class="sl-add">Add a spoonful</button>
+          <button type="button" class="sl-reset">Fresh beaker</button>
+        </div>
+      </div>
+      <div class="sim-body">
+        <div class="dl-ctl">
+          <div><label>Solute</label><select class="sl-solute"><option value="sugar">sugar</option><option value="salt">common salt</option><option value="chalk">chalk</option></select></div>
+          <div><label>Solvent</label><select class="sl-solvent"><option value="water">water</option><option value="oil">cooking oil</option></select></div>
+        </div>
+        <svg viewBox="0 0 420 200" role="img" aria-label="A beaker showing how much solute has dissolved">
+          <path d="M 140 30 L 140 176 Q 140 190 154 190 L 266 190 Q 280 190 280 176 L 280 30" fill="none" stroke="#0F2436" stroke-width="2.4"/>
+          <path class="sl-liquid" d="M 142 70 L 142 176 Q 142 188 154 188 L 266 188 Q 278 188 278 176 L 278 70 Z" fill="rgba(200,220,235,.35)"/>
+          <rect class="sl-sediment" x="144" y="176" width="132" height="0" fill="#F7FAFC" stroke="#0F2436" stroke-width="1.2"/>
+        </svg>
+        <div class="readout-grid">
+          <div class="readout-box"><span class="rl">Spoonfuls dissolved</span><span class="rv sl-dissolved">0</span></div>
+          <div class="readout-box"><span class="rl">Spoonfuls undissolved</span><span class="rv sl-undissolved">0</span></div>
+        </div>
+        <p class="pl-why sl-verdict"></p>
+      </div>
+      <div class="sim-foot">Numbers are illustrative, not measured — but the pattern is the textbook's: sugar is more soluble in water than salt, chalk is insoluble in water, and salt dissolves in water but not in oil.</div>
+    </div>
+
+    <p>Two things decide solubility:</p>
+    <ul>
+      <li><strong>Type of solute.</strong> In the same water, sugar dissolves more than salt, and chalk does not dissolve at all.</li>
+      <li><strong>Type of solvent.</strong> Salt is soluble in water but insoluble in oil. Change the solvent and the same solute behaves differently.</li>
+    </ul>
+
+    <div class="callout think">
+      <span class="callout-label">The two lists, side by side</span>
+      <p style="margin:0 0 6px"><strong>Rate of dissolving</strong> (how fast) depends on: particle size · temperature of solvent · rate of stirring.</p>
+      <p style="margin:0"><strong>Solubility</strong> (how much) depends on: type of solute · type of solvent.</p>
+      <p style="margin:8px 0 0">Stirring is <em>not</em> on the solubility list. Temperature is not on the solubility list <em>in your textbook</em> — the definition fixes it (“at a specific temperature”). If a question asks what affects solubility and offers “stirring”, that is the wrong answer every time.</p>
+    </div>
+
+    <h2 class="section">Check yourself</h2>
+    <div id="quiz">
+      <script type="application/json">
+      {
+        "questions": [
+          {
+            "type": "mcq",
+            "marks": 1,
+            "stem": "<p>A sugar cube is dropped into cold water and left unstirred. Which change would make it dissolve <strong>faster</strong> without changing how much can dissolve?</p>",
+            "options": [
+              "Use less water",
+              "Crush the cube into powder first",
+              "Use cooking oil instead of water",
+              "Add a second sugar cube"
+            ],
+            "answer": 1,
+            "explain": "Smaller particles dissolve faster — a rate factor, not a solubility factor.",
+            "whyWrong": {
+              "0": "Less water means less sugar can dissolve in total — that changes the amount, and the question said not to. It also does not make each grain dissolve faster.",
+              "2": "Sugar is insoluble in oil. Changing the solvent changes <em>whether and how much</em> it dissolves, which is solubility, not rate.",
+              "3": "More sugar does not make sugar dissolve faster. If anything the second cube takes just as long as the first."
+            },
+            "workthrough": [
+              "Separate the two ideas: the question wants the <strong>rate</strong> changed but the <strong>solubility</strong> untouched.",
+              "Recall the three rate factors: particle size, temperature, stirring.",
+              "Crushing the cube changes <strong>particle size</strong> — smaller pieces dissolve faster because more of the sugar is touching the water.",
+              "The total amount of sugar and the solvent are unchanged, so solubility is unaffected. ✓"
+            ]
+          },
+          {
+            "type": "mcq",
+            "marks": 2,
+            "stem": "<p>A student stirs salt into a glass of water until no more will dissolve, then keeps stirring vigorously for five more minutes. What happens to the undissolved salt?</p>",
+            "options": [
+              "It dissolves, because stirring increases solubility",
+              "It stays undissolved, because stirring changes the rate of dissolving, not the amount that can dissolve",
+              "It dissolves, because stirring warms the water",
+              "It turns into a different substance"
+            ],
+            "answer": 1,
+            "explain": "The water is saturated — solubility, not rate, is the limit now.",
+            "whyWrong": {
+              "0": "This is the misconception the lesson exists to remove. Stirring is a <em>rate</em> factor. It cannot make the water hold more salt than its solubility allows.",
+              "2": "Stirring does not warm water noticeably — and even if it did, temperature would be the factor, not stirring. The question says nothing about heating.",
+              "3": "Dissolving is a physical change. The salt is still salt, dissolved or not."
+            },
+            "workthrough": [
+              "Note the key phrase: “until <strong>no more will dissolve</strong>”. The solution has reached its solubility limit — it is saturated.",
+              "Recall what solubility depends on: <strong>type of solute and type of solvent</strong>. Stirring is not on that list.",
+              "Recall what stirring does: it increases the <strong>rate</strong> of dissolving — how quickly salt dissolves <em>while there is still room for it</em>.",
+              "Once the water is saturated there is no room, so more stirring changes nothing. The salt stays at the bottom.",
+              "Two marks: one for “stays undissolved”, one for the reason — rate versus amount."
+            ]
+          }
+        ]
+      }
+      </script>
+    </div>
+  </div>
+
+  <nav class="lesson-nav">
+    <a href="4-mixtures.html">← Mixtures</a>
+    <a class="next" href="6-suspensions-and-distinguishing.html">Next: Suspensions →</a>
+  </nav>
+</div>
+<script src="../../../js/matter-widgets.js"></script>
+<script src="../../../js/quiz-engine.js"></script>
+</body>
+</html>

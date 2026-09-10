@@ -1,0 +1,554 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Challenging Qns Lvl 2 — Atoms and Molecules</title>
+<meta name="description" content="20 harder questions on sub-atomic particles, proton and nucleon number, isotopes, relative atomic mass and chemical formulae, with options set deliberately close together so only correct reasoning separates them.">
+<meta name="theme-color" content="#E4EAF0">
+<link rel="icon" type="image/svg+xml" href="../../favicon.svg">
+<link rel="stylesheet" href="../../css/style.css">
+<link rel="stylesheet" href="../../css/interactive.css">
+</head>
+<body>
+<div class="sheet">
+  <header>
+    <div>
+      <a class="crumb" href="index.html">← Atoms and Molecules</a>
+      <p class="eyebrow" style="margin-top:10px">Challenging · Level 2</p>
+      <h1>Challenging Qns Lvl 2</h1>
+    </div>
+    <p class="sub">Twenty harder questions. The options are set <strong>deliberately close together</strong>, so guessing by feel will not work — only the correct reasoning separates them.</p>
+  </header>
+
+  <div class="prose" style="padding-bottom:0">
+    <div class="lvl2-note">
+      <span class="lvl2-tag">How this set is different</span>
+      Every wrong option is a <strong>real mistake someone actually makes</strong> — a nucleon number used where a proton number was wanted, a plain average where a weighted one was needed, two joined atoms called a compound. If you land on one, the feedback names the slip.
+    </div>
+  </div>
+
+  <div class="scorebar" id="scorebar">
+    <span>Score <span class="sc">0 / 0</span></span>
+    <span class="bar"><span></span></span>
+    <span class="dn">0 of 20 answered</span>
+    <button class="qz-reset" type="button">Start again</button>
+  </div>
+
+  <div class="qlist" id="quiz">
+    <script type="application/json">
+    {
+      "questions": [
+        {
+          "type": "mcq",
+          "marks": 2,
+          "stem": "<p>An atom has 17 protons and 20 neutrons. What are its proton number and nucleon number?</p>",
+          "options": [
+            "17 and 20",
+            "17 and 37",
+            "20 and 37",
+            "37 and 17"
+          ],
+          "answer": 1,
+          "explain": "Proton number = 17. Nucleon number = 17 + 20 = 37.",
+          "whyWrong": {
+            "0": "20 is the neutron count, not the nucleon number. Nucleon number counts protons <em>and</em> neutrons together.",
+            "2": "You have used the neutron count as the proton number. The proton number is 17, which makes this chlorine.",
+            "3": "The two are the right way round in value but swapped in position. Proton number is always the <em>smaller</em> of the two."
+          },
+          "workthrough": [
+            "<strong>Proton number</strong> is simply the number of protons: <strong>17</strong>.",
+            "<strong>Nucleon number</strong> = protons + neutrons = 17 + 20 = <strong>37</strong>.",
+            "So this atom is <strong>chlorine-37</strong>.",
+            "A useful check: the nucleon number is always <em>larger</em> than the proton number, unless the atom has no neutrons at all (hydrogen-1).",
+            "Notice how close the four options look — only tracking which number counts what separates them."
+          ]
+        },
+        {
+          "type": "mcq",
+          "marks": 2,
+          "stem": "<p>An element has two isotopes: 80% with nucleon number 10 and 20% with nucleon number 11. What is its relative atomic mass?</p>",
+          "options": [
+            "10.2",
+            "10.5",
+            "10.8",
+            "11.0"
+          ],
+          "answer": 0,
+          "explain": "(80/100 × 10) + (20/100 × 11) = 8.0 + 2.2 = 10.2",
+          "whyWrong": {
+            "1": "That is the plain average of 10 and 11. A plain average would only be right if the two isotopes were <strong>50% each</strong>.",
+            "2": "You may have swapped the abundances, weighting 11 by 80%. The <em>lighter</em> isotope is the more abundant here, so the answer must sit close to 10.",
+            "3": "That is the heavier isotope alone — and it is the <em>less</em> abundant one, so the average must be well below it."
+          },
+          "workthrough": [
+            "Multiply each nucleon number by its abundance over 100.",
+            "Isotope-10: <sup>80</sup>&frasl;<sub>100</sub> × 10 = <strong>8.0</strong>",
+            "Isotope-11: <sup>20</sup>&frasl;<sub>100</sub> × 11 = <strong>2.2</strong>",
+            "Add: 8.0 + 2.2 = <strong>10.2</strong>",
+            "Check it lies between 10 and 11, and <em>close to 10</em> because that isotope is far more abundant ✓ That closeness check instantly rules out 10.5 and 10.8."
+          ]
+        },
+        {
+          "type": "mcq",
+          "marks": 2,
+          "stem": "<p>Which pair of atoms are isotopes of each other?</p>",
+          "options": [
+            "6 protons 6 neutrons, and 7 protons 7 neutrons",
+            "6 protons 6 neutrons, and 6 protons 8 neutrons",
+            "6 protons 6 neutrons, and 8 protons 6 neutrons",
+            "6 protons 6 neutrons, and 6 protons 6 electrons"
+          ],
+          "answer": 1,
+          "explain": "Same protons (6, so both carbon), different neutrons.",
+          "whyWrong": {
+            "0": "Different proton numbers means <strong>different elements</strong> — carbon and nitrogen. Isotopes must be the same element.",
+            "2": "Again different proton numbers: carbon and oxygen. The matching neutron count is irrelevant.",
+            "3": "That describes a <em>single</em> neutral carbon atom, where electrons equal protons. It is not a pair of isotopes."
+          },
+          "workthrough": [
+            "Apply the definition: isotopes are atoms of the <strong>same element</strong> with the <strong>same protons and electrons</strong> but <strong>different neutrons</strong>.",
+            "So the first thing to check is the <strong>proton number</strong> — it must match.",
+            "Only one option has 6 protons in both atoms.",
+            "Then check the neutrons differ: 6 and 8 ✓ These are carbon-12 and carbon-14.",
+            "The distractors all vary the protons, which changes the element — the very thing isotopes cannot do."
+          ]
+        },
+        {
+          "type": "mcq",
+          "marks": 2,
+          "stem": "<p>How many atoms in total are there in one molecule of C₂H₆O?</p>",
+          "options": [
+            "3",
+            "8",
+            "9",
+            "12"
+          ],
+          "answer": 2,
+          "explain": "2 + 6 + 1 = 9.",
+          "whyWrong": {
+            "0": "You counted the number of <strong>elements</strong> (carbon, hydrogen, oxygen), not the atoms.",
+            "1": "You have missed the oxygen. A symbol with <strong>no subscript means one atom</strong>, so the O counts as 1.",
+            "3": "You may have multiplied 2 × 6 instead of adding. Subscripts are counts, so they are added."
+          },
+          "workthrough": [
+            "Read each symbol with its subscript in turn.",
+            "<strong>C₂</strong> → 2 carbon atoms.",
+            "<strong>H₆</strong> → 6 hydrogen atoms.",
+            "<strong>O</strong> → no subscript, so <strong>1</strong> oxygen atom.",
+            "Add: 2 + 6 + 1 = <strong>9 atoms</strong>. The missing-oxygen error giving 8 is the near-miss to watch for."
+          ]
+        },
+        {
+          "type": "mcq",
+          "marks": 2,
+          "stem": "<p>Which formula represents an <strong>element</strong>?</p>",
+          "options": [
+            "CO",
+            "S₈",
+            "NO₂",
+            "HCl"
+          ],
+          "answer": 1,
+          "explain": "Only one chemical symbol appears, so every atom is sulfur.",
+          "whyWrong": {
+            "0": "Two symbols — carbon and oxygen — so a <strong>compound</strong>, despite having only two atoms.",
+            "2": "Nitrogen and oxygen chemically combined: a compound.",
+            "3": "Hydrogen and chlorine: two different elements, so a compound."
+          },
+          "workthrough": [
+            "Ignore how many atoms there are and count the number of <strong>different chemical symbols</strong>.",
+            "<strong>One symbol</strong> → element. <strong>Two or more</strong> → compound.",
+            "S₈ has a single symbol, so all eight atoms are sulfur → <strong>element</strong>.",
+            "CO is the mirror trap: only two atoms, but two <em>different</em> elements, so it is a compound.",
+            "Atom count is completely irrelevant to this decision — S₈ has four times as many atoms as CO and is still the element."
+          ]
+        },
+        {
+          "type": "mcq",
+          "marks": 2,
+          "stem": "<p>An atom of an element has 11 protons, 11 electrons and 12 neutrons. What is its overall charge?</p>",
+          "options": [
+            "+1",
+            "−1",
+            "0",
+            "+12"
+          ],
+          "answer": 2,
+          "explain": "Equal protons and electrons cancel; neutrons contribute nothing.",
+          "whyWrong": {
+            "0": "A +1 charge would need one more proton than electrons. Here they are equal at 11 each.",
+            "1": "A −1 charge would need one more electron than protons. Again, they are equal.",
+            "3": "Neutrons have a relative charge of <strong>0</strong>. Their number never affects the overall charge."
+          },
+          "workthrough": [
+            "List the charges: proton <strong>+1</strong>, electron <strong>−1</strong>, neutron <strong>0</strong>.",
+            "Total positive = 11 × (+1) = <strong>+11</strong>.",
+            "Total negative = 11 × (−1) = <strong>−11</strong>.",
+            "These cancel exactly, so the overall charge is <strong>0</strong> — the atom is electrically neutral.",
+            "The 12 neutrons are a distractor. They add mass, not charge — which is why option D is there."
+          ]
+        },
+        {
+          "type": "mcq",
+          "marks": 2,
+          "stem": "<p>Which statement about the <strong>mass</strong> of an atom is correct?</p>",
+          "options": [
+            "It is shared roughly equally between protons, neutrons and electrons",
+            "It comes mainly from the protons and neutrons, because an electron has only about 1/1840 of a proton's mass",
+            "It comes mainly from the electrons, because they are the most numerous",
+            "It comes from the protons only"
+          ],
+          "answer": 1,
+          "explain": "Nucleons carry essentially all the mass.",
+          "whyWrong": {
+            "0": "A proton is about <strong>1840 times</strong> heavier than an electron — nowhere near equal.",
+            "2": "Electrons are never more numerous than protons in a neutral atom, and each is vanishingly light. Their total mass is treated as <strong>negligible</strong>.",
+            "3": "Neutrons have the same relative mass as protons (1), so leaving them out badly underestimates it. Helium has 2 protons but a relative atomic mass of 4."
+          },
+          "workthrough": [
+            "Compare the relative masses: proton <strong>1</strong>, neutron <strong>1</strong>, electron <strong>1/1840</strong>.",
+            "The electrons' contribution is so small it is treated as <strong>negligible</strong> and does not add to the atom's mass.",
+            "Both protons and neutrons sit in the <strong>nucleus</strong>.",
+            "So the mass of an atom is essentially the mass of its nucleus.",
+            "Test it on helium: 2 protons + 2 neutrons = 4 nucleons, and its relative atomic mass is 4 ✓"
+          ]
+        },
+        {
+          "type": "mcq",
+          "marks": 2,
+          "stem": "<p>Element X has 30 protons. Element Y has 83 protons. They are fused to make a new element. What is its proton number, and why?</p>",
+          "options": [
+            "53, because you subtract",
+            "113, because the protons combine and the proton number defines the element",
+            "113, because the masses combine",
+            "2490, because you multiply"
+          ],
+          "answer": 1,
+          "explain": "30 + 83 = 113 protons, which by definition is element 113.",
+          "whyWrong": {
+            "0": "Fusing brings nuclei <em>together</em>, so the protons add rather than subtract.",
+            "2": "The number 113 is right but the reason is wrong. Masses do roughly add, but it is the <strong>proton count</strong> that names the element.",
+            "3": "Multiplying has no physical meaning here. The protons of the two nuclei simply join."
+          },
+          "workthrough": [
+            "Recall what defines an element: its <strong>number of protons</strong>.",
+            "Fusion brings the two nuclei together, so the protons combine: 30 + 83 = <strong>113</strong>.",
+            "An atom with 113 protons <em>is</em> element 113 — <strong>nihonium (Nh)</strong>.",
+            "Note that option C reaches the right number by faulty reasoning. In an exam that would lose the explanation mark.",
+            "This was Kosuke Morita's team using zinc and bismuth — over four trillion collisions across nine years."
+          ]
+        },
+        {
+          "type": "mcq",
+          "marks": 2,
+          "stem": "<p>Which model of the atom had <strong>no nucleus</strong>?</p>",
+          "options": [
+            "The planetary model",
+            "Thomson's plum pudding model",
+            "Both the planetary and plum pudding models",
+            "Neither — all models have a nucleus"
+          ],
+          "answer": 1,
+          "explain": "Thomson spread the positive charge through the whole atom.",
+          "whyWrong": {
+            "0": "The planetary model is defined by having a central <strong>nucleus</strong> of protons and neutrons, with electrons moving around it.",
+            "2": "The planetary model definitely has a nucleus. Only Thomson's lacks one.",
+            "3": "Dalton's billiard ball model had no internal structure at all, and Thomson's had charges but no nucleus. So the statement is false."
+          },
+          "workthrough": [
+            "Take the models in order and ask what each contains.",
+            "<strong>Dalton (1800s):</strong> a hard solid sphere. No sub-atomic particles at all, so no nucleus.",
+            "<strong>Thomson (early 1900s):</strong> electrons (the plums) sitting within a mass of positive charge (the pudding). Charges are present, but <strong>spread through the whole atom</strong> — no nucleus.",
+            "<strong>Planetary:</strong> a small central <strong>nucleus</strong> of protons and neutrons, with electrons around it.",
+            "Of the options given, Thomson's is the one described as having charges but no nucleus — which is exactly why it could not explain later experiments."
+          ]
+        },
+        {
+          "type": "mcq",
+          "marks": 2,
+          "stem": "<p>Why is the relative atomic mass of chlorine 35.5 rather than a whole number?</p>",
+          "options": [
+            "Because protons and neutrons have slightly different masses",
+            "Because it is a weighted average of chlorine-35 and chlorine-37, which occur in fixed proportions",
+            "Because the measurement is imprecise",
+            "Because electrons add half a unit"
+          ],
+          "answer": 1,
+          "explain": "An average of whole numbers need not itself be whole.",
+          "whyWrong": {
+            "0": "Both are given a relative mass of <strong>1</strong> at this level, so that is not the cause.",
+            "2": "The value is known very precisely. The non-whole number is real, not measurement error.",
+            "3": "An electron's mass is <strong>negligible</strong> (1/1840) and is not counted towards the atom's mass at all."
+          },
+          "workthrough": [
+            "Every individual isotope has a <strong>whole-number</strong> nucleon number — you cannot have half a proton.",
+            "But chlorine is a mixture of isotopes: about 75% chlorine-35 and 25% chlorine-37.",
+            "The relative atomic mass is the <strong>weighted average</strong> of those.",
+            "(75/100 × 35) + (25/100 × 37) = 26.25 + 9.25 = <strong>35.5</strong>",
+            "An average of whole numbers need not be whole. This is why many periodic-table masses are decimals."
+          ]
+        },
+        {
+          "type": "mcq",
+          "marks": 2,
+          "stem": "<p>Which is a molecule of an <strong>element</strong>?</p>",
+          "options": [
+            "NO₂",
+            "CO",
+            "N₂",
+            "H₂O"
+          ],
+          "answer": 2,
+          "explain": "Two nitrogen atoms joined — same type, so still an element.",
+          "whyWrong": {
+            "0": "Nitrogen and oxygen chemically combined: a molecule of a <strong>compound</strong>.",
+            "1": "Carbon and oxygen: two different types of atom, so a compound.",
+            "3": "Hydrogen and oxygen: a compound — the textbook's standard example."
+          },
+          "workthrough": [
+            "Ask the deciding question: <strong>how many different types of atom in one molecule?</strong>",
+            "N₂ contains only nitrogen atoms — <strong>one</strong> type.",
+            "One type → molecule of an <strong>element</strong>, however many atoms are joined.",
+            "The other three each contain two different symbols, so all are compounds.",
+            "The persistent trap: joining atoms does <em>not</em> automatically make a compound. They must be <strong>different</strong> atoms."
+          ]
+        },
+        {
+          "type": "mcq",
+          "marks": 2,
+          "stem": "<p>Nitrogen-14 and nitrogen-15 differ in which particle, and what stays the same?</p>",
+          "options": [
+            "Different protons; same neutrons",
+            "Different neutrons; same protons and electrons",
+            "Different electrons; same protons",
+            "Different protons and neutrons; same electrons"
+          ],
+          "answer": 1,
+          "explain": "Isotopes vary only in neutrons.",
+          "whyWrong": {
+            "0": "If the protons differed they would be <strong>different elements</strong>, not two forms of nitrogen.",
+            "2": "Electrons equal protons in a neutral atom, so they cannot differ while the element stays the same.",
+            "3": "The protons cannot differ — both are nitrogen, so both have 7 protons."
+          },
+          "workthrough": [
+            "Both are nitrogen, so both must have the same <strong>proton number: 7</strong>.",
+            "Both are neutral atoms, so both have <strong>7 electrons</strong> too.",
+            "The names give the nucleon numbers: 14 and 15.",
+            "Neutrons = nucleon number − proton number → 14 − 7 = <strong>7</strong>, and 15 − 7 = <strong>8</strong>.",
+            "So only the <strong>neutrons</strong> differ — which is exactly the definition of isotopes."
+          ]
+        },
+        {
+          "type": "mcq",
+          "marks": 2,
+          "stem": "<p>Which limitation of the labelled-circle model does the textbook specifically name?</p>",
+          "options": [
+            "Atoms are cubes, not spheres",
+            "Atoms do not actually have colour — models are simplified and not always real and accurate",
+            "Models cannot show more than four atoms",
+            "All atoms are the same size in reality"
+          ],
+          "answer": 1,
+          "explain": "Colours are added for our convenience, not because atoms have them.",
+          "whyWrong": {
+            "0": "The textbook makes no claim about shape. The limitation it names concerns <strong>colour</strong>.",
+            "2": "Diagrams routinely show many atoms — the vitamin B12 structure has over a hundred.",
+            "3": "Atoms of different elements genuinely do differ in size, so that part of the model is not the misleading bit."
+          },
+          "workthrough": [
+            "Ask why the colours are used at all: so that <strong>we can distinguish between atoms easily</strong>.",
+            "Then ask whether atoms really have those colours. They do not — <strong>atoms have no colour</strong>.",
+            "So the colour is added for our benefit, not because it is real.",
+            "That makes it a <strong>limitation of scientific models</strong>: simplified representations, not always real and accurate.",
+            "The same caution applies to the planetary model — useful for study, but not a picture of what an atom looks like."
+          ]
+        },
+        {
+          "type": "mcq",
+          "marks": 2,
+          "stem": "<p>An atom of magnesium has a proton number of 12 and a nucleon number of 24. How many <strong>neutrons</strong>?</p>",
+          "options": [
+            "12",
+            "24",
+            "36",
+            "6"
+          ],
+          "answer": 0,
+          "explain": "24 − 12 = 12.",
+          "whyWrong": {
+            "1": "24 is the nucleon number, which already includes the protons. You still need to subtract them.",
+            "2": "You added instead of subtracting. That counts the protons twice.",
+            "3": "You may have halved the proton number. Neutrons = nucleon number − proton number, so 24 − 12."
+          },
+          "workthrough": [
+            "Recall: <strong>nucleon number = protons + neutrons</strong>.",
+            "Rearrange: <strong>neutrons = nucleon number − proton number</strong>.",
+            "Substitute: 24 − 12 = <strong>12 neutrons</strong>.",
+            "Here protons and neutrons happen to be equal, which is common for lighter elements — but it is a coincidence, not a rule.",
+            "Chlorine-37 has 17 protons and 20 neutrons, so do not assume they always match."
+          ]
+        },
+        {
+          "type": "mcq",
+          "marks": 2,
+          "stem": "<p>Which comparison best conveys how small a nucleus is compared with its atom?</p>",
+          "options": [
+            "A pea in a shoebox",
+            "A marble in the middle of a football stadium",
+            "A coin on a dinner plate",
+            "A grain of sand in a cup"
+          ],
+          "answer": 1,
+          "explain": "The textbook's image — and the ratio really is that extreme.",
+          "whyWrong": {
+            "0": "A shoebox is only a few hundred times a pea. The real ratio is vastly larger than that.",
+            "2": "A dinner plate is barely a hundred times a coin — far too modest a comparison.",
+            "3": "A cup is only a few thousand times a grain of sand, still nowhere near the true ratio."
+          },
+          "workthrough": [
+            "Recall the planetary model: the atom is <strong>mostly empty space</strong>.",
+            "The textbook's comparison: if an atom were the size of a <strong>football stadium</strong>, the nucleus would be a <strong>marble in the middle</strong>.",
+            "The other three options all understate the ratio dramatically — which is the point of the question.",
+            "Hold on to the consequence: nearly all the atom's <strong>mass</strong> sits in that marble, while nearly all its <strong>volume</strong> is empty.",
+            "That is why the nucleus is where the mass discussion belongs and the electrons are where the charge discussion belongs."
+          ]
+        },
+        {
+          "type": "mcq",
+          "marks": 2,
+          "stem": "<p>Boron is 20% boron-10 and 80% boron-11. Its relative atomic mass is closest to:</p>",
+          "options": [
+            "10.2",
+            "10.5",
+            "10.8",
+            "11.0"
+          ],
+          "answer": 2,
+          "explain": "(20/100 × 10) + (80/100 × 11) = 2.0 + 8.8 = 10.8",
+          "whyWrong": {
+            "0": "That would be right if the abundances were <em>swapped</em> — 80% of the lighter isotope. Here the <strong>heavier</strong> one dominates, so the answer sits near 11.",
+            "1": "That is the plain average, correct only at 50% each.",
+            "3": "That is the heavier isotope alone. The 20% of boron-10 pulls the average slightly below 11."
+          },
+          "workthrough": [
+            "Before calculating, predict: the <strong>heavier</strong> isotope is the more abundant (80%), so the answer must sit <em>close to 11</em>.",
+            "Boron-10: <sup>20</sup>&frasl;<sub>100</sub> × 10 = <strong>2.0</strong>",
+            "Boron-11: <sup>80</sup>&frasl;<sub>100</sub> × 11 = <strong>8.8</strong>",
+            "Add: 2.0 + 8.8 = <strong>10.8</strong> ✓ — matching the prediction.",
+            "Compare with question 2, where the <em>lighter</em> isotope dominated and the answer was 10.2. Same two nucleon numbers, opposite abundances, opposite ends of the range."
+          ]
+        },
+        {
+          "type": "mcq",
+          "marks": 3,
+          "stem": "<p>Two atoms have the same nucleon number but different proton numbers. Which is true?</p>",
+          "options": [
+            "They are isotopes of the same element",
+            "They are different elements, and must therefore have different neutron counts too",
+            "They are identical atoms",
+            "They must have the same number of electrons"
+          ],
+          "answer": 1,
+          "explain": "Different protons means different elements; with nucleon number fixed, the neutrons must differ too.",
+          "whyWrong": {
+            "0": "Isotopes share the same <strong>proton</strong> number and differ in nucleon number. This pair is the exact reverse.",
+            "2": "Different proton numbers make them different elements, so they cannot be identical.",
+            "3": "Electrons equal protons in a neutral atom, so different proton numbers mean different electron counts."
+          },
+          "workthrough": [
+            "Different proton numbers → <strong>different elements</strong>. That alone rules out three options.",
+            "Now use the fixed nucleon number. Since nucleon number = protons + neutrons, and the total is the same while the protons differ…",
+            "…the <strong>neutrons must differ too</strong>, in the opposite direction.",
+            "Example: carbon-14 (6p, 8n) and nitrogen-14 (7p, 7n). Same nucleon number 14, different elements.",
+            "These are sometimes called isobars — the mirror image of isotopes, which share protons and differ in nucleon number."
+          ]
+        },
+        {
+          "type": "mcq",
+          "marks": 3,
+          "stem": "<p>An element's two isotopes have nucleon numbers 63 and 65. Its relative atomic mass is 63.6. Which isotope is more abundant, and roughly how do you know?</p>",
+          "options": [
+            "The 65 isotope, because 63.6 is above 63",
+            "The 63 isotope, because 63.6 lies much closer to 63 than to 65",
+            "They are equally abundant, because 63.6 is between them",
+            "Cannot tell without the exact percentages"
+          ],
+          "answer": 1,
+          "explain": "A weighted average always sits nearer the more abundant value.",
+          "whyWrong": {
+            "0": "Being above 63 only shows some of the heavier isotope is present. The <em>distance</em> is what reveals which dominates — and 63.6 is only 0.6 above 63, but 1.4 below 65.",
+            "2": "Equal abundances would give exactly 64, the midpoint. 63.6 is well below that.",
+            "3": "You can tell the direction without exact figures. That is the whole value of the closeness check."
+          },
+          "workthrough": [
+            "A weighted average always lies <strong>between</strong> the two values, and <strong>closer to the more abundant one</strong>.",
+            "Measure the distances: 63.6 − 63 = <strong>0.6</strong>, and 65 − 63.6 = <strong>1.4</strong>.",
+            "It is much closer to <strong>63</strong>, so the 63 isotope must be more abundant.",
+            "Sanity-check with a midpoint: equal abundances would give 64. We are below that, confirming the lighter isotope dominates.",
+            "This is copper, roughly 69% copper-63 and 31% copper-65. The estimate matches without any calculation — a fast way to check an answer you computed."
+          ]
+        },
+        {
+          "type": "mcq",
+          "marks": 3,
+          "stem": "<p>A student says: “O₂ must be a compound because two atoms are chemically combined.” What is the precise correction?</p>",
+          "options": [
+            "O₂ is a mixture, not a compound",
+            "A compound needs two or more <em>different</em> types of atom; O₂ has only one type, so it is a molecule of an element",
+            "O₂ is a single atom, not a molecule",
+            "Nothing is wrong — O₂ is a compound"
+          ],
+          "answer": 1,
+          "explain": "Chemical combination is necessary but not sufficient — the atoms must differ.",
+          "whyWrong": {
+            "0": "A mixture needs two or more substances that are <strong>not</strong> chemically combined. In O₂ the atoms are combined, so it is not a mixture.",
+            "2": "O₂ genuinely <em>is</em> a molecule — two or more atoms chemically combined. That part of the student's statement was right.",
+            "3": "Two atoms joined does not make a compound if they are the same kind. Joining two oxygen atoms still gives oxygen."
+          },
+          "workthrough": [
+            "Notice what the student got <strong>right</strong>: O₂ is a molecule, and the atoms are chemically combined.",
+            "The error is in what a compound requires. Chemical combination alone is not enough.",
+            "A molecule of a <strong>compound</strong> needs <strong>two or more different types</strong> of atom.",
+            "O₂ has only one type — oxygen — so it is a molecule of an <strong>element</strong>.",
+            "A good correction names both parts: what the student had right, and the missing condition. That is what makes option B precise rather than merely correct."
+          ]
+        },
+        {
+          "type": "mcq",
+          "marks": 3,
+          "stem": "<p>Why does knowing an element's <strong>proton number</strong> tell you more about its identity than knowing its nucleon number?</p>",
+          "options": [
+            "Nucleon number is harder to measure",
+            "Proton number is unique to each element, while different elements can share a nucleon number",
+            "Nucleon number changes over time",
+            "Proton number includes the electrons"
+          ],
+          "answer": 1,
+          "explain": "Proton number is the identity; nucleon number is not unique.",
+          "whyWrong": {
+            "0": "Ease of measurement is irrelevant to what the numbers <em>mean</em>. Both are known precisely.",
+            "2": "An atom's nucleon number does not drift over time. It is fixed for a given isotope.",
+            "3": "Proton number counts protons only. Electrons happen to match it in a neutral atom, but they are not part of the definition."
+          },
+          "workthrough": [
+            "Recall the rule: <strong>no two elements can have the same number of protons</strong>. Proton number is a unique identity number.",
+            "Now test whether nucleon number is unique. Carbon-14 has 14 nucleons; nitrogen-14 also has 14.",
+            "So a nucleon number of 14 could belong to <em>either</em> element — it does not identify anything on its own.",
+            "Worse, one element has several nucleon numbers: carbon can be 12, 13 or 14.",
+            "So the relationship is one-to-one for protons but many-to-many for nucleons. That is why the periodic table is ordered by <strong>proton number</strong>."
+          ]
+        }
+      ]
+    }
+    </script>
+  </div>
+
+  <nav class="lesson-nav">
+    <a href="practice.html">← Level 1 practice</a>
+    <a class="next" href="index.html">Chapter home ↺</a>
+  </nav>
+</div>
+<script src="../../js/quiz-engine.js"></script>
+</body>
+</html>

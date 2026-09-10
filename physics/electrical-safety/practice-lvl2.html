@@ -1,0 +1,558 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Challenging Qns Lvl 2 — The three-pin plug</title>
+<meta name="description" content="20 harder questions on the three-pin plug, wire functions, fuses and earthing, with options set deliberately close together so only correct reasoning separates them.">
+<meta name="theme-color" content="#E4EAF0">
+<link rel="icon" type="image/svg+xml" href="../../favicon.svg">
+<link rel="stylesheet" href="../../css/style.css">
+<link rel="stylesheet" href="../../css/interactive.css">
+</head>
+<body>
+<div class="sheet">
+  <header>
+    <div>
+      <a class="crumb" href="index.html">← The three-pin plug</a>
+      <p class="eyebrow" style="margin-top:10px">Challenging · Level 2</p>
+      <h1>Challenging Qns Lvl 2</h1>
+    </div>
+    <p class="sub">Twenty harder questions. The options are set <strong>deliberately close together</strong>, so guessing by feel will not work — only the correct reasoning separates them.</p>
+  </header>
+
+  <div class="prose" style="padding-bottom:0">
+    <div class="lvl2-note">
+      <span class="lvl2-tag">How this set is different</span>
+      Every wrong option is a <strong>real mistake someone actually makes</strong> — the right wire with the wrong job, a fuse rating just below the current it must carry, an earth explanation that sounds sensible until you follow the path. If you land on one, the feedback names the slip.
+    </div>
+  </div>
+
+  <div class="scorebar" id="scorebar">
+    <span>Score <span class="sc">0 / 0</span></span>
+    <span class="bar"><span></span></span>
+    <span class="dn">0 of 20 answered</span>
+    <button class="qz-reset" type="button">Start again</button>
+  </div>
+
+  <div class="qlist" id="quiz">
+    <script type="application/json">
+    {
+      "questions": [
+        {
+          "type": "mcq",
+          "marks": 2,
+          "stem": "<p>An appliance normally draws 3.1 A. Which fuse should be fitted?</p>",
+          "options": [
+            "1 A",
+            "3 A",
+            "5 A",
+            "13 A"
+          ],
+          "answer": 2,
+          "explain": "The fuse must be rated just ABOVE the normal current — 5 A is the next standard value up from 3.1 A.",
+          "whyWrong": {
+            "0": "Far below the working current. The fuse would blow the moment the appliance was switched on.",
+            "1": "The closest trap. 3 A is <em>below</em> 3.1 A, so the fuse would blow in normal use — a fuse must carry the normal current without melting.",
+            "3": "Safe for the appliance to run, but far too high to protect it. A fault current of 10 A would flow happily through a 13 A fuse and could start a fire."
+          },
+          "workthrough": [
+            "A fuse has two jobs at once: <strong>carry the normal current</strong> without blowing, and <strong>blow before a fault current does damage</strong>.",
+            "So the rule is: choose the fuse rated <strong>just above</strong> the normal working current.",
+            "Normal current is 3.1 A, so a 3 A fuse is ruled out — it is below and would blow in ordinary use.",
+            "The next standard rating above 3.1 A is <strong>5 A</strong>.",
+            "13 A would let the appliance run, but it is far too loose to offer protection. Note how close 3 A and 5 A look — the decision hinges entirely on which side of 3.1 A they fall."
+          ]
+        },
+        {
+          "type": "mcq",
+          "marks": 2,
+          "stem": "<p>Why is the fuse placed in the <strong>live</strong> wire rather than the neutral wire?</p>",
+          "options": [
+            "The live wire carries more current than the neutral wire",
+            "So that when the fuse blows, the appliance is disconnected from the high voltage",
+            "Because the live wire is thicker",
+            "Because the neutral wire is already earthed"
+          ],
+          "answer": 1,
+          "explain": "Blowing the live cuts the appliance off from the 230 V supply. A fuse in the neutral would stop the current but leave the appliance live.",
+          "whyWrong": {
+            "0": "The same current flows through live and neutral — they are in the same series loop. Current is not the reason.",
+            "2": "Live and neutral wires are the same thickness. Thickness relates to current capacity, not to which one gets the fuse.",
+            "3": "The neutral is near 0 V, which is true — but that is precisely the argument for putting the fuse in the <em>live</em> instead. This option states a fact and draws the wrong conclusion from it."
+          },
+          "workthrough": [
+            "Ask what you want to achieve when a fault occurs: the appliance must become <strong>safe to touch</strong>.",
+            "The <strong>live</strong> wire is the dangerous one, at about 230 V. The neutral sits near 0 V.",
+            "If the fuse is in the <strong>live</strong> and it blows, the appliance is cut off from the 230 V — everything beyond the break is now safe.",
+            "If the fuse were in the <strong>neutral</strong> and it blew, the current would stop, but the appliance would still be <strong>connected to 230 V</strong> through the live wire. Touch it and you could complete a path to earth.",
+            "Same current stops in both cases — the difference is entirely about what remains at high voltage."
+          ]
+        },
+        {
+          "type": "mcq",
+          "marks": 2,
+          "stem": "<p>A metal-cased appliance has a fault: the live wire has come loose and is touching the metal case. The appliance is correctly earthed. What happens?</p>",
+          "options": [
+            "Nothing — the earth wire simply absorbs the charge",
+            "A large current flows through the earth wire, blowing the fuse and disconnecting the appliance",
+            "The case becomes live and stays dangerous until someone notices",
+            "The neutral wire carries the fault current back to the supply"
+          ],
+          "answer": 1,
+          "explain": "The earth gives a low-resistance path, so a huge current flows and the fuse blows — making the appliance safe.",
+          "whyWrong": {
+            "0": "Charge is not \"absorbed\". The earth wire provides a <strong>path</strong>, and the point of that path is to cause a large current that blows the fuse.",
+            "2": "That is what happens with <em>no</em> earth wire. With the earth connected, the fault is converted into a blown fuse within a fraction of a second.",
+            "3": "The neutral is not connected to the case. It is the <strong>earth</strong> wire attached to the metal case that carries the fault current."
+          },
+          "workthrough": [
+            "Trace the path the fault current takes.",
+            "The live wire touches the case, so the case is now at 230 V.",
+            "The <strong>earth wire</strong> is attached to that case and offers a <strong>very low resistance</strong> path to earth.",
+            "From I = V ÷ R, a low resistance means a <strong>very large current</strong> — far above the fuse rating.",
+            "That surge <strong>blows the fuse</strong>, breaking the live connection and making the appliance safe. The earth does not make the fault harmless; it makes the fault <em>trigger the protection</em>."
+          ]
+        },
+        {
+          "type": "mcq",
+          "marks": 2,
+          "stem": "<p>Which wire completes the circuit by carrying current back to the supply?</p>",
+          "options": [
+            "The live wire, brown",
+            "The neutral wire, blue",
+            "The earth wire, green and yellow",
+            "The neutral wire, brown"
+          ],
+          "answer": 1,
+          "explain": "Neutral, blue, sits at about 0 V and is the return path.",
+          "whyWrong": {
+            "0": "The live wire brings current <em>from</em> the supply to the appliance at about 230 V. It is the outward path, not the return.",
+            "2": "The earth carries no current in normal operation. It is a safety path used only during a fault.",
+            "3": "Right wire, wrong colour. Neutral is <strong>blue</strong>; <strong>brown</strong> is live — and mixing those two up is exactly the mistake that makes a plug dangerous."
+          },
+          "workthrough": [
+            "Match each of the three wires to its job and colour.",
+            "<strong>Live — brown</strong> — carries current from the mains to the appliance at about 230 V.",
+            "<strong>Neutral — blue</strong> — <strong>completes the circuit</strong>, carrying current back to the supply at about 0 V.",
+            "<strong>Earth — green and yellow</strong> — a safety path, carrying no current unless there is a fault.",
+            "Watch the last option: it pairs the right function with the wrong colour. Colour and function must both be right."
+          ]
+        },
+        {
+          "type": "mcq",
+          "marks": 2,
+          "stem": "<p>Why does a plastic-cased hairdryer often have only <strong>two</strong> wires, with no earth?</p>",
+          "options": [
+            "Plastic appliances use less current, so they are safer",
+            "The plastic casing cannot become live, so there is no metal case needing an earth path",
+            "The neutral wire doubles as the earth",
+            "Two-wire appliances are only allowed for low-voltage devices"
+          ],
+          "answer": 1,
+          "explain": "Double insulation — a non-conducting case can never become live, so an earth would have nothing to protect.",
+          "whyWrong": {
+            "0": "Current depends on the appliance's power, not its casing material. A plastic hairdryer can draw a large current.",
+            "2": "The neutral is a current-carrying wire in normal use. Using it as an earth would defeat the purpose — a fault could make the case live with no protection.",
+            "3": "Such appliances run on the same 230 V mains as any other. It is the <strong>insulating casing</strong>, not the voltage, that removes the need for an earth."
+          },
+          "workthrough": [
+            "Ask what the earth wire is actually for: it protects you when a <strong>metal case</strong> accidentally becomes live.",
+            "Now ask whether that danger exists here. The casing is <strong>plastic</strong>, which is an insulator.",
+            "A live wire touching the inside of a plastic case cannot make the outside live, because plastic will not conduct.",
+            "With no way for the case to become live, there is nothing for an earth wire to protect against — this is called <strong>double insulation</strong>.",
+            "So only live and neutral are needed. The safety comes from the material, not from a third wire."
+          ]
+        },
+        {
+          "type": "mcq",
+          "marks": 2,
+          "stem": "<p>A 230 V appliance is rated at 690 W. Which fuse is most suitable?</p>",
+          "options": [
+            "1 A",
+            "3 A",
+            "5 A",
+            "13 A"
+          ],
+          "answer": 1,
+          "explain": "I = 690 ÷ 230 = 3.0 A, so the 3 A fuse is the closest standard rating that carries it.",
+          "whyWrong": {
+            "0": "1 A is below the 3 A working current, so the fuse would blow immediately in normal use.",
+            "2": "5 A would work safely but is unnecessarily loose — it would allow a 4 A fault current to flow unchecked. Choose the closest rating that still carries the normal current.",
+            "3": "Far too high. A 13 A fuse offers almost no protection to an appliance drawing only 3 A."
+          },
+          "workthrough": [
+            "First find the working current from the power rating: <strong>I = P ÷ V</strong>.",
+            "I = 690 ÷ 230 = <strong>3.0 A</strong>.",
+            "Now choose the fuse: it must carry 3.0 A without blowing, and be as close above it as possible.",
+            "The standard ratings are 1, 3, 5 and 13 A. The <strong>3 A</strong> fuse is rated exactly at the working current and is the standard choice here.",
+            "Compare with the earlier 3.1 A question, where 3 A was <em>too small</em>. A tenth of an amp moved the answer — which is why you must calculate rather than estimate."
+          ]
+        },
+        {
+          "type": "mcq",
+          "marks": 2,
+          "stem": "<p>In a correctly wired UK-style three-pin plug held with the earth pin at the top, where does the <strong>brown</strong> wire go?</p>",
+          "options": [
+            "To the top terminal",
+            "To the left-hand terminal",
+            "To the right-hand terminal",
+            "To whichever terminal is nearest"
+          ],
+          "answer": 2,
+          "explain": "Brown is live, and live goes to the right-hand terminal (with earth at the top).",
+          "whyWrong": {
+            "0": "The top terminal is the <strong>earth</strong>, which takes the green-and-yellow wire.",
+            "1": "The left-hand terminal is <strong>neutral</strong>, which takes the <strong>blue</strong> wire. Swapping brown and blue is the classic dangerous miswiring.",
+            "3": "Position is fixed by the standard, not by convenience. Wiring to the nearest terminal is exactly how plugs get wired wrongly."
+          },
+          "workthrough": [
+            "Fix the orientation first: <strong>earth pin at the top</strong>. Every position rule depends on this.",
+            "<strong>Top</strong> — earth — green and yellow.",
+            "<strong>Right</strong> — live — <strong>brown</strong>. A memory hook: b<strong>R</strong>own goes <strong>R</strong>ight.",
+            "<strong>Left</strong> — neutral — blue.",
+            "Also remember the fuse sits in the <strong>live</strong> line, so it is on the same side as the brown wire."
+          ]
+        },
+        {
+          "type": "mcq",
+          "marks": 2,
+          "stem": "<p>Which statement about the earth wire in normal (fault-free) operation is correct?</p>",
+          "options": [
+            "It carries the same current as the live wire",
+            "It carries a small current to keep the case safe",
+            "It carries no current at all",
+            "It carries current only when the appliance is switched off"
+          ],
+          "answer": 2,
+          "explain": "The earth is a safety path, idle until a fault occurs.",
+          "whyWrong": {
+            "0": "That is the <strong>neutral</strong> wire, which carries the return current equal to the live current. The earth is a separate, normally idle path.",
+            "1": "A tempting middle answer, but wrong. Any current in the earth wire means something is faulty — it is not a normal condition.",
+            "3": "Switching off breaks the circuit, so even less current flows. The earth is idle whether the appliance is on or off, provided there is no fault."
+          },
+          "workthrough": [
+            "In normal operation the current path is <strong>live → appliance → neutral</strong>, a complete loop.",
+            "The <strong>earth</strong> wire is attached to the metal case, which is not part of that loop.",
+            "With no fault, there is no p.d. driving current down the earth wire, so it carries <strong>no current</strong>.",
+            "It only carries current when a fault connects the live wire to the case — and then it carries a very large current, blowing the fuse.",
+            "So the earth is best described as a <em>standby safety path</em>, not part of the working circuit."
+          ]
+        },
+        {
+          "type": "mcq",
+          "marks": 2,
+          "stem": "<p>An appliance draws 4 A normally. A fault causes the current to rise to 9 A. A 5 A fuse is fitted. What happens?</p>",
+          "options": [
+            "Nothing — 9 A is below the 13 A mains limit",
+            "The fuse blows, breaking the live connection",
+            "The fuse carries the current but gets warm",
+            "The earth wire diverts the extra 4 A"
+          ],
+          "answer": 1,
+          "explain": "9 A exceeds the 5 A rating, so the fuse melts and cuts the live wire.",
+          "whyWrong": {
+            "0": "The 13 A figure refers to the socket, not the fuse. The <strong>fuse</strong> rating is what decides — and 9 A is well above 5 A.",
+            "2": "A fuse carries currents up to its rating. Above it, the wire inside <strong>melts</strong>. 9 A is nearly double the rating, so it blows quickly.",
+            "3": "The earth carries fault current only when the live touches the case. It does not \"divert the extra\" from a general overcurrent."
+          },
+          "workthrough": [
+            "Compare the fault current with the <strong>fuse rating</strong>, not with anything else.",
+            "Fault current = <strong>9 A</strong>. Fuse rating = <strong>5 A</strong>.",
+            "9 A is well above 5 A, so the thin wire inside the fuse heats up and <strong>melts</strong>.",
+            "That breaks the <strong>live</strong> connection, disconnecting the appliance from the 230 V supply.",
+            "Note the fuse was correctly chosen: 5 A is just above the normal 4 A, so it carried normal operation fine and still responded to the fault."
+          ]
+        },
+        {
+          "type": "mcq",
+          "marks": 2,
+          "stem": "<p>A cable grip in a plug clamps the outer sleeve of the cable rather than the individual wires. Why?</p>",
+          "options": [
+            "To make the plug look tidy",
+            "So that any pull on the cable is taken by the tough outer sleeve, not by the wire connections",
+            "To stop the wires touching each other",
+            "To insulate the wires from the plug casing"
+          ],
+          "answer": 1,
+          "explain": "The grip transfers strain to the sleeve, keeping the terminal connections intact.",
+          "whyWrong": {
+            "0": "Tidiness is a side effect. The grip has a specific mechanical safety job.",
+            "2": "The wires are individually insulated already, so touching is not the danger the grip addresses.",
+            "3": "Insulation is provided by the coloured sheath on each wire. The grip's job is mechanical, not electrical."
+          },
+          "workthrough": [
+            "Ask what goes wrong if the cable is tugged and there is <strong>no</strong> grip.",
+            "The pull would reach the <strong>terminal screws</strong> and could drag a wire loose.",
+            "The most dangerous one to come loose is the <strong>live</strong>, which could then touch the case or another terminal.",
+            "The grip clamps the <strong>tough outer sleeve</strong>, so any pull is taken by the sleeve and never reaches the connections.",
+            "This is why the grip must be tightened on the sleeve, not on the three inner wires — a very common wiring mistake."
+          ]
+        },
+        {
+          "type": "mcq",
+          "marks": 2,
+          "stem": "<p>Two appliances are plugged into the same socket using an adaptor. One draws 5 A, the other 9 A. The socket is protected by a 13 A fuse. What happens?</p>",
+          "options": [
+            "Nothing — each appliance is below 13 A",
+            "The total current is 14 A, which exceeds 13 A, so the fuse blows",
+            "The current splits, so each carries 6.5 A",
+            "Only the larger appliance blows its own fuse"
+          ],
+          "answer": 1,
+          "explain": "Appliances in parallel add their currents: 5 + 9 = 14 A, above the 13 A rating.",
+          "whyWrong": {
+            "0": "The fuse sees the <strong>total</strong> current, not each appliance separately. Judging them individually is exactly the mistake that causes overloading.",
+            "2": "Current does not divide equally between branches — each appliance draws what its own resistance demands. And the socket fuse still carries the sum.",
+            "3": "Each appliance may have its own plug fuse, but the <strong>socket</strong> fuse carries the combined 14 A and will blow first."
+          },
+          "workthrough": [
+            "The two appliances are connected <strong>in parallel</strong> through the adaptor — they share the same supply p.d.",
+            "In parallel, the <strong>branch currents add</strong> to give the total drawn from the supply.",
+            "Total = 5 + 9 = <strong>14 A</strong>.",
+            "That total passes through the socket's <strong>13 A</strong> fuse.",
+            "14 A exceeds 13 A, so the fuse blows. This is precisely the overloading hazard that warnings about adaptors are about."
+          ]
+        },
+        {
+          "type": "mcq",
+          "marks": 2,
+          "stem": "<p>Why is the earth pin on a three-pin plug longer than the other two?</p>",
+          "options": [
+            "To carry a larger current",
+            "So it connects first and disconnects last, keeping the appliance earthed whenever it is live",
+            "Because it is made of a different metal",
+            "To make the plug harder to insert the wrong way"
+          ],
+          "answer": 1,
+          "explain": "Earth-first, earth-last means protection is never absent while power is present.",
+          "whyWrong": {
+            "0": "The earth carries no current in normal use. Length is about <em>timing</em>, not capacity.",
+            "2": "The pins are the same material. The difference is purely the length.",
+            "3": "The plug is already shaped so it only fits one way. The longer earth pin serves a safety purpose beyond orientation."
+          },
+          "workthrough": [
+            "Think about the order in which the pins make contact as the plug is pushed in.",
+            "Being longer, the <strong>earth pin connects first</strong> — before live and neutral.",
+            "When the plug is pulled out, it is also the <strong>last to disconnect</strong>.",
+            "So the appliance is <strong>earthed the whole time it is connected to the live supply</strong>, with no unprotected moment at either end.",
+            "If earth connected last, there would be a brief instant where the case was live but unearthed — exactly when a fault would be most dangerous."
+          ]
+        },
+        {
+          "type": "mcq",
+          "marks": 2,
+          "stem": "<p>A student says: “A fuse protects the person using the appliance.” What is the better description?</p>",
+          "options": [
+            "Correct — the fuse stops anyone getting a shock",
+            "The fuse mainly protects the appliance and wiring from overheating; the earth wire is what protects the user",
+            "The fuse protects only the mains supply, not the appliance",
+            "Neither the fuse nor the earth protects the user"
+          ],
+          "answer": 1,
+          "explain": "Fuse guards against fire from overcurrent; earth guards the person against a live case.",
+          "whyWrong": {
+            "0": "A fuse takes time to blow and only responds to a <em>large</em> overcurrent. A current far too small to blow it can still be fatal to a person.",
+            "2": "The fuse very much protects the appliance and its cable — that is its main purpose. Protecting the supply is not the point.",
+            "3": "Both offer protection, just of different things. Dismissing both goes too far."
+          },
+          "workthrough": [
+            "Separate the two devices and what each one responds to.",
+            "The <strong>fuse</strong> responds to <strong>excess current</strong>. It stops the flex and the appliance overheating and causing a fire.",
+            "The <strong>earth wire</strong> responds to a <strong>live case</strong>. It gives the fault current a low-resistance path, which blows the fuse and makes the case safe to touch.",
+            "So the user is protected mainly by the <strong>earth</strong>, working together with the fuse.",
+            "The nuance that makes the first option wrong: a shock current of well under 1 A can kill, but would never blow a 5 A or 13 A fuse."
+          ]
+        },
+        {
+          "type": "mcq",
+          "marks": 2,
+          "stem": "<p>An appliance rated 230 V, 1150 W is fitted with a 3 A fuse. What is the likely result?</p>",
+          "options": [
+            "It works normally",
+            "The fuse blows as soon as the appliance is switched on",
+            "The appliance runs at reduced power",
+            "The earth wire carries the excess current"
+          ],
+          "answer": 1,
+          "explain": "I = 1150 ÷ 230 = 5 A, which is above the 3 A fuse rating.",
+          "whyWrong": {
+            "0": "Only if the fuse could carry 5 A — it cannot. A 3 A fuse melts at currents above 3 A.",
+            "2": "A fuse does not throttle the current. It either carries it or melts and stops it entirely.",
+            "3": "The earth wire does not carry normal operating current. This is not a fault to earth; it is simply an undersized fuse."
+          },
+          "workthrough": [
+            "Find the working current first: <strong>I = P ÷ V</strong> = 1150 ÷ 230 = <strong>5 A</strong>.",
+            "Compare with the fitted fuse: <strong>3 A</strong>.",
+            "The normal current exceeds the fuse rating, so the fuse melts <strong>immediately on switch-on</strong>.",
+            "The correct fuse here would be <strong>5 A</strong> or the next standard value above it.",
+            "This is the mirror image of fitting a fuse that is too large: too small and it will not let the appliance work; too large and it will not protect it."
+          ]
+        },
+        {
+          "type": "mcq",
+          "marks": 2,
+          "stem": "<p>What is the main hazard of using a cable with <strong>damaged insulation</strong>?</p>",
+          "options": [
+            "The appliance draws more current",
+            "Exposed live wire can be touched, or can short to neutral or earth, causing shock or fire",
+            "The fuse rating becomes incorrect",
+            "The appliance runs more slowly"
+          ],
+          "answer": 1,
+          "explain": "Insulation keeps conductors apart and away from people; damage removes both protections.",
+          "whyWrong": {
+            "0": "Damaged insulation does not change the appliance's resistance, so the normal current is unchanged — until a short circuit occurs.",
+            "2": "The fuse rating is a property of the fuse. Damaged insulation does not alter it, though a short may cause it to blow.",
+            "3": "Speed depends on the appliance and its supply. Insulation damage is a safety hazard, not a performance one."
+          },
+          "workthrough": [
+            "Ask what insulation is for: keeping the conductors <strong>apart from each other</strong> and <strong>away from people</strong>.",
+            "Damage removes both protections at once.",
+            "<strong>Touch hazard:</strong> exposed live wire at 230 V can give a fatal shock through a path to earth.",
+            "<strong>Short-circuit hazard:</strong> live touching neutral or earth gives a very low resistance, so a huge current flows, generating heat and risking fire.",
+            "This is why damaged flexes must be replaced rather than taped over — the fuse may blow, but only after a dangerous surge."
+          ]
+        },
+        {
+          "type": "mcq",
+          "marks": 2,
+          "stem": "<p>Two identical 2 A appliances are plugged into two <em>separate</em> sockets on the same ring circuit. Compared with plugging both into one socket via an adaptor, the total current drawn from the supply is:</p>",
+          "options": [
+            "Half as much",
+            "The same",
+            "Twice as much",
+            "Four times as much"
+          ],
+          "answer": 1,
+          "explain": "The same two appliances draw the same total current either way; only the wiring path differs.",
+          "whyWrong": {
+            "0": "Separating them does not reduce what each appliance needs. Each still draws 2 A.",
+            "2": "Nothing has been added. Two 2 A appliances draw 4 A in total however they are plugged in.",
+            "3": "Four times would mean 16 A from two 2 A appliances, which no arrangement produces."
+          },
+          "workthrough": [
+            "Identify what actually determines the current: each appliance's own resistance and the 230 V supply.",
+            "Each draws <strong>2 A</strong>, so the total from the supply is 2 + 2 = <strong>4 A</strong> in both arrangements.",
+            "So the total current is <strong>the same</strong>.",
+            "What <em>does</em> change is where that current flows. Through an adaptor, all 4 A passes through <strong>one socket and one plug fuse</strong>.",
+            "That concentration is the real hazard of adaptors — not extra current overall, but too much current through a single point."
+          ]
+        },
+        {
+          "type": "mcq",
+          "marks": 3,
+          "stem": "<p>A metal-cased appliance is <strong>not</strong> earthed. A fault makes the live wire touch the case. What is the danger, and why does the fuse not help?</p>",
+          "options": [
+            "There is no danger, because the neutral wire completes the circuit",
+            "The case becomes live; no large current flows until someone touches it, so the fuse does not blow",
+            "The case becomes live and the fuse blows immediately",
+            "The appliance simply stops working"
+          ],
+          "answer": 1,
+          "explain": "Without an earth path there is no fault current, so the fuse stays intact and the case sits silently at 230 V.",
+          "whyWrong": {
+            "0": "The neutral is not connected to the case. The case is live and the circuit through it is incomplete — until a person provides the missing path.",
+            "2": "A fuse only blows when a <strong>large current</strong> flows. With no earth wire there is no low-resistance path, so no such current exists.",
+            "3": "The appliance may keep working perfectly. That is what makes this fault so dangerous — there is no outward sign."
+          },
+          "workthrough": [
+            "Trace what happens with <strong>no earth wire</strong> present.",
+            "The live wire touches the case, so the case rises to about <strong>230 V</strong>.",
+            "But there is no low-resistance path from the case to earth, so <strong>no large current flows</strong>.",
+            "No large current means the <strong>fuse does not blow</strong> — and the appliance may carry on working normally, giving no warning at all.",
+            "The circuit is only completed when a <strong>person touches the case</strong> and provides a path to earth. The current then flows through them.",
+            "Two marks for the live case with no fuse response, one for identifying the person as the completing path."
+          ]
+        },
+        {
+          "type": "mcq",
+          "marks": 3,
+          "stem": "<p>Why can a current of only 0.05 A be lethal, even though household fuses are rated at 3 A or more?</p>",
+          "options": [
+            "Fuses are designed to blow at very small currents",
+            "The human body is harmed by currents far smaller than those needed to melt a fuse, so a fatal shock never triggers it",
+            "0.05 A is actually larger than 3 A in a person",
+            "The fuse blows, but too slowly to matter"
+          ],
+          "answer": 1,
+          "explain": "The protection thresholds are mismatched — this is exactly why earthing and insulation matter more than the fuse for personal safety.",
+          "whyWrong": {
+            "0": "The opposite. Fuses are deliberately rated well above normal working currents so they do not blow during ordinary use.",
+            "2": "Current is current — 0.05 A is 0.05 A wherever it flows. The difference is what that amount does to a body versus to a fuse wire.",
+            "3": "Speed is not the issue here. A 0.05 A current will <strong>never</strong> blow a 3 A fuse, however long it flows."
+          },
+          "workthrough": [
+            "Compare the two thresholds directly.",
+            "A fuse rated <strong>3 A</strong> needs more than 3 A before its wire melts.",
+            "The human body can be seriously harmed by currents of around <strong>0.05 A</strong> — sixty times smaller.",
+            "So a shock current passes through a person <strong>without ever approaching</strong> the fuse's blowing point.",
+            "This is why personal safety relies on the <strong>earth wire</strong> and good <strong>insulation</strong>, which prevent you being in the circuit at all, rather than on the fuse.",
+            "Three marks: the body's low threshold, the fuse's high threshold, and the conclusion that the fuse cannot protect a person."
+          ]
+        },
+        {
+          "type": "mcq",
+          "marks": 3,
+          "stem": "<p>A plug is wired with brown to the left terminal and blue to the right. The appliance still works. Why is this dangerous?</p>",
+          "options": [
+            "It is not dangerous, since the appliance works",
+            "The switch and fuse now sit in the neutral line, so the appliance stays connected to 230 V even when switched off or fused out",
+            "The appliance will draw twice the current",
+            "The earth wire will overheat"
+          ],
+          "answer": 1,
+          "explain": "Reversing live and neutral leaves the appliance live after the switch or fuse has operated.",
+          "whyWrong": {
+            "0": "Working and being safe are different things. The current still flows in a loop, so the appliance runs — while remaining dangerous.",
+            "2": "Current depends on the appliance's resistance and the 230 V supply, neither of which has changed. Swapping the wires does not double it.",
+            "3": "The earth carries no current here — there is no fault to earth. The hazard is about which line gets broken by the switch and fuse."
+          },
+          "workthrough": [
+            "Recall where the protective devices sit: the <strong>fuse and switch are in the live line</strong>, on the right-hand side.",
+            "If <strong>brown (live)</strong> is wired to the left, the live supply now enters through the terminal that has <em>no</em> fuse or switch in it.",
+            "Turning the appliance off, or blowing the fuse, now breaks the <strong>neutral</strong> line instead.",
+            "The current stops — so the appliance appears safely off — but the internal parts remain <strong>connected to 230 V</strong> through the unbroken live path.",
+            "Anyone opening the appliance, or touching an internal part, could receive a fatal shock from something that looks switched off.",
+            "Three marks: fuse/switch now in neutral, current stops, appliance still at 230 V."
+          ]
+        },
+        {
+          "type": "mcq",
+          "marks": 3,
+          "stem": "<p>Rank these three safety features by <strong>what they primarily protect</strong>: (i) fuse, (ii) earth wire, (iii) double insulation.</p>",
+          "options": [
+            "All three primarily protect the user",
+            "(i) protects the wiring and appliance; (ii) and (iii) primarily protect the user",
+            "(i) and (ii) protect the appliance; (iii) protects the user",
+            "All three primarily protect the appliance"
+          ],
+          "answer": 1,
+          "explain": "Fuse → overcurrent and fire. Earth and double insulation → keeping the user out of the circuit.",
+          "whyWrong": {
+            "0": "The fuse's threshold is far too high to protect a person — a fatal current would never blow it.",
+            "2": "The earth wire's whole purpose is to stop a metal case staying live and shocking someone. Classing it with the fuse misses that.",
+            "3": "Double insulation clearly protects the person, not the appliance — it stops the casing ever becoming live."
+          },
+          "workthrough": [
+            "Take each feature and ask what failure it is designed to prevent.",
+            "<strong>Fuse</strong> — responds to <strong>excess current</strong>, preventing the flex and appliance overheating and starting a fire. Protects <em>equipment</em>.",
+            "<strong>Earth wire</strong> — gives a fault current a low-resistance path so the fuse blows and the case cannot stay live. Protects the <em>user</em>.",
+            "<strong>Double insulation</strong> — a non-conducting case that can never become live in the first place. Protects the <em>user</em>.",
+            "So (i) sits apart from (ii) and (iii).",
+            "This is the distinction worth carrying into an exam: fuses are about fire, earthing and insulation are about shock."
+          ]
+        }
+      ]
+    }
+    </script>
+  </div>
+
+  <nav class="lesson-nav">
+    <a href="index.html">← The three-pin plug</a>
+    <a class="next" href="../circuits/practice-lvl2.html">Circuits Lvl 2 →</a>
+  </nav>
+</div>
+<script src="../../js/quiz-engine.js"></script>
+</body>
+</html>

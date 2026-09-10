@@ -1,0 +1,556 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Challenging Qns Lvl 2 — Diversity of Matter</title>
+<meta name="description" content="20 harder questions on elements, compounds, mixtures, solutions and solubility, with options set deliberately close together so only correct reasoning separates them.">
+<meta name="theme-color" content="#E4EAF0">
+<link rel="icon" type="image/svg+xml" href="../../favicon.svg">
+<link rel="stylesheet" href="../../css/style.css">
+<link rel="stylesheet" href="../../css/interactive.css">
+</head>
+<body>
+<div class="sheet">
+  <header>
+    <div>
+      <a class="crumb" href="index.html">← Diversity of Matter</a>
+      <p class="eyebrow" style="margin-top:10px">Challenging · Level 2</p>
+      <h1>Challenging Qns Lvl 2</h1>
+    </div>
+    <p class="sub">Twenty harder questions. The options are set <strong>deliberately close together</strong>, so guessing by feel will not work — only the correct reasoning separates them.</p>
+  </header>
+
+  <div class="prose" style="padding-bottom:0">
+    <div class="lvl2-note">
+      <span class="lvl2-tag">How this set is different</span>
+      Every wrong option is a <strong>real mistake someone actually makes</strong> — a rate factor offered where solubility was asked, a mixture that looks like a compound, two atoms joined that are still an element. If you land on one, the feedback names the slip.
+    </div>
+  </div>
+
+  <div class="scorebar" id="scorebar">
+    <span>Score <span class="sc">0 / 0</span></span>
+    <span class="bar"><span></span></span>
+    <span class="dn">0 of 20 answered</span>
+    <button class="qz-reset" type="button">Start again</button>
+  </div>
+
+  <div class="qlist" id="quiz">
+    <script type="application/json">
+    {
+      "questions": [
+        {
+          "type": "mcq",
+          "marks": 2,
+          "stem": "<p>Which of these is a <strong>mixture of elements only</strong>?</p>",
+          "options": [
+            "Concrete",
+            "Steel",
+            "Seawater",
+            "Carbon dioxide"
+          ],
+          "answer": 1,
+          "explain": "Steel is iron, carbon and other elements mixed — no compounds present.",
+          "whyWrong": {
+            "0": "Concrete is calcium carbonate, silicon dioxide and water — all <strong>compounds</strong>, so it is a mixture of compounds only.",
+            "2": "Seawater contains compounds (sodium chloride, magnesium chloride) plus the element iodine, so it is a mixture of <em>both</em>.",
+            "3": "Carbon dioxide is a single <strong>compound</strong>, not a mixture at all — its carbon and oxygen are chemically combined."
+          },
+          "workthrough": [
+            "Take each option and label every constituent as element (E) or compound (C).",
+            "<strong>Steel</strong> — iron (E), carbon (E), other elements (E). All E → mixture of elements only ✓",
+            "<strong>Concrete</strong> — calcium carbonate (C), silicon dioxide (C), water (C). All C.",
+            "<strong>Seawater</strong> — sodium chloride (C), magnesium chloride (C), iodine (E). Mixed.",
+            "<strong>Carbon dioxide</strong> — chemically combined, so a compound, not a mixture. Notice how easily 'contains carbon' misleads you into grouping it with steel."
+          ]
+        },
+        {
+          "type": "mcq",
+          "marks": 2,
+          "stem": "<p>Sugar dissolves faster when stirred. A student concludes that stirring increases the <strong>solubility</strong> of sugar. What is wrong?</p>",
+          "options": [
+            "Nothing — the conclusion is correct",
+            "Stirring increases the rate of dissolving, not the amount that can dissolve",
+            "Stirring decreases solubility",
+            "Stirring only works on insoluble substances"
+          ],
+          "answer": 1,
+          "explain": "Rate is how fast; solubility is how much. Stirring changes only the first.",
+          "whyWrong": {
+            "0": "This is the exact confusion the chapter is built to prevent. Stirring is a <strong>rate</strong> factor and cannot change how much a solvent can hold.",
+            "2": "Stirring does not reduce solubility either. It has <em>no effect at all</em> on the maximum amount that dissolves.",
+            "3": "An insoluble substance will not dissolve however hard you stir. Stirring only speeds up something that was going to dissolve anyway."
+          },
+          "workthrough": [
+            "Separate the two ideas precisely.",
+            "<strong>Rate of dissolving</strong> = how <em>fast</em>. Affected by particle size, temperature of solvent, and stirring.",
+            "<strong>Solubility</strong> = how <em>much</em> can dissolve in a fixed volume at a given temperature. Affected by type of solute and type of solvent.",
+            "Stirring appears on the first list only.",
+            "The decisive test: stir a saturated solution for an hour and not one extra grain dissolves. Speed changed; capacity did not."
+          ]
+        },
+        {
+          "type": "mcq",
+          "marks": 2,
+          "stem": "<p>Air is 78% nitrogen and 21% oxygen. In a sealed room, someone burns a candle until it goes out. What has most likely happened to the composition?</p>",
+          "options": [
+            "The nitrogen percentage has fallen sharply",
+            "The oxygen percentage has fallen and the carbon dioxide percentage has risen",
+            "All percentages stay exactly the same",
+            "The oxygen has been destroyed completely"
+          ],
+          "answer": 1,
+          "explain": "Combustion uses oxygen and produces carbon dioxide, so those two change.",
+          "whyWrong": {
+            "0": "Nitrogen takes almost no part in ordinary combustion. It is the component described as usually constant.",
+            "2": "A chemical reaction has taken place, consuming one gas and producing another. The composition must change.",
+            "3": "The candle goes out well before all the oxygen is gone — it needs a certain concentration to keep burning. Some oxygen always remains."
+          },
+          "workthrough": [
+            "Recall what combustion does: a fuel reacts with <strong>oxygen</strong> to produce <strong>carbon dioxide</strong> and water.",
+            "So oxygen is consumed → its percentage <strong>falls</strong>.",
+            "Carbon dioxide is produced → its percentage <strong>rises</strong>.",
+            "Nitrogen is not involved, so it stays essentially unchanged.",
+            "Note the wording of the last option: the candle goes out because the oxygen drops <em>below the level needed</em>, not because it is all gone."
+          ]
+        },
+        {
+          "type": "mcq",
+          "marks": 2,
+          "stem": "<p>Which statement about a <strong>compound</strong> is correct?</p>",
+          "options": [
+            "Its constituents can be separated by filtration",
+            "Its constituents are in a fixed proportion by mass",
+            "It keeps the properties of its constituent elements",
+            "It is formed by a physical change"
+          ],
+          "answer": 1,
+          "explain": "Fixed proportion is the compound property; the other three describe mixtures.",
+          "whyWrong": {
+            "0": "Filtration separates <strong>mixtures</strong> with different particle sizes. A compound's elements are chemically combined and cannot be filtered apart.",
+            "2": "That is a <strong>mixture</strong> property. A compound's properties are <em>different</em> from its elements' — water is a liquid though hydrogen and oxygen are gases.",
+            "3": "Compounds are formed by <strong>chemical reactions</strong>. Physical changes make mixtures."
+          },
+          "workthrough": [
+            "Run each option through Table 3.3, which sets compounds against mixtures line by line.",
+            "<strong>Fixed proportion by mass?</strong> Compound: yes. Mixture: no. ✓",
+            "<strong>Same properties as constituents?</strong> Compound: no. Mixture: yes.",
+            "<strong>Separated easily?</strong> Compound: no. Mixture: yes.",
+            "Three of the four options are mixture properties dressed up as compound ones — which is why reading them against the table beats relying on feel."
+          ]
+        },
+        {
+          "type": "mcq",
+          "marks": 2,
+          "stem": "<p>A student filters muddy salt water. Which statement about the <strong>filtrate</strong> is correct?</p>",
+          "options": [
+            "It is pure water",
+            "It is salt solution — the mud is removed but the dissolved salt passes through",
+            "It contains the mud but no salt",
+            "It is empty, since everything is trapped"
+          ],
+          "answer": 1,
+          "explain": "Filtration removes the insoluble mud only; dissolved salt goes straight through.",
+          "whyWrong": {
+            "0": "The salt is <strong>dissolved</strong>, so its particles are as small as the water particles and pass through the pores. The filtrate is still salty.",
+            "2": "The mud is the <em>insoluble</em> part, so it is exactly what gets retained as the residue. It cannot be in the filtrate.",
+            "3": "The liquid passes through easily — that is the whole basis of filtration."
+          },
+          "workthrough": [
+            "Sort the constituents by behaviour in water: mud is <strong>insoluble</strong>, salt is <strong>soluble</strong>.",
+            "Filter paper retains particles <strong>bigger than its pores</strong>.",
+            "Mud particles are big → retained on the paper as the <strong>residue</strong>.",
+            "Dissolved salt particles are tiny → pass straight through with the water.",
+            "So the filtrate is <strong>salt solution</strong>. To get pure water from it you would then need distillation, and to get the salt you would need evaporation."
+          ]
+        },
+        {
+          "type": "mcq",
+          "marks": 2,
+          "stem": "<p>Oxygen gas exists as O₂ molecules. Which classification is correct?</p>",
+          "options": [
+            "A compound, because two atoms are joined",
+            "An element, because both atoms are the same type",
+            "A mixture, because it contains two particles",
+            "A compound, because it has a chemical formula"
+          ],
+          "answer": 1,
+          "explain": "Joining identical atoms does not create a new substance — it is still oxygen.",
+          "whyWrong": {
+            "0": "Joining atoms only makes a compound if they are <strong>different</strong> kinds. Two oxygen atoms joined are still oxygen.",
+            "2": "A mixture needs two or more <em>different substances</em> that are not chemically combined. O₂ is one substance.",
+            "3": "Elements have chemical formulae too — H₂, N₂, Cl₂, S₈. Having a formula says nothing about which category it falls into."
+          },
+          "workthrough": [
+            "Ask the deciding question: <strong>how many different types of atom?</strong>",
+            "In O₂ there is only <strong>one</strong> type — oxygen.",
+            "One type → <strong>element</strong>, however many atoms are joined together.",
+            "The number of atoms is irrelevant: S₈ has eight atoms and is still an element.",
+            "This is the single most common trap in Chapter 3, and it reappears in Chapter 8 with molecules of elements versus molecules of compounds."
+          ]
+        },
+        {
+          "type": "mcq",
+          "marks": 2,
+          "stem": "<p>Which change would increase the <strong>amount</strong> of salt that can dissolve in 100 cm³ of water?</p>",
+          "options": [
+            "Stirring faster",
+            "Crushing the salt into powder",
+            "Using a different solvent",
+            "Pouring the water more slowly"
+          ],
+          "answer": 2,
+          "explain": "Solubility depends on the type of solute and the type of solvent — nothing else on this list.",
+          "whyWrong": {
+            "0": "Stirring is a <strong>rate</strong> factor. It changes how fast the salt dissolves, never how much.",
+            "1": "Particle size is also a rate factor. Powder dissolves faster, but exactly the same total amount dissolves in the end.",
+            "3": "How the water is poured has no effect on either rate or solubility."
+          },
+          "workthrough": [
+            "Recall the two separate lists and check which one each option belongs to.",
+            "<strong>Rate factors:</strong> particle size, temperature of solvent, rate of stirring.",
+            "<strong>Solubility factors:</strong> type of solute, type of solvent.",
+            "Stirring and crushing are both on the <em>rate</em> list, so neither changes the amount.",
+            "Only <strong>changing the solvent</strong> is on the solubility list — salt dissolves well in water but not at all in cooking oil."
+          ]
+        },
+        {
+          "type": "mcq",
+          "marks": 2,
+          "stem": "<p>Two beakers each contain 100 cm³ of water. One has 1 spoon of copper sulfate dissolved, the other has 5. Which statement is correct?</p>",
+          "options": [
+            "They are different compounds",
+            "The first is dilute and the second is concentrated — both are the same mixture",
+            "The second has a higher solubility",
+            "The first is a solution and the second is a suspension"
+          ],
+          "answer": 1,
+          "explain": "Same solute and solvent, different proportions — which is proof it is a mixture.",
+          "whyWrong": {
+            "0": "Both are copper sulfate in water. Only the <em>amount</em> differs, and amount does not change what a substance is.",
+            "2": "Solubility is a fixed property of that solute-and-solvent pair at a given temperature. It is the same for both beakers; only how close each is to the limit differs.",
+            "3": "Both are solutions — the copper sulfate has dissolved in each. A suspension would need <em>insoluble</em> particles."
+          },
+          "workthrough": [
+            "Fix what is the same: same solute, same solvent, same volume, same temperature.",
+            "What differs is only the <strong>amount of solute dissolved</strong>.",
+            "Low percentage of dissolved solute → <strong>dilute</strong>. High percentage → <strong>concentrated</strong>.",
+            "So they are the same mixture in different proportions.",
+            "And that is itself significant: being able to vary the proportions freely is exactly what proves a solution is a <strong>mixture</strong>, not a compound."
+          ]
+        },
+        {
+          "type": "mcq",
+          "marks": 2,
+          "stem": "<p>A liquid is cloudy, blocks a torch beam, and forms a deposit after standing overnight. What is it?</p>",
+          "options": [
+            "A solution",
+            "A suspension",
+            "A compound",
+            "An element"
+          ],
+          "answer": 1,
+          "explain": "All three observations point to insoluble particles.",
+          "whyWrong": {
+            "0": "A solution lets light through fully and never forms a deposit, however long you wait.",
+            "2": "A compound is a single pure substance. A cloudy liquid that settles clearly contains more than one thing.",
+            "3": "An element is a single type of atom. This liquid contains at least a solvent and the material that settled out."
+          },
+          "workthrough": [
+            "Take the three observations one at a time — each points the same way.",
+            "<strong>Cloudy</strong> → the particles can be seen, so they are large.",
+            "<strong>Blocks light</strong> → large enough to get in the beam's way.",
+            "<strong>Forms a deposit</strong> → heavy enough to settle out.",
+            "All three are signs of <strong>insoluble substances in a solvent</strong>, which is the definition of a <strong>suspension</strong>. A solution would fail all three tests."
+          ]
+        },
+        {
+          "type": "mcq",
+          "marks": 2,
+          "stem": "<p>Substance X always contains 40% Y and 60% Z by mass, and does not resemble either. Substance W contains Y and Z in whatever ratio you choose. What are X and W?</p>",
+          "options": [
+            "X is a mixture, W is a compound",
+            "X is a compound, W is a mixture",
+            "Both are compounds",
+            "Both are mixtures"
+          ],
+          "answer": 1,
+          "explain": "Fixed ratio plus new properties = compound. Variable ratio = mixture.",
+          "whyWrong": {
+            "0": "Exactly reversed. A <em>fixed</em> proportion is the hallmark of a compound; a <em>variable</em> one is the hallmark of a mixture.",
+            "2": "W's proportions can be chosen freely, which no compound allows.",
+            "3": "X's proportions are fixed and its properties are new — both compound properties."
+          },
+          "workthrough": [
+            "Test each substance against the fixed-proportion rule.",
+            "<strong>X:</strong> always 40 : 60, and its properties differ from Y's and Z's. Both are compound properties → <strong>compound</strong>.",
+            "<strong>W:</strong> the ratio can be anything you like → no fixed proportion → <strong>mixture</strong>.",
+            "Proportion is the sharpest single test, because it gives a yes/no answer from a single piece of data.",
+            "This mirrors real chemistry: water is always 2 : 1 hydrogen to oxygen, but salt <em>solution</em> can be any strength you like."
+          ]
+        },
+        {
+          "type": "mcq",
+          "marks": 2,
+          "stem": "<p>At high altitude, climbers carry oxygen tanks. Which statement is correct?</p>",
+          "options": [
+            "The air contains a lower percentage of oxygen",
+            "The percentage is the same, but there is less air overall so less oxygen per breath",
+            "The air contains more nitrogen, crowding out the oxygen",
+            "Oxygen at altitude is chemically different"
+          ],
+          "answer": 1,
+          "explain": "Composition is unchanged; the air is simply thinner.",
+          "whyWrong": {
+            "0": "The percentage stays at about 21%. This is the trap the textbook explicitly warns about.",
+            "2": "Nitrogen stays at about 78% too. Nothing crowds anything out — there is simply less of both.",
+            "3": "Oxygen is oxygen wherever it is. Altitude changes quantity, not identity."
+          },
+          "workthrough": [
+            "Distinguish <strong>proportion</strong> from <strong>amount</strong> — the whole question turns on this.",
+            "The <strong>composition</strong> of air at altitude is the same as at sea level: still about 21% oxygen.",
+            "But the air is <strong>thinner</strong> — there is less air in each lungful.",
+            "Same fraction of a smaller amount = <strong>less oxygen per breath</strong>.",
+            "Hence the tanks. The wrong answer sounds right because the <em>effect</em> is a shortage of oxygen — but the cause is density, not composition."
+          ]
+        },
+        {
+          "type": "mcq",
+          "marks": 2,
+          "stem": "<p>Which of these is a mixture of <strong>both elements and compounds</strong>?</p>",
+          "options": [
+            "Pewter",
+            "Salt solution",
+            "Milk",
+            "Ammonia"
+          ],
+          "answer": 2,
+          "explain": "Milk has water, fats and sugars (compounds) plus iron, phosphorus and calcium (elements).",
+          "whyWrong": {
+            "0": "Pewter is tin, copper and silver — all <strong>elements</strong>, so it is a mixture of elements only.",
+            "1": "Salt solution is sodium chloride and water — both <strong>compounds</strong>, so a mixture of compounds only.",
+            "3": "Ammonia (NH₃) is a single <strong>compound</strong>, not a mixture at all."
+          },
+          "workthrough": [
+            "Label every constituent of each option as element (E) or compound (C).",
+            "<strong>Pewter</strong> — tin (E), copper (E), silver (E). All E.",
+            "<strong>Salt solution</strong> — sodium chloride (C), water (C). All C.",
+            "<strong>Milk</strong> — water (C), fats (C), sugars (C) <em>plus</em> iron (E), phosphorus (E), calcium (E). Both kinds ✓",
+            "<strong>Ammonia</strong> — nitrogen and hydrogen chemically combined, so a compound and not a mixture at all. Watch for that fourth option: it is the only one that is not a mixture."
+          ]
+        },
+        {
+          "type": "mcq",
+          "marks": 2,
+          "stem": "<p>Sodium is a metal that fizzes violently in water. Chlorine is a poisonous green gas. Sodium chloride is table salt. What does this best demonstrate?</p>",
+          "options": [
+            "Compounds are always safe",
+            "A compound's properties differ from those of its constituent elements",
+            "Sodium and chlorine are mixed in salt",
+            "Salt is a mixture of a metal and a gas"
+          ],
+          "answer": 1,
+          "explain": "Chemical combination creates a genuinely new substance.",
+          "whyWrong": {
+            "0": "Carbon monoxide is a compound and is lethal. Safety is a property of particular compounds, not of compounds in general.",
+            "2": "“Mixed” is the wrong word. If merely mixed, the salt would still fizz and still be poisonous — mixtures keep their constituents' properties.",
+            "3": "Salt is a <strong>compound</strong>. Its sodium and chlorine are chemically combined, which is exactly why the properties changed so drastically."
+          },
+          "workthrough": [
+            "Line up the properties before and after.",
+            "<strong>Before:</strong> sodium is a violently reactive metal; chlorine is a poisonous gas.",
+            "<strong>After:</strong> sodium chloride is a harmless white crystal you eat.",
+            "Ask which type of matter <em>changes</em> the properties of its parts. A mixture keeps them; a <strong>compound</strong> replaces them.",
+            "This example is chosen because the change is so extreme — it is the clearest possible evidence that “chemically combined” means something genuinely new was made."
+          ]
+        },
+        {
+          "type": "mcq",
+          "marks": 2,
+          "stem": "<p>Chalk does not dissolve in water however long it is stirred. Which statement is correct?</p>",
+          "options": [
+            "Chalk needs hotter water",
+            "Chalk is insoluble in water — a matter of solubility, not of rate",
+            "The water is saturated with chalk",
+            "Stirring for longer would eventually work"
+          ],
+          "answer": 1,
+          "explain": "Insolubility is absolute — rate factors cannot overcome it.",
+          "whyWrong": {
+            "0": "Temperature speeds up the dissolving of a <em>soluble</em> substance. It does not make an insoluble one soluble.",
+            "2": "Saturation means the water already holds as much of <em>that</em> solute as it can. Fresh water with only chalk in it is not saturated with anything.",
+            "3": "Stirring speeds up dissolving when dissolving is possible at all. With an insoluble substance, no amount of time helps."
+          },
+          "workthrough": [
+            "Note that all three wrong options are <strong>rate</strong> arguments — hotter, longer, more stirring.",
+            "Rate factors only change how <em>fast</em> a soluble substance dissolves.",
+            "Chalk is <strong>insoluble</strong> in water, which is a fact about the solute-and-solvent pair.",
+            "No rate factor can make an insoluble substance dissolve, because there is no dissolving to speed up.",
+            "This is why the two lists must be kept apart: rate factors act on a process that is already possible."
+          ]
+        },
+        {
+          "type": "mcq",
+          "marks": 2,
+          "stem": "<p>Which best explains why ice kacang is a mixture?</p>",
+          "options": [
+            "It contains many ingredients",
+            "Each ingredient keeps its own taste, the amounts vary between stalls, and the parts can be picked out",
+            "It is cold",
+            "It was made by a chemical reaction"
+          ],
+          "answer": 1,
+          "explain": "Three mixture properties, each backed by an observation.",
+          "whyWrong": {
+            "0": "Containing many ingredients is a start, but it does not prove they are uncombined. A compound also contains several elements.",
+            "2": "Temperature has nothing to do with whether something is a mixture.",
+            "3": "Mixtures are formed by <strong>physical</strong> change. If a chemical reaction had occurred, new substances would have formed and the ingredients would not be recognisable."
+          },
+          "workthrough": [
+            "A full answer names the <strong>property</strong> and ties it to something observable.",
+            "<strong>Properties retained</strong> — the beans still taste like beans, the syrup like syrup.",
+            "<strong>No fixed proportion</strong> — every stall uses different amounts.",
+            "<strong>Easily separated</strong> — you can spoon the corn out.",
+            "Three properties, three pieces of evidence. Saying only “it has many ingredients” would earn very little, because it never shows the parts are uncombined."
+          ]
+        },
+        {
+          "type": "mcq",
+          "marks": 2,
+          "stem": "<p>The Periodic Table is arranged in order of increasing proton number. What does this achieve?</p>",
+          "options": [
+            "It lists elements alphabetically",
+            "Elements with similar properties fall near each other, so patterns can be predicted",
+            "It puts the heaviest elements first",
+            "It separates natural from artificial elements"
+          ],
+          "answer": 1,
+          "explain": "Arrangement by properties is what makes the table predictive.",
+          "whyWrong": {
+            "0": "Hydrogen, helium, lithium — nothing alphabetical, and it never becomes so.",
+            "2": "The lightest element, hydrogen, comes first. Mass increases roughly down the table, not the reverse.",
+            "3": "Technetium (artificial) sits at 43, between naturally occurring neighbours. Origin plays no part in the ordering."
+          },
+          "workthrough": [
+            "Recall the purpose: elements are arranged based on their <strong>properties</strong>.",
+            "Ordering by proton number makes elements with similar properties fall into the same columns.",
+            "That is what lets you <strong>predict</strong> an unfamiliar element's behaviour from its position — metals to the left and middle, non-metals to the top right.",
+            "Mendeleev even left <strong>gaps</strong> for undiscovered elements, and the predictions held.",
+            "The metal/non-metal split is a <em>result</em> of the arrangement, not the rule behind it."
+          ]
+        },
+        {
+          "type": "mcq",
+          "marks": 3,
+          "stem": "<p>A student adds 3 spoons of sugar to water and all dissolves. They add 3 more and 2 spoons remain undissolved at the bottom. What can be concluded?</p>",
+          "options": [
+            "Sugar is insoluble in water",
+            "The solution is saturated — about 4 spoons is the solubility limit for that volume and temperature",
+            "The water is too cold to dissolve any sugar",
+            "Stirring would dissolve the remaining 2 spoons"
+          ],
+          "answer": 1,
+          "explain": "3 dissolved + 3 added − 2 left = 4 dissolved in total, which is the limit.",
+          "whyWrong": {
+            "0": "Four spoons did dissolve, so sugar is clearly soluble. An insoluble substance would leave all 6 at the bottom.",
+            "2": "Cold water dissolves sugar more slowly, but four spoonfuls have already dissolved. Temperature is not preventing it.",
+            "3": "Stirring is a rate factor. Once the solution is <strong>saturated</strong>, stirring cannot make it hold more."
+          },
+          "workthrough": [
+            "Track the totals carefully.",
+            "First addition: 3 spoons in, <strong>3 dissolved</strong>.",
+            "Second addition: 3 more in, so 6 added in total. Of those, 2 remain undissolved.",
+            "So the amount dissolved is 6 − 2 = <strong>4 spoons</strong>.",
+            "The water can hold no more, so it is <strong>saturated</strong>, and the solubility for that volume and temperature is about 4 spoons.",
+            "Three marks: identifying saturation, doing the arithmetic, and stating the limit."
+          ]
+        },
+        {
+          "type": "mcq",
+          "marks": 3,
+          "stem": "<p>Why does the fact that you can make salt solution both weak and strong prove it is a <strong>mixture</strong> rather than a compound?</p>",
+          "options": [
+            "Because it can be separated by filtration",
+            "Because a compound must have a fixed proportion of constituents by mass, and this does not",
+            "Because it is a liquid",
+            "Because salt and water are both compounds"
+          ],
+          "answer": 1,
+          "explain": "Variable proportion is decisive — no compound permits it.",
+          "whyWrong": {
+            "0": "Salt solution <em>cannot</em> be separated by filtration — the dissolved salt passes straight through. The separation argument fails here even though it is a mixture.",
+            "2": "Being liquid says nothing about the category. Water is a liquid and is a compound.",
+            "3": "True, but irrelevant to the question. A mixture of compounds is still a mixture — what proves it is the variable ratio."
+          },
+          "workthrough": [
+            "Recall the defining difference: a <strong>compound</strong> has its elements in a <strong>fixed proportion by mass</strong>; a mixture does not.",
+            "Salt solution can be made with a pinch or a spoonful in the same water, and both are still salt solution.",
+            "So its proportions are <strong>not fixed</strong>.",
+            "A compound could never behave that way — you cannot make “water with extra oxygen” and still have water.",
+            "Note that option A gives the right verdict for the wrong reason, and its reasoning is actually false here. Getting the answer right by faulty logic still loses the mark."
+          ]
+        },
+        {
+          "type": "mcq",
+          "marks": 3,
+          "stem": "<p>Smoke contains carbon dioxide, water vapour, other gases and tiny solid particles. Which classification and evidence is strongest?</p>",
+          "options": [
+            "A compound, because it is produced by a chemical reaction",
+            "A mixture, because its composition varies with what is burning and the solids can be filtered from the gases",
+            "An element, because it comes from burning carbon",
+            "A solution, because the particles are dissolved in the gases"
+          ],
+          "answer": 1,
+          "explain": "Varying composition plus separability are both mixture properties.",
+          "whyWrong": {
+            "0": "The individual substances in smoke were made by a reaction, but smoke itself is those substances sitting side by side, uncombined. Being produced by burning does not make the result a compound.",
+            "2": "Smoke contains carbon dioxide and water vapour among other things — several kinds of atom, so not an element.",
+            "3": "The solid particles are not dissolved. They can be seen, they block light and they settle as soot — that is closer to a suspension, and either way a mixture."
+          },
+          "workthrough": [
+            "List the constituents: carbon dioxide, water vapour, other gases, solid particles. Several substances.",
+            "Ask whether they are chemically combined with each other. No — each is its own substance, sharing the same space.",
+            "Now apply the mixture properties and back each with evidence.",
+            "<strong>No fixed proportion</strong> — the composition varies with what is burning.",
+            "<strong>Easily separated</strong> — the soot can be filtered from the gases.",
+            "Three marks: the classification plus two pieces of supporting evidence. Naming the category alone would earn one."
+          ]
+        },
+        {
+          "type": "mcq",
+          "marks": 3,
+          "stem": "<p>A liquid lets a torch beam through fully and leaves no deposit after a week, yet evaporating it leaves a white solid. What is it, and what does the white solid tell you?</p>",
+          "options": [
+            "A suspension; the solid was floating in it",
+            "A solution; the solid was dissolved, so it passed every suspension test but was still present",
+            "Pure water; the solid came from the container",
+            "A compound; the solid is one of its elements"
+          ],
+          "answer": 1,
+          "explain": "Dissolved solute is invisible to all three suspension tests but reappears on evaporation.",
+          "whyWrong": {
+            "0": "A suspension would block the light and form a deposit. This liquid did neither.",
+            "2": "Pure water leaves nothing behind on evaporation. The white solid proves something was dissolved in it.",
+            "3": "Evaporation is a physical change and cannot split a compound into its elements. It simply removed the solvent."
+          },
+          "workthrough": [
+            "Test the liquid against the three suspension checks.",
+            "<strong>Light passes fully</strong> → no large particles. <strong>No deposit after a week</strong> → nothing settles. Both point away from a suspension.",
+            "So it is a <strong>solution</strong> — the solute is dissolved, with particles as small as the solvent's.",
+            "Evaporating removes the water and leaves the <strong>dissolved solid</strong> behind as a residue.",
+            "The lesson: a solution can look identical to pure water and still contain a great deal of dissolved material. Clarity is not proof of purity — which is exactly why water treatment involves more than just filtering."
+          ]
+        }
+      ]
+    }
+    </script>
+  </div>
+
+  <nav class="lesson-nav">
+    <a href="practice.html">← Level 1 practice</a>
+    <a class="next" href="index.html">Chapter home ↺</a>
+  </nav>
+</div>
+<script src="../../js/quiz-engine.js"></script>
+</body>
+</html>

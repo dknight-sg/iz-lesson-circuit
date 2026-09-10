@@ -1,0 +1,556 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Challenging Qns Lvl 2 — Circuit Lab</title>
+<meta name="description" content="20 harder questions on circuits, with options set deliberately close together so only correct reasoning separates them.">
+<meta name="theme-color" content="#E4EAF0">
+<link rel="icon" type="image/svg+xml" href="../../favicon.svg">
+<link rel="stylesheet" href="../../css/style.css">
+<link rel="stylesheet" href="../../css/interactive.css">
+</head>
+<body>
+<div class="sheet">
+  <header>
+    <div>
+      <a class="crumb" href="index.html">← Circuit Lab</a>
+      <p class="eyebrow" style="margin-top:10px">Challenging · Level 2</p>
+      <h1>Challenging Qns Lvl 2</h1>
+    </div>
+    <p class="sub">Twenty harder questions. The options are set <strong>deliberately close together</strong>, so guessing by feel will not work — only the correct reasoning separates them.</p>
+  </header>
+
+  <div class="prose" style="padding-bottom:0">
+    <div class="lvl2-note">
+      <span class="lvl2-tag">How this set is different</span>
+      Every wrong option here is a <strong>real mistake someone actually makes</strong> — the right formula with the wrong resistor, the right method one step too early, the total current where a branch current was wanted. If you land on one, the feedback names which slip it was.
+    </div>
+  </div>
+
+  <div class="scorebar" id="scorebar">
+    <span>Score <span class="sc">0 / 0</span></span>
+    <span class="bar"><span></span></span>
+    <span class="dn">0 of 20 answered</span>
+    <button class="qz-reset" type="button">Start again</button>
+  </div>
+
+  <div class="qlist" id="quiz">
+    <script type="application/json">
+    {
+      "questions": [
+        {
+          "type": "mcq",
+          "marks": 2,
+          "stem": "<p>A 12 V battery is connected to a 4 Ω and a 6 Ω resistor <strong>in series</strong>. What is the p.d. across the <strong>4 Ω</strong> resistor?</p>",
+          "options": [
+            "4.8 V",
+            "6.0 V",
+            "7.2 V",
+            "12.0 V"
+          ],
+          "answer": 0,
+          "explain": "I = 12 ÷ 10 = 1.2 A, then V = 1.2 × 4 = 4.8 V.",
+          "whyWrong": {
+            "1": "You split the 12 V equally. The two resistors are <em>not</em> equal, so they do not take equal shares — the larger resistor always takes the larger share.",
+            "2": "That is the p.d. across the <strong>6 Ω</strong> resistor. Check which one the question asks for. (Note 4.8 + 7.2 = 12 ✓)",
+            "3": "The full EMF is <em>shared</em> between the two resistors in series. Only a single resistor alone would take all 12 V."
+          },
+          "workthrough": [
+            "Two steps, always. <strong>Step 1</strong> — total resistance: 4 + 6 = <strong>10 Ω</strong>.",
+            "<strong>Step 2</strong> — current in the loop: I = 12 ÷ 10 = <strong>1.2 A</strong>. Same current through both, since there is one path.",
+            "Now apply V = I × R to the resistor you were asked about: 1.2 × 4 = <strong>4.8 V</strong>.",
+            "Check with the energy budget: the 6 Ω takes 1.2 × 6 = 7.2 V, and 4.8 + 7.2 = 12 V ✓",
+            "Shortcut worth knowing: in series, p.d. divides in the <em>ratio of the resistances</em> — 4 : 6, so the 4 Ω gets 4/10 of 12 V."
+          ]
+        },
+        {
+          "type": "mcq",
+          "marks": 2,
+          "stem": "<p>A 6 Ω and a 3 Ω resistor are connected <strong>in parallel</strong> across a 12 V supply. What is the <strong>total</strong> current drawn from the supply?</p>",
+          "options": [
+            "2.0 A",
+            "4.0 A",
+            "6.0 A",
+            "1.33 A"
+          ],
+          "answer": 2,
+          "explain": "Rp = 2 Ω, so I = 12 ÷ 2 = 6 A. (Or 2 A + 4 A.)",
+          "whyWrong": {
+            "0": "That is the current through the <strong>6 Ω branch</strong> alone (12 ÷ 6). The question asks for the total from the supply.",
+            "1": "That is the current through the <strong>3 Ω branch</strong> alone (12 ÷ 3). Add both branches to get the total.",
+            "3": "You used 12 ÷ 9, adding the resistances as if they were in <em>series</em>. In parallel the combined resistance is <strong>smaller</strong> than either branch."
+          },
+          "workthrough": [
+            "Two routes give the same answer — use whichever you trust.",
+            "<strong>Route A:</strong> combine first. Rp = (6 × 3) ÷ (6 + 3) = 18 ÷ 9 = <strong>2 Ω</strong>. Then I = 12 ÷ 2 = <strong>6 A</strong>.",
+            "<strong>Route B:</strong> branches first. Each branch has the full 12 V, so 12 ÷ 6 = 2 A and 12 ÷ 3 = 4 A. Total = 2 + 4 = <strong>6 A</strong>.",
+            "Both give 6 A, which is a good self-check.",
+            "Sense check: the total current must be <em>larger</em> than the biggest branch current (4 A). 6 A ✓"
+          ]
+        },
+        {
+          "type": "mcq",
+          "marks": 2,
+          "stem": "<p>A 24 V battery is connected to a 2 Ω resistor in series with a parallel pair of 4 Ω and 4 Ω. What current flows from the battery?</p>",
+          "options": [
+            "4.0 A",
+            "6.0 A",
+            "8.0 A",
+            "12.0 A"
+          ],
+          "answer": 1,
+          "explain": "Rp = 2 Ω, Rtotal = 4 Ω, I = 24 ÷ 4 = 6 A.",
+          "whyWrong": {
+            "0": "You used 24 ÷ 6, adding 2 + 4 and forgetting the second 4 Ω branch is in <em>parallel</em>, not series.",
+            "2": "You used 24 ÷ 3 — but the combined parallel resistance is 2 Ω, not 1 Ω. Two equal 4 Ω branches give <strong>half of 4</strong>, which is 2.",
+            "3": "You used only the 2 Ω series resistor and ignored the parallel section entirely."
+          },
+          "workthrough": [
+            "Collapse the <strong>parallel section first</strong>, never both rules at once.",
+            "Two <em>equal</em> resistors in parallel give exactly half: Rp = 4 ÷ 2 = <strong>2 Ω</strong>.",
+            "Now it is a simple series circuit: Rtotal = 2 + 2 = <strong>4 Ω</strong>.",
+            "I = V ÷ Rtotal = 24 ÷ 4 = <strong>6 A</strong>.",
+            "Sense check: Rp (2 Ω) must be smaller than either branch (4 Ω) ✓"
+          ]
+        },
+        {
+          "type": "mcq",
+          "marks": 2,
+          "stem": "<p>Two resistors are in series. The second has <strong>twice</strong> the resistance of the first. What fraction of the EMF appears across the <strong>second</strong> resistor?</p>",
+          "options": [
+            "one half",
+            "one third",
+            "two thirds",
+            "three quarters"
+          ],
+          "answer": 2,
+          "explain": "Resistances are in the ratio 1 : 2, so the p.d. divides 1 : 2 — the second gets 2 out of 3.",
+          "whyWrong": {
+            "0": "Half would be right only if the two resistors were <strong>equal</strong>. Here one is twice the other, so the shares cannot be equal.",
+            "1": "One third is the share taken by the <strong>first</strong> (smaller) resistor. The question asks about the second.",
+            "3": "Three quarters would need a 1 : 3 ratio. Twice as big gives 1 : 2, so the shares are thirds, not quarters."
+          },
+          "workthrough": [
+            "Call the first resistance R. Then the second is 2R.",
+            "Total resistance = R + 2R = <strong>3R</strong>.",
+            "In series the same current flows through both, so p.d. divides in the <strong>ratio of the resistances</strong>: 1 : 2.",
+            "The second resistor's share is therefore 2R ÷ 3R = <strong>two thirds</strong>.",
+            "Test it with numbers if the algebra feels slippery: 2 Ω and 4 Ω on 12 V → I = 2 A → 4 V and 8 V. And 8 is two thirds of 12 ✓"
+          ]
+        },
+        {
+          "type": "mcq",
+          "marks": 2,
+          "stem": "<p>An extra resistor is added <strong>in parallel</strong> to an existing circuit. What happens to the total resistance and the current drawn from the battery?</p>",
+          "options": [
+            "Resistance falls, current falls",
+            "Resistance falls, current rises",
+            "Resistance rises, current falls",
+            "Resistance stays the same, current rises"
+          ],
+          "answer": 1,
+          "explain": "More routes → lower total resistance → more current at the same EMF.",
+          "whyWrong": {
+            "0": "The resistance half is right, but then apply I = V ÷ R. With V fixed and R <em>smaller</em>, the current must go <strong>up</strong>, not down.",
+            "2": "Resistance rises when you add in <em>series</em>. Adding in parallel gives the charge an extra route, making it easier for current to flow.",
+            "3": "The total resistance definitely changes — 1/R = 1/R₁ + 1/R₂ + … , and each extra term makes 1/R bigger, so R gets smaller."
+          },
+          "workthrough": [
+            "Think physically first: each parallel branch is an <strong>extra road</strong> for the charge.",
+            "More roads means it is easier for current to flow overall, so the total resistance <strong>falls</strong>.",
+            "Confirm with the formula: 1/R = 1/R₁ + 1/R₂ + 1/R₃. Adding a positive term makes 1/R larger, so R is smaller.",
+            "Now apply I = V ÷ R to the whole circuit. The battery's EMF has not changed, and R has fallen.",
+            "Dividing the same V by a smaller R gives a <strong>larger</strong> current. This is why plugging in more appliances can blow a fuse."
+          ]
+        },
+        {
+          "type": "mcq",
+          "marks": 2,
+          "stem": "<p>In a circuit, a 9 V battery drives 0.6 A through a lamp in series with a 5 Ω resistor. What is the resistance of the <strong>lamp</strong>?</p>",
+          "options": [
+            "5.0 Ω",
+            "10.0 Ω",
+            "15.0 Ω",
+            "20.0 Ω"
+          ],
+          "answer": 1,
+          "explain": "Rtotal = 9 ÷ 0.6 = 15 Ω, then 15 − 5 = 10 Ω.",
+          "whyWrong": {
+            "0": "That is the resistor you were <em>given</em>, not the lamp. The lamp is the unknown.",
+            "2": "15 Ω is the <strong>total</strong> resistance of the circuit. You still need to subtract the 5 Ω resistor to isolate the lamp.",
+            "3": "You may have added 15 + 5 instead of subtracting. The lamp is <em>part</em> of the total, so it must be smaller than 15 Ω."
+          },
+          "workthrough": [
+            "You are asked for one component, so find the whole first and subtract.",
+            "<strong>Step 1</strong> — total resistance from the whole circuit: R = V ÷ I = 9 ÷ 0.6 = <strong>15 Ω</strong>.",
+            "<strong>Step 2</strong> — in series the resistances add, so R<sub>lamp</sub> + 5 = 15.",
+            "R<sub>lamp</sub> = 15 − 5 = <strong>10 Ω</strong>.",
+            "Check forwards: 10 + 5 = 15 Ω, and 9 ÷ 15 = 0.6 A ✓"
+          ]
+        },
+        {
+          "type": "mcq",
+          "marks": 2,
+          "stem": "<p>A current of 0.25 A flows for <strong>4 minutes</strong>. How much charge passes?</p>",
+          "options": [
+            "1.0 C",
+            "16.0 C",
+            "60.0 C",
+            "960.0 C"
+          ],
+          "answer": 2,
+          "explain": "t = 240 s, so Q = 0.25 × 240 = 60 C.",
+          "whyWrong": {
+            "0": "You used t = 4 instead of 240. The formula needs <strong>seconds</strong>, and the question gave minutes — this is the classic trap.",
+            "1": "You divided the wrong way (4 ÷ 0.25). Charge is current <strong>multiplied</strong> by time.",
+            "3": "You multiplied by 4 minutes <em>and</em> converted, doing the conversion twice: 0.25 × 240 = 60, not 0.25 × 4 × 960."
+          },
+          "workthrough": [
+            "<strong>Convert the time first</strong>, before touching the formula: 4 × 60 = <strong>240 s</strong>.",
+            "Recall Q = I × t.",
+            "Substitute: Q = 0.25 × 240 = <strong>60 C</strong>.",
+            "Sense check: 0.25 A means a quarter of a coulomb every second. Over 240 seconds that is 240 ÷ 4 = 60 C ✓",
+            "Make the conversion a reflex — whenever you see minutes or hours, convert before anything else."
+          ]
+        },
+        {
+          "type": "mcq",
+          "marks": 2,
+          "stem": "<p>A battery transfers 84 J of energy while moving 7 C of charge. If the current is 0.5 A, for how long does it flow?</p>",
+          "options": [
+            "3.5 s",
+            "7.0 s",
+            "12.0 s",
+            "14.0 s"
+          ],
+          "answer": 3,
+          "explain": "t = Q ÷ I = 7 ÷ 0.5 = 14 s. (The 84 J is not needed.)",
+          "whyWrong": {
+            "0": "You multiplied (7 × 0.5) instead of dividing. Dividing by a number less than 1 must make the answer <em>bigger</em>, not smaller.",
+            "1": "That is the charge in coulombs, not a time. Divide it by the current.",
+            "2": "You used the energy (84 ÷ 7) — that gives the EMF in volts, which the question did not ask for."
+          },
+          "workthrough": [
+            "First spot what is <em>not</em> needed. The 84 J is a distractor; time depends only on charge and current.",
+            "Start from I = Q ÷ t and rearrange: <strong>t = Q ÷ I</strong>.",
+            "Substitute: t = 7 ÷ 0.5 = <strong>14 s</strong>.",
+            "Sense check: 0.5 A delivers half a coulomb per second, so 7 C takes 14 seconds ✓",
+            "For interest, the spare data gives the EMF: V = W ÷ Q = 84 ÷ 7 = 12 V. Real exam questions often include one figure you do not need."
+          ]
+        },
+        {
+          "type": "mcq",
+          "marks": 2,
+          "stem": "<p>Three identical lamps are connected in series to a battery. One lamp burns out. What happens to the other two?</p>",
+          "options": [
+            "They go out, because the circuit is broken",
+            "They stay the same brightness",
+            "They get brighter, because there is less resistance",
+            "They get dimmer, but stay lit"
+          ],
+          "answer": 0,
+          "explain": "A series circuit has one path — break it anywhere and current stops everywhere.",
+          "whyWrong": {
+            "1": "Nothing stays the same when a series circuit is broken. With no complete path, the current is zero.",
+            "2": "A burnt-out lamp is not a lower resistance — it is a <strong>break</strong>, an infinite resistance. No current can pass at all.",
+            "3": "Dimmer would mean <em>some</em> current still flows. In a broken series circuit the current is exactly zero, so they are fully out."
+          },
+          "workthrough": [
+            "Recall the defining feature of series: there is <strong>one single path</strong> for the charge.",
+            "A burnt-out lamp creates a <strong>break</strong> in that path.",
+            "With no complete loop, charge cannot flow, so the current everywhere in the circuit is <strong>zero</strong>.",
+            "All three lamps are therefore out, not just the broken one.",
+            "Contrast with parallel: there, each lamp has its own path, so the others keep working. This is why house lighting is wired in parallel."
+          ]
+        },
+        {
+          "type": "mcq",
+          "marks": 2,
+          "stem": "<p>Which arrangement of three 6 Ω resistors gives the <strong>smallest</strong> total resistance?</p>",
+          "options": [
+            "All three in series",
+            "Two in parallel, then that pair in series with the third",
+            "All three in parallel",
+            "Two in series, then that pair in parallel with the third"
+          ],
+          "answer": 2,
+          "explain": "All parallel gives 6 ÷ 3 = 2 Ω — the smallest of the four.",
+          "whyWrong": {
+            "0": "That is the <strong>largest</strong>: 6 + 6 + 6 = 18 Ω. Series always adds.",
+            "1": "Two in parallel give 3 Ω, plus 6 Ω in series = <strong>9 Ω</strong>. Better than series, but not the smallest.",
+            "3": "Two in series give 12 Ω, in parallel with 6 Ω gives (12 × 6) ÷ 18 = <strong>4 Ω</strong>. Close, but still above 2 Ω."
+          },
+          "workthrough": [
+            "Work out all four rather than guessing — they are close enough that intuition fails.",
+            "<strong>All series:</strong> 6 + 6 + 6 = 18 Ω.",
+            "<strong>Two parallel + one series:</strong> (6∥6) = 3, then 3 + 6 = 9 Ω.",
+            "<strong>All parallel:</strong> n equal resistors in parallel give R ÷ n, so 6 ÷ 3 = <strong>2 Ω</strong>.",
+            "<strong>Two series ∥ one:</strong> (6+6) = 12, then (12 × 6) ÷ (12 + 6) = 72 ÷ 18 = 4 Ω.",
+            "Smallest is <strong>2 Ω</strong>. General rule: the more paths you give the charge, the lower the total resistance."
+          ]
+        },
+        {
+          "type": "mcq",
+          "marks": 2,
+          "stem": "<p>A 20 V supply is connected to a <strong>6 Ω</strong> resistor in series with a parallel pair of 6 Ω and 12 Ω. What is the p.d. across the <strong>parallel section</strong>?</p>",
+          "options": [
+            "4.0 V",
+            "8.0 V",
+            "12.0 V",
+            "16.0 V"
+          ],
+          "answer": 1,
+          "explain": "Rp = 4 Ω, Rtotal = 10 Ω, I = 2 A, so Vp = 2 × 4 = 8 V.",
+          "whyWrong": {
+            "0": "4 is the combined <em>resistance</em> of the parallel pair in ohms, not a voltage. You still need to multiply by the current.",
+            "2": "That is the p.d. across the <strong>6 Ω series resistor</strong> (2 × 6 = 12 V). The two must add to 20 V, so check which one is wanted.",
+            "3": "Too large. The 6 Ω series resistor is bigger than the 4 Ω parallel section, so it must take the <em>larger</em> share of the 20 V."
+          },
+          "workthrough": [
+            "<strong>Step 1</strong> — collapse the parallel pair: Rp = (6 × 12) ÷ (6 + 12) = 72 ÷ 18 = <strong>4 Ω</strong>.",
+            "<strong>Step 2</strong> — total resistance: 6 + 4 = <strong>10 Ω</strong>.",
+            "<strong>Step 3</strong> — current from the supply: I = 20 ÷ 10 = <strong>2 A</strong>.",
+            "<strong>Step 4</strong> — p.d. across the parallel block: V<sub>p</sub> = I × R<sub>p</sub> = 2 × 4 = <strong>8 V</strong>.",
+            "Check the budget: the series resistor takes 2 × 6 = 12 V, and 8 + 12 = 20 V ✓"
+          ]
+        },
+        {
+          "type": "mcq",
+          "marks": 2,
+          "stem": "<p>Two lamps are connected <strong>in parallel</strong> across a battery. One lamp is unscrewed and removed. What happens to the <strong>other</strong> lamp?</p>",
+          "options": [
+            "It goes out",
+            "It stays at the same brightness",
+            "It gets brighter",
+            "It gets dimmer"
+          ],
+          "answer": 1,
+          "explain": "Each branch has the full EMF, so removing one branch does not change the other.",
+          "whyWrong": {
+            "0": "That happens in <em>series</em>. In parallel each lamp has its own complete path to the battery, so one can be removed without breaking the other.",
+            "2": "The remaining lamp still has the same p.d. across it and the same resistance, so its current — and brightness — are unchanged. Total current from the battery falls, but that is a different quantity.",
+            "3": "Nothing has reduced the p.d. across the remaining lamp. It still connects directly to both battery terminals."
+          },
+          "workthrough": [
+            "Recall the key parallel fact: <strong>every branch has the full supply p.d. across it</strong>.",
+            "Removing one branch does not change the p.d. across the other — it still connects to the same two terminals.",
+            "The remaining lamp's resistance is unchanged too, so I = V ÷ R gives the same current as before.",
+            "Same current through the same lamp means the <strong>same brightness</strong>.",
+            "What <em>does</em> change is the total current from the battery, which falls because one route has been removed. Be careful which quantity a question is asking about."
+          ]
+        },
+        {
+          "type": "mcq",
+          "marks": 2,
+          "stem": "<p>A student writes: “In a parallel circuit the current is the same through every branch.” What is wrong?</p>",
+          "options": [
+            "Nothing — the statement is correct",
+            "It is the p.d. that is the same across every branch; the branch currents are equal only if the resistances are equal",
+            "Both the current and the p.d. differ between branches",
+            "The current is the same, but only if the branches have different resistances"
+          ],
+          "answer": 1,
+          "explain": "Parallel shares voltage, not current. Series shares current.",
+          "whyWrong": {
+            "0": "It is the <strong>series</strong> rule that has been applied to a parallel circuit. In series the current is shared; in parallel the p.d. is.",
+            "2": "The p.d. <em>is</em> the same across every parallel branch — that is the defining property. Only the currents differ.",
+            "3": "Backwards. Equal branch resistances give equal currents; different resistances give different currents."
+          },
+          "workthrough": [
+            "Hold the two rules apart deliberately, because they are mirror images.",
+            "<strong>Series:</strong> one path → the <strong>current</strong> is the same everywhere, and the p.d.s add to the EMF.",
+            "<strong>Parallel:</strong> branches join the same two points → the <strong>p.d.</strong> is the same across each, and the currents add to the total.",
+            "So the student has swapped them.",
+            "The branch currents are equal <em>only</em> in the special case of equal resistances, since I = V ÷ R with V fixed."
+          ]
+        },
+        {
+          "type": "mcq",
+          "marks": 2,
+          "stem": "<p>A 12 V battery drives current through a 3 Ω and a 6 Ω resistor in parallel. Which branch carries more current, and by what factor?</p>",
+          "options": [
+            "The 6 Ω branch, twice as much",
+            "The 3 Ω branch, twice as much",
+            "The 3 Ω branch, half as much",
+            "Both carry the same current"
+          ],
+          "answer": 1,
+          "explain": "Same p.d., so I ∝ 1/R. Half the resistance means twice the current.",
+          "whyWrong": {
+            "0": "Backwards. A <em>larger</em> resistance opposes the flow more, so the 6 Ω branch carries <strong>less</strong> current, not more.",
+            "2": "The direction is right but the factor is inverted. The 3 Ω branch carries <em>twice</em>, not half.",
+            "3": "Equal currents would need equal resistances. 3 Ω and 6 Ω are different, so their currents must differ."
+          },
+          "workthrough": [
+            "Both branches have the <strong>same p.d.</strong> — the full 12 V — because they connect the same two points.",
+            "With V fixed, I = V ÷ R means current is <strong>inversely proportional</strong> to resistance.",
+            "3 Ω branch: 12 ÷ 3 = <strong>4 A</strong>. 6 Ω branch: 12 ÷ 6 = <strong>2 A</strong>.",
+            "So the 3 Ω branch carries <strong>twice</strong> as much current.",
+            "General rule worth remembering: in parallel, the path of <em>lower</em> resistance takes the <em>larger</em> share of the current."
+          ]
+        },
+        {
+          "type": "mcq",
+          "marks": 2,
+          "stem": "<p>An electric heater is rated to carry 2.5 A. How much charge flows through it in <strong>half an hour</strong>?</p>",
+          "options": [
+            "75 C",
+            "1250 C",
+            "4500 C",
+            "9000 C"
+          ],
+          "answer": 2,
+          "explain": "t = 1800 s, so Q = 2.5 × 1800 = 4500 C.",
+          "whyWrong": {
+            "0": "You used t = 30 (minutes) instead of 1800 (seconds). The formula requires SI units.",
+            "1": "You used t = 500, or halved incorrectly. Half an hour is 30 × 60 = 1800 s.",
+            "3": "You used a full hour (3600 s) instead of half an hour. Read the time carefully — 9000 C is exactly double the right answer."
+          },
+          "workthrough": [
+            "<strong>Convert first.</strong> Half an hour = 30 minutes = 30 × 60 = <strong>1800 s</strong>.",
+            "Recall Q = I × t.",
+            "Substitute: Q = 2.5 × 1800 = <strong>4500 C</strong>.",
+            "Sense check the scale: 2.5 C every second for 1800 seconds is clearly thousands of coulombs, which rules out 75 C immediately.",
+            "Notice how close 4500 and 9000 are in feel — one is simply a full hour instead of half. Always re-read the stated time."
+          ]
+        },
+        {
+          "type": "mcq",
+          "marks": 2,
+          "stem": "<p>A voltmeter across a battery reads 9.0 V when nothing else is connected. A 3 Ω resistor is then connected and the voltmeter still reads 9.0 V. What current now flows?</p>",
+          "options": [
+            "0.33 A",
+            "3.0 A",
+            "6.0 A",
+            "27.0 A"
+          ],
+          "answer": 1,
+          "explain": "I = V ÷ R = 9 ÷ 3 = 3 A.",
+          "whyWrong": {
+            "0": "You divided the wrong way (3 ÷ 9). Current is volts divided by ohms — check with the units.",
+            "2": "You may have used 18 ÷ 3, doubling the EMF. The battery supplies 9 V, and the voltmeter confirms it is still 9 V.",
+            "3": "You multiplied (9 × 3). To find current, divide the voltage by the resistance."
+          },
+          "workthrough": [
+            "The voltmeter reads the battery's p.d.: <strong>9.0 V</strong>, unchanged after connecting the resistor.",
+            "There is only one resistor, so the whole 9 V is across it.",
+            "Apply Ohm's Law: I = V ÷ R = 9 ÷ 3 = <strong>3 A</strong>.",
+            "Check the units: volts ÷ ohms = amperes ✓ — this instantly rules out the 0.33 A option.",
+            "The detail that the reading did not change is telling you the battery is behaving ideally, so you can use the full 9 V."
+          ]
+        },
+        {
+          "type": "mcq",
+          "marks": 3,
+          "stem": "<p>Circuit A has two 4 Ω resistors in series. Circuit B has two 4 Ω resistors in parallel. Both are connected to identical 8 V batteries. How does the current in B compare with the current in A?</p>",
+          "options": [
+            "B is half of A",
+            "B is twice A",
+            "B is the same as A",
+            "B is four times A"
+          ],
+          "answer": 3,
+          "explain": "A: 8 ÷ 8 = 1 A. B: 8 ÷ 2 = 4 A. Four times.",
+          "whyWrong": {
+            "0": "That is the wrong direction entirely. Parallel <em>lowers</em> the resistance, so it must draw <strong>more</strong> current, not less.",
+            "1": "A common near-miss. Series gives 8 Ω and parallel gives 2 Ω — that is a factor of <strong>four</strong> in resistance, not two, so four times the current.",
+            "2": "The two arrangements have very different total resistances (8 Ω versus 2 Ω), so the currents cannot match."
+          },
+          "workthrough": [
+            "Work out each circuit separately, then compare.",
+            "<strong>Circuit A (series):</strong> R = 4 + 4 = 8 Ω, so I = 8 ÷ 8 = <strong>1 A</strong>.",
+            "<strong>Circuit B (parallel):</strong> two equal resistors give half, R = 4 ÷ 2 = 2 Ω, so I = 8 ÷ 2 = <strong>4 A</strong>.",
+            "Compare: 4 A ÷ 1 A = <strong>four times</strong>.",
+            "Why four and not two: going from series to parallel with two equal resistors changes R from 2R to R/2 — a factor of 4. Since I = V ÷ R, the current changes by the same factor."
+          ]
+        },
+        {
+          "type": "mcq",
+          "marks": 3,
+          "stem": "<p>A 12 V battery is connected to a <strong>2 Ω</strong> resistor in series with a parallel pair of 3 Ω and 6 Ω. What current flows through the <strong>3 Ω</strong> resistor?</p>",
+          "options": [
+            "1.0 A",
+            "2.0 A",
+            "3.0 A",
+            "4.0 A"
+          ],
+          "answer": 1,
+          "explain": "Rp = 2 Ω, Rtotal = 4 Ω, I = 3 A, Vp = 6 V, so I through 3 Ω = 6 ÷ 3 = 2 A.",
+          "whyWrong": {
+            "0": "That is the current through the <strong>6 Ω</strong> branch (6 ÷ 6). The larger resistance takes the <em>smaller</em> share — check which resistor is asked for.",
+            "2": "That is the <strong>total</strong> current from the battery, before it splits between the two branches.",
+            "3": "You used the full 12 V across the 3 Ω resistor (12 ÷ 3). The 2 Ω series resistor takes a share of the voltage first."
+          },
+          "workthrough": [
+            "Four steps, in order — do not skip ahead to the resistor you want.",
+            "<strong>1.</strong> Combine the parallel pair: Rp = (3 × 6) ÷ (3 + 6) = 18 ÷ 9 = <strong>2 Ω</strong>.",
+            "<strong>2.</strong> Total resistance: 2 + 2 = <strong>4 Ω</strong>. Total current: I = 12 ÷ 4 = <strong>3 A</strong>.",
+            "<strong>3.</strong> P.d. across the parallel section: V<sub>p</sub> = 3 × 2 = <strong>6 V</strong>.",
+            "<strong>4.</strong> That 6 V sits across <em>both</em> branches, so through the 3 Ω: I = 6 ÷ 3 = <strong>2 A</strong>.",
+            "Check: the 6 Ω branch carries 6 ÷ 6 = 1 A, and 2 + 1 = 3 A = the total ✓"
+          ]
+        },
+        {
+          "type": "mcq",
+          "marks": 3,
+          "stem": "<p>A student says: “Adding a resistor in series makes the current smaller, so it must also make the p.d. across the battery smaller.” Which correction is right?</p>",
+          "options": [
+            "The current actually increases, so the p.d. increases too",
+            "The current does fall, but the battery's EMF is unchanged — it is the p.d. across each component that changes",
+            "Both the current and the EMF fall together",
+            "Neither the current nor the EMF changes"
+          ],
+          "answer": 1,
+          "explain": "The EMF is a property of the battery; adding resistance changes the current and the sharing, not the source.",
+          "whyWrong": {
+            "0": "Adding resistance in series <em>increases</em> the total resistance, so with I = V ÷ R the current must <strong>fall</strong>, not rise.",
+            "2": "The current does fall — that half is right. But the EMF is set by the battery's chemistry and does not depend on what you connect to it.",
+            "3": "The current definitely changes. More resistance in the single path means less current."
+          },
+          "workthrough": [
+            "Separate the two claims and test each.",
+            "<strong>Claim 1 — the current falls.</strong> True: series resistances add, so R goes up, and I = V ÷ R means I goes down.",
+            "<strong>Claim 2 — the battery's p.d. falls.</strong> False. The <strong>EMF is a property of the battery</strong>, not of the circuit attached to it.",
+            "What actually changes is how that fixed EMF is <strong>shared out</strong> among the components — more resistors means smaller shares each.",
+            "A voltmeter across the battery terminals would still read the same value; a voltmeter across any one resistor would read less."
+          ]
+        },
+        {
+          "type": "mcq",
+          "marks": 3,
+          "stem": "<p>Two circuits each use a 6 V battery. Circuit P: a 2 Ω and a 4 Ω resistor in series. Circuit Q: a 2 Ω and a 4 Ω resistor in parallel. In which circuit does the <strong>2 Ω</strong> resistor carry more current, and why?</p>",
+          "options": [
+            "P, because series circuits carry more current",
+            "Q, because the 2 Ω resistor gets the full 6 V rather than a share of it",
+            "Both the same, because it is the same resistor and the same battery",
+            "Q, because the total resistance in Q is higher"
+          ],
+          "answer": 1,
+          "explain": "In P the 2 Ω shares the 6 V; in Q it gets all of it.",
+          "whyWrong": {
+            "0": "Series circuits carry <em>less</em> current for the same components, because the resistances add to give a larger total.",
+            "2": "The same resistor behaves differently depending on the p.d. across it. In P it gets only part of the 6 V; in Q it gets all of it.",
+            "3": "Q's total resistance is <strong>lower</strong> (1.33 Ω versus 6 Ω), not higher. The reasoning is right about Q but wrong about why."
+          },
+          "workthrough": [
+            "Work out the current through the 2 Ω resistor in each case.",
+            "<strong>Circuit P (series):</strong> Rtotal = 2 + 4 = 6 Ω, so I = 6 ÷ 6 = <strong>1 A</strong> through both resistors.",
+            "<strong>Circuit Q (parallel):</strong> the 2 Ω branch has the full 6 V across it, so I = 6 ÷ 2 = <strong>3 A</strong>.",
+            "So Q carries three times as much through the same resistor.",
+            "The reason is the <strong>p.d. across it</strong>, not the resistor itself: in series it shares the EMF with the 4 Ω; in parallel it receives all 6 V."
+          ]
+        }
+      ]
+    }
+    </script>
+  </div>
+
+  <nav class="lesson-nav">
+    <a href="practice.html">← Level 1 practice</a>
+    <a class="next" href="index.html">Course home ↺</a>
+  </nav>
+</div>
+<script src="../../js/quiz-engine.js"></script>
+</body>
+</html>

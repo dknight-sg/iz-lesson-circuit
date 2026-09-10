@@ -269,6 +269,9 @@ svg.guide-dim .lit *{opacity:1}
 .tile.lab .tile-num{color:var(--hot)}
 .tile.practice{background:rgba(46,122,140,.06)}
 .tile.practice .tile-num{color:var(--cool)}
+.tile.challenge{background:rgba(240,135,30,.10);border-left:5px solid var(--charge)}
+.tile.challenge .tile-num{color:var(--charge)}
+.tile.challenge h3{color:var(--ink)}
 
 /* ---- practice questions (native <details> reveal) ------------------ */
 .qlist{padding:8px 24px 24px}

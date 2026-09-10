@@ -1,0 +1,554 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Challenging Qns Lvl 2 — Ray Model of Light</title>
+<meta name="description" content="20 harder questions on reflection, mirrors, refraction, dispersion and radiation, with options set deliberately close together so only correct reasoning separates them.">
+<meta name="theme-color" content="#E4EAF0">
+<link rel="icon" type="image/svg+xml" href="../../favicon.svg">
+<link rel="stylesheet" href="../../css/style.css">
+<link rel="stylesheet" href="../../css/interactive.css">
+</head>
+<body>
+<div class="sheet">
+  <header>
+    <div>
+      <a class="crumb" href="index.html">← Ray Model of Light</a>
+      <p class="eyebrow" style="margin-top:10px">Challenging · Level 2</p>
+      <h1>Challenging Qns Lvl 2</h1>
+    </div>
+    <p class="sub">Twenty harder questions. The options are set <strong>deliberately close together</strong>, so guessing by feel will not work — only the correct reasoning separates them.</p>
+  </header>
+
+  <div class="prose" style="padding-bottom:0">
+    <div class="lvl2-note">
+      <span class="lvl2-tag">How this set is different</span>
+      Every wrong option is a <strong>real mistake someone actually makes</strong> — an angle measured from the surface instead of the normal, a bend in the right direction for the wrong medium, the total angle where one angle was wanted. If you land on one, the feedback names the slip.
+    </div>
+  </div>
+
+  <div class="scorebar" id="scorebar">
+    <span>Score <span class="sc">0 / 0</span></span>
+    <span class="bar"><span></span></span>
+    <span class="dn">0 of 20 answered</span>
+    <button class="qz-reset" type="button">Start again</button>
+  </div>
+
+  <div class="qlist" id="quiz">
+    <script type="application/json">
+    {
+      "questions": [
+        {
+          "type": "mcq",
+          "marks": 2,
+          "stem": "<p>A ray strikes a plane mirror at <strong>28° to the mirror surface</strong>. What is the angle of reflection?</p>",
+          "options": [
+            "28°",
+            "56°",
+            "62°",
+            "124°"
+          ],
+          "answer": 2,
+          "explain": "Convert to the normal first: 90 − 28 = 62°, then r = i.",
+          "whyWrong": {
+            "0": "You used the angle as given. But 28° was measured from the <strong>surface</strong>, and both i and r are measured from the <strong>normal</strong>.",
+            "1": "You doubled the given angle. Doubling gives the angle <em>between</em> two rays, not an angle of reflection.",
+            "3": "You doubled the correct answer. 124° is the total angle between the incident and reflected rays; the angle of reflection is half of it."
+          },
+          "workthrough": [
+            "Spot the trap in the wording: the angle is given <strong>to the mirror surface</strong>, not to the normal.",
+            "The normal is <strong>perpendicular</strong> to the surface, so the two angles add to 90°.",
+            "Angle of incidence = 90 − 28 = <strong>62°</strong>.",
+            "Apply the law: r = i = <strong>62°</strong>.",
+            "Note how close 56 and 62 look on a page. One comes from doubling, the other from the correct 90° conversion — only the method separates them."
+          ]
+        },
+        {
+          "type": "mcq",
+          "marks": 2,
+          "stem": "<p>A ray hits a mirror with an angle of incidence of 35°. What is the angle <strong>between the incident ray and the reflected ray</strong>?</p>",
+          "options": [
+            "35°",
+            "55°",
+            "70°",
+            "110°"
+          ],
+          "answer": 2,
+          "explain": "Both rays sit 35° from the normal on opposite sides, so 35 + 35 = 70°.",
+          "whyWrong": {
+            "0": "That is the angle of reflection on its own. The question asks for the angle spanning <em>both</em> rays.",
+            "1": "You used 90 − 35, which converts to the angle from the surface. That is not what was asked.",
+            "3": "You may have used 180 − 70, or added the two surface angles. The two rays are each 35° from the normal, so they span 70°."
+          },
+          "workthrough": [
+            "Draw the normal first, then place both rays relative to it.",
+            "The incident ray sits <strong>35° on one side</strong> of the normal.",
+            "By the law of reflection, the reflected ray sits <strong>35° on the other side</strong>.",
+            "The angle between them spans both: 35 + 35 = <strong>70°</strong>.",
+            "This question and the previous one look almost identical but ask for different quantities. Read carefully whether an angle is <em>from the normal</em> or <em>between the rays</em>."
+          ]
+        },
+        {
+          "type": "mcq",
+          "marks": 2,
+          "stem": "<p>A person stands 1.5 m in front of a plane mirror and then steps back another 0.5 m. By how much does the distance <strong>between the person and their image</strong> increase?</p>",
+          "options": [
+            "0.5 m",
+            "1.0 m",
+            "2.0 m",
+            "4.0 m"
+          ],
+          "answer": 1,
+          "explain": "The image moves back by the same 0.5 m, so the gap grows by 0.5 + 0.5 = 1.0 m.",
+          "whyWrong": {
+            "0": "That is how far the <em>person</em> moved. The image moves back by the same amount at the same time, so the gap grows by twice that.",
+            "2": "That is the person-to-image distance at the start (1.5 + 1.5 = 3.0 m) minus... check again: the <em>increase</em> is asked for, not a total.",
+            "3": "You may have doubled the final total. The increase is 1.0 m; the final separation is 4.0 m."
+          },
+          "workthrough": [
+            "Recall the rule: the image is always as far <strong>behind</strong> the mirror as the object is in front.",
+            "<strong>Before:</strong> person 1.5 m in front, image 1.5 m behind → separation 3.0 m.",
+            "<strong>After:</strong> person 2.0 m in front, image 2.0 m behind → separation 4.0 m.",
+            "Increase = 4.0 − 3.0 = <strong>1.0 m</strong>.",
+            "The key insight: stepping back by <em>d</em> increases the separation by <strong>2d</strong>, because the image retreats too."
+          ]
+        },
+        {
+          "type": "mcq",
+          "marks": 2,
+          "stem": "<p>Parallel rays strike a <strong>rough</strong> surface. Which statement is correct?</p>",
+          "options": [
+            "i = r fails at each point, so the rays scatter",
+            "i = r holds at each point, but the normals point in different directions, so the rays scatter",
+            "i = r holds and the normals are parallel, so the rays stay parallel",
+            "The rays are absorbed rather than reflected"
+          ],
+          "answer": 1,
+          "explain": "The law is never broken; the surface orientation is what varies.",
+          "whyWrong": {
+            "0": "The law of reflection is <strong>never</strong> broken, on any surface. This is the single commonest misconception in the topic.",
+            "2": "The normals are parallel only on a <em>smooth</em> surface. On a rough one they point in different directions, which is exactly why the rays scatter.",
+            "3": "Some light is absorbed by any surface, but scattering is not absorption — the rays are reflected, just in many directions."
+          },
+          "workthrough": [
+            "Recall the Take Note: for <strong>both</strong> smooth and rough surfaces, the angle of reflection of each ray equals the angle of incidence.",
+            "So the law itself does not change. Something else must.",
+            "Ask what the angles are measured from: the <strong>normal</strong>, perpendicular to the surface <em>at that point</em>.",
+            "On a rough surface the tilt varies from point to point, so each normal points a <strong>different way</strong>.",
+            "Each ray obeys i = r but leaves in its own direction — hence scattering, and no image."
+          ]
+        },
+        {
+          "type": "mcq",
+          "marks": 2,
+          "stem": "<p>A ray passes from air into glass with an angle of incidence of 50°. Which could be the angle of refraction?</p>",
+          "options": [
+            "31°",
+            "50°",
+            "62°",
+            "90°"
+          ],
+          "answer": 0,
+          "explain": "Entering the denser glass, the light slows and bends TOWARDS the normal, so the angle must be less than 50°.",
+          "whyWrong": {
+            "1": "Equal angles would mean no bending at all. That only happens at 0° incidence, along the normal.",
+            "2": "Bending <em>away</em> from the normal happens when light <strong>speeds up</strong> — that is glass to air, not air to glass.",
+            "3": "90° would mean the ray travels along the boundary itself, which does not happen on entering a denser medium."
+          },
+          "workthrough": [
+            "Identify the direction of travel: <strong>air → glass</strong>, so less dense → denser.",
+            "Light travels <strong>faster in air than in glass</strong>, so entering the glass it <strong>slows down</strong>.",
+            "Recall the pairing: slowing down → bends <strong>towards</strong> the normal.",
+            "Towards the normal means the angle gets <strong>smaller</strong>, so it must be less than 50°.",
+            "Only <strong>31°</strong> qualifies. You do not need to calculate the exact value — the direction of the inequality is enough to choose."
+          ]
+        },
+        {
+          "type": "mcq",
+          "marks": 2,
+          "stem": "<p>A ray leaves a glass block into air with an angle of incidence (inside the glass) of 30°. The angle of refraction in air is:</p>",
+          "options": [
+            "Less than 30°",
+            "Exactly 30°",
+            "Greater than 30°",
+            "Impossible to say without more information"
+          ],
+          "answer": 2,
+          "explain": "Glass to air means speeding up, which bends the ray away from the normal.",
+          "whyWrong": {
+            "0": "Smaller angles happen when light <strong>slows down</strong>, entering a denser medium. Here it is leaving one.",
+            "1": "Equal angles would mean no refraction, which only occurs along the normal (0°).",
+            "3": "You have all you need. The <em>direction</em> of the bend is fixed by which medium is denser, regardless of the exact angle."
+          },
+          "workthrough": [
+            "Identify the direction: <strong>glass → air</strong>, so denser → less dense.",
+            "Leaving the denser glass, the light <strong>speeds up</strong>.",
+            "Recall the pairing: speeding up → bends <strong>away from</strong> the normal.",
+            "Away from the normal means the angle gets <strong>larger</strong>, so it exceeds 30°.",
+            "This is the half of refraction students most often forget — and it is the half that explains why a swimming pool looks shallower than it is."
+          ]
+        },
+        {
+          "type": "mcq",
+          "marks": 2,
+          "stem": "<p>Which explains why a swimming pool looks shallower than it really is?</p>",
+          "options": [
+            "Light from the bottom slows on leaving the water, bending towards the normal",
+            "Light from the bottom speeds up on leaving the water, bending away from the normal, and the eye traces it back along a straight line",
+            "Water absorbs light, making the bottom appear closer",
+            "The water magnifies the pool floor"
+          ],
+          "answer": 1,
+          "explain": "Refraction on exit plus the brain's straight-line assumption.",
+          "whyWrong": {
+            "0": "Wrong direction. Leaving water for air is denser → less dense, so the light <strong>speeds up</strong> and bends <strong>away</strong> from the normal.",
+            "2": "Absorption makes deep water dimmer and bluer, but it cannot change where the bottom <em>appears</em> to be — that is a matter of direction.",
+            "3": "Magnification changes apparent <em>size</em>, not apparent depth. The floor looks nearer, not bigger."
+          },
+          "workthrough": [
+            "Follow the light from the pool floor upwards and out into the air.",
+            "<strong>Water → air</strong> is denser → less dense, so the light <strong>speeds up</strong> and bends <strong>away from the normal</strong>.",
+            "Your eye then makes an assumption: that light travelled in a <strong>straight line</strong> the whole way.",
+            "Tracing the final direction straight back into the water lands you <em>above</em> the real object.",
+            "So the <strong>perceived depth</strong> is less than the <strong>actual depth</strong>. Note that option A has the right structure but the wrong direction — that is the trap."
+          ]
+        },
+        {
+          "type": "mcq",
+          "marks": 2,
+          "stem": "<p>A dentist needs a <strong>magnified</strong> image of a tooth. A driver needs to see a <strong>wide area</strong> behind the car. Which mirrors do they use?</p>",
+          "options": [
+            "Dentist convex, driver concave",
+            "Dentist concave, driver convex",
+            "Both concave",
+            "Both convex"
+          ],
+          "answer": 1,
+          "explain": "Concave converges and magnifies; convex diverges and widens the view.",
+          "whyWrong": {
+            "0": "Exactly reversed. Convex mirrors make things look <em>smaller</em>, which is no use to a dentist examining a tooth closely.",
+            "2": "A concave rear-view mirror would magnify but show a very narrow strip of road — the opposite of what a driver needs.",
+            "3": "A convex dentist's mirror would shrink the tooth, making it harder rather than easier to examine."
+          },
+          "workthrough": [
+            "Ask what each person needs: <strong>see bigger</strong>, or <strong>see more</strong>?",
+            "<strong>Dentist</strong> — needs to see bigger → rays must be brought together → <strong>concave</strong> (converging).",
+            "<strong>Driver</strong> — needs to see more → rays must be spread apart → <strong>convex</strong> (diverging).",
+            "Memory hook: a <strong>cave</strong> goes <em>into</em> the hillside, so con<strong>cave</strong> curves inwards.",
+            "The trade-off: a convex mirror gives the wide view but makes objects look smaller and further away — which is why cars carry that warning."
+          ]
+        },
+        {
+          "type": "mcq",
+          "marks": 2,
+          "stem": "<p>White light passes through a prism. Which colour emerges <strong>closest</strong> to the original direction of the white beam?</p>",
+          "options": [
+            "Violet",
+            "Blue",
+            "Green",
+            "Red"
+          ],
+          "answer": 3,
+          "explain": "Red bends the least, so it is deviated least from the original path.",
+          "whyWrong": {
+            "0": "Violet bends the <strong>most</strong>, so it ends up furthest from the original direction — the opposite extreme.",
+            "1": "Blue is near the violet end, so it bends a lot. Not the least.",
+            "2": "Green sits in the middle of ROYGBIV, so it is deviated by a middling amount."
+          },
+          "workthrough": [
+            "Recall the cause: each colour slows to a <strong>different extent</strong> in the glass, so each bends by a different angle.",
+            "Recall the two extremes: <strong>violet bends the most, red bends the least</strong>.",
+            "Bending least means deviating least from the original straight path.",
+            "So <strong>red</strong> emerges closest to the original direction.",
+            "Careful with the wording: this question asks about deviation from the <em>original beam</em>, not about position on the screen. The two are linked, but the reasoning must start from how much each colour bends."
+          ]
+        },
+        {
+          "type": "mcq",
+          "marks": 2,
+          "stem": "<p>Two plane mirrors are placed at right angles. A ray strikes the first at 30° to its normal. After reflecting off <strong>both</strong> mirrors, the ray travels:</p>",
+          "options": [
+            "At 30° to its original direction",
+            "At 60° to its original direction",
+            "Parallel to its original direction but reversed",
+            "Perpendicular to its original direction"
+          ],
+          "answer": 2,
+          "explain": "Two perpendicular mirrors always send a ray back parallel to how it came — the corner-reflector effect.",
+          "whyWrong": {
+            "0": "The 30° is the angle at the first mirror only. After the second reflection the total turning is fixed by the mirrors' 90° angle, not by the incoming angle.",
+            "1": "A tempting near-miss, but the total deviation from two perpendicular mirrors is 180°, not 60°.",
+            "3": "Perpendicular would be a 90° turn. Two reflections at right-angled mirrors turn the ray by a full 180°."
+          },
+          "workthrough": [
+            "Handle each reflection in turn, using i = r each time.",
+            "At the <strong>first</strong> mirror the ray turns through 180 − 2(30) = 120°.",
+            "It then meets the <strong>second</strong> mirror and turns again, this time through 180 − 2(60) = 60°.",
+            "Total turning = 120 + 60 = <strong>180°</strong> — the ray heads back the way it came, parallel to its original path.",
+            "This is true for <em>any</em> incoming angle, which is why corner reflectors are used in bicycle reflectors and road studs: light returns straight to its source."
+          ]
+        },
+        {
+          "type": "mcq",
+          "marks": 2,
+          "stem": "<p>A ray enters a glass block <strong>along the normal</strong>. Which statement is fully correct?</p>",
+          "options": [
+            "It does not slow down and does not bend",
+            "It slows down but does not bend",
+            "It bends towards the normal and slows down",
+            "It speeds up and does not bend"
+          ],
+          "answer": 1,
+          "explain": "The speed always changes at the boundary; only the direction is unaffected at 0° incidence.",
+          "whyWrong": {
+            "0": "The speed <em>does</em> change. Refraction is defined by the change in speed, and that happens at every boundary regardless of angle.",
+            "2": "There is nothing to bend towards — the ray is already travelling along the normal.",
+            "3": "Entering the denser glass, light <strong>slows down</strong>. Speeding up happens on the way out."
+          },
+          "workthrough": [
+            "Use the cart model. Entering the grass <strong>perpendicularly</strong>, both wheels cross the boundary at the same instant.",
+            "Both slow together, so neither travels further than the other — nothing swings the cart round.",
+            "The cart continues in a <strong>straight line at a lower speed</strong>. Light behaves identically.",
+            "So: <strong>speed changes, direction does not</strong>.",
+            "This is a precise-wording question. Option A is the popular answer and it is wrong on the speed — refraction is fundamentally about speed, not bending."
+          ]
+        },
+        {
+          "type": "mcq",
+          "marks": 2,
+          "stem": "<p>Which pair correctly matches the radiation to its harmful effect?</p>",
+          "options": [
+            "Infrared → skin cancer; Ultraviolet → climate change",
+            "Infrared → climate change; Ultraviolet → skin cancer",
+            "Both cause skin cancer",
+            "Both contribute to climate change"
+          ],
+          "answer": 1,
+          "explain": "IR trapped in the atmosphere drives climate change; UV overexposure causes skin cancer.",
+          "whyWrong": {
+            "0": "Exactly swapped. This is the commonest confusion between the two invisible radiations.",
+            "2": "Infrared is a heating radiation; it does not cause skin cancer. UV does, because it drives chemical changes in cells.",
+            "3": "UV does not contribute to climate change. It is <strong>infrared</strong> trapped in the atmosphere that raises temperatures."
+          },
+          "workthrough": [
+            "Take each radiation and recall what it does.",
+            "<strong>Infrared</strong> carries heat energy. Trapped in the atmosphere it raises temperatures — <strong>climate change</strong>. Overexposure in welding and furnaces harms the eyes.",
+            "<strong>Ultraviolet</strong> drives chemical changes in living tissue. That is useful for sterilisation and vitamin D, but harmful to cells — <strong>skin cancer</strong> and eye damage.",
+            "So the correct pairing is IR → climate change, UV → skin cancer.",
+            "A useful rule: if the effect is about <em>heat</em>, think infrared; if it is about <em>chemical or biological change</em>, think ultraviolet."
+          ]
+        },
+        {
+          "type": "mcq",
+          "marks": 2,
+          "stem": "<p>A thermal imaging camera at an airport screens people for fever. Which radiation does it detect, and why does that work?</p>",
+          "options": [
+            "Ultraviolet, because hot objects emit more UV",
+            "Infrared, because objects emit infrared according to their temperature",
+            "Visible light, because a fever makes the skin redder",
+            "X-rays, because they penetrate the body"
+          ],
+          "answer": 1,
+          "explain": "Warm bodies emit infrared, so the intensity maps directly to temperature.",
+          "whyWrong": {
+            "0": "UV comes mainly from the sun and UV lamps, not from body heat. Bees see it; it is not a temperature signal.",
+            "2": "The camera works in darkness and through a mask. It is not reading visible colour at all.",
+            "3": "X-rays are used in medical imaging to see through tissue, not to measure surface temperature — and they would be far too hazardous for routine screening."
+          },
+          "workthrough": [
+            "Ask what physically differs about a person with a fever: their <strong>body temperature</strong> is higher.",
+            "Recall which radiation is linked to temperature: <strong>infrared</strong>. Warm objects emit it.",
+            "A thermal camera detects that infrared and builds an image where intensity maps to temperature.",
+            "That is why the technique was used to screen for fever during <strong>COVID-19</strong>.",
+            "It also explains why snakes, which can see infrared, can hunt warm-blooded prey in complete darkness."
+          ]
+        },
+        {
+          "type": "mcq",
+          "marks": 2,
+          "stem": "<p>Why can you see your reflection in a mirror but not in white paper, even though paper reflects most of the light hitting it?</p>",
+          "options": [
+            "Paper absorbs all the light",
+            "Paper is uneven at a microscopic scale, so it scatters the reflected rays in many directions",
+            "Light passes straight through paper",
+            "Paper reflects only invisible radiation"
+          ],
+          "answer": 1,
+          "explain": "Both reflect; only the mirror keeps the rays organised.",
+          "whyWrong": {
+            "0": "If paper absorbed all the light it would look <strong>black</strong>. White paper is white precisely because it reflects most of what hits it.",
+            "2": "Paper is opaque, and any light that does get through carries no image.",
+            "3": "Paper reflects visible light — that is how you see the page. The issue is the <em>direction</em> of that reflection."
+          },
+          "workthrough": [
+            "Note first that paper <em>does</em> reflect light — you can see the paper, so light from it reaches your eyes.",
+            "So the question is about <strong>direction</strong>, not amount.",
+            "Although white paper looks smooth, its surface is <strong>uneven under a microscope</strong>.",
+            "Uneven means the normals point many ways, so parallel rays leave in many directions — the light is <strong>scattered</strong>.",
+            "Scattered light carries no organised image, so no reflection of your face survives. A mirror's smooth surface keeps every ray in step."
+          ]
+        },
+        {
+          "type": "mcq",
+          "marks": 2,
+          "stem": "<p>A ray of light travels from water into glass. Glass is optically denser than water. The ray:</p>",
+          "options": [
+            "Speeds up and bends away from the normal",
+            "Slows down and bends towards the normal",
+            "Does not change speed, because both are transparent",
+            "Slows down and bends away from the normal"
+          ],
+          "answer": 1,
+          "explain": "Denser medium means slower, and slowing bends the ray towards the normal — the same rule as air to glass.",
+          "whyWrong": {
+            "0": "Entering a <em>denser</em> medium always slows light, not speeds it up.",
+            "2": "Being transparent is what allows the light through; it is <strong>optical density</strong> that sets the speed, and the two media differ in it.",
+            "3": "The speed is right but the direction is not. Slowing always bends light <strong>towards</strong> the normal."
+          },
+          "workthrough": [
+            "Do not memorise this as an air-and-glass rule — memorise it as a <strong>density</strong> rule.",
+            "Going from less dense to <strong>more</strong> dense, light <strong>slows down</strong>.",
+            "Slowing down bends the ray <strong>towards</strong> the normal.",
+            "Here water → glass is less dense → more dense, so it behaves exactly like air → glass.",
+            "The medium names are interchangeable; only which one is optically denser matters."
+          ]
+        },
+        {
+          "type": "mcq",
+          "marks": 2,
+          "stem": "<p>The moon is bright in the night sky. Which statement is correct?</p>",
+          "options": [
+            "The moon is luminous, because it emits light",
+            "The moon is non-luminous; we see it because it reflects sunlight",
+            "The moon is luminous only during a full moon",
+            "The moon emits its own light but only reflects it towards Earth"
+          ],
+          "answer": 1,
+          "explain": "The moon makes no light of its own — every photon started at the sun.",
+          "whyWrong": {
+            "0": "Emitting light is exactly what the moon does <em>not</em> do. It has no internal energy source producing light.",
+            "2": "The phases are about which part of the lit half we can see from Earth. The moon's nature does not change between phases.",
+            "3": "Self-contradictory — an object either emits its own light or it does not. The moon does not."
+          },
+          "workthrough": [
+            "Apply the test: does the object <strong>make its own light</strong>?",
+            "The moon has no process producing light — unlike the sun, which runs on nuclear fusion in its core.",
+            "So the moon is <strong>non-luminous</strong>. We see it because sunlight <strong>reflects</strong> off its surface into our eyes.",
+            "That is two straight lines: sun → moon → eye.",
+            "It is the classic trap because the moon is so bright, but brightness is not the test — origin is."
+          ]
+        },
+        {
+          "type": "mcq",
+          "marks": 3,
+          "stem": "<p>A ray strikes a mirror at 20° to the normal. The mirror is then rotated by 10°, while the incoming ray stays fixed. What is the new angle between the incident and reflected rays?</p>",
+          "options": [
+            "20°",
+            "40°",
+            "60°",
+            "80°"
+          ],
+          "answer": 2,
+          "explain": "Rotating the mirror by 10° changes the angle of incidence to 30°, so the rays span 30 + 30 = 60°.",
+          "whyWrong": {
+            "0": "That was the original angle of incidence, and it has changed. Also, the angle <em>between the rays</em> is twice the angle of incidence.",
+            "1": "That is the original angle between the rays (20 + 20). The mirror has since been rotated.",
+            "3": "You may have added 10° twice to the 20° and then doubled. The new angle of incidence is 30°, not 40°."
+          },
+          "workthrough": [
+            "Rotating the mirror also rotates its <strong>normal</strong> by the same 10°.",
+            "The incoming ray is fixed, so the angle between it and the normal changes by 10°: new angle of incidence = 20 + 10 = <strong>30°</strong>.",
+            "By the law of reflection, the reflected ray is also <strong>30°</strong> from the normal, on the other side.",
+            "Angle between the two rays = 30 + 30 = <strong>60°</strong>.",
+            "Worth noting the general result: rotating a mirror by θ rotates the reflected ray by <strong>2θ</strong> — here 10° of mirror rotation moved the reflected ray by 20°."
+          ]
+        },
+        {
+          "type": "mcq",
+          "marks": 3,
+          "stem": "<p>Light travels from air into glass, then out of the glass back into air, through a rectangular block. Compared with the original incoming ray, the emerging ray is:</p>",
+          "options": [
+            "Bent towards the normal overall",
+            "Bent away from the normal overall",
+            "Parallel to the original ray, but shifted sideways",
+            "Travelling back the way it came"
+          ],
+          "answer": 2,
+          "explain": "The two bends are equal and opposite, so direction is restored but the path is displaced.",
+          "whyWrong": {
+            "0": "The entry bend is towards the normal, but the exit bend is away from it by the same amount. They cancel.",
+            "1": "Same reasoning — the exit bend is cancelled by the entry bend, so there is no net turning.",
+            "3": "That would need a mirror or a corner reflector. Light passing through a transparent block continues forwards."
+          },
+          "workthrough": [
+            "Handle the two boundaries separately.",
+            "<strong>Entering (air → glass):</strong> the light slows and bends <strong>towards</strong> the normal.",
+            "<strong>Leaving (glass → air):</strong> the light speeds up and bends <strong>away</strong> from the normal by the same amount.",
+            "The faces of a rectangular block are parallel, so the two bends are equal and opposite — the net change in direction is <strong>zero</strong>.",
+            "But while inside the glass the ray travelled along a shifted path, so it emerges <strong>parallel to the original but displaced sideways</strong>. This is why letters under a glass block appear shifted."
+          ]
+        },
+        {
+          "type": "mcq",
+          "marks": 3,
+          "stem": "<p>Which of these is the strongest evidence that light travels in straight lines?</p>",
+          "options": [
+            "A mirror forms a clear image",
+            "Moving one of three aligned cards makes a candle flame invisible",
+            "A prism splits white light into colours",
+            "A pool looks shallower than it is"
+          ],
+          "answer": 1,
+          "explain": "The card experiment isolates straight-line travel — nothing else explains why the flame disappears.",
+          "whyWrong": {
+            "0": "A clear image shows that reflection is <em>regular</em> on a smooth surface. It does not by itself prove the light travelled in straight lines to get there.",
+            "2": "Dispersion shows that different colours refract by different amounts. That is about bending, not about straight-line travel.",
+            "3": "Apparent depth is evidence of <strong>refraction</strong> — light <em>changing</em> direction. If anything it shows light does not always continue straight."
+          },
+          "workthrough": [
+            "Ask which observation would be <strong>impossible</strong> if light could bend around obstacles.",
+            "In the three-card experiment, aligned holes let you see the flame; moving one card blocks it completely.",
+            "If light could curve, it would simply bend around the displaced card and still reach your eye.",
+            "It does not — so light must travel in <strong>straight lines</strong>. Nothing else explains the result.",
+            "The other three options all involve light <em>changing</em> direction at a boundary, so they cannot be evidence for straight-line travel."
+          ]
+        },
+        {
+          "type": "mcq",
+          "marks": 3,
+          "stem": "<p>Two students describe a plane-mirror image. A says “it is virtual and laterally inverted”. B says “it is virtual and upside down”. Who is right, and why?</p>",
+          "options": [
+            "A, because a mirror reverses left and right, not top and bottom",
+            "B, because a mirror flips the image vertically",
+            "Both, because laterally inverted and upside down mean the same thing",
+            "Neither, because a plane-mirror image is real"
+          ],
+          "answer": 0,
+          "explain": "Lateral inversion is a left–right swap; the image stays upright.",
+          "whyWrong": {
+            "1": "A plane mirror image is <strong>upright</strong>. Stand in front of one and your head is still at the top.",
+            "2": "They are different. <strong>Laterally inverted</strong> means left and right are swapped; <strong>inverted</strong> means top and bottom are. Only the first applies here.",
+            "3": "A plane-mirror image is <strong>virtual</strong> — it cannot be caught on a screen. Both students had that part right."
+          },
+          "workthrough": [
+            "Check each characteristic against the list of five for a plane mirror.",
+            "<strong>Virtual</strong> ✓ — both students agree, and both are right.",
+            "<strong>Upright</strong> — the image is not turned upside down. So B is wrong.",
+            "<strong>Laterally inverted</strong> ✓ — left and right are swapped, which is what A said.",
+            "The vocabulary matters: <em>inverted</em> alone means top-to-bottom, while <em>laterally inverted</em> means left-to-right. Using the wrong one loses the mark even when you understand the physics — which is why AMBULANCE is printed reversed left-to-right, not upside down."
+          ]
+        }
+      ]
+    }
+    </script>
+  </div>
+
+  <nav class="lesson-nav">
+    <a href="practice.html">← Level 1 practice</a>
+    <a class="next" href="index.html">Chapter home ↺</a>
+  </nav>
+</div>
+<script src="../../js/quiz-engine.js"></script>
+</body>
+</html>

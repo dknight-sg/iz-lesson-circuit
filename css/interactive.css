@@ -738,3 +738,14 @@ table.isot .diff{color:var(--charge);font-weight:700}
   padding:11px 12px;min-height:44px;border:1.5px solid var(--ink);background:#FFF;cursor:pointer;
   box-shadow:none;color:var(--ink)}
 .at-btn[aria-pressed="true"],.mh-btn[aria-pressed="true"]{background:var(--ink);color:#F7FAFC}
+
+/* ---- Challenging Qns Lvl 2 header treatment ----------------- */
+.lvl2-note{
+  border:1.5px solid var(--charge);background:rgba(240,135,30,.08);
+  padding:14px 18px;margin:0 0 22px;font-size:14px;
+}
+.lvl2-note strong{color:var(--ink)}
+.lvl2-note .lvl2-tag{
+  display:block;font-family:"Space Mono",monospace;font-size:10px;letter-spacing:.12em;
+  text-transform:uppercase;color:var(--charge);margin-bottom:6px;
+}
